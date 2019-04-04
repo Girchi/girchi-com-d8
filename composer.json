@@ -250,6 +250,7 @@
     "drupal/straw": "^1.0",
     "drupal/swiftmailer": "^1.0@beta",
     "drupal/taxonomy_container": "^1.0",
+    "drupal/telephone_validation": "^2.2",
     "drupal/twig_field_value": "^1.1",
     "drupal/twig_tweak": "2.1",
     "drupal/url_embed": "^1.0@alpha",
