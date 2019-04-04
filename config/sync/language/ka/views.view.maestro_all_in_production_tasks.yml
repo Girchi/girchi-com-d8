@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- All -'
+      fields:
+        task_label:
+          label: Label
+        created:
+          label: Created
+        admin_operations:
+          label: Operations
+  maestro_all_active_tasks_full:
+    display_options:
+      fields:
+        task_label:
+          label: Label
+        created:
+          label: Created
+        admin_operations:
+          label: Operations
+  maestro_all_active_tasks_lean:
+    display_options:
+      fields:
+        created:
+          label: Created
+        admin_operations:
+          label: Operations

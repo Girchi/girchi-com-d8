@@ -34,4 +34,5 @@ content:
     type: string
     region: content
 hidden:
+  field_date: true
   field_pdf_file: true

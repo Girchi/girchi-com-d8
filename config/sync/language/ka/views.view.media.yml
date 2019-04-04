@@ -1,8 +1,50 @@
+label: Media
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          sort_desc_label: Desc
       pager:
         options:
+          expose:
+            items_per_page_options_all_label: '- All -'
           tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
             first: '« პირველი'
             last: 'ბოლო »'
+      fields:
+        media_bulk_form:
+          action_title: Action
+        bundle:
+          label: ტიპი
+        uid:
+          label: Author
+        status:
+          label: Status
+          settings:
+            format_custom_true: Published
+        changed:
+          label: Updated
+        operations:
+          label: Operations
+      filters:
+        bundle:
+          expose:
+            label: ტიპი
+        status:
+          group_info:
+            group_items:
+              1:
+                title: Published
+        langcode:
+          expose:
+            label: Language
+      title: Media
+  media_page_list:
+    display_title: Media
+    display_options:
+      menu:
+        title: Media

@@ -1,0 +1,26 @@
+uuid: 61457899-c7a0-4f86-9896-bf9b324ab8ff
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_telephone
+  module:
+    - telephone
+    - telephone_validation
+    - user
+third_party_settings:
+  telephone_validation:
+    format: 0
+    country: {  }
+id: user.user.field_telephone
+field_name: field_telephone
+entity_type: user
+bundle: user
+label: Telephone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

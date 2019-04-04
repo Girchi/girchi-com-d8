@@ -1,0 +1,24 @@
+uuid: c8c6b717-96b3-4400-8faf-071d0c478952
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_be_politic
+  module:
+    - user
+id: user.user.field_be_politic
+field_name: field_be_politic
+entity_type: user
+bundle: user
+label: 'Be politic'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: politic
+  off_label: 'not a politic'
+field_type: boolean

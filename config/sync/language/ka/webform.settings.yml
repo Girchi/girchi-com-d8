@@ -1,3 +1,5 @@
 settings:
   default_submit_button_label: გაგზავნა
   default_form_required_label: 'აღნიშნავს სავალდებულო ველს'
+element:
+  default_more_title: More

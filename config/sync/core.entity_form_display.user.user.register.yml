@@ -1,0 +1,45 @@
+uuid: e6fe5146-aa4e-474e-b502-1dc85a5fde65
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.user.user.field_be_politic
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_id
+    - field.field.user.user.field_lastname
+    - field.field.user.user.user_picture
+  module:
+    - path
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.register
+targetEntityType: user
+bundle: user
+mode: register
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+    region: content
+hidden:
+  contact: true
+  field_be_politic: true
+  field_firstname: true
+  field_id: true
+  field_lastname: true
+  google_analytics: true
+  langcode: true
+  language: true
+  user_picture: true

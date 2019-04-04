@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: tournament_page
 label: 'Tournament Page'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

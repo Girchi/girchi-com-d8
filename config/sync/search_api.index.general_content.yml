@@ -13,33 +13,6 @@ name: 'General Content'
 description: ''
 read_only: false
 field_settings:
-  node_grants:
-    label: 'Node access information'
-    property_path: search_api_node_grants
-    type: string
-    indexed_locked: true
-    type_locked: true
-    hidden: true
-  title:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: text
-    boost: !!float 3
-  status:
-    label: status
-    datasource_id: 'entity:node'
-    property_path: status
-    type: boolean
-    indexed_locked: true
-    type_locked: true
-  uid:
-    label: uid
-    datasource_id: 'entity:node'
-    property_path: uid
-    type: integer
-    indexed_locked: true
-    type_locked: true
   body:
     label: Body
     datasource_id: 'entity:node'
@@ -53,6 +26,33 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: created
     type: date
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 3
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
 datasource_settings:
   'entity:node':
     bundles:
@@ -63,9 +63,12 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  rendered_item: {  }
   add_url: {  }
   aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -49
+  entity_status: {  }
   highlight:
     highlight: always
     highlight_partial: true
@@ -77,34 +80,31 @@ processor_settings:
     suffix: '</strong>'
     weights:
       postprocess_query: 0
-  entity_status: {  }
-  ignorecase:
-    all_fields: false
-    fields:
-      - title
-      - body
-    weights:
-      preprocess_index: -48
-      preprocess_query: -50
-  content_access:
-    weights:
-      preprocess_query: -49
   html_filter:
     all_fields: false
     fields:
-      - title
       - body
+      - title
     title: true
     alt: true
     tags:
+      b: 3
       h1: 5
       h2: 4
       h3: 3
       strong: 3
-      b: 3
     weights:
       preprocess_index: -49
       preprocess_query: -47
+  ignorecase:
+    all_fields: false
+    fields:
+      - body
+      - title
+    weights:
+      preprocess_index: -48
+      preprocess_query: -50
+  rendered_item: {  }
 tracker_settings:
   default: {  }
 options:

@@ -4,6 +4,7 @@ status: false
 dependencies: {  }
 id: prod
 label: prod
+description: ''
 folder: ../config/environments/prod
 module:
   static_server: 0

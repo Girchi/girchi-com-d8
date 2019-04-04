@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: basic_content
 label: 'Basic Content'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

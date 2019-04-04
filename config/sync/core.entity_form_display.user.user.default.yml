@@ -3,11 +3,17 @@ langcode: ka
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_be_politic
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_id
+    - field.field.user.user.field_lastname
+    - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
     - path
+    - telephone
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -17,13 +23,51 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 2
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_be_politic:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_firstname:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_id:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lastname:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
   path:
     type: path
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -32,7 +76,7 @@ content:
     region: content
   user_picture:
     type: image_image
-    weight: 0
+    weight: 6
     region: content
     settings:
       progress_indicator: throbber

@@ -1,3 +1,4 @@
+uuid: f457d082-83b3-4121-8eb0-2dba8033cdd0
 langcode: ka
 status: open
 dependencies:
@@ -184,4 +185,3 @@ handlers:
       mergevars: "FIRST_NAME: \"[webform_submission:values:first_name:raw]\"\nLAST_NAME: \"[webform_submission:values:last_name]\"\nBIRTHDAY: \"[webform_submission:values:birthday:d/m/Y]\""
       interest_groups: {  }
       control: ''
-uuid: f457d082-83b3-4121-8eb0-2dba8033cdd0

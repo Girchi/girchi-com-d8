@@ -28,4 +28,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_image: true
   langcode: true

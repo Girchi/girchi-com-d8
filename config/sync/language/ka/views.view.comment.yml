@@ -1,0 +1,63 @@
+label: Comments
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+          expose:
+            items_per_page_options_all_label: '- All -'
+      fields:
+        comment_bulk_form:
+          action_title: Action
+        subject:
+          label: Subject
+        name:
+          label: Author
+        changed:
+          label: Updated
+        operations:
+          label: Operations
+      filters:
+        subject:
+          expose:
+            label: Subject
+        langcode:
+          expose:
+            label: Language
+      title: Comments
+      empty:
+        area_text_custom:
+          content: 'No comments available.'
+      use_more_text: more
+  page_published:
+    display_title: 'Published comments'
+    display_options:
+      menu:
+        title: Comments
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: Subject
+        langcode:
+          expose:
+            label: Language
+      fields:
+        comment_bulk_form:
+          action_title: Action
+        subject:
+          label: Subject
+        name:
+          label: Author
+        changed:
+          label: Updated
+        operations:
+          label: Operations

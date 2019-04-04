@@ -117,6 +117,8 @@ module:
   system: 0
   taxonomy: 0
   taxonomy_container: 0
+  telephone: 0
+  telephone_validation: 0
   text: 0
   token: 0
   toolbar: 0

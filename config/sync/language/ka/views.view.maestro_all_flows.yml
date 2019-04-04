@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- All -'
+      fields:
+        created:
+          label: Created
+        admin_operations:
+          label: Operations
+  all_flows_full:
+    display_title: Page

@@ -64,8 +64,10 @@ content:
 hidden:
   field_gallery: true
   field_hide_from_main_news_list: true
+  field_hide_thumbnail: true
   field_is_gallery: true
   field_is_video: true
+  field_old_link: true
   field_related_clubs: true
   field_social_thumbnail: true
   field_social_title: true
