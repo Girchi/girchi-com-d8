@@ -1,8 +1,0 @@
-display:
-  default:
-    display_options:
-      pager:
-        options:
-          tags:
-            first: '« პირველი'
-            last: 'ბოლო »'

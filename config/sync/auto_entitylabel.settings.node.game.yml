@@ -1,7 +1,0 @@
-status: '1'
-pattern: '[node:field_club_1:entity:field_club_name] - [node:field_club_2:entity:field_club_name] / [node:field_date:date:article_short]'
-php: 0
-escape: 0
-dependencies:
-  config:
-    - node.type.game

@@ -9,23 +9,8 @@ dependencies:
     - taxonomy.vocabulary.tournaments
   module:
     - chosen_field
-    - field_group
     - path
     - text
-third_party_settings:
-  field_group:
-    group_table_notes:
-      children:
-        - field_table_notes
-      parent_name: ''
-      weight: 5
-      format_type: details
-      format_settings:
-        id: ''
-        classes: ''
-        open: false
-        required_fields: false
-      label: 'Table Notes'
 id: taxonomy_term.tournaments.default
 targetEntityType: taxonomy_term
 bundle: tournaments

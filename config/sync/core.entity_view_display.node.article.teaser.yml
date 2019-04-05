@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.article.field_categories
     - field.field.node.article.field_gallery
     - field.field.node.article.field_hide_from_main_news_list
+    - field.field.node.article.field_hide_thumbnail
     - field.field.node.article.field_is_gallery
     - field.field.node.article.field_is_video
+    - field.field.node.article.field_old_link
     - field.field.node.article.field_related_clubs
     - field.field.node.article.field_social_thumbnail
     - field.field.node.article.field_social_title
@@ -18,7 +20,7 @@ dependencies:
     - node.type.article
   module:
     - image
-    - smart_trim
+    - text
     - user
 id: node.article.teaser
 targetEntityType: node
@@ -26,24 +28,12 @@ bundle: article
 mode: teaser
 content:
   body:
-    type: smart_trim
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      trim_length: 100
-      trim_type: chars
-      trim_suffix: ''
-      wrap_class: trimmed
-      more_text: More
-      more_class: more-link
-      summary_handler: full
-      trim_options:
-        text: true
-        trim_zero: false
-      wrap_output: false
-      more_link: false
+    weight: 3
+    label: above
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
+    region: content
   field_categories:
     type: entity_reference_label
     weight: 1

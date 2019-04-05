@@ -6,14 +6,7 @@ dependencies:
     - field.storage.node.field_description
     - node.type.slider
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    plain_text: plain_text
-    basic_html: '0'
-    restricted_html: '0'
-    full_html: '0'
 id: node.slider.field_description
 field_name: field_description
 entity_type: node

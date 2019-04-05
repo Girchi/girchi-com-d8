@@ -1,0 +1,21 @@
+uuid: 8996a08e-4597-47fd-9192-7dbae08a19b9
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_personal_id
+field_name: field_personal_id
+entity_type: user
+type: string
+settings:
+  max_length: 11
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

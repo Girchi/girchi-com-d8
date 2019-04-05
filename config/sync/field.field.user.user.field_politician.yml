@@ -1,0 +1,24 @@
+uuid: cc953b7c-7a81-417a-a712-cf2215600f97
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_politician
+  module:
+    - user
+id: user.user.field_politician
+field_name: field_politician
+entity_type: user
+bundle: user
+label: Politician
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ჩართვა
+  off_label: გამორთვა
+field_type: boolean

@@ -1,16 +1,7 @@
 uuid: 19eea414-87a6-43ec-8535-a41f5b5739d1
 langcode: ka
 status: true
-dependencies:
-  module:
-    - contact_storage
-third_party_settings:
-  contact_storage:
-    submit_text: 'Send message'
-    show_preview: true
-    disabled_form_message: 'This contact form has been disabled.'
-    maximum_submissions_user: 0
-    page_autoreply_format: plain_text
+dependencies: {  }
 id: contact
 label: Contact
 recipients:

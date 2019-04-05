@@ -6,14 +6,7 @@ dependencies:
     - field.storage.taxonomy_term.field_table_notes
     - taxonomy.vocabulary.tournaments
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    basic_html: basic_html
-    restricted_html: '0'
-    full_html: '0'
-    plain_text: '0'
 id: taxonomy_term.tournaments.field_table_notes
 field_name: field_table_notes
 entity_type: taxonomy_term

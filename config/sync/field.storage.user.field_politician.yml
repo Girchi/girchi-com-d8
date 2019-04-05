@@ -1,0 +1,18 @@
+uuid: f1203f84-fa54-4781-a408-624a6b521c2c
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_politician
+field_name: field_politician
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

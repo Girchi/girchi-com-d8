@@ -1,0 +1,32 @@
+uuid: 5423dfae-bafe-42c8-81df-2c9b7d247124
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.register
+targetEntityType: user
+bundle: user
+mode: register
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+    region: content
+hidden:
+  contact: true
+  google_analytics: true
+  langcode: true
+  language: true
+  path: true
+  translation: true
+  user_picture: true

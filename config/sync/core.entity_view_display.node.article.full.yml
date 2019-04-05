@@ -20,7 +20,6 @@ dependencies:
     - node.type.article
   module:
     - image
-    - image_formatter_link_to_image_style
     - text
     - user
 id: node.article.full
@@ -44,16 +43,13 @@ content:
     type: entity_reference_label
     region: content
   field_gallery:
-    weight: 3
-    label: hidden
+    weight: 13
+    label: above
     settings:
-      image_style: gallery_thumb
-      image_link_style: gallery_full
-      image_link_class: ''
-      image_link_rel: ''
-      image_link_image_class: ''
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: image_formatter_link_to_image_style
+    type: image
     region: content
   field_hide_from_main_news_list:
     weight: 5
