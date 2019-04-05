@@ -46,7 +46,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: mini
         options:
@@ -55,14 +55,14 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
       style:
@@ -122,7 +122,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Block description'
+          label: 'ბლოკის აღწერა'
           exclude: false
           alter:
             alter_text: false
@@ -318,7 +318,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Updated
+          label: განახლებულია
           exclude: false
           alter:
             alter_text: false
@@ -374,7 +374,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: ოპერაციები
           exclude: false
           alter:
             alter_text: false
@@ -432,7 +432,7 @@ display:
           exposed: true
           expose:
             operator_id: info_op
-            label: 'Block description'
+            label: 'ბლოკის აღწერა'
             description: ''
             use_operator: false
             operator: info_op
@@ -579,7 +579,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: გვერდი
     position: 1
     display_options:
       display_extenders: {  }

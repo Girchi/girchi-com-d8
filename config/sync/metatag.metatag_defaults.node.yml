@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: ydpmSCtxLjO9xqkBxObkeYx0Bf2dkW-d8bB_6Q1Ggjs
 id: node
-label: Content
+label: კონტენტი
 tags:
   description: '[node:summary]'
   image_src: '[node:field_image:og_image]'

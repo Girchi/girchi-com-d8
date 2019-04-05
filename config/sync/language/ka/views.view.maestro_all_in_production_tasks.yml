@@ -3,31 +3,31 @@ display:
     display_options:
       exposed_form:
         options:
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         options:
           expose:
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
       fields:
         task_label:
-          label: Label
+          label: სათაური
         created:
-          label: Created
+          label: შექმნილია
         admin_operations:
-          label: Operations
+          label: ოპერაციები
   maestro_all_active_tasks_full:
     display_options:
       fields:
         task_label:
-          label: Label
+          label: სათაური
         created:
-          label: Created
+          label: შექმნილია
         admin_operations:
-          label: Operations
+          label: ოპერაციები
   maestro_all_active_tasks_lean:
     display_options:
       fields:
         created:
-          label: Created
+          label: შექმნილია
         admin_operations:
-          label: Operations
+          label: ოპერაციები

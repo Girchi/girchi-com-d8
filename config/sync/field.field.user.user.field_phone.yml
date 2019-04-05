@@ -1,9 +1,9 @@
-uuid: 61457899-c7a0-4f86-9896-bf9b324ab8ff
+uuid: a758992d-54e2-4021-b357-bf91914ea3a5
 langcode: ka
 status: true
 dependencies:
   config:
-    - field.storage.user.field_telephone
+    - field.storage.user.field_phone
   module:
     - telephone
     - telephone_validation
@@ -11,12 +11,13 @@ dependencies:
 third_party_settings:
   telephone_validation:
     format: 0
-    country: {  }
-id: user.user.field_telephone
-field_name: field_telephone
+    country:
+      GE: GE
+id: user.user.field_phone
+field_name: field_phone
 entity_type: user
 bundle: user
-label: Telephone
+label: Phone
 description: ''
 required: false
 translatable: false

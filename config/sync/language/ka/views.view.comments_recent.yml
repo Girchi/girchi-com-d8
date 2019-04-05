@@ -3,6 +3,6 @@ display:
     display_options:
       empty:
         area_text_custom:
-          content: 'No comments available.'
+          content: 'კომენტარები არ არსებობს.'
   block_1:
-    display_title: Block
+    display_title: ბლოკი

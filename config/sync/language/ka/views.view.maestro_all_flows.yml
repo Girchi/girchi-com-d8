@@ -3,15 +3,15 @@ display:
     display_options:
       exposed_form:
         options:
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         options:
           expose:
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
       fields:
         created:
-          label: Created
+          label: შექმნილია
         admin_operations:
-          label: Operations
+          label: ოპერაციები
   all_flows_full:
-    display_title: Page
+    display_title: გვერდი

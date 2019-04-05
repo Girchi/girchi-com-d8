@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: wTJRNzsLVTenCALONNlVfgm_pBOlqucSPuVFLOD56ck
 id: user_admin_people
-label: People
+label: მომხმარებლები
 module: user
 description: 'Find and manage people interacting with your site.'
 tag: default
@@ -38,13 +38,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: ფილტრი
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: full
         options:
@@ -53,8 +53,8 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
             first: '« პირველი'
             last: 'ბოლო »'
           expose:
@@ -62,7 +62,7 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -199,7 +199,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Username
+          label: მომხმარებელი
           exclude: false
           alter:
             alter_text: false
@@ -251,7 +251,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: სტატუსი
           exclude: false
           alter:
             alter_text: false
@@ -297,7 +297,7 @@ display:
           settings:
             format: custom
             format_custom_true: Active
-            format_custom_false: Blocked
+            format_custom_false: დაბლოკილი
           entity_type: user
           entity_field: status
         roles_target_id:
@@ -307,7 +307,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Roles
+          label: როლები
           exclude: false
           alter:
             alter_text: false
@@ -358,7 +358,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Member for'
+          label: წევრი
           exclude: false
           alter:
             alter_text: false
@@ -414,7 +414,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Last access'
+          label: 'ბოლო ვიზიტი'
           exclude: false
           alter:
             alter_text: false
@@ -470,7 +470,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: ოპერაციები
           exclude: false
           alter:
             alter_text: false
@@ -648,7 +648,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: Status
+            label: სტატუსი
             description: ''
             identifier: status
             optional: true
@@ -663,7 +663,7 @@ display:
                 operator: '='
                 value: '1'
               2:
-                title: Blocked
+                title: დაბლოკილი
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -682,7 +682,7 @@ display:
           exposed: true
           expose:
             operator_id: roles_target_id_op
-            label: Role
+            label: როლი
             description: ''
             use_operator: false
             operator: roles_target_id_op
@@ -722,7 +722,7 @@ display:
           exposed: true
           expose:
             operator_id: permission_op
-            label: Permission
+            label: უფლება
             description: ''
             use_operator: false
             operator: permission_op
@@ -846,7 +846,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: created
-      title: People
+      title: მომხმარებლები
       empty:
         area_text_custom:
           id: area_text_custom
@@ -861,7 +861,7 @@ display:
           plugin_id: text_custom
       use_more: false
       use_more_always: false
-      use_more_text: more
+      use_more_text: მეტი
       display_comment: ''
       use_ajax: false
       hide_attachment_summary: false
@@ -887,21 +887,21 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: გვერდი
     position: 1
     display_options:
       path: admin/people/list
       show_admin_links: false
       menu:
         type: 'default tab'
-        title: List
+        title: სია
         description: 'Find and manage people interacting with your site.'
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: People
+        title: მომხმარებლები
         description: 'Manage user accounts, roles, and permissions.'
         menu_name: admin
         weight: 0

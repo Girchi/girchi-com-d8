@@ -45,7 +45,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: some
         options:
@@ -185,7 +185,7 @@ display:
     display_options:
       display_description: 'A list of new users'
       block_description: 'Who''s new'
-      block_category: User
+      block_category: მომხმარებელი
       display_extenders: {  }
     cache_metadata:
       contexts:

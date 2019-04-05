@@ -41,13 +41,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: ფილტრი
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: full
         options:
@@ -56,16 +56,16 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+            first: '« პირველი'
             last: 'last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -195,7 +195,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: From
+          label: ვისგან
           exclude: false
           alter:
             alter_text: false
@@ -280,7 +280,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Created
+          label: შექმნილია
           exclude: false
           alter:
             alter_text: false
@@ -347,7 +347,7 @@ display:
           exposed: true
           expose:
             operator_id: redirect_source__path_op
-            label: From
+            label: ვისგან
             description: ''
             use_operator: false
             operator: redirect_source__path_op
@@ -388,7 +388,7 @@ display:
           exposed: true
           expose:
             operator_id: redirect_redirect__uri_op
-            label: To
+            label: მიმღები
             description: ''
             use_operator: false
             operator: redirect_redirect__uri_op
@@ -588,7 +588,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: გვერდი
     position: 1
     display_options:
       display_extenders: {  }

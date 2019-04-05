@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_i_want_to_be_a_politician
     - field.field.user.user.field_last_name
     - field.field.user.user.field_personal_id
-    - field.field.user.user.field_telephone
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_politician
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -35,13 +35,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_i_want_to_be_a_politician:
-    weight: 6
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_last_name:
     weight: 2
     settings:
@@ -58,12 +51,19 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_telephone:
-    weight: 4
+  field_phone:
+    weight: 9
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+    region: content
+  field_politician:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   path:
     type: path

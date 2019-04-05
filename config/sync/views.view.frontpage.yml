@@ -72,7 +72,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       filters:
         promote:
           admin_label: ''
@@ -175,12 +175,12 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
             first: '« პირველი'
             last: 'ბოლო »'
           quantity: 9
@@ -292,7 +292,7 @@ display:
       path: node
       display_extenders: {  }
     display_plugin: page
-    display_title: Page
+    display_title: გვერდი
     id: page_1
     position: 1
     cache_metadata:

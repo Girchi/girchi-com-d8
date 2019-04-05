@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_i_want_to_be_a_politician
     - field.field.user.user.field_last_name
     - field.field.user.user.field_personal_id
-    - field.field.user.user.field_telephone
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_politician
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - telephone
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -28,16 +29,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_i_want_to_be_a_politician:
-    weight: 3
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_last_name:
     weight: 1
     label: above
@@ -45,6 +36,24 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_phone:
+    weight: 6
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_politician:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   member_for:
     weight: 4
@@ -62,5 +71,4 @@ content:
     label: hidden
 hidden:
   field_personal_id: true
-  field_telephone: true
   langcode: true

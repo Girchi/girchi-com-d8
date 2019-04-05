@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: rRWxAX-IQkJ5viACQRovRkC784EyCl9493GU_G23n2Q
 id: files
-label: Files
+label: ფაილები
 module: file
 description: 'Find and manage files.'
 tag: default
@@ -40,13 +40,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: ფილტრი
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: mini
         options:
@@ -55,14 +55,14 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
       style:
@@ -187,7 +187,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Name
+          label: სახელი
           exclude: false
           alter:
             alter_text: false
@@ -250,7 +250,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'MIME type'
+          label: 'MIME ტიპი'
           exclude: false
           alter:
             alter_text: false
@@ -302,7 +302,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Size
+          label: ზომა
           exclude: false
           alter:
             alter_text: false
@@ -354,7 +354,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: სტატუსი
           exclude: false
           alter:
             alter_text: false
@@ -586,7 +586,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: Filename
+            label: 'ფაილის სახელი'
             description: ''
             use_operator: false
             operator: filename_op
@@ -627,7 +627,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: 'MIME type'
+            label: 'MIME ტიპი'
             description: ''
             use_operator: false
             operator: filemime_op
@@ -668,7 +668,7 @@ display:
           exposed: true
           expose:
             operator_id: status_op
-            label: Status
+            label: სტატუსი
             description: ''
             use_operator: false
             operator: status_op
@@ -697,7 +697,7 @@ display:
           entity_type: file
           entity_field: status
       sorts: {  }
-      title: Files
+      title: ფაილები
       header: {  }
       footer: {  }
       empty:
@@ -739,7 +739,7 @@ display:
       path: admin/content/files
       menu:
         type: tab
-        title: Files
+        title: ფაილები
         description: ''
         menu_name: admin
         weight: 0
@@ -796,14 +796,14 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
       filters: {  }
@@ -1030,7 +1030,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: ყველა
           title_enable: true
           title: 'File usage information for {{ arguments.fid }}'
           default_argument_type: fixed

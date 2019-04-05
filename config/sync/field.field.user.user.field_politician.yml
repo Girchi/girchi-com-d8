@@ -1,16 +1,16 @@
-uuid: c8c6b717-96b3-4400-8faf-071d0c478952
+uuid: dee24495-5be9-4b73-a142-646ee3d53d0a
 langcode: ka
 status: true
 dependencies:
   config:
-    - field.storage.user.field_be_politic
+    - field.storage.user.field_politician
   module:
     - user
-id: user.user.field_be_politic
-field_name: field_be_politic
+id: user.user.field_politician
+field_name: field_politician
 entity_type: user
 bundle: user
-label: 'Be politic'
+label: Politician
 description: ''
 required: false
 translatable: false
@@ -19,6 +19,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: politic
-  off_label: 'not a politic'
+  on_label: ჩართვა
+  off_label: გამორთვა
 field_type: boolean

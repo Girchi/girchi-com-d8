@@ -45,7 +45,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: some
         options:
@@ -126,7 +126,7 @@ display:
           exposed: false
           expose:
             operator_id: access_op
-            label: 'Last access'
+            label: 'ბოლო ვიზიტი'
             description: 'A user is considered online for this long after they have last viewed a page.'
             use_operator: false
             operator: access_op

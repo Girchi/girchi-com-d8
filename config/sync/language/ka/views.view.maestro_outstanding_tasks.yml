@@ -3,17 +3,17 @@ display:
     display_options:
       exposed_form:
         options:
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         options:
           expose:
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
       fields:
         admin_operations:
-          label: Operations
+          label: ოპერაციები
   taskconsole_display:
     display_options:
       arguments:
         process_id:
           exception:
-            title: All
+            title: ყველა

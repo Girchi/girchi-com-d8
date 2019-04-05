@@ -1,16 +1,15 @@
-uuid: 54176136-bf60-4a2f-aa8e-2099d5289872
+uuid: f0f27728-f60a-4708-9b67-1efed4d914fc
 langcode: ka
 status: true
 dependencies:
   module:
-    - telephone
     - user
-id: user.field_telephone
-field_name: field_telephone
+id: user.field_politician
+field_name: field_politician
 entity_type: user
-type: telephone
+type: boolean
 settings: {  }
-module: telephone
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1,35 +1,33 @@
-label: Media
+label: მედია
 display:
   default:
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
-          sort_desc_label: Desc
+          submit_button: ფილტრი
+          sort_desc_label: აღწერა
       pager:
         options:
           expose:
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« პირველი'
-            last: 'ბოლო »'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
       fields:
         media_bulk_form:
-          action_title: Action
+          action_title: ოპერაცია
         bundle:
           label: ტიპი
         uid:
-          label: Author
+          label: ავტორი
         status:
-          label: Status
+          label: სტატუსი
           settings:
-            format_custom_true: Published
+            format_custom_true: გამოქვეყნებული
         changed:
-          label: Updated
+          label: განახლებულია
         operations:
-          label: Operations
+          label: ოპერაციები
       filters:
         bundle:
           expose:
@@ -38,13 +36,13 @@ display:
           group_info:
             group_items:
               1:
-                title: Published
+                title: გამოქვეყნებული
         langcode:
           expose:
-            label: Language
-      title: Media
+            label: ენა
+      title: მედია
   media_page_list:
-    display_title: Media
+    display_title: მედია
     display_options:
       menu:
-        title: Media
+        title: მედია

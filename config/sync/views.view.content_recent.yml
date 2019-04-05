@@ -47,7 +47,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: some
         options:
@@ -290,7 +290,7 @@ display:
       display_extenders: {  }
       use_more: false
       use_more_always: false
-      use_more_text: More
+      use_more_text: მეტი
       link_url: ''
       link_display: '0'
     cache_metadata:
@@ -305,7 +305,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: ბლოკი
     position: 1
     display_options:
       display_extenders: {  }

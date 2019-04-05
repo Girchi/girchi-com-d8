@@ -3,24 +3,24 @@ display:
     display_options:
       exposed_form:
         options:
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         options:
           expose:
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+            first: '« პირველი'
       fields:
         subject:
-          label: Subject
+          label: სათაური
         created:
-          label: Created
+          label: შექმნილია
         operations:
-          label: Operations
+          label: ოპერაციები
   page_1:
-    display_title: Page
+    display_title: გვერდი
     display_options:
       menu:
-        title: List
+        title: სია

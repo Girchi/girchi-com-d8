@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_personal_id
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_politician
     - field.field.user.user.user_picture
     - image.style.avatar_xs
   module:
@@ -26,5 +31,16 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_be_politic: true
+  field_first_name: true
+  field_firstname: true
+  field_i_want_to_be_a_politician: true
+  field_id: true
+  field_last_name: true
+  field_lastname: true
+  field_personal_id: true
+  field_phone: true
+  field_politician: true
+  field_telephone: true
   langcode: true
   member_for: true

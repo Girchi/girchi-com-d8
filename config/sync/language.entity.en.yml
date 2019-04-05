@@ -3,7 +3,7 @@ langcode: ka
 status: true
 dependencies: {  }
 id: en
-label: English
+label: ინგლისური
 direction: ltr
 weight: -10
 locked: false

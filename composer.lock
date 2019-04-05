@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87bf6a5bcd2dcd501e322e20bceabbc8",
+    "content-hash": "b486534cf6ceb5f8febf3ad3d62ed0d9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -228,9 +228,7 @@
             "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "http://download.ckeditor.com/filetools/releases/filetools_4.7.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://download.ckeditor.com/filetools/releases/filetools_4.7.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -242,9 +240,7 @@
             "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "http://download.ckeditor.com/liststyle/releases/liststyle_4.7.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://download.ckeditor.com/liststyle/releases/liststyle_4.7.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -256,9 +252,7 @@
             "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "http://download.ckeditor.com/notification/releases/notification_4.7.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://download.ckeditor.com/notification/releases/notification_4.7.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -270,9 +264,7 @@
             "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "http://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.7.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.7.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -284,9 +276,7 @@
             "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "http://download.ckeditor.com/uploadimage/releases/uploadimage_4.7.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://download.ckeditor.com/uploadimage/releases/uploadimage_4.7.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -298,9 +288,7 @@
             "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "http://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.7.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.7.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -1106,9 +1094,7 @@
             "version": "3.1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/desandro/imagesloaded/archive/v3.1.8.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/desandro/imagesloaded/archive/v3.1.8.zip"
             },
             "type": "drupal-library"
         },
@@ -1117,9 +1103,7 @@
             "version": "3.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/desandro/masonry/archive/v3.3.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/desandro/masonry/archive/v3.3.1.zip"
             },
             "type": "drupal-library"
         },
@@ -2181,7 +2165,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha6",
-                    "datestamp": "1536490636",
+                    "datestamp": "1553362685",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -2209,7 +2193,7 @@
             "description": "Allows users with 'administer users' permission and a role (specified in 'Permissions') to edit/delete other users with a specified role.  Also provides control over user creation.",
             "homepage": "https://www.drupal.org/project/administerusersbyrole",
             "support": {
-                "source": "http://cgit.drupalcode.org/administerusersbyrole"
+                "source": "https://git.drupalcode.org/project/administerusersbyrole"
             }
         },
         {
@@ -2830,7 +2814,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1519351726",
+                    "datestamp": "1553856781",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2855,7 +2839,7 @@
             "description": "Integrates CKEditor's Upload Image plugin to Drupal. This enables Drupal's default WYSIWYG text editor capable of uploading images that were dropped or pasted from clipboard into the editor as inline image.",
             "homepage": "https://drupal.org/project/ckeditor_uploadimage",
             "support": {
-                "source": "http://cgit.drupalcode.org/ckeditor_uploadimage"
+                "source": "https://git.drupalcode.org/project/ckeditor_uploadimage"
             }
         },
         {
@@ -4688,7 +4672,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1542624480",
+                    "datestamp": "1554478985",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4708,7 +4692,7 @@
             "description": "Allow users to link uploaded files in the text Editor.",
             "homepage": "https://www.drupal.org/project/editor_file",
             "support": {
-                "source": "http://cgit.drupalcode.org/editor_file"
+                "source": "https://git.drupalcode.org/project/editor_file"
             }
         },
         {
@@ -4864,7 +4848,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1539272769",
+                    "datestamp": "1553254684",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -4900,7 +4884,7 @@
             "description": "Provides expanded entity APIs, which will be moved to Drupal core one day.",
             "homepage": "http://drupal.org/project/entity",
             "support": {
-                "source": "http://cgit.drupalcode.org/entity"
+                "source": "https://git.drupalcode.org/project/entity"
             }
         },
         {
@@ -5366,7 +5350,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta6",
-                    "datestamp": "1519932484",
+                    "datestamp": "1553270584",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -5386,7 +5370,7 @@
             "description": "Allows users to specify the focal point of an image for use during cropping.",
             "homepage": "https://www.drupal.org/project/focal_point",
             "support": {
-                "source": "http://cgit.drupalcode.org/focal_point"
+                "source": "https://git.drupalcode.org/project/focal_point"
             }
         },
         {
@@ -5520,7 +5504,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1514911385",
+                    "datestamp": "1554169085",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -5544,7 +5528,7 @@
             "description": "Provides hierarchical term formatters for taxonomy reference fields.",
             "homepage": "https://www.drupal.org/project/hierarchical_term_formatter",
             "support": {
-                "source": "http://cgit.drupalcode.org/hierarchical_term_formatter"
+                "source": "https://git.drupalcode.org/project/hierarchical_term_formatter"
             }
         },
         {
@@ -5770,11 +5754,17 @@
         },
         {
             "name": "drupal/maestro",
-            "version": "dev-2.x",
+            "version": "2.1.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maestro.git",
-                "reference": "4700f620811d832bbedf88449e8e479ce0961a6d"
+                "reference": "8.x-2.1-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/maestro-8.x-2.1-rc2.zip",
+                "reference": "8.x-2.1-rc2",
+                "shasum": "ed0bb9cdaa7000fa047239007f50fc7a3f0ff738"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5789,11 +5779,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.1-rc1+17-dev",
-                    "datestamp": "1546879384",
+                    "version": "8.x-2.1-rc2",
+                    "datestamp": "1552423384",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5818,9 +5808,8 @@
             "description": "Provides the engine and API for Maestro.",
             "homepage": "https://www.drupal.org/project/maestro",
             "support": {
-                "source": "http://cgit.drupalcode.org/maestro"
-            },
-            "time": "2019-01-14T13:14:40+00:00"
+                "source": "https://git.drupalcode.org/project/maestro"
+            }
         },
         {
             "name": "drupal/mailchimp",
@@ -6656,7 +6645,7 @@
                 },
                 "drupal": {
                     "version": "8.x-4.3",
-                    "datestamp": "1523670784",
+                    "datestamp": "1553565784",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6754,7 +6743,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.6",
-                    "datestamp": "1550692525",
+                    "datestamp": "1553087589",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6790,7 +6779,7 @@
             "description": "Enables the creation of Paragraphs entities.",
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
-                "source": "http://cgit.drupalcode.org/paragraphs"
+                "source": "https://git.drupalcode.org/project/paragraphs"
             }
         },
         {
@@ -6819,7 +6808,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1536407884",
+                    "datestamp": "1554239887",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6851,7 +6840,7 @@
             "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
-                "source": "http://cgit.drupalcode.org/pathauto"
+                "source": "https://git.drupalcode.org/project/pathauto"
             }
         },
         {
@@ -7007,7 +6996,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.11",
-                    "datestamp": "1542564480",
+                    "datestamp": "1552334285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8182,7 +8171,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.1",
-                    "datestamp": "1549473699",
+                    "datestamp": "1553768585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8834,9 +8823,7 @@
             "version": "1.0.0",
             "dist": {
                 "type": "zip",
-                "url": "http://omedia.ge/temp/colorpicker.zip",
-                "reference": null,
-                "shasum": null
+                "url": "http://omedia.ge/temp/colorpicker.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -9290,9 +9277,7 @@
             "version": "1.8.7",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/harvesthq/chosen/releases/download/v1.7.0/chosen_v1.7.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/harvesthq/chosen/releases/download/v1.7.0/chosen_v1.7.0.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -11090,7 +11075,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -13806,7 +13791,7 @@
         "drupal/focal_point": 10,
         "drupal/hierarchical_term_formatter": 10,
         "drupal/inline_entity_form": 10,
-        "drupal/maestro": 20,
+        "drupal/maestro": 5,
         "drupal/node_revision_delete": 15,
         "drupal/page_manager": 10,
         "drupal/redirect": 10,

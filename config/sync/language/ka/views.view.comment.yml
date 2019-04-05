@@ -1,63 +1,63 @@
-label: Comments
+label: კომენტარები
 display:
   default:
     display_options:
       exposed_form:
         options:
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         options:
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+            first: '« პირველი'
           expose:
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
       fields:
         comment_bulk_form:
-          action_title: Action
+          action_title: ოპერაცია
         subject:
-          label: Subject
+          label: სათაური
         name:
-          label: Author
+          label: ავტორი
         changed:
-          label: Updated
+          label: განახლებულია
         operations:
-          label: Operations
+          label: ოპერაციები
       filters:
         subject:
           expose:
-            label: Subject
+            label: სათაური
         langcode:
           expose:
-            label: Language
-      title: Comments
+            label: ენა
+      title: კომენტარები
       empty:
         area_text_custom:
-          content: 'No comments available.'
-      use_more_text: more
+          content: 'კომენტარები არ არსებობს.'
+      use_more_text: მეტი
   page_published:
-    display_title: 'Published comments'
+    display_title: 'გამოქვეყნებული კომენტარები'
     display_options:
       menu:
-        title: Comments
+        title: კომენტარები
   page_unapproved:
     display_options:
       filters:
         subject:
           expose:
-            label: Subject
+            label: სათაური
         langcode:
           expose:
-            label: Language
+            label: ენა
       fields:
         comment_bulk_form:
-          action_title: Action
+          action_title: ოპერაცია
         subject:
-          label: Subject
+          label: სათაური
         name:
-          label: Author
+          label: ავტორი
         changed:
-          label: Updated
+          label: განახლებულია
         operations:
-          label: Operations
+          label: ოპერაციები
