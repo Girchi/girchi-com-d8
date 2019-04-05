@@ -67,11 +67,6 @@ module:
   link: 0
   linkit: 0
   locale: 0
-  maestro: 0
-  maestro_taskconsole: 0
-  maestro_template_builder: 0
-  maestro_utilities: 0
-  maestro_webform: 0
   mailchimp: 0
   mailsystem: 0
   media: 0
