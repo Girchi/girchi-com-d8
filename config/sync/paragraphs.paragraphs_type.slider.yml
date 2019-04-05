@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: slider
 label: Slider
+icon_uuid: null
+description: null
 behavior_plugins: {  }

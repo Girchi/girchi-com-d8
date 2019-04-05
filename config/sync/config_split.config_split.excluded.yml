@@ -4,6 +4,7 @@ status: false
 dependencies: {  }
 id: excluded
 label: excluded
+description: ''
 folder: ../config/excluded
 module: {  }
 theme: {  }

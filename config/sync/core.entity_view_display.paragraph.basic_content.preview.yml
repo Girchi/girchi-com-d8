@@ -17,13 +17,13 @@ content:
     weight: 0
     label: hidden
     settings:
-      trim_length: '300'
+      trim_length: 300
       trim_type: chars
       trim_suffix: ''
-      more_link: '0'
+      more_link: false
       more_text: More
       trim_options:
-        text: text
+        text: true
       more_class: more-link
       summary_handler: full
     third_party_settings: {  }

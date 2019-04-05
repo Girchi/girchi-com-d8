@@ -1,3 +1,4 @@
+uuid: 685387ba-3cee-4366-845f-a0ce1c231963
 langcode: ka
 status: open
 dependencies: {  }
@@ -205,4 +206,3 @@ handlers:
       sender_mail: ''
       sender_name: ''
       theme_name: ''
-uuid: 685387ba-3cee-4366-845f-a0ce1c231963

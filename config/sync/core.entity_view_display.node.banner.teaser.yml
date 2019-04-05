@@ -67,5 +67,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
+  field_pinned: true
   langcode: true
   links: true

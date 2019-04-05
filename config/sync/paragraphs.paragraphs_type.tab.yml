@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: tab
 label: Tab
+icon_uuid: null
+description: null
 behavior_plugins: {  }

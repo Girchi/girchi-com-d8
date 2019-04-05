@@ -9,7 +9,7 @@ notify:
   register_admin_created: true
   register_no_approval_required: false
   register_pending_approval: false
-register: admin_only
+register: visitors
 cancel_method: user_cancel_block
 password_reset_timeout: 86400
 password_strength: true

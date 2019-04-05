@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: block_reference
 label: 'Block Reference'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

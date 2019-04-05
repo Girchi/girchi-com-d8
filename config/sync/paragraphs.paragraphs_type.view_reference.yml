@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: view_reference
 label: 'View Reference'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

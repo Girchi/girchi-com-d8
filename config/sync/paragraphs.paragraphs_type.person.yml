@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: person
 label: Person
+icon_uuid: null
+description: null
 behavior_plugins: {  }
