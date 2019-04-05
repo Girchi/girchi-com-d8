@@ -4,10 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
-    - field.field.user.user.field_be_politic
-    - field.field.user.user.field_firstname
-    - field.field.user.user.field_id
-    - field.field.user.user.field_lastname
+    - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
   module:
     - path
@@ -35,10 +32,7 @@ content:
     region: content
 hidden:
   contact: true
-  field_be_politic: true
-  field_firstname: true
-  field_id: true
-  field_lastname: true
+  field_telephone: true
   google_analytics: true
   langcode: true
   language: true

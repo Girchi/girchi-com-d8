@@ -1,0 +1,20 @@
+uuid: 6e1b6185-849f-44f6-a5ba-0fd11ccb3fac
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_personal_id
+  module:
+    - user
+id: user.user.field_personal_id
+field_name: field_personal_id
+entity_type: user
+bundle: user
+label: 'Personal ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

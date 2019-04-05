@@ -3,10 +3,10 @@ langcode: ka
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_be_politic
-    - field.field.user.user.field_firstname
-    - field.field.user.user.field_id
-    - field.field.user.user.field_lastname
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_i_want_to_be_a_politician
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_personal_id
     - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -27,14 +27,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_be_politic:
-    weight: 5
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_firstname:
+  field_first_name:
     weight: 1
     settings:
       size: 60
@@ -42,16 +35,23 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_id:
-    weight: 3
+  field_i_want_to_be_a_politician:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_last_name:
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_lastname:
-    weight: 2
+  field_personal_id:
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -76,7 +76,7 @@ content:
     region: content
   user_picture:
     type: image_image
-    weight: 6
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
