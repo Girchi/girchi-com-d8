@@ -1,9 +1,0 @@
-uuid: 44f4078a-8e6d-478f-8e8b-109a4299efa4
-langcode: ka
-status: true
-dependencies: {  }
-id: shortcuts
-label: Shortcuts
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

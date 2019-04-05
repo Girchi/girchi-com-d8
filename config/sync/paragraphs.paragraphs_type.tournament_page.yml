@@ -1,9 +1,0 @@
-uuid: ddf8b9eb-e111-46f2-ac0a-8656d4e80d8c
-langcode: ka
-status: true
-dependencies: {  }
-id: tournament_page
-label: 'Tournament Page'
-icon_uuid: null
-description: null
-behavior_plugins: {  }

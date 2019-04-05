@@ -1,9 +1,0 @@
-uuid: 7e48c770-bbe7-416f-aacf-adfb3d9a6d07
-langcode: ka
-status: true
-dependencies: {  }
-id: paragraph
-label: Paragraph
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

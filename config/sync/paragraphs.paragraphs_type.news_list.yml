@@ -1,9 +1,0 @@
-uuid: 75b96178-991c-4eaa-917a-4aff11d01e8b
-langcode: ka
-status: true
-dependencies: {  }
-id: news_list
-label: 'News List'
-icon_uuid: null
-description: null
-behavior_plugins: {  }

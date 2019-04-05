@@ -1,9 +1,0 @@
-uuid: e62c1f7f-e83f-4542-b5ef-f52ccc768e26
-langcode: ka
-status: true
-dependencies: {  }
-id: pdf_file
-label: Document
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

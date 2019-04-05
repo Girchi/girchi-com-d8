@@ -1,9 +1,0 @@
-uuid: 4c204bd0-e798-4cd6-b3fa-a0e3fa67cf34
-langcode: ka
-status: true
-dependencies: {  }
-id: basic_content
-label: 'Basic Content'
-icon_uuid: null
-description: null
-behavior_plugins: {  }

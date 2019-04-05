@@ -1,9 +1,0 @@
-uuid: ffb42ec0-5346-4872-b1ec-37c42bb3867e
-langcode: ka
-status: true
-dependencies: {  }
-id: contact
-label: Contact
-icon_uuid: null
-description: 'Contact information paragraph.'
-behavior_plugins: {  }

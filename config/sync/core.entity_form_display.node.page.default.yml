@@ -3,7 +3,6 @@ langcode: ka
 status: true
 dependencies:
   config:
-    - field.field.node.page.field_content
     - field.field.node.page.field_header_image
     - field.field.node.page.field_icon
     - field.field.node.page.field_image
@@ -16,7 +15,6 @@ dependencies:
     - field_group
     - image
     - link
-    - paragraphs
     - path
 third_party_settings:
   field_group:
@@ -75,24 +73,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content:
-    weight: 10
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: preview
-      autocollapse: none
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-        add_above: add_above
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
   field_header_image:
     weight: 126
     settings:

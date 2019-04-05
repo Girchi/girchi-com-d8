@@ -1,9 +1,0 @@
-uuid: 2799ba34-e131-4e0b-85fb-60a55bfd27fd
-langcode: ka
-status: true
-dependencies: {  }
-id: get_involved
-label: 'Get Involved'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

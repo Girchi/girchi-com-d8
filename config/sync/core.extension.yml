@@ -71,7 +71,6 @@ module:
   maestro_taskconsole: 0
   maestro_template_builder: 0
   maestro_utilities: 0
-  maestro_webform: 0
   mailchimp: 0
   mailsystem: 0
   media: 0
@@ -134,16 +133,10 @@ module:
   views_base_url: 0
   views_infinite_scroll: 0
   views_ui: 0
-  webform: 0
-  webform_composite: 0
-  webform_mailchimp: 0
-  webform_ui: 0
-  webform_views: 0
   menu_link_content: 1
   pathauto: 1
   content_translation: 10
   views: 10
-  paragraphs: 11
   minimal: 1000
 theme:
   stable: 0

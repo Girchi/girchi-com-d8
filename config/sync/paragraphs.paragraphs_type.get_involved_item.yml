@@ -1,9 +1,0 @@
-uuid: d58f4875-6572-453e-b7cf-836a85a159de
-langcode: ka
-status: true
-dependencies: {  }
-id: get_involved_item
-label: 'Get Involved Item'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

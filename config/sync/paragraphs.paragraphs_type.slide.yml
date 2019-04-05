@@ -1,9 +1,0 @@
-uuid: 916d5e2c-8d90-4066-bf0a-a9e698869ba5
-langcode: ka
-status: true
-dependencies: {  }
-id: slide
-label: Slide
-icon_uuid: null
-description: null
-behavior_plugins: {  }

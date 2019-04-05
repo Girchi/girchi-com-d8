@@ -1,9 +1,0 @@
-uuid: 9f252e3a-fd99-4a14-8126-e3536f4c590a
-langcode: ka
-status: true
-dependencies: {  }
-id: section_title
-label: 'Section Title'
-icon_uuid: null
-description: null
-behavior_plugins: {  }

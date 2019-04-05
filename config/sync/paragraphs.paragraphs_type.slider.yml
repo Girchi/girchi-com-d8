@@ -1,9 +1,0 @@
-uuid: 5a695e3b-4c1c-4ce3-be7f-a2aaa9341940
-langcode: ka
-status: true
-dependencies: {  }
-id: slider
-label: Slider
-icon_uuid: null
-description: null
-behavior_plugins: {  }

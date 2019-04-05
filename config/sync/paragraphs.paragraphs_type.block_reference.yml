@@ -1,9 +1,0 @@
-uuid: c038ed7f-20d1-465f-aff1-8c9cc6d819ab
-langcode: ka
-status: true
-dependencies: {  }
-id: block_reference
-label: 'Block Reference'
-icon_uuid: null
-description: null
-behavior_plugins: {  }

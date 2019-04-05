@@ -4,26 +4,11 @@ status: true
 dependencies:
   config:
     - block_content.type.paragraph_container
-    - field.field.block_content.paragraph_container.field_content
-  module:
-    - paragraphs
 id: block_content.paragraph_container.default
 targetEntityType: block_content
 bundle: paragraph_container
 mode: default
 content:
-  field_content:
-    type: entity_reference_paragraphs
-    weight: 26
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   info:
     type: string_textfield
     weight: -5

@@ -1,9 +1,0 @@
-uuid: 8b10e21a-fac3-49ec-997e-6c3b06cff6ca
-langcode: ka
-status: true
-dependencies: {  }
-id: tab
-label: Tab
-icon_uuid: null
-description: null
-behavior_plugins: {  }

@@ -1,7 +1,0 @@
-elements: ''
-settings:
-  confirmation_message: "Thank you!<br />\r\nYour email has been added to your subscription list."
-handlers:
-  mailchimp:
-    settings:
-      mergevars: "FIRST_NAME: \"[webform_submission:values:first_name:raw]\"\r\nLAST_NAME: \"[webform_submission:values:last_name]\"\r\nBIRTHDAY: \"[webform_submission:values:birthday:d/m/Y]\""

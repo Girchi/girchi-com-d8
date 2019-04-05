@@ -1,8 +1,0 @@
-uuid: de204893-46e5-44cb-b9ed-abea14600d13
-langcode: ka
-status: true
-dependencies: {  }
-id: piradi_monatsemebi
-label: 'პირადი მონაცემები'
-elements: "sakheli_gvari_kartulad:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'სახელი და გვარი (ქართულად)'\r\nsakheli_gvari_latinurad:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'სახელი და გვარი (ლათინურად)'\r\nsakontakto_nomeri:\r\n  '#type': tel\r\n  '#required': true\r\n  '#title': 'საკონტაქტო ნომერი'\r\nelektronuli_posta:\r\n  '#type': email\r\n  '#required': true\r\n  '#title': 'ელექტრონული ფოსტა'\r\ndabadebis_kvekana:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'დაბადების ქვეყანა'\r\npiradi_nomeri:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'პირადი ნომერი'\r\ndabadebis_tarighi:\r\n  '#type': datelist\r\n  '#required': true\r\n  '#title': 'დაბადების თარიღი'\r\n  '#date_part_order':\r\n    - year\r\n    - month\r\n    - day\r\n  '#date_year_range': '1920:2005'\r\n  '#date_year_range_reverse': true\r\ndabadebis_adgili:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'დაბადების ადგილი'\r\n"
-description: ''

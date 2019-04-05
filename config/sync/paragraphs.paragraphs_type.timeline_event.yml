@@ -1,9 +1,0 @@
-uuid: a01abeb3-ec9a-47da-a0af-09ceef9f83cb
-langcode: ka
-status: true
-dependencies: {  }
-id: timeline_event
-label: 'Timeline Event'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

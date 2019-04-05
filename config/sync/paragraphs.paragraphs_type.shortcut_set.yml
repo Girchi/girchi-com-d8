@@ -1,9 +1,0 @@
-uuid: 10fa6d84-bb90-4869-8858-3f6b0674db5f
-langcode: ka
-status: true
-dependencies: {  }
-id: shortcut_set
-label: 'Shortcut Set'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

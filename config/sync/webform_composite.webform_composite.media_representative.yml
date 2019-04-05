@@ -1,8 +1,0 @@
-uuid: f8c91504-8759-41a3-8a98-ffef9c747683
-langcode: ka
-status: true
-dependencies: {  }
-id: media_representative
-label: 'Media Representative'
-elements: "name_surname:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'სახელი, გვარი'\r\nposition:\r\n  '#type': textfield\r\n  '#required': true\r\n  '#title': 'თანამდებობა'\r\n"
-description: ''

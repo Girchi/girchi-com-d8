@@ -4,22 +4,10 @@ status: true
 dependencies:
   config:
     - block_content.type.paragraph_container
-    - field.field.block_content.paragraph_container.field_content
-  module:
-    - entity_reference_revisions
 id: block_content.paragraph_container.default
 targetEntityType: block_content
 bundle: paragraph_container
 mode: default
-content:
-  field_content:
-    type: entity_reference_revisions_entity_view
-    weight: 0
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
   langcode: true

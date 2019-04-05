@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.page.field_content
     - field.field.node.page.field_header_image
     - field.field.node.page.field_icon
     - field.field.node.page.field_image
@@ -27,7 +26,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_content: true
   field_header_image: true
   field_icon: true
   field_image: true
