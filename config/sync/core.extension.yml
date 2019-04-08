@@ -32,6 +32,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  girchi_referral: 0
   hal: 0
   help: 0
   hierarchical_term_formatter: 0
@@ -63,9 +64,12 @@ module:
   user_registrationpassword: 0
   video_embed_field: 0
   video_embed_wysiwyg: 0
+  view_unpublished: 0
+  views_ui: 0
   menu_link_content: 1
   pathauto: 1
   content_translation: 10
+  views: 10
   minimal: 1000
 theme:
   stable: 0

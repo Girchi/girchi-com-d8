@@ -1,0 +1,52 @@
+label: მომხმარებლები
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: ფილტრი
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      fields:
+        name:
+          label: მომხმარებელი
+        status:
+          label: სტატუსი
+          settings:
+            format_custom_false: დაბლოკილი
+        roles_target_id:
+          label: როლები
+        created:
+          label: წევრი
+        access:
+          label: 'ბოლო ვიზიტი'
+        operations:
+          label: ოპერაციები
+      filters:
+        status:
+          group_info:
+            label: სტატუსი
+            group_items:
+              2:
+                title: დაბლოკილი
+        roles_target_id:
+          expose:
+            label: როლი
+        permission:
+          expose:
+            label: უფლება
+      title: მომხმარებლები
+      use_more_text: მეტი
+  page_1:
+    display_title: გვერდი
+    display_options:
+      menu:
+        title: სია
+      tab_options:
+        title: მომხმარებლები

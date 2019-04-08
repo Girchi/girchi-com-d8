@@ -1,0 +1,19 @@
+uuid: b04efaed-1ff5-4e03-94ce-54e3ac297357
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_referral
+field_name: field_referral
+entity_type: user
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

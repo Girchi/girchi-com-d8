@@ -1,0 +1,9 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: აღწერა
+      use_more_text: მეტი
+  block_1:
+    display_title: ბლოკი

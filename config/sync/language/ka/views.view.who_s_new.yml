@@ -1,0 +1,9 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: აღწერა
+  block_1:
+    display_options:
+      block_category: მომხმარებელი

@@ -8,6 +8,7 @@ dependencies:
     - field.field.user.user.field_personal_id
     - field.field.user.user.field_phone
     - field.field.user.user.field_politician
+    - field.field.user.user.field_referral
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -27,8 +28,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  contact:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_first_name:
-    weight: 9
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -36,7 +42,7 @@ content:
     type: string_textfield
     region: content
   field_last_name:
-    weight: 8
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -44,7 +50,7 @@ content:
     type: string_textfield
     region: content
   field_personal_id:
-    weight: 12
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -52,18 +58,27 @@ content:
     type: string_textfield
     region: content
   field_phone:
-    weight: 11
+    weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
   field_politician:
-    weight: 10
+    weight: 6
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_referral:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   path:
     type: path
@@ -88,7 +103,6 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
-  contact: true
   google_analytics: true
   langcode: true
   language: true

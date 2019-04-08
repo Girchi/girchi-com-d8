@@ -1,0 +1,28 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: ფილტრი
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      fields:
+        type:
+          label: ტიპი
+        timestamp:
+          label: თარიღი
+        message:
+          label: შეტყობინება
+        name:
+          label: მომხმარებელი
+        link:
+          label: ოპერაციები
+      filters:
+        type:
+          expose:
+            label: ტიპი
+  page:
+    display_title: გვერდი

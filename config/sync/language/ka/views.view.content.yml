@@ -1,0 +1,53 @@
+label: კონტენტი
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: ფილტრი
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+      fields:
+        title:
+          label: სათაური
+        type:
+          label: 'კონტენტის ტიპი'
+        name:
+          label: ავტორი
+        status:
+          label: სტატუსი
+          settings:
+            format_custom_true: გამოქვეყნებული
+        changed:
+          label: განახლებულია
+        operations:
+          label: ოპერაციები
+      filters:
+        title:
+          expose:
+            label: სათაური
+        type:
+          expose:
+            label: 'კონტენტის ტიპი'
+        status:
+          expose:
+            label: სტატუსი
+          group_info:
+            group_items:
+              1:
+                title: გამოქვეყნებული
+        langcode:
+          expose:
+            label: ენა
+      title: კონტენტი
+  page_1:
+    display_options:
+      menu:
+        title: კონტენტი
+      tab_options:
+        title: კონტენტი
+    display_title: გვერდი

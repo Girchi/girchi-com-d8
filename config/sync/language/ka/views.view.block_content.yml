@@ -1,0 +1,26 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      fields:
+        info:
+          label: 'ბლოკის აღწერა'
+        changed:
+          label: განახლებულია
+        operations:
+          label: ოპერაციები
+      filters:
+        info:
+          expose:
+            label: 'ბლოკის აღწერა'
+  page_1:
+    display_title: გვერდი

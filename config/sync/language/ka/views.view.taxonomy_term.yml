@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      arguments:
+        tid:
+          exception:
+            title: ყველა
+  page_1:
+    display_title: გვერდი

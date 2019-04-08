@@ -1,0 +1,52 @@
+label: ფაილები
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: ფილტრი
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      fields:
+        filename:
+          label: სახელი
+        filemime:
+          label: 'MIME ტიპი'
+        filesize:
+          label: ზომა
+        status:
+          label: სტატუსი
+      filters:
+        filename:
+          expose:
+            label: 'ფაილის სახელი'
+        filemime:
+          expose:
+            label: 'MIME ტიპი'
+        status:
+          expose:
+            label: სტატუსი
+      title: ფაილები
+  page_1:
+    display_options:
+      menu:
+        title: ფაილები
+  page_2:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      arguments:
+        fid:
+          exception:
+            title: ყველა

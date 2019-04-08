@@ -4,6 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_personal_id
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_politician
+    - field.field.user.user.field_referral
     - field.field.user.user.user_picture
   module:
     - user
@@ -19,11 +25,25 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_referral:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
 hidden:
   contact: true
+  field_first_name: true
+  field_last_name: true
+  field_personal_id: true
+  field_phone: true
+  field_politician: true
   google_analytics: true
   langcode: true
   language: true

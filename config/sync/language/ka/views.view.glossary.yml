@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      fields:
+        title:
+          label: სათაური
+        name:
+          label: ავტორი
+        changed:
+          label: 'ბოლო განახლება'
+  attachment_1:
+    display_title: 'მიმაგრებული ფაილი'
+  page_1:
+    display_title: გვერდი
