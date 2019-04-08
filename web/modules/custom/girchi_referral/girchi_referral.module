@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains girchi_referral.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\user\Entity\User;
+
+
+
+/**
+ * Implements hook_help().
+ */
+function girchi_referral_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the girchi_referral module.
+    case 'help.page.girchi_referral':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Girchi referral module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_form_alter()
+ *
+ * Adding automatic filling of referral field from GET param;
+ *
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ */
+function girchi_referral_form_alter(&$form, FormStateInterface $form_state, $form_id){
+
+    //get query param from url
+    $referral = Drupal::request()->query->get('referral');
+
+    //check registration form
+    if($form_id == "user_register_form" &&  $referral) {
+
+        //load user by id that was passed from url
+        $user  = User::load($referral);
+        if($user) {
+
+            //adding default value to field_referral
+            $form['field_referral']['widget'][0]['target_id']['#default_value'] = $user;
+
+        }
+    }
+
+}
