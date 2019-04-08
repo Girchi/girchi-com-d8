@@ -335,6 +335,9 @@
       },
       "drupal/email_registration": {
         "Username is changing when admin edits profile": "https://www.drupal.org/files/issues/2019-04-02/email_registration-strange_username_logic_after_rc6_release-3024558-62.patch"
+      },
+      "drupal/core": {
+        "Fix Entity reference autocomplete with fields": "https://www.drupal.org/files/issues/2018-03-09/drupal-use_view_output_for_entityreference_options-2174633-206.patch"
       }
     },
     "installer-paths": {
