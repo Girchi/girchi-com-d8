@@ -38,20 +38,15 @@ function girchi_referral_help($route_name, RouteMatchInterface $route_match) {
  * @param $form_id
  */
 function girchi_referral_form_alter(&$form, FormStateInterface $form_state, $form_id){
-
     //get query param from url
     $referral = Drupal::request()->query->get('referral');
-
     //check registration form
     if($form_id == "user_register_form" &&  $referral) {
-
         //load user by id that was passed from url
         $user  = User::load($referral);
         if($user) {
-
             //adding default value to field_referral
             $form['field_referral']['widget'][0]['target_id']['#default_value'] = $user;
-
         }
     }
 
