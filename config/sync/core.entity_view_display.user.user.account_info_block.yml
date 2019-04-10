@@ -26,5 +26,10 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_first_name: true
+  field_last_name: true
+  field_personal_id: true
+  field_phone: true
+  field_politician: true
   langcode: true
   member_for: true

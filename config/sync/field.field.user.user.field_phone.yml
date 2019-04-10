@@ -17,7 +17,7 @@ id: user.user.field_phone
 field_name: field_phone
 entity_type: user
 bundle: user
-label: Phone
+label: 'ტელეფონის ნომერი'
 description: ''
 required: false
 translatable: false

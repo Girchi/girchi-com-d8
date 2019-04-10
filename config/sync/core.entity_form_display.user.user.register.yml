@@ -24,6 +24,11 @@ content:
     region: content
 hidden:
   contact: true
+  field_first_name: true
+  field_last_name: true
+  field_personal_id: true
+  field_phone: true
+  field_politician: true
   google_analytics: true
   langcode: true
   language: true

@@ -10,7 +10,7 @@ id: user.user.field_politician
 field_name: field_politician
 entity_type: user
 bundle: user
-label: Politician
+label: პოლიტიკოსი
 description: ''
 required: false
 translatable: false
