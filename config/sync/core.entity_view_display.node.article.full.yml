@@ -41,7 +41,7 @@ content:
     type: image
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
@@ -65,7 +65,7 @@ content:
     type: video_embed_field_video
     weight: 6
     region: content
-    label: above
+    label: hidden
     settings:
       responsive: true
       width: 854

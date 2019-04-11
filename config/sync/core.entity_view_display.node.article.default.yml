@@ -24,7 +24,7 @@ content:
   body:
     label: above
     type: text_default
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -37,26 +37,26 @@ content:
     type: entity_reference_label
     region: content
   field_image:
-    weight: 8
+    type: image
+    weight: 3
+    region: content
     label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
-    region: content
   field_is_video:
+    type: boolean
     weight: 6
+    region: content
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
-    region: content
   field_short_description:
-    weight: 2
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -71,7 +71,9 @@ content:
     type: entity_reference_label
     region: content
   field_video_url:
+    type: video_embed_field_video
     weight: 7
+    region: content
     label: above
     settings:
       responsive: true
@@ -79,8 +81,6 @@ content:
       height: 480
       autoplay: true
     third_party_settings: {  }
-    type: video_embed_field_video
-    region: content
   links:
     weight: 0
     region: content
