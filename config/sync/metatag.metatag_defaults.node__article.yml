@@ -1,0 +1,8 @@
+uuid: 7c5cd271-c014-46a7-bdbb-1273f7aaaaf9
+langcode: ka
+status: true
+dependencies: {  }
+id: node__article
+label: 'კონტენტი: Article'
+tags:
+  og_image: '[node:field_image]'

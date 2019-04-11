@@ -1,0 +1,22 @@
+uuid: eeed730c-76e8-42d0-bbeb-5a16766ec248
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.article
+  module:
+    - text
+id: node.article.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: article
+label: 'მოკლე აღწერა'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

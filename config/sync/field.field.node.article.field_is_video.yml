@@ -9,10 +9,10 @@ id: node.article.field_is_video
 field_name: field_is_video
 entity_type: node
 bundle: article
-label: 'Mark as Video'
+label: 'არის ვიდეო'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

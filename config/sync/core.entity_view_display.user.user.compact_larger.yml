@@ -31,5 +31,6 @@ hidden:
   field_personal_id: true
   field_phone: true
   field_politician: true
+  field_referral: true
   langcode: true
   member_for: true

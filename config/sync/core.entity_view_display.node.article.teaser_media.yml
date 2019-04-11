@@ -5,35 +5,19 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser_media
     - field.field.node.article.body
-    - field.field.node.article.field_categories
-    - field.field.node.article.field_gallery
-    - field.field.node.article.field_hide_from_main_news_list
-    - field.field.node.article.field_is_gallery
+    - field.field.node.article.field_category
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_related_clubs
-    - field.field.node.article.field_social_thumbnail
-    - field.field.node.article.field_social_title
-    - field.field.node.article.field_thumbnail
-    - image.style.teaser_media
+    - field.field.node.article.field_short_description
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_video_url
     - node.type.article
   module:
-    - image
     - user
 id: node.article.teaser_media
 targetEntityType: node
 bundle: article
 mode: teaser_media
 content:
-  field_is_gallery:
-    weight: 2
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_is_video:
     weight: 1
     label: hidden
@@ -44,24 +28,11 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
-  field_thumbnail:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: teaser_media
-      image_link: content
-    third_party_settings: {  }
-    type: image
-    region: content
 hidden:
   body: true
-  field_categories: true
-  field_gallery: true
-  field_hide_from_main_news_list: true
-  field_hide_thumbnail: true
-  field_old_link: true
-  field_related_clubs: true
-  field_social_thumbnail: true
-  field_social_title: true
+  field_category: true
+  field_short_description: true
+  field_tags: true
+  field_video_url: true
   langcode: true
   links: true

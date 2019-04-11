@@ -4,23 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_categories
-    - field.field.node.article.field_gallery
-    - field.field.node.article.field_hide_from_main_news_list
-    - field.field.node.article.field_hide_thumbnail
-    - field.field.node.article.field_is_gallery
+    - field.field.node.article.field_category
+    - field.field.node.article.field_image
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_old_link
-    - field.field.node.article.field_related_clubs
-    - field.field.node.article.field_social_thumbnail
-    - field.field.node.article.field_social_title
-    - field.field.node.article.field_thumbnail
+    - field.field.node.article.field_short_description
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_video_url
     - image.style.thumbnail
     - node.type.article
   module:
     - image
     - path
     - text
+    - video_embed_field
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -28,7 +24,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 12
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -41,79 +37,53 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_categories:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
-  field_gallery:
-    weight: 13
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_hide_from_main_news_list:
-    weight: 11
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_hide_thumbnail:
+  field_category:
     weight: 12
     settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_is_gallery:
-    weight: 11
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_is_video:
-    weight: 10
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_old_link:
-    weight: 12
-    settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
-  field_social_thumbnail:
-    weight: 27
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_social_title:
+  field_image:
     weight: 26
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_thumbnail:
-    weight: 8
-    settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_is_video:
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_short_description:
+    weight: 8
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_tags:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_video_url:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
     region: content
   langcode:
     type: language_select
@@ -139,7 +109,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 11
     third_party_settings: {  }
     region: content
   sticky:
@@ -176,5 +146,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_related_clubs: true
+hidden: {  }

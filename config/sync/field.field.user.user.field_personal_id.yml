@@ -10,7 +10,7 @@ id: user.user.field_personal_id
 field_name: field_personal_id
 entity_type: user
 bundle: user
-label: 'Personal ID'
+label: 'პირადი ნომერი'
 description: ''
 required: false
 translatable: false

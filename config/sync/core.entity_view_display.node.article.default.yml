@@ -4,109 +4,40 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_categories
-    - field.field.node.article.field_gallery
-    - field.field.node.article.field_hide_from_main_news_list
-    - field.field.node.article.field_hide_thumbnail
-    - field.field.node.article.field_is_gallery
+    - field.field.node.article.field_category
+    - field.field.node.article.field_image
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_old_link
-    - field.field.node.article.field_related_clubs
-    - field.field.node.article.field_social_thumbnail
-    - field.field.node.article.field_social_title
-    - field.field.node.article.field_thumbnail
+    - field.field.node.article.field_short_description
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_video_url
     - node.type.article
   module:
     - image
     - text
     - user
+    - video_embed_field
 id: node.article.default
 targetEntityType: node
 bundle: article
 mode: default
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
-    weight: 101
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_categories:
-    weight: 104
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_gallery:
-    weight: 103
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_hide_from_main_news_list:
-    weight: 105
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_hide_thumbnail:
-    weight: 112
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_is_gallery:
-    weight: 110
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_is_video:
-    weight: 109
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_old_link:
-    weight: 111
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_related_clubs:
-    weight: 106
+  field_category:
+    weight: 4
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_social_thumbnail:
-    weight: 108
+  field_image:
+    weight: 8
     label: above
     settings:
       image_style: ''
@@ -114,25 +45,44 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  field_social_title:
-    weight: 107
+  field_is_video:
+    weight: 6
     label: above
     settings:
-      link_to_entity: false
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    type: string
+    type: boolean
     region: content
-  field_thumbnail:
-    weight: 102
+  field_short_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_tags:
+    weight: 5
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      link: true
     third_party_settings: {  }
-    type: image
+    type: entity_reference_label
+    region: content
+  field_video_url:
+    weight: 7
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }

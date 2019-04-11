@@ -1,0 +1,48 @@
+label: მედია
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: ფილტრი
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+      fields:
+        media_bulk_form:
+          action_title: ოპერაცია
+        bundle:
+          label: ტიპი
+        uid:
+          label: ავტორი
+        status:
+          label: სტატუსი
+          settings:
+            format_custom_true: გამოქვეყნებული
+        changed:
+          label: განახლებულია
+        operations:
+          label: ოპერაციები
+      filters:
+        bundle:
+          expose:
+            label: ტიპი
+        status:
+          group_info:
+            group_items:
+              1:
+                title: გამოქვეყნებული
+        langcode:
+          expose:
+            label: ენა
+      title: მედია
+  media_page_list:
+    display_title: მედია
+    display_options:
+      menu:
+        title: მედია

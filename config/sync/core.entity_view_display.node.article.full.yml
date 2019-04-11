@@ -5,23 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.article.body
-    - field.field.node.article.field_categories
-    - field.field.node.article.field_gallery
-    - field.field.node.article.field_hide_from_main_news_list
-    - field.field.node.article.field_hide_thumbnail
-    - field.field.node.article.field_is_gallery
+    - field.field.node.article.field_category
+    - field.field.node.article.field_image
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_old_link
-    - field.field.node.article.field_related_clubs
-    - field.field.node.article.field_social_thumbnail
-    - field.field.node.article.field_social_title
-    - field.field.node.article.field_thumbnail
-    - image.style.article_full_thumb
+    - field.field.node.article.field_short_description
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_video_url
     - node.type.article
   module:
     - image
     - text
     - user
+    - video_embed_field
 id: node.article.full
 targetEntityType: node
 bundle: article
@@ -30,113 +25,58 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_categories:
-    weight: 4
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
+  field_category:
     type: entity_reference_label
-    region: content
-  field_gallery:
-    weight: 13
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_hide_from_main_news_list:
     weight: 5
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
-  field_hide_thumbnail:
-    type: boolean
-    weight: 11
-    region: content
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-  field_is_gallery:
-    weight: 10
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_is_video:
-    weight: 9
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_old_link:
-    weight: 12
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_related_clubs:
-    weight: 6
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+  field_image:
+    type: image
+    weight: 3
     region: content
-  field_social_thumbnail:
-    weight: 8
     label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
+  field_short_description:
+    type: text_default
+    weight: 1
     region: content
-  field_social_title:
-    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_label
+    weight: 4
+    region: content
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    type: string
+  field_video_url:
+    type: video_embed_field_video
+    weight: 6
     region: content
-  field_thumbnail:
-    weight: 2
-    label: hidden
+    label: above
     settings:
-      image_style: article_full_thumb
-      image_link: ''
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
     third_party_settings: {  }
-    type: image
-    region: content
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_is_video: true
   langcode: true
