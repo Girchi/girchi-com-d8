@@ -38,7 +38,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_category:
-    weight: 12
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60
@@ -47,7 +47,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_image:
-    weight: 26
+    weight: 11
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -55,7 +55,7 @@ content:
     type: image_image
     region: content
   field_is_video:
-    weight: 14
+    weight: 12
     settings:
       display_label: true
     third_party_settings: {  }
@@ -71,7 +71,7 @@ content:
     type: text_textarea_with_summary
     region: content
   field_tags:
-    weight: 13
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -80,7 +80,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_video_url:
-    weight: 15
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: video_embed_field_textfield
@@ -109,7 +109,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 10
     third_party_settings: {  }
     region: content
   sticky:

@@ -29,7 +29,7 @@ content:
     third_party_settings: {  }
     region: content
   field_category:
-    weight: 4
+    weight: 6
     label: above
     settings:
       link: true
@@ -47,7 +47,7 @@ content:
     third_party_settings: {  }
   field_is_video:
     type: boolean
-    weight: 6
+    weight: 4
     region: content
     label: above
     settings:
@@ -63,7 +63,7 @@ content:
     type: text_default
     region: content
   field_tags:
-    weight: 5
+    weight: 7
     label: above
     settings:
       link: true
@@ -72,7 +72,7 @@ content:
     region: content
   field_video_url:
     type: video_embed_field_video
-    weight: 7
+    weight: 5
     region: content
     label: above
     settings:
