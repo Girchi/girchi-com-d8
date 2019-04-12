@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.article.field_category
     - field.field.node.article.field_image
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_short_description
     - field.field.node.article.field_tags
     - field.field.node.article.field_video_url
     - node.type.article
@@ -45,13 +44,6 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
-  field_short_description:
-    type: text_default
-    weight: 1
-    region: content
-    label: above
-    settings: {  }
     third_party_settings: {  }
   field_tags:
     type: entity_reference_label

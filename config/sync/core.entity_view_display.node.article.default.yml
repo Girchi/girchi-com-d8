@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.article.field_category
     - field.field.node.article.field_image
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_short_description
     - field.field.node.article.field_tags
     - field.field.node.article.field_video_url
     - node.type.article
@@ -55,13 +54,6 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-  field_short_description:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_tags:
     weight: 7
     label: above

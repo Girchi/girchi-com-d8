@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.article.field_category
     - field.field.node.article.field_image
     - field.field.node.article.field_is_video
-    - field.field.node.article.field_short_description
     - field.field.node.article.field_tags
     - field.field.node.article.field_video_url
     - image.style.thumbnail
@@ -60,15 +59,6 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-    region: content
-  field_short_description:
-    weight: 8
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea_with_summary
     region: content
   field_tags:
     weight: 15
