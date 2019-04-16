@@ -1,5 +1,5 @@
-<?php
 
+<?php
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -55,7 +55,6 @@
  * register custom, site-specific service definitions and/or swap out default
  * implementations with custom ones.
  */
-
 /**
  * Database settings:
  *
@@ -87,7 +86,6 @@
  * @endcode
  */
  $databases = array();
-
 /**
  * Customizing database settings.
  *
@@ -223,7 +221,6 @@
  *   );
  * @endcode
  */
-
 /**
  * Location of the site configuration files.
  *
@@ -250,7 +247,6 @@
  * @endcode
  */
 $config_directories = array();
-
 /**
  * Settings:
  *
@@ -260,7 +256,6 @@ $config_directories = array();
  *
  * @see \Drupal\Core\Site\Settings::get()
  */
-
 /**
  * The active installation profile.
  *
@@ -277,7 +272,6 @@ $config_directories = array();
  *   parameter. Functional code can use \Drupal::installProfile().
  */
 # $settings['install_profile'] = '';
-
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.
  *
@@ -296,7 +290,6 @@ $config_directories = array();
  * @endcode
  */
 $settings['hash_salt'] = '_q1rnWTOTmSPUHffn3LG6P4snLU85PfIViKaBQHSVLJzlhQuPG7qDtziC3zU3Yy_';
-
 /**
  * Deployment identifier.
  *
@@ -306,7 +299,6 @@ $settings['hash_salt'] = '_q1rnWTOTmSPUHffn3LG6P4snLU85PfIViKaBQHSVLJzlhQuPG7qDt
  * allow the container to be invalidated as soon as code is deployed.
  */
 # $settings['deployment_identifier'] = \Drupal::VERSION;
-
 /**
  * Access control for update.php script.
  *
@@ -319,7 +311,6 @@ $settings['hash_salt'] = '_q1rnWTOTmSPUHffn3LG6P4snLU85PfIViKaBQHSVLJzlhQuPG7qDt
  * TRUE back to a FALSE!
  */
 $settings['update_free_access'] = FALSE;
-
 /**
  * External access proxy settings:
  *
@@ -339,7 +330,6 @@ $settings['update_free_access'] = FALSE;
 # $settings['http_client_config']['proxy']['http'] = 'http://proxy_user:proxy_pass@example.com:8080';
 # $settings['http_client_config']['proxy']['https'] = 'http://proxy_user:proxy_pass@example.com:8080';
 # $settings['http_client_config']['proxy']['no'] = ['127.0.0.1', 'localhost'];
-
 /**
  * Reverse Proxy Configuration:
  *
@@ -372,43 +362,36 @@ $settings['update_free_access'] = FALSE;
  * address spoofing unless more advanced precautions are taken.
  */
 # $settings['reverse_proxy'] = TRUE;
-
 /**
  * Specify every reverse proxy IP address in your environment.
  * This setting is required if $settings['reverse_proxy'] is TRUE.
  */
 # $settings['reverse_proxy_addresses'] = array('a.b.c.d', ...);
-
 /**
  * Set this value if your proxy server sends the client IP in a header
  * other than X-Forwarded-For.
  */
 # $settings['reverse_proxy_header'] = 'X_CLUSTER_CLIENT_IP';
-
 /**
  * Set this value if your proxy server sends the client protocol in a header
  * other than X-Forwarded-Proto.
  */
 # $settings['reverse_proxy_proto_header'] = 'X_FORWARDED_PROTO';
-
 /**
  * Set this value if your proxy server sends the client protocol in a header
  * other than X-Forwarded-Host.
  */
 # $settings['reverse_proxy_host_header'] = 'X_FORWARDED_HOST';
-
 /**
  * Set this value if your proxy server sends the client protocol in a header
  * other than X-Forwarded-Port.
  */
 # $settings['reverse_proxy_port_header'] = 'X_FORWARDED_PORT';
-
 /**
  * Set this value if your proxy server sends the client protocol in a header
  * other than Forwarded.
  */
 # $settings['reverse_proxy_forwarded_header'] = 'FORWARDED';
-
 /**
  * Page caching:
  *
@@ -426,8 +409,6 @@ $settings['update_free_access'] = FALSE;
  * getting cached pages from the proxy.
  */
 # $settings['omit_vary_cookie'] = TRUE;
-
-
 /**
  * Cache TTL for client error (4xx) responses.
  *
@@ -439,8 +420,6 @@ $settings['update_free_access'] = FALSE;
  * page_cache module.
  */
 # $settings['cache_ttl_4xx'] = 3600;
-
-
 /**
  * Class Loader.
  *
@@ -449,7 +428,6 @@ $settings['update_free_access'] = FALSE;
  * class_loader_auto_detect to false, as in the example below.
  */
 # $settings['class_loader_auto_detect'] = FALSE;
-
 /*
  * If the APC extension is not detected, either because APC is missing or
  * because auto-detection has been disabled, auto-loading falls back to
@@ -472,7 +450,6 @@ if ($settings['hash_salt']) {
   $class_loader = $apc_loader;
 }
 */
-
 /**
  * Authorized file system operations:
  *
@@ -496,7 +473,6 @@ if ($settings['hash_salt']) {
  * Remove the leading hash signs to disable.
  */
 # $settings['allow_authorize_operations'] = FALSE;
-
 /**
  * Default mode for directories and files written by Drupal.
  *
@@ -504,7 +480,6 @@ if ($settings['hash_salt']) {
  */
 # $settings['file_chmod_directory'] = 0775;
 # $settings['file_chmod_file'] = 0664;
-
 /**
  * Public file base URL:
  *
@@ -517,7 +492,6 @@ if ($settings['hash_salt']) {
  * pointing to the same server. Do not include a trailing slash.
  */
 # $settings['file_public_base_url'] = 'http://downloads.example.com/files';
-
 /**
  * Public file path:
  *
@@ -526,7 +500,6 @@ if ($settings['hash_salt']) {
  * the Drupal installation directory and be accessible over the web.
  */
 # $settings['file_public_path'] = 'sites/default/files';
-
 /**
  * Private file path:
  *
@@ -541,7 +514,6 @@ if ($settings['hash_salt']) {
  * about securing private files.
  */
 # $settings['file_private_path'] = '';
-
 /**
  * Session write interval:
  *
@@ -549,7 +521,6 @@ if ($settings['hash_salt']) {
  * For performance reasons it defaults to 180.
  */
 # $settings['session_write_interval'] = 180;
-
 /**
  * String overrides:
  *
@@ -566,7 +537,6 @@ if ($settings['hash_salt']) {
 #   'forum'      => 'Discussion board',
 #   '@count min' => '@count minutes',
 # );
-
 /**
  * A custom theme for the offline page:
  *
@@ -578,7 +548,6 @@ if ($settings['hash_salt']) {
  * Note: This setting does not apply to installation and update pages.
  */
 # $settings['maintenance_theme'] = 'bartik';
-
 /**
  * PHP settings:
  *
@@ -590,7 +559,6 @@ if ($settings['hash_salt']) {
  * Settings defined there should not be duplicated here so as to avoid conflict
  * issues.
  */
-
 /**
  * If you encounter a situation where users post a large amount of text, and
  * the result is stripped out upon viewing but can still be edited, Drupal's
@@ -601,7 +569,6 @@ if ($settings['hash_salt']) {
  */
 # ini_set('pcre.backtrack_limit', 200000);
 # ini_set('pcre.recursion_limit', 200000);
-
 /**
  * Active configuration settings.
  *
@@ -620,7 +587,6 @@ if ($settings['hash_salt']) {
  *   (definitions in this file will override service definition defaults).
  */
 # $settings['bootstrap_config_storage'] = array('Drupal\Core\Config\BootstrapConfigStorageFactory', 'getFileStorage');
-
 /**
  * Configuration overrides.
  *
@@ -646,7 +612,6 @@ if ($settings['hash_salt']) {
 # $config['system.site']['name'] = 'My Drupal site';
 # $config['system.theme']['default'] = 'stark';
 # $config['user.settings']['anonymous'] = 'Visitor';
-
 /**
  * Fast 404 pages:
  *
@@ -673,13 +638,11 @@ if ($settings['hash_salt']) {
 # $config['system.performance']['fast_404']['exclude_paths'] = '/\/(?:styles)|(?:system\/files)\//';
 # $config['system.performance']['fast_404']['paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
 # $config['system.performance']['fast_404']['html'] = '<!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
-
 /**
  * Load services definition file.
  */
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.develop.yml';
-
 /**
  * Override the default service container class.
  *
@@ -688,7 +651,6 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.devel
  * to test a service container that throws an exception.
  */
 # $settings['container_base_class'] = '\Drupal\Core\DependencyInjection\Container';
-
 /**
  * Override the default yaml parser class.
  *
@@ -697,7 +659,6 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.devel
  * \Drupal\Component\Serialization\SerializationInterface interface.
  */
 # $settings['yaml_parser_class'] = NULL;
-
 /**
  * Trusted host configuration.
  *
@@ -734,7 +695,6 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.devel
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-
 /**
  * The default list of directories that will be ignored by Drupal's file API.
  *
@@ -749,13 +709,11 @@ $settings['file_scan_ignore_directories'] = [
   'node_modules',
   'bower_components',
 ];
-
 /**
  * Misc
  */
-//$settings['install_profile'] = 'standard';
+$settings['install_profile'] = 'minimal';
 $config_directories['sync'] = '../config/sync';
-
 /**
  * Load local development override configuration, if available.
  *
@@ -766,20 +724,6 @@ $config_directories['sync'] = '../config/sync';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-// if (file_exists($app_root . '/' . $site_path . '/settings.production.php')) {
-//   include $app_root . '/' . $site_path . '/settings.production.php';
-// } elseif (file_exists($app_root . '/' . $site_path . '/settings.develop.php')) {
-//   include $app_root . '/' . $site_path . '/settings.develop.php';
-// }
-$databases['default']['default'] = array (
-  'database' => 'girchi',
-  'username' => 'girchi',
-  'password' => 'girchi',
-  'prefix' => 'omdrpl_',
-  'host' => 'mariadb',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-
-$settings['install_profile'] = 'minimal';
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}

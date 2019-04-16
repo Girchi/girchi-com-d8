@@ -19,6 +19,7 @@ display:
         status:
           label: სტატუსი
           settings:
+            format_custom_true: აქტიური
             format_custom_false: დაბლოკილი
         roles_target_id:
           label: როლები
@@ -33,6 +34,8 @@ display:
           group_info:
             label: სტატუსი
             group_items:
+              1:
+                title: აქტიური
               2:
                 title: დაბლოკილი
         roles_target_id:

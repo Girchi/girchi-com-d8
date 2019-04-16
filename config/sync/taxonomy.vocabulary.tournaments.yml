@@ -1,9 +1,0 @@
-uuid: 97fda129-d597-49bf-89fe-b7f13405fad0
-langcode: und
-status: true
-dependencies: {  }
-name: Tournaments
-vid: tournaments
-description: ''
-hierarchy: 1
-weight: 0

@@ -1,0 +1,3139 @@
+# Georgian translation of Girchi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-04-16 07:06+0000\n"
+"PO-Revision-Date: 2019-04-16 07:06+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Content type"
+msgstr "კონტენტის ტიპი"
+
+msgid "Vocabulary"
+msgstr "ლექსიკონი"
+
+msgid "Description"
+msgstr "აღწერა"
+
+msgid "Content"
+msgstr "კონტენტი"
+
+msgid "User"
+msgstr "მომხმარებელი"
+
+msgid "Block"
+msgstr "ბლოკი"
+
+msgid "Text format"
+msgstr "ტექსტის ფორმატი"
+
+msgid "Language"
+msgstr "ენა"
+
+msgid "Menu"
+msgstr "მენიუ"
+
+msgid "Role"
+msgstr "როლი"
+
+msgid "Date format"
+msgstr "თარიღის ფორმატი"
+
+msgid "Forms"
+msgstr "ფორმები"
+
+msgid "Home"
+msgstr "მთავარი"
+
+msgid "User interface"
+msgstr "მომხმარებლის ინტერფეისი"
+
+msgid "Title"
+msgstr "სათაური"
+
+msgid "Body"
+msgstr "ტანი"
+
+msgid "Next"
+msgstr "შემდეგი"
+
+msgid "user"
+msgstr "მომხმარებელი"
+
+msgid "Pages"
+msgstr "გვერდები"
+
+msgid "Save configuration"
+msgstr "კონფიგურაციის შენახვა"
+
+msgid "delete"
+msgstr "წაშლა"
+
+msgid "Status"
+msgstr "სტატუსი"
+
+msgid "Register"
+msgstr "რეგისტრაცია"
+
+msgid "Create a new user account."
+msgstr ""
+"ახალი მომხმარებლის "
+"შექმნა."
+
+msgid "Markup"
+msgstr "კორექტურა"
+
+msgid "Prefix"
+msgstr "პრეფიქსი"
+
+msgid "Suffix"
+msgstr "სუფიქსი"
+
+msgid "Approve"
+msgstr "დადასტურება"
+
+msgid "Delete"
+msgstr "წაშლა"
+
+msgid "Submit"
+msgstr "დადასტურება"
+
+msgid "Operations"
+msgstr "ოპერაციები"
+
+msgid "Attribute"
+msgstr "ატრიბუტი"
+
+msgid "Value"
+msgstr "მნიშვნელობა"
+
+msgid "Username"
+msgstr "მომხმარებელი"
+
+msgid "Email address"
+msgstr "ელ.ფოსტის მისამართი"
+
+msgid "Development"
+msgstr "დეველოპმენტი"
+
+msgid "Groups"
+msgstr "ჯგუფები"
+
+msgid "Group"
+msgstr "ჯგუფი"
+
+msgid "Type"
+msgstr "ტიპი"
+
+msgid "Author"
+msgstr "ავტორი"
+
+msgid "Replies"
+msgstr "გამოხმაურებები"
+
+msgid "Closed"
+msgstr "დახურულია"
+
+msgid "yes"
+msgstr "დიახ"
+
+msgid "List"
+msgstr "სია"
+
+msgid "Subject"
+msgstr "სათაური"
+
+msgid "Send email"
+msgstr "ელ. ფოსტის გაგზავნა"
+
+msgid "closed"
+msgstr "დახურული"
+
+msgid "Actions"
+msgstr "ოპერაციები"
+
+msgid "disabled"
+msgstr "გამორთულია"
+
+msgid "Confirm"
+msgstr "დადასტურება"
+
+msgid "Cancel"
+msgstr "გაუქმება"
+
+msgid "Remove"
+msgstr "ამოშლა"
+
+msgid "Last comment"
+msgstr "ბოლო კომენტრარი"
+
+msgid "more"
+msgstr "მეტი"
+
+msgid "Enable"
+msgstr "ჩართვა"
+
+msgid "Disable"
+msgstr "გამორთვა"
+
+msgid "Disabled"
+msgstr "გამორთულია"
+
+msgid "Enabled"
+msgstr "ჩართულია"
+
+msgid "Administration"
+msgstr "ადმინისტრირება"
+
+msgid "Comments"
+msgstr "კომენტარები"
+
+msgid "More"
+msgstr "მეტი"
+
+msgid "not verified"
+msgstr "შეუმოწმებელი"
+
+msgid "Action"
+msgstr "ოპერაცია"
+
+msgid "Last updated"
+msgstr "ბოლოს განახლდა"
+
+msgid "On"
+msgstr "ჩართვა"
+
+msgid "new"
+msgstr "ახალი"
+
+msgid "Tags"
+msgstr "ტეგები"
+
+msgid "Block title"
+msgstr "ბლოკის სათაური"
+
+msgid "The title of the block as shown to the user."
+msgstr ""
+"ბლოკის სათაური, რომელსაც "
+"დაინახავს მომხმარებელი."
+
+msgid "Yes"
+msgstr "დიახ"
+
+msgid "No"
+msgstr "არა"
+
+msgid "Content types"
+msgstr "კონტენტის ტიპები"
+
+msgid "Homepage"
+msgstr "მთავარი გვერდი"
+
+msgid "Home page"
+msgstr "მთავარი გვერდი"
+
+msgid "Download"
+msgstr "გადმოტვირთვა"
+
+msgid "Version"
+msgstr "ვერსია"
+
+msgid "view"
+msgstr "ნახვა"
+
+msgid "updated"
+msgstr "განახლებულია"
+
+msgid "Overview"
+msgstr "მიმოხილვა"
+
+msgid "File information"
+msgstr "ინფორმაცია ფაილზე"
+
+msgid "File"
+msgstr "ფაილი"
+
+msgid "Tag"
+msgstr "ტეგი"
+
+msgid "File path"
+msgstr "ფაილის მდებარეობა"
+
+msgid "Advanced options"
+msgstr "დამატებითი ოფციები"
+
+msgid "Edit"
+msgstr "რედაქტირება"
+
+msgid "Date"
+msgstr "თარიღი"
+
+msgid "Size"
+msgstr "ზომა"
+
+msgid "Links"
+msgstr "ბმულები"
+
+msgid "Search"
+msgstr "ძიება"
+
+msgid "Daily"
+msgstr "ყოველდღიური"
+
+msgid "Weekly"
+msgstr "ყოველკვირეული"
+
+msgid "Monthly"
+msgstr "ყოველთვიური"
+
+msgid "None"
+msgstr "არცერთი"
+
+msgid "Test"
+msgstr "ტესტი"
+
+msgid "Number"
+msgstr "რიცხვი"
+
+msgid "Message"
+msgstr "შეტყობინება"
+
+msgid "Account Name"
+msgstr "მომხმარებლის სახელი"
+
+msgid "Password"
+msgstr "პაროლი"
+
+msgid "Block settings"
+msgstr "ბლოკის პარამეტრები"
+
+msgid "- None -"
+msgstr "- არცერთი -"
+
+msgid "Country"
+msgstr "ქვეყანა"
+
+msgid "Weight"
+msgstr "წონა"
+
+msgid "Link"
+msgstr "ბმული"
+
+msgid "Image"
+msgstr "სურათი"
+
+msgid "Types"
+msgstr "ტიპები"
+
+msgid "Hierarchy"
+msgstr "იერარქია"
+
+msgid "Required"
+msgstr "სავალდებულო"
+
+msgid "Parent"
+msgstr "მშობელი"
+
+msgid "none"
+msgstr "არცერთი"
+
+msgid "Category"
+msgstr "კატეგორია"
+
+msgid "Add container"
+msgstr "კონტეინერის დამატება"
+
+msgid "Settings"
+msgstr "პარამეტრები"
+
+msgid "Name"
+msgstr "სახელი"
+
+msgid "edit container"
+msgstr "კონტეინერის რედაქტირება"
+
+msgid "edit"
+msgstr "რედაქტირება"
+
+msgid "Go to previous page"
+msgstr "წინა გვერდზე გადასვლა"
+
+msgid "Go to parent page"
+msgstr "მშობელ გვერდზე გადასვლა"
+
+msgid "Go to next page"
+msgstr "შემდეგ გვერდზე გადასვლა"
+
+msgid "Import"
+msgstr "იმპორტი"
+
+msgid "Book"
+msgstr "წიგნი"
+
+msgid "Export"
+msgstr "ექსპორტი"
+
+msgid "settings"
+msgstr "პარამეტრები"
+
+msgid "Field"
+msgstr "ველი"
+
+msgid "Label"
+msgstr "სათაური"
+
+msgid "Session opened for %name."
+msgstr "სესია ღიაა %name-სთვის."
+
+msgid "Help"
+msgstr "დახმარება"
+
+msgid "Image settings"
+msgstr "სურათის პარამეტრები"
+
+msgid "Update"
+msgstr "განახლება"
+
+msgid "Open"
+msgstr "ღია"
+
+msgid "Sunday"
+msgstr "კვირა"
+
+msgid "Monday"
+msgstr "ორშაბათი"
+
+msgid "Tuesday"
+msgstr "სამშაბათი"
+
+msgid "Wednesday"
+msgstr "ოთხშაბათი"
+
+msgid "Thursday"
+msgstr "ხუთშაბათი"
+
+msgid "Friday"
+msgstr "პარასკევი"
+
+msgid "Saturday"
+msgstr "შაბათი"
+
+msgid "High"
+msgstr "მაღალი"
+
+msgid "Low"
+msgstr "დაბალი"
+
+msgid "Album"
+msgstr "ალბომი"
+
+msgid "Artist"
+msgstr "არტისტი"
+
+msgid "Add new"
+msgstr "ახლის დამატება"
+
+msgid "Time"
+msgstr "დრო"
+
+msgid "Add"
+msgstr "დამატება"
+
+msgid "Length"
+msgstr "სიგრძე"
+
+msgid "Format"
+msgstr "ფორმატი"
+
+msgid "History"
+msgstr "ისტორია"
+
+msgid "hidden"
+msgstr "დამალული"
+
+msgid "Path"
+msgstr "გზა"
+
+msgid "Filename"
+msgstr "ფაილის სახელი"
+
+msgid "File extensions"
+msgstr "ფაილის გაფართოებები"
+
+msgid "Vocabularies"
+msgstr "ლექსიკონები"
+
+msgid "Modules"
+msgstr "მოდულები"
+
+msgid "Form ID"
+msgstr "ფორმის ID"
+
+msgid "General discussion"
+msgstr "ზოგადი დისკუსია"
+
+msgid "edit forum"
+msgstr "ფორუმის რედაქტირება"
+
+msgid "Forum name"
+msgstr "ფორუმის სახელი"
+
+msgid "forum"
+msgstr "ფორუმი"
+
+msgid "Manage"
+msgstr "მართვა"
+
+msgid "Refresh"
+msgstr "განახლება"
+
+msgid "Region"
+msgstr "რეგიონი"
+
+msgid "link"
+msgstr "ბმული"
+
+msgid "Anchor"
+msgstr "ბმული"
+
+msgid "Display"
+msgstr "ჩვენება"
+
+msgid "Advanced settings"
+msgstr "დამატებითი პარამეტრები"
+
+msgid "never"
+msgstr "არასდროს"
+
+msgid "Updated"
+msgstr "განახლებულია"
+
+msgid "actions"
+msgstr "ოპერაციები"
+
+msgid "Text"
+msgstr "ტექსტი"
+
+msgid "Add forum"
+msgstr "ფორუმის დამატება"
+
+msgid "Component"
+msgstr "კომპონენტი"
+
+msgid "Statistics"
+msgstr "სტატისტიკა"
+
+msgid "You are not authorized to access this page."
+msgstr ""
+"თქვენ არ ხართ "
+"უფლებამოსილი, ნახოთ ეს "
+"გვერდი."
+
+msgid "Unknown"
+msgstr "უცნობი"
+
+msgid "Attachment"
+msgstr "მიმაგრებული ფაილი"
+
+msgid "Upload"
+msgstr "ატვირთვა"
+
+msgid "Picture"
+msgstr "სურათი"
+
+msgid "Upload image"
+msgstr "სურათის ატვირთვა"
+
+msgid "Before"
+msgstr "მდე"
+
+msgid "After"
+msgstr "შემდეგ"
+
+msgid "Database type"
+msgstr "მონაცემთა ბაზის ტიპი"
+
+msgid "action"
+msgstr "ოპერაცია"
+
+msgid "Continue"
+msgstr "გაგრძელება"
+
+msgid "Configure"
+msgstr "კონფიგურირება"
+
+msgid "Email"
+msgstr "ელ. ფოსტა"
+
+msgid "Files"
+msgstr "ფაილები"
+
+msgid "file"
+msgstr "ფაილი"
+
+msgid "User ID"
+msgstr "მომხმარებლის ID"
+
+msgid "Error"
+msgstr "შეცდომა"
+
+msgid "Options"
+msgstr "პარამეტრები"
+
+msgid "Contact"
+msgstr "კონტაქტი"
+
+msgid "no"
+msgstr "არა"
+
+msgid "Created"
+msgstr "შექმნილია"
+
+msgid "Sent email to %recipient"
+msgstr "წერილის გაგზავნა %recipient-თან"
+
+msgid "The subject of the message."
+msgstr "შეტყობინების სათაური."
+
+msgid "Number of columns"
+msgstr "სვეტების რაოდენობა"
+
+msgid "Create"
+msgstr "შექმნა"
+
+msgid "Separator"
+msgstr "გამყოფი"
+
+msgid "Horizontal"
+msgstr "ჰორიზონტალური"
+
+msgid "Vertical"
+msgstr "ვერტიკალური"
+
+msgid "Open link in new window"
+msgstr ""
+"ბმულის ახალ ფანჯარაში "
+"გახსნა"
+
+msgid "Expanded"
+msgstr "გაშლილი"
+
+msgid "Parent item"
+msgstr "მშობელი"
+
+msgid "Add child page"
+msgstr ""
+"შვილობილი გვერდის "
+"დამატება"
+
+msgid "Content type for child pages"
+msgstr ""
+"კონტენტის ტიპი შვილობილი "
+"გვერდებისთვის"
+
+msgid "Done"
+msgstr "დასრულება"
+
+msgid "Last post"
+msgstr "ბოლო პოსტი"
+
+msgid "Access denied"
+msgstr "წვდომა აკრძალულია"
+
+msgid "Year"
+msgstr "წელი"
+
+msgid "Add content"
+msgstr "კონტენტის დამატება"
+
+msgid "Page title"
+msgstr "გვერდის სათაური"
+
+msgid "Override title"
+msgstr "სათაურის გადაწერა"
+
+msgid "CSS class"
+msgstr "CSS კლასი"
+
+msgid "Page"
+msgstr "გვერდი"
+
+msgid "View arguments"
+msgstr "არგუმენტების ნახვა"
+
+msgid "1 minute"
+msgid_plural "@count minutes"
+msgstr[0] "1 წუთი"
+msgstr[1] "@count წუთი"
+
+msgid "1 hour"
+msgid_plural "@count hours"
+msgstr[0] "1 საათი"
+msgstr[1] "@count საათი"
+
+msgid "1 day"
+msgid_plural "@count days"
+msgstr[0] "1 დღე"
+msgstr[1] "@count დღე"
+
+msgid "Configuration saved."
+msgstr ""
+"კონფიგურაცია "
+"დამახსოვრებულია."
+
+msgid "Logo"
+msgstr "ლოგო"
+
+msgid "Site name"
+msgstr "საიტის სახელი"
+
+msgid "Site slogan"
+msgstr "საიტის სლოგანი"
+
+msgid "Good"
+msgstr "კარგი"
+
+msgid "User settings"
+msgstr "მომხმარებლის პარამეტრები"
+
+msgid "Site"
+msgstr "საიტი"
+
+msgid "Web Server"
+msgstr "ვებ სერვერი"
+
+msgid "Database"
+msgstr "მონაცემტა ბაზა"
+
+msgid "Drupal"
+msgstr "Drupal"
+
+msgid "Not found"
+msgstr "ვერ მოიძებნა"
+
+msgid "Module"
+msgstr "მოდული"
+
+msgid "Off"
+msgstr "გამორთვა"
+
+msgid "Host"
+msgstr "ჰოსტი"
+
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+msgid "Available updates"
+msgstr "შესაძლებელი განახლებები"
+
+msgid "Manual update check"
+msgstr ""
+"განახლებების ხელით "
+"შემოწმება"
+
+msgid "Never"
+msgstr "არასდროს"
+
+msgid "Check manually"
+msgstr "ხელით შემოწმება"
+
+msgid "Up to date"
+msgstr "განახლებულია"
+
+msgid "Update available"
+msgstr "განახლება შესაძლებელია"
+
+msgid "Drupal core update status"
+msgstr ""
+"Drupal core-ის განახლების "
+"სტატუსი"
+
+msgid "Out of date"
+msgstr "მოძველებულია"
+
+msgid "Left sidebar"
+msgstr "მარცხენა სვეტი"
+
+msgid "Right sidebar"
+msgstr "მარჯვენა სვეტი"
+
+msgid "Inline"
+msgstr "ერთ ხაზზე"
+
+msgid "Recipients"
+msgstr "მიმღებები"
+
+msgid "Your name"
+msgstr "თქვენი სახელი"
+
+msgid "Menu link"
+msgstr "მენიუს ბმული"
+
+msgid "To"
+msgstr "მიმღები"
+
+msgid "From"
+msgstr "ვისგან"
+
+msgid "Visibility"
+msgstr "ხილვადობა"
+
+msgid "Roles"
+msgstr "როლები"
+
+msgid "Role ID"
+msgstr "როლის ID"
+
+msgid "Comment"
+msgstr "კომენტარი"
+
+msgid "Comment ID"
+msgstr "კომენტარის ID"
+
+msgid "Score"
+msgstr "ქულა"
+
+msgid "Published"
+msgstr "გამოქვეყნებული"
+
+msgid "Signature"
+msgstr "ხელმოწერა"
+
+msgid "Filter"
+msgstr "ფილტრი"
+
+msgid "Location"
+msgstr "ადგილმდებარეობა"
+
+msgid "File ID"
+msgstr "ფაილის ID"
+
+msgid "File name"
+msgstr "ფაილის სახელი"
+
+msgid "File MIME type"
+msgstr "ფაილის MIME ტიპი"
+
+msgid "File size"
+msgstr "ფაილის ზომა"
+
+msgid "Vocabulary ID"
+msgstr "ლექსიკონის ID"
+
+msgid "Vocabulary name"
+msgstr "ლექსიკონის სახელი"
+
+msgid "User role"
+msgstr "მომხმარებლის როლი"
+
+msgid "Role name"
+msgstr "როლის სახელი"
+
+msgid "Last access"
+msgstr "ბოლო ვიზიტი"
+
+msgid "Last login"
+msgstr "ბოლო ავტორიზაცია"
+
+msgid "Time zone"
+msgstr "სასაათო სარტყელი"
+
+msgid "Field name"
+msgstr "ველის სახელი"
+
+msgid "Field type"
+msgstr "ველის ტიპი"
+
+msgid "Global settings"
+msgstr "ზოგადი პარამეტრები"
+
+msgid "Fields"
+msgstr "ველები"
+
+msgid "Contains"
+msgstr "შეიცავს"
+
+msgid "Does not contain"
+msgstr "არ შეიცავს"
+
+msgid "Is less than"
+msgstr "ნაკლებია ვიდრე"
+
+msgid "Is less than or equal to"
+msgstr "ნაკლებია ვიდრე ან უდრის"
+
+msgid "Is equal to"
+msgstr "უდრის"
+
+msgid "Is greater than or equal to"
+msgstr "მეტია ვიდრე ან უდრის"
+
+msgid "Is greater than"
+msgstr "მეტია ვიდრე"
+
+msgid "Is not equal to"
+msgstr "არ უდრის"
+
+msgid "Average"
+msgstr "საშუალო"
+
+msgid "Count"
+msgstr "რაოდენობა"
+
+msgid "Mode"
+msgstr "რეჟიმი"
+
+msgid "Warning"
+msgstr "გაფრთხილება"
+
+msgid "blocked"
+msgstr "დაბლოკილი"
+
+msgid "active"
+msgstr "აქტიური"
+
+msgid "Number of news items in block"
+msgstr ""
+"სიახლეების რაოდენობა "
+"ბლოკი"
+
+msgid "Items"
+msgstr "ელემენტები"
+
+msgid "Last update"
+msgstr "ბოლო განახლება"
+
+msgid "Next update"
+msgstr "მომდევნო განახლება"
+
+msgid "%time ago"
+msgstr "%time-ის წინ"
+
+msgid "%time left"
+msgstr "დარჩენილია %time"
+
+msgid "Authored by"
+msgstr "ავტორი"
+
+msgid "Advanced"
+msgstr "გაფართოებული"
+
+msgid "Processor"
+msgstr "პროცესორი"
+
+msgid "Width"
+msgstr "სიგანე"
+
+msgid "Height"
+msgstr "სიმაღლე"
+
+msgid "Maximum"
+msgstr "მაქსიმუმი"
+
+msgid "Medium"
+msgstr "საშუალო"
+
+msgid "Media"
+msgstr "მედია"
+
+msgid "standard"
+msgstr "სტანდარტული"
+
+msgid "Month"
+msgstr "თვე"
+
+msgid "Details"
+msgstr "დეტალები"
+
+msgid "Prev"
+msgstr "წინა"
+
+msgid "System"
+msgstr "სისტემა"
+
+msgid "Domain"
+msgstr "დომენი"
+
+msgid "Processors"
+msgstr "პროცესორები"
+
+msgid "Unlimited"
+msgstr "ულიმიტო"
+
+msgid "Current"
+msgstr "მიმდინარე"
+
+msgid "Desc"
+msgstr "აღწერა"
+
+msgid "Filter by"
+msgstr "გაფილტვრა"
+
+msgid "Owner"
+msgstr "მფლობელი"
+
+msgid "Recipient"
+msgstr "მიმღები"
+
+msgid "OR"
+msgstr "ან"
+
+msgid "Add a role to the selected users"
+msgstr ""
+"მონიშნული "
+"მომხმარებლებისთვის როლის "
+"დამატება"
+
+msgid "Remove a role from the selected users"
+msgstr ""
+"მონიშნული "
+"მომხმარებლებისთვის როლის "
+"მოხსნა"
+
+msgid "Administer content"
+msgstr "კონტენტის ადმინისტრირება"
+
+msgid "General"
+msgstr "ზოგადი"
+
+msgid "Directory"
+msgstr "დირექტორია"
+
+msgid "Method"
+msgstr "მეთოდი"
+
+msgid "Egypt"
+msgstr "ეგვიპტე"
+
+msgid "Namibia"
+msgstr "ნამიბია"
+
+msgid "Israel"
+msgstr "ისრაელი"
+
+msgid "Iran"
+msgstr "ირანი"
+
+msgid "New Zealand"
+msgstr "ახალი ზელანდია"
+
+msgid "Tonga"
+msgstr "ტონგა"
+
+msgid "Cuba"
+msgstr "კუბა"
+
+msgid "Brazil"
+msgstr "ბრაზილია"
+
+msgid "Chile"
+msgstr "ჩილე"
+
+msgid "Jamaica"
+msgstr "იამაიკა"
+
+msgid "Japan"
+msgstr "იაპონია"
+
+msgid "Libya"
+msgstr "ლიბია"
+
+msgid "Poland"
+msgstr "პოლონეთი"
+
+msgid "Portugal"
+msgstr "პორტუგალია"
+
+msgid "Singapore"
+msgstr "სინგაპური"
+
+msgid "Turkey"
+msgstr "თურქეთი"
+
+msgid "Day"
+msgstr "დღე"
+
+msgid "Table"
+msgstr "ცხრილი"
+
+msgid "Mon"
+msgstr "ორშ"
+
+msgid "Tue"
+msgstr "სამშ"
+
+msgid "Wed"
+msgstr "ოთხ"
+
+msgid "Thu"
+msgstr "ხუთ"
+
+msgid "Fri"
+msgstr "პარ"
+
+msgid "Sat"
+msgstr "შაბ"
+
+msgid "Sun"
+msgstr "კვი"
+
+msgid "May"
+msgstr "მაისი"
+
+msgid "am"
+msgstr "დილის"
+
+msgid "pm"
+msgstr "საღამოს"
+
+msgid "Forum"
+msgstr "ფორუმი"
+
+msgid "Configuration"
+msgstr "კონფიგურაცია"
+
+msgid "Other"
+msgstr "სხვა"
+
+msgid "Display title"
+msgstr "სათაურის ჩვენება"
+
+msgid "Background color"
+msgstr "ფონის ფერი"
+
+msgid "Text color"
+msgstr "ტექსტის ფერი"
+
+msgid "Navigation"
+msgstr "ნავიგაცია"
+
+msgid "Color"
+msgstr "ფერი"
+
+msgid "Appearance"
+msgstr "იერსახე"
+
+msgid "Link URL"
+msgstr "ბმულის მისამართი"
+
+msgid "List type"
+msgstr "ლისტის ტიპი"
+
+msgid "Attributes"
+msgstr "ატრიბუტები"
+
+msgid "Select all"
+msgstr "ყველას მონიშვნა"
+
+msgid "User login"
+msgstr "მომხმარებლის ავტორიზაცია"
+
+msgid "Log in"
+msgstr "სისტემაში შესვლა"
+
+msgid "Link text"
+msgstr "ბმულის ტექსტი"
+
+msgid "Add new comment"
+msgstr "კომენტარის დამატება"
+
+msgid "Counter"
+msgstr "მთვლელი"
+
+msgid "External"
+msgstr "გარე"
+
+msgid "Users"
+msgstr "მომხმარებლები"
+
+msgid "Not installed"
+msgstr "არ არის დაინსტალირებული"
+
+msgid ""
+"@site is currently under maintenance. We should be back shortly. Thank "
+"you for your patience."
+msgstr ""
+"@site დროებით გამორთულია. "
+"ჩვენ მალე დავბრუნდებით, "
+"გმადლობთ მოთმინებისთის."
+
+msgid "Default front page"
+msgstr "მთავარი გვერდი"
+
+msgid "Button"
+msgstr "ღილაკი"
+
+msgid "Both"
+msgstr "ორივე"
+
+msgid "Maximum length"
+msgstr "მაქსიმალური სიგრძე"
+
+msgid "Cache"
+msgstr "ქეში"
+
+msgid "Argument"
+msgstr "არგუმენტი"
+
+msgid "Anonymous"
+msgstr "ანონიმური"
+
+msgid "Provider"
+msgstr "პროვაიდერი"
+
+msgid "Install"
+msgstr "დაყენება"
+
+msgid "Save and edit"
+msgstr "შენახვა და რედაქტირება"
+
+msgid "Tools"
+msgstr "ხელსაწყოები"
+
+msgid "Arguments"
+msgstr "არგუმენტები"
+
+msgid "Operator"
+msgstr "ოპერატორი"
+
+msgid "Filters"
+msgstr "ფილტრები"
+
+msgid "Random"
+msgstr "შემთხვევითი"
+
+msgid "Position"
+msgstr "პოციზია"
+
+msgid "Integer"
+msgstr "მთელი რიცხვი"
+
+msgid "Anonymous users"
+msgstr "ანონიმური მომხმარებლები"
+
+msgid "Clear cache"
+msgstr "ქეშის გაწმენდა"
+
+msgid "fields"
+msgstr "ველები"
+
+msgid "Save settings"
+msgstr "პარამეტრების შენახვა"
+
+msgid "Duration"
+msgstr "ხანგრძლივობა"
+
+msgid "Session closed for %name."
+msgstr "სესია დახურულია %name-სთვის."
+
+msgid "Germany"
+msgstr "გერმანია"
+
+msgid "Created date"
+msgstr "შექმნის თარიღი"
+
+msgid "Updated date"
+msgstr "განახლების თარიღი"
+
+msgid "comments"
+msgstr "კომენტარები"
+
+msgid "Full"
+msgstr "სრული"
+
+msgid "Condition"
+msgstr "პირობა"
+
+msgid "Albania"
+msgstr "ალბანეთი"
+
+msgid "Algeria"
+msgstr "ალჟირი"
+
+msgid "American Samoa"
+msgstr "ამერიკის სამოა"
+
+msgid "Andorra"
+msgstr "ანდორა"
+
+msgid "Angola"
+msgstr "ანგოლა"
+
+msgid "Anguilla"
+msgstr "ანგილია"
+
+msgid "Antarctica"
+msgstr "ანტარქტიდა"
+
+msgid "Antigua and Barbuda"
+msgstr "ანტიგუა და ბარბუდა"
+
+msgid "Argentina"
+msgstr "არგენტინა"
+
+msgid "Armenia"
+msgstr "სომხეთი"
+
+msgid "Aruba"
+msgstr "არუბა"
+
+msgid "Australia"
+msgstr "ავსტრალია"
+
+msgid "Austria"
+msgstr "ავსტრია"
+
+msgid "Azerbaijan"
+msgstr "აზერბაიჯანი"
+
+msgid "Bahamas"
+msgstr "ბაჰამის თანამეგობრობა"
+
+msgid "Bahrain"
+msgstr "ბაჰრეინი"
+
+msgid "Bangladesh"
+msgstr "ბანგლადეში"
+
+msgid "Barbados"
+msgstr "ბარბადოსი"
+
+msgid "Belarus"
+msgstr "ბელარუსი"
+
+msgid "Belgium"
+msgstr "ბელგია"
+
+msgid "Belize"
+msgstr "ბელიზი"
+
+msgid "Benin"
+msgstr "ბენინი"
+
+msgid "Bermuda"
+msgstr "ბერმუდი"
+
+msgid "Bhutan"
+msgstr "ბჰუტანი"
+
+msgid "Bolivia"
+msgstr "ბოლივია"
+
+msgid "Bosnia and Herzegovina"
+msgstr "ბოსნია და ჰერცეგოვინა"
+
+msgid "Botswana"
+msgstr "ბოტსვანა"
+
+msgid "Bouvet Island"
+msgstr "ბუვე"
+
+msgid "Brunei"
+msgstr "ბრუნეი"
+
+msgid "Bulgaria"
+msgstr "ბულგარეთი"
+
+msgid "Burkina Faso"
+msgstr "ბურკინა-ფასო"
+
+msgid "Burundi"
+msgstr "ბურუნდი"
+
+msgid "Cambodia"
+msgstr "კამბოჯა"
+
+msgid "Cameroon"
+msgstr "კამერუნი"
+
+msgid "Canada"
+msgstr "კანადა"
+
+msgid "Cape Verde"
+msgstr "კაბო-ვერდე"
+
+msgid "Cayman Islands"
+msgstr "კაიმანის კუნძულები"
+
+msgid "Central African Republic"
+msgstr ""
+"ცენტრალური აფრიკის "
+"რესპუბლიკა"
+
+msgid "Chad"
+msgstr "ჩადი"
+
+msgid "China"
+msgstr "ჩინეთი"
+
+msgid "Christmas Island"
+msgstr "შობის კუნძული"
+
+msgid "Colombia"
+msgstr "კოლუმბია"
+
+msgid "Comoros"
+msgstr "კომორის კუნძულები"
+
+msgid "Cook Islands"
+msgstr "კუკის კუნძულები"
+
+msgid "Costa Rica"
+msgstr "კოსტა-რიკა"
+
+msgid "Cyprus"
+msgstr "კვიპროსი"
+
+msgid "Czech Republic"
+msgstr "ჩეხეთის რესპუბლიკა"
+
+msgid "Denmark"
+msgstr "დანია"
+
+msgid "Djibouti"
+msgstr "ჯიბუტი"
+
+msgid "Dominica"
+msgstr "დომინიკა"
+
+msgid "Dominican Republic"
+msgstr "დომინიკელთა რესპუბლიკა"
+
+msgid "Ecuador"
+msgstr "ეკვადორი"
+
+msgid "El Salvador"
+msgstr "სალვადორი"
+
+msgid "Equatorial Guinea"
+msgstr "ეკვატორული გვინეა"
+
+msgid "Eritrea"
+msgstr "ერიტრეა"
+
+msgid "Estonia"
+msgstr "ესტონეთი"
+
+msgid "Ethiopia"
+msgstr "ეთიოპია"
+
+msgid "Faroe Islands"
+msgstr "ფარერის კუნძულები"
+
+msgid "Finland"
+msgstr "ფინეთი"
+
+msgid "France"
+msgstr "საფრანგეთი"
+
+msgid "French Guiana"
+msgstr "საფრანგეთის გვიანა"
+
+msgid "French Polynesia"
+msgstr "საფრანგეთის პოლინეზია"
+
+msgid "Gabon"
+msgstr "გაბონი"
+
+msgid "Gambia"
+msgstr "გამბია"
+
+msgid "Georgia"
+msgstr "საქართველო"
+
+msgid "Ghana"
+msgstr "განა"
+
+msgid "Gibraltar"
+msgstr "გიბრალტარი"
+
+msgid "Greece"
+msgstr "საბერძნეთი"
+
+msgid "Greenland"
+msgstr "გრენლანდია"
+
+msgid "Grenada"
+msgstr "გრენადა"
+
+msgid "Guadeloupe"
+msgstr "გვადელუპა"
+
+msgid "Guam"
+msgstr "გუამი"
+
+msgid "Guatemala"
+msgstr "გვატემალა"
+
+msgid "Guinea"
+msgstr "გვინეა"
+
+msgid "Guinea-Bissau"
+msgstr "გვინეა-ბისაუ"
+
+msgid "Guyana"
+msgstr "გაიანა"
+
+msgid "Haiti"
+msgstr "ჰაიტი"
+
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+"ჰერდი და მაკდონალდის "
+"კუნძულები"
+
+msgid "Honduras"
+msgstr "ჰონდურასი"
+
+msgid "Hungary"
+msgstr "უნგრეთი"
+
+msgid "Iceland"
+msgstr "ისლანდია"
+
+msgid "India"
+msgstr "ინდოეთი"
+
+msgid "Indonesia"
+msgstr "ინდონეზია"
+
+msgid "Iraq"
+msgstr "ერაყი"
+
+msgid "Ireland"
+msgstr "ირლანდია"
+
+msgid "Italy"
+msgstr "იტალია"
+
+msgid "Jordan"
+msgstr "იორდანია"
+
+msgid "Kazakhstan"
+msgstr "ყაზახეთი"
+
+msgid "Kenya"
+msgstr "კენია"
+
+msgid "Kiribati"
+msgstr "კირიბატი"
+
+msgid "Kuwait"
+msgstr "ქუვეითი"
+
+msgid "Kyrgyzstan"
+msgstr "ყირგიზეთი"
+
+msgid "Laos"
+msgstr "ლაოსი"
+
+msgid "Latvia"
+msgstr "ლატვია"
+
+msgid "Lebanon"
+msgstr "ლიბანი"
+
+msgid "Lesotho"
+msgstr "ლესოთო"
+
+msgid "Liberia"
+msgstr "ლიბერია"
+
+msgid "Liechtenstein"
+msgstr "ლიხტენშტაინი"
+
+msgid "Lithuania"
+msgstr "ლიტვა"
+
+msgid "Luxembourg"
+msgstr "ლუქსემბურგი"
+
+msgid "Madagascar"
+msgstr "მადაგასკარი"
+
+msgid "Malawi"
+msgstr "მალავი"
+
+msgid "Malaysia"
+msgstr "მალაიზია"
+
+msgid "Maldives"
+msgstr "მალდივები"
+
+msgid "Mali"
+msgstr "მალი"
+
+msgid "Malta"
+msgstr "მალტა"
+
+msgid "Marshall Islands"
+msgstr "მარშალის კუნძულები"
+
+msgid "Martinique"
+msgstr "მარტინიკა"
+
+msgid "Mauritania"
+msgstr "მავრიტანია"
+
+msgid "Mauritius"
+msgstr "მავრიკი"
+
+msgid "Mayotte"
+msgstr "მაიოტა"
+
+msgid "Mexico"
+msgstr "მექსიკა"
+
+msgid "Micronesia"
+msgstr "მიკრონეზია"
+
+msgid "Moldova"
+msgstr "მოლდოვა"
+
+msgid "Monaco"
+msgstr "მონაკო"
+
+msgid "Mongolia"
+msgstr "მონღოლეთი"
+
+msgid "Montserrat"
+msgstr "მონსერატი"
+
+msgid "Morocco"
+msgstr "მაროკო"
+
+msgid "Mozambique"
+msgstr "მოზამბიკი"
+
+msgid "Nauru"
+msgstr "ნაურუ"
+
+msgid "Nepal"
+msgstr "ნეპალი"
+
+msgid "Netherlands"
+msgstr "ნიდერლანდი"
+
+msgid "Netherlands Antilles"
+msgstr "ნიდერლანდის ანტილები"
+
+msgid "New Caledonia"
+msgstr "ახალი კალედონია"
+
+msgid "Nicaragua"
+msgstr "ნიკარაგუა"
+
+msgid "Niger"
+msgstr "ნიგერი"
+
+msgid "Nigeria"
+msgstr "ნიგერია"
+
+msgid "Niue"
+msgstr "ნიუე"
+
+msgid "Norfolk Island"
+msgstr "ნორფოლკის კუნძული"
+
+msgid "North Korea"
+msgstr "ჩრდილოეთი კორეა"
+
+msgid "Northern Mariana Islands"
+msgstr ""
+"ჩრდილოეთი მარიანას "
+"კუნძულები"
+
+msgid "Norway"
+msgstr "ნორვეგია"
+
+msgid "Oman"
+msgstr "ომანი"
+
+msgid "Pakistan"
+msgstr "პაკისტანი"
+
+msgid "Palau"
+msgstr "პალაუ"
+
+msgid "Panama"
+msgstr "პანამა"
+
+msgid "Papua New Guinea"
+msgstr "პაპუა-ახალი გვინეა"
+
+msgid "Peru"
+msgstr "პერუ"
+
+msgid "Philippines"
+msgstr "ფილიპინები"
+
+msgid "Pitcairn Islands"
+msgstr "პიტკერნის კუნძულები"
+
+msgid "Puerto Rico"
+msgstr "პუერტო-რიკო"
+
+msgid "Qatar"
+msgstr "კატარი"
+
+msgid "Romania"
+msgstr "რუმინეთი"
+
+msgid "Russia"
+msgstr "რუსეთი"
+
+msgid "Rwanda"
+msgstr "რუანდა"
+
+msgid "Samoa"
+msgstr "სამოა"
+
+msgid "San Marino"
+msgstr "სან-მარინო"
+
+msgid "Saudi Arabia"
+msgstr "საუდის არაბეთი"
+
+msgid "Senegal"
+msgstr "სენეგალი"
+
+msgid "Seychelles"
+msgstr "სეიშელის კუნძულები"
+
+msgid "Sierra Leone"
+msgstr "სიერა-ლეონე"
+
+msgid "Slovakia"
+msgstr "სლოვაკეთი"
+
+msgid "Slovenia"
+msgstr "სლოვენია"
+
+msgid "Solomon Islands"
+msgstr "სოლომონის კუნძულები"
+
+msgid "Somalia"
+msgstr "სომალი"
+
+msgid "South Africa"
+msgstr "სამხრეთი აფრიკა"
+
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+"სამხრეთი გეორგია და "
+"სამხრეთ სენდვიჩის "
+"კუნძულები"
+
+msgid "Spain"
+msgstr "ესპანეთი"
+
+msgid "Sri Lanka"
+msgstr "შრი-ლანკა"
+
+msgid "Sudan"
+msgstr "სუდანი"
+
+msgid "Suriname"
+msgstr "სურინამი"
+
+msgid "Svalbard and Jan Mayen"
+msgstr "შპიცბერგენი და იან-მაიენი"
+
+msgid "Swaziland"
+msgstr "სვაზილენდი"
+
+msgid "Sweden"
+msgstr "შვედეთი"
+
+msgid "Switzerland"
+msgstr "შვეიცარია"
+
+msgid "Syria"
+msgstr "სირია"
+
+msgid "Taiwan"
+msgstr "ტაივანი"
+
+msgid "Tajikistan"
+msgstr "ტაჯიკეთი"
+
+msgid "Tanzania"
+msgstr "ტანზანია"
+
+msgid "Thailand"
+msgstr "ტაილანდი"
+
+msgid "Togo"
+msgstr "ტოგო"
+
+msgid "Tokelau"
+msgstr "ტოკელაუ"
+
+msgid "Trinidad and Tobago"
+msgstr "ტრინიდადი და ტობაგო"
+
+msgid "Tunisia"
+msgstr "ტუნისი"
+
+msgid "Turkmenistan"
+msgstr "თურქმენეთი"
+
+msgid "Turks and Caicos Islands"
+msgstr ""
+"ტერქსისა და კაიკოსის "
+"კუნძულები"
+
+msgid "Tuvalu"
+msgstr "ტუვალუ"
+
+msgid "Uganda"
+msgstr "უგანდა"
+
+msgid "Ukraine"
+msgstr "უკრაინა"
+
+msgid "United Arab Emirates"
+msgstr ""
+"არაბთა გაერთიანებული "
+"საამიროები"
+
+msgid "United Kingdom"
+msgstr "გაერთიანებული სამეფო"
+
+msgid "United States"
+msgstr "შეერთებული შტატები"
+
+msgid "Uruguay"
+msgstr "ურუგვაი"
+
+msgid "Uzbekistan"
+msgstr "უზბეკეთი"
+
+msgid "Vanuatu"
+msgstr "ვანუატუ"
+
+msgid "Venezuela"
+msgstr "ვენესუელა"
+
+msgid "Wallis and Futuna"
+msgstr "უოლისი და ფუტუნა"
+
+msgid "Yemen"
+msgstr "იემენი"
+
+msgid "Zambia"
+msgstr "ზამბია"
+
+msgid "Zimbabwe"
+msgstr "ზიმბაბვე"
+
+msgid "Database username"
+msgstr ""
+"მონაცემთა ბაზის "
+"მომხმარებლი"
+
+msgid "Database password"
+msgstr "მონაცემთა ბაზის პაროლი"
+
+msgid "Database name"
+msgstr "მონაცემთა ბაზის სახელი"
+
+msgid "Add user"
+msgstr "მომხმარებლის დამატება"
+
+msgid "Port"
+msgstr "პორტი"
+
+msgid "Authoring information"
+msgstr ""
+"ინფორმაცია ავტორის "
+"შესახებ"
+
+msgid "Authored on"
+msgstr "დაიწერა"
+
+msgid "Hidden"
+msgstr "დამალული"
+
+msgid "Site language"
+msgstr "საიტის ენა"
+
+msgid "Change"
+msgstr "შეცვლა"
+
+msgid "English"
+msgstr "ინგლისური"
+
+msgid "Messages"
+msgstr "შეტყობინებები"
+
+msgid "Edit term"
+msgstr "ტერმინის შესწორება"
+
+msgid "Switch"
+msgstr "გადართვა"
+
+msgid "Allowed HTML tags"
+msgstr "ნებადართული HTML ტეგები"
+
+msgid "Sources"
+msgstr "წყაროები"
+
+msgid "Add menu"
+msgstr "მენიუს დამატება"
+
+msgid "menu"
+msgstr "მენიუ"
+
+msgid "‹ previous"
+msgstr "‹ წინა"
+
+msgid "next ›"
+msgstr "შემდეგი ›"
+
+msgid "Result"
+msgstr "შედეგი"
+
+msgid "Browser"
+msgstr "ბრაუზერი"
+
+msgid "Titles only"
+msgstr "მხოლოდ სათაურები"
+
+msgid "Full text"
+msgstr "სრული ტექსტი"
+
+msgid "Source"
+msgstr "წყარო"
+
+msgid "Add Block"
+msgstr "ბლოკის დამატება"
+
+msgid "published"
+msgstr "გამოქვეყნებული"
+
+msgid "Member for"
+msgstr "წევრი"
+
+msgid "@time ago"
+msgstr "@time წინ"
+
+msgid "Front page"
+msgstr "მთავარი გვერდი"
+
+msgid "Deleted"
+msgstr "წაშლილი"
+
+msgid "Languages"
+msgstr "ენები"
+
+msgid "Today"
+msgstr "დღეს"
+
+msgid "Edit menu"
+msgstr "მენიუს რედაქტირება"
+
+msgid "Delete menu"
+msgstr "მენიუს წაშლა"
+
+msgid "Minimum height"
+msgstr "მინიმალური სიმაღლე"
+
+msgid "Minimum width"
+msgstr "მინიმალური სიგანე"
+
+msgid "Configure block"
+msgstr "ბლოკის კონფიგურირება"
+
+msgid "Jan"
+msgstr "იან"
+
+msgid "Feb"
+msgstr "თებ"
+
+msgid "Mar"
+msgstr "მარ"
+
+msgid "Apr"
+msgstr "აპრ"
+
+msgid "Jun"
+msgstr "ივნ"
+
+msgid "Jul"
+msgstr "ივლ"
+
+msgid "Aug"
+msgstr "აგვ"
+
+msgid "Sep"
+msgstr "სექ"
+
+msgid "Oct"
+msgstr "ოქტ"
+
+msgid "Nov"
+msgstr "ნოე"
+
+msgid "Dec"
+msgstr "დეკ"
+
+msgid "Hour"
+msgstr "საათი"
+
+msgid "Minute"
+msgstr "წუთი"
+
+msgid "Second"
+msgstr "წამი"
+
+msgid "Posts"
+msgstr "პოსტები"
+
+msgid "author"
+msgstr "ავტორი"
+
+msgid "Fixed"
+msgstr "ფიქსირებული"
+
+msgid "Revert"
+msgstr "დაბრუნება"
+
+msgid "Empty"
+msgstr "ცარიელი"
+
+msgid "Greater than"
+msgstr "მეტი ვიდრე"
+
+msgid "Less than"
+msgstr "ნაკლები ვიდრე"
+
+msgid "Buttons"
+msgstr "ღილაკები"
+
+msgid "Log out"
+msgstr "გამოსვლა"
+
+msgid "characters"
+msgstr "სიმბოლოები"
+
+msgid "Su"
+msgstr "კვი"
+
+msgid "Mo"
+msgstr "ორშ"
+
+msgid "Tu"
+msgstr "სამ"
+
+msgid "We"
+msgstr "ოთხ"
+
+msgid "Th"
+msgstr "ხუთ"
+
+msgid "Fr"
+msgstr "პარ"
+
+msgid "Sa"
+msgstr "შაბ"
+
+msgid "First day of week"
+msgstr "კვირის პირველი დღე"
+
+msgid "Left"
+msgstr "მარცხნივ"
+
+msgid "Right"
+msgstr "მარჯვნივ"
+
+msgid "Seconds"
+msgstr "წამი"
+
+msgid "role"
+msgstr "როლი"
+
+msgid "Info"
+msgstr "ინფო"
+
+msgid "People"
+msgstr "მომხმარებლები"
+
+msgid "Site information"
+msgstr "ინფორმაცია საიტზე"
+
+msgid "Blocked"
+msgstr "დაბლოკილი"
+
+msgid ""
+"Deleting a term will delete all its children if there are any. This "
+"action cannot be undone."
+msgstr ""
+"ტერმინის წაშლა მისი ყველა "
+"შვილობილი ტერმინის "
+"წაშლას გამოიწვევს (თუ "
+"ასეთი არსებობს). ამ "
+"მოქმედების გაუქმება "
+"შეუძლებელია."
+
+msgid "Parent term"
+msgstr "მშობელი ტერმინი"
+
+msgid "Parent terms"
+msgstr "მშობელი ტერმინები"
+
+msgid "Syndicate"
+msgstr "სინდიკატი"
+
+msgid "Books"
+msgstr "წიგნები"
+
+msgid "Style"
+msgstr "სტილი"
+
+msgid "Forums"
+msgstr "ფორუმები"
+
+msgid "The specified passwords do not match."
+msgstr ""
+"მითითებული პაროლი არ "
+"ემთხვევა."
+
+msgid "Session"
+msgstr "სესია"
+
+msgid "No forums defined"
+msgstr "ფორუმები არ არსებობს"
+
+msgid "This topic has been moved"
+msgstr "ეს თემა გადატანილია"
+
+msgid "Permissions"
+msgstr "უფლებები"
+
+msgid "Your settings have been saved."
+msgstr ""
+"თქვენი პარამეტრები "
+"შენახულია."
+
+msgid "Cron"
+msgstr "კრონი"
+
+msgid "Plugin"
+msgstr "ჩანართი"
+
+msgid "Link color"
+msgstr "ბმულის ფერი"
+
+msgid "Fiji"
+msgstr "ფიჯი"
+
+msgid "Falkland Islands"
+msgstr "ფოლკლენდის კუნძულები"
+
+msgid "Saint Kitts and Nevis"
+msgstr "სენტ-კიტსი და ნევისი"
+
+msgid "South Korea"
+msgstr "სამხრეთი კორეა"
+
+msgid "Saint Lucia"
+msgstr "სენტ-ლუსია"
+
+msgid "Saint Helena"
+msgstr "წმინდა ელენეს კუნძული"
+
+msgid "French Southern Territories"
+msgstr ""
+"საფრანგეთის სამხრეთული "
+"ტერიტორია"
+
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+"სენტ-ვინსენტი და "
+"გრენადინები"
+
+msgid "British Virgin Islands"
+msgstr ""
+"ბრიტანეთის ვირჯინის "
+"კუნძულები"
+
+msgid "U.S. Virgin Islands"
+msgstr "აშშ-ის ვირჯინის კუნძულები"
+
+msgid "Vietnam"
+msgstr "ვიეტნამი"
+
+msgid "Guernsey"
+msgstr "გერნსი"
+
+msgid "Jersey"
+msgstr "ჯერსი"
+
+msgid "User name"
+msgstr "მომხმარებლის სახელი"
+
+msgid "Not published"
+msgstr "არ არის გამოქვეყნებული"
+
+msgid "File settings"
+msgstr "ფაილის პარამეტრები"
+
+msgid "Formats"
+msgstr "ფორმატები"
+
+msgid "New comments"
+msgstr "ახალი კომენტარები"
+
+msgid "New"
+msgstr "ახალი"
+
+msgid "Login attempt failed for %user."
+msgstr ""
+"%user-ის სისტემაში შესვლა ვერ "
+"მოხერხდა."
+
+msgid "‹ Previous"
+msgstr "‹ წინა"
+
+msgid "Next ›"
+msgstr "შემდეგი ›"
+
+msgid "Oldest first"
+msgstr "ჯერ ძველები"
+
+msgid "Themes"
+msgstr "თემები"
+
+msgid "Multilingual"
+msgstr "მრავალენოვანი"
+
+msgid "JPEG quality"
+msgstr "JPEG-ის ხარისხი"
+
+msgid "%"
+msgstr "%"
+
+msgid "Content options"
+msgstr "კონტენტის პარამეტრები"
+
+msgid "not published"
+msgstr "არ არის გამოქვეყნებული"
+
+msgid "Published comments"
+msgstr ""
+"გამოქვეყნებული "
+"კომენტარები"
+
+msgid "Loading..."
+msgstr "იტვირთება..."
+
+msgid "Protected"
+msgstr "დაცული"
+
+msgid "Comment settings"
+msgstr "კომენტარის პარამეტრები"
+
+msgid "Sticky"
+msgstr "მიმაგრებული"
+
+msgid "Contact settings"
+msgstr "კონტენტის პარამეტრები"
+
+msgid "Processing"
+msgstr "დამუშავება"
+
+msgid "Temporary directory"
+msgstr "დროებითი დირექტორია"
+
+msgid "File upload error. Could not move uploaded file."
+msgstr ""
+"შეცდომა ფაილის "
+"ატვირთვისას. ატვირთული "
+"ფაილის გადაადგილება ვერ "
+"მოხერხდა."
+
+msgid "User status"
+msgstr "მომხმარებლის სტატუსი"
+
+msgid "Next page"
+msgstr "შემდეგი გვერდი"
+
+msgid "Shortcuts"
+msgstr "სწრაფი ბმულები"
+
+msgid "Shortcut"
+msgstr "სწრაფი ბმული"
+
+msgid "Default value"
+msgstr "საწყისი მნიშვნელობა"
+
+msgid "Timezone"
+msgstr "სასაათო სარტყელი"
+
+msgid "Password strength:"
+msgstr "პაროლის მდგრადობა:"
+
+msgid "Passwords match:"
+msgstr ""
+"პაროლები ერთმანეთს "
+"ემთხვევა:"
+
+msgid "Slogan"
+msgstr "სლოგანი"
+
+msgid "Anonymous user"
+msgstr "Anonymous user"
+
+msgid "Enabled modules"
+msgstr "ჩართული მოდულები"
+
+msgid "Please wait..."
+msgstr "გთხოვთ დაიცადოთ..."
+
+msgid "Not translated"
+msgstr "არ არის თარგმნილი"
+
+msgid "Translatable"
+msgstr "თარგმნადი"
+
+msgid "Show blocks"
+msgstr "ბლოკების ჩვენება"
+
+msgid "Go to first page"
+msgstr "პირველ გვერდზე გადასვლა"
+
+msgid "Go to last page"
+msgstr "ბოლო გვერდზე გადასვლა"
+
+msgid "Plugins"
+msgstr "ჩანართები"
+
+msgid "Delete role"
+msgstr "როლის წაშლა"
+
+msgid "PHP Code"
+msgstr "PHP კოდი"
+
+msgid "Basic configuration"
+msgstr "საბაზო კონფიგურაცია"
+
+msgid "British Indian Ocean Territory"
+msgstr ""
+"ბრიტანეთის ინდოეთის "
+"ოკეანის ტერიტორია"
+
+msgid "Croatia"
+msgstr "ხორვატია"
+
+msgid "Macedonia"
+msgstr "მაკედონია"
+
+msgid "Western Sahara"
+msgstr "დასავლეთი საჰარა"
+
+msgid "Language switcher"
+msgstr "ენის გადამრთველი"
+
+msgid "Block description"
+msgstr "ბლოკის აღწერა"
+
+msgid "Translation status"
+msgstr "თარგმანის სტატუსი"
+
+msgid "Blocks"
+msgstr "ბლოკები"
+
+msgid "Delete block"
+msgstr "ბლოკის წაშლა"
+
+msgid "Save blocks"
+msgstr "ბლოკების შენახვა"
+
+msgid "The block settings have been updated."
+msgstr ""
+"ბლოკის პარამეტრები "
+"განახლებულია."
+
+msgid "Save block"
+msgstr "ბლოკის შენახვა"
+
+msgid "The block configuration has been saved."
+msgstr ""
+"ბლოკის კონფიგურაცია "
+"შენახულია."
+
+msgid "Add vocabulary"
+msgstr "ლექსიკონის დამატება"
+
+msgid "Edit vocabulary"
+msgstr "ლექსიკონის რედაქტირება"
+
+msgid "Created new vocabulary %name."
+msgstr ""
+"შექმნილია ახალი "
+"ლექსიკონი %name."
+
+msgid "Updated vocabulary %name."
+msgstr ""
+"განახლებულია ლექსიკონი "
+"%name."
+
+msgid "Are you sure you want to delete the vocabulary %title?"
+msgstr ""
+"დარწმუნებული ხართ, რომ "
+"გსურთ ლექსიკონის %title წაშლა?"
+
+msgid ""
+"Deleting a vocabulary will delete all the terms in it. This action "
+"cannot be undone."
+msgstr ""
+"ლექსიკონის წაშლა მასში "
+"არსებული ყველა ტერმინის "
+"წაშლას გამოიწვევს. ამ "
+"მოქმედების გაუქმება "
+"შეუძლებელია."
+
+msgid "Deleted vocabulary %name."
+msgstr "წაშლილია ლექსიკონი %name."
+
+msgid "Above"
+msgstr "ზემოთ"
+
+msgid "Default time zone"
+msgstr ""
+"სტანდარტული სასაათო "
+"სარტყელი"
+
+msgid "Manage fields"
+msgstr "ველების მართვა"
+
+msgid "Add field"
+msgstr "ველის დამატება"
+
+msgid "Add a new field"
+msgstr "ახალი ველის დამატება"
+
+msgid "Save field settings"
+msgstr ""
+"ველის პარამეტრების "
+"შენახვა"
+
+msgid "The update has encountered an error."
+msgstr "განახლებაში შეცდომაა."
+
+msgid "Minimum"
+msgstr "მინიმუმი"
+
+msgid "Publish"
+msgstr "გამოქვეყნება"
+
+msgid "Permission"
+msgstr "უფლება"
+
+msgid "More information"
+msgstr "დამატებითი ინფორმაცია"
+
+msgid "Italic"
+msgstr "დახრილი"
+
+msgid "Text Editor"
+msgstr "ტექსტური რედაქტორი"
+
+msgid "Hide"
+msgstr "დამალვა"
+
+msgid "Anonymous commenting"
+msgstr "ანონიმურად კომენტირება"
+
+msgid "Anonymous posters may not enter their contact information"
+msgstr ""
+"ანონიმურ ავტორებს "
+"შეუძლიათ, არ დატოვონ "
+"თავიანთი საკონტაქტო "
+"ინფორმაცია."
+
+msgid "Anonymous posters may leave their contact information"
+msgstr ""
+"ანონიმურ ავტორებს "
+"შეუძლიათ დატოვონ "
+"თავიანთი საკონტაქტო "
+"ინფორმაცია."
+
+msgid "Anonymous posters must leave their contact information"
+msgstr ""
+"ანონიმურმა ავტორებმა "
+"უნდა დატოვონ თავიანთი "
+"საკონტაქტო ინფორმაცია."
+
+msgid "Default comment setting"
+msgstr ""
+"კომენტარის საწყისი "
+"პარამეტრები"
+
+msgid ""
+"The content of this field is kept private and will not be shown "
+"publicly."
+msgstr ""
+"ამ ველის კონტენტი პირადია "
+"და არ გამოჩნდება."
+
+msgid "parent"
+msgstr "მშობელი"
+
+msgid "Date - newest first"
+msgstr "თარიღი - ჯერ უახლესი"
+
+msgid "1 comment"
+msgid_plural "@count comments"
+msgstr[0] "1 კომენტარი"
+msgstr[1] "@count კომენტარი"
+
+msgid "1 new comment"
+msgid_plural "@count new comments"
+msgstr[0] "1 ახალი კომენტარი"
+msgstr[1] "@count ახალი კომენტარი"
+
+msgid "Global"
+msgstr "გლობალური"
+
+msgid "Show descriptions"
+msgstr "აღწერების ჩვენება"
+
+msgid "Language code"
+msgstr "ენის კოდი"
+
+msgid "Authenticated user"
+msgstr "Authenticated user"
+
+msgid "Menu link title"
+msgstr "მენიუს ბმულის სახელი"
+
+msgid "Menu name"
+msgstr "მენიუს სახელი"
+
+msgid "Page not found"
+msgstr "გვერდი ვერ მოიძებნა"
+
+msgid "More help"
+msgstr "მეტი დახმარება"
+
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
+msgid "« first"
+msgstr "« პირველი"
+
+msgid "The directory %directory does not exist."
+msgstr ""
+"%directory დირექტორია არ "
+"არსებობს."
+
+msgid "No comments available."
+msgstr "კომენტარები არ არსებობს."
+
+msgid "empty"
+msgstr "ცარიელი"
+
+msgid "@type: updated %title."
+msgstr "@type: განახლებულია %title."
+
+msgid "@type: added %title."
+msgstr "@type: დამატებულია %title."
+
+msgid "Add role"
+msgstr "როლის დამატება"
+
+msgid "- None selected -"
+msgstr "- არცერთი არ არის შერჩეული -"
+
+msgid "Clean URLs"
+msgstr "მკაფიო URL-ები"
+
+msgid "1 year"
+msgid_plural "@count years"
+msgstr[0] "1 წელი"
+msgstr[1] "@count წელი"
+
+msgid "1 week"
+msgid_plural "@count weeks"
+msgstr[0] "1 კვირა"
+msgstr[1] "@count კვირა"
+
+msgid "1 min"
+msgid_plural "@count min"
+msgstr[0] "1 წუთი"
+msgstr[1] "@count წუთი"
+
+msgid "1 sec"
+msgid_plural "@count sec"
+msgstr[0] "1 წამი"
+msgstr[1] "@count წამი"
+
+msgid "Module name"
+msgstr "მოდულის სახელი"
+
+msgid "Page settings"
+msgstr "გვერდის პარამეტრები"
+
+msgid "The file could not be created."
+msgstr "ფაილი ვერ შეიქმნა."
+
+msgid "Not secure!"
+msgstr "არ არის უსაფრთხო!"
+
+msgid "Recommended version:"
+msgstr "რეკომენდირებული ვერსია:"
+
+msgid "Security update:"
+msgstr "უსაფრთხოების განახლება:"
+
+msgid "Latest version:"
+msgstr "ბოლო ვერსია:"
+
+msgid "Or"
+msgstr "ან"
+
+msgid "Install profile"
+msgstr "პროფილის ინსტალაცია"
+
+msgid "File directory"
+msgstr "ფაილების დირექტორია"
+
+msgid "Web server"
+msgstr "ვებსერვერი"
+
+msgid "Memory limit"
+msgstr "მეხსიერების ლიმიტი"
+
+msgid "Translate"
+msgstr "თარგმნა"
+
+msgid "Web services"
+msgstr "ვებ სერვისები"
+
+msgid "Effect"
+msgstr "ეფექტი"
+
+msgid "For security reasons, your upload has been renamed to %filename."
+msgstr ""
+"უსაფრთხოების მიზნით "
+"თქვენი ატვირთული ფაილის "
+"სახელი შეიცვალა %filename-ით."
+
+msgid "Dates"
+msgstr "თარიღები"
+
+msgid "1 month"
+msgid_plural "@count months"
+msgstr[0] "1 თვე"
+msgstr[1] "@count months"
+
+msgid "Password field is required."
+msgstr ""
+"პაროლის ველი "
+"სავალდებულოა."
+
+msgid "Confirm password"
+msgstr "პაროლის დადასტურება"
+
+msgid "Run cron"
+msgstr "კრონის  გაშვება"
+
+msgid "The file %file could not be saved. An unknown error has occurred."
+msgstr ""
+"ფაილის %file დამახსოვრება "
+"ვერ მოხერხდა. უცნობი "
+"შეცდომა."
+
+msgid "Only files with the following extensions are allowed: %files-allowed."
+msgstr ""
+"მხოლოდ შემდეგი "
+"გაფართოების ფაილებია "
+"დაშვებული: %files-allowed."
+
+msgid "The file is %filesize exceeding the maximum file size of %maxsize."
+msgstr ""
+"ფაილი %filesize აღემატება "
+"ფაილის %maxsize-ის მაქსიმალურ "
+"ზომას."
+
+msgid "The file is %filesize which would exceed your disk quota of %quota."
+msgstr ""
+"ფაილის ზომაა %filesize, რაც "
+"აღემატება თქვენი დისკის "
+"ქვოტას %quota."
+
+msgid ""
+"Upload error. Could not move uploaded file %file to destination "
+"%destination."
+msgstr ""
+"ატვირთვის შეცდომა. "
+"ატვირთული ფაილის %file "
+"დანიშნულების ადგილზე "
+"%destination გადატანა ვერ "
+"მოხერხდა."
+
+msgid "Save and continue"
+msgstr "შენახვა და გაგრძელება"
+
+msgid "Maximum height"
+msgstr "მაქსიმალური სიმაღლე"
+
+msgid "Maximum width"
+msgstr "მაქსიმალური სიგანე"
+
+msgid ""
+"An illegal choice has been detected. Please contact the site "
+"administrator."
+msgstr ""
+"დაფიქსირდა არასწორი "
+"არჩევანი. გთხოვთ, "
+"დაუკავშირდეთ საიტის "
+"ადმინისტრატორს."
+
+msgid "MIME type"
+msgstr "MIME ტიპი"
+
+msgid "The MIME type of the file."
+msgstr "ფაილის MIME ტიპი"
+
+msgid "PHP extensions"
+msgstr "PHP გაფართოებები"
+
+msgid "Administration pages"
+msgstr "ადმინისტრირების გვერდები"
+
+msgid "0 sec"
+msgstr "0 წამი"
+
+msgid "Abbreviation"
+msgstr "აბრევიატურა"
+
+msgid "Administration menu"
+msgstr "ადმინისტრირების მენიუ"
+
+msgid "Attempting to re-run cron while it is already running."
+msgstr ""
+"cron-ის ხელახლა გაშვების "
+"მცდელობა, მაშინ როცა ის "
+"უკვე გაშვებულია."
+
+msgid "Cron run completed."
+msgstr ""
+"cron-ის გაშვება "
+"დასრულებულია."
+
+msgid "- All -"
+msgstr "- ყველა -"
+
+msgid "Machine-readable name"
+msgstr ""
+"მანქანურად-კითხვადი "
+"სახელი"
+
+msgid "The requested page could not be found."
+msgstr ""
+"მოთხოვნილი გვერდის პოვნა "
+"ვერ მოხერხდა."
+
+msgid "Requirements problem"
+msgstr "მოთხოვნების პრობლება"
+
+msgid "Database configuration"
+msgstr ""
+"მონაცემთა ბაზის "
+"კონფიგურაცია"
+
+msgid "Select an installation profile"
+msgstr ""
+"ინსტალაციის პროფილის "
+"შერჩევა"
+
+msgid "Choose language"
+msgstr "ენის არჩევა"
+
+msgid "Select language"
+msgstr "ენის არჩევა"
+
+msgid "No profiles available"
+msgstr "პროფილები არ არსებობს"
+
+msgid "Drupal already installed"
+msgstr ""
+"Drupal-ი უკვე "
+"დაინსტალირებულია"
+
+msgid "Installing @drupal"
+msgstr "@drupal-ის ინსტალაცია"
+
+msgid "The installation has encountered an error."
+msgstr "შეცდომა ინსტალაციის დროს."
+
+msgid "Configure site"
+msgstr "საიტის კონფიგურირება"
+
+msgid "Installed %module module."
+msgstr "დაყენებულია %module მოდული."
+
+msgid "Choose profile"
+msgstr "პროფილის არჩევა"
+
+msgid "Verify requirements"
+msgstr "მოთხოვნების შემოწმება"
+
+msgid "Set up database"
+msgstr "მონაცემთა ბაზის დაყენება"
+
+msgid "Set up translations"
+msgstr "თარგმანის დაყენება"
+
+msgid "Install site"
+msgstr "საიტის ინსტალაცია"
+
+msgid "Finish translations"
+msgstr "თარგმანის დასრულება"
+
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
+
+msgid "Update notifications"
+msgstr "განახლების შეტყობინებები"
+
+msgid "Check for updates automatically"
+msgstr ""
+"ავტომატური შემოწმება "
+"განახლებებზე"
+
+msgid "1 byte"
+msgid_plural "@count bytes"
+msgstr[0] "1 ბაიტი"
+msgstr[1] "@count ბაიტი"
+
+msgid ""
+"The machine-readable name must contain only lowercase letters, "
+"numbers, and underscores."
+msgstr ""
+"კომპიუტერისათვის აღქმადი "
+"სახელწოდება უნდა "
+"შედგებოდეს მხოლოდ "
+"ლათინური ნუსხური "
+"ასოებისგან, ციფრებისა და "
+"ქვედა ტირეებისგან."
+
+msgid "Upload logo image"
+msgstr "ლოგოს ატვირთვა"
+
+msgid "Date and time"
+msgstr "თარიღი და დრო"
+
+msgid "Interface"
+msgstr "ინტერფეისი"
+
+msgid "@size KB"
+msgstr "@size კბ"
+
+msgid "@size MB"
+msgstr "@size მბ"
+
+msgid "@size GB"
+msgstr "@size გბ"
+
+msgid "@size TB"
+msgstr "@size ტბ"
+
+msgid "@size PB"
+msgstr "@size პბ"
+
+msgid "@size EB"
+msgstr "@size ებ"
+
+msgid "@size ZB"
+msgstr "@size ზბ"
+
+msgid "@size YB"
+msgstr "@size YB"
+
+msgid "All messages"
+msgstr "ყველა შეტყობინება"
+
+msgid "The name of the site."
+msgstr "საიტის სახელი."
+
+msgid "Add format"
+msgstr "ფორმატის დამატება"
+
+msgid "Delete date format"
+msgstr "თარიღის ფორმატის წაშლა"
+
+msgid "Regional settings"
+msgstr "რეგიონალური პარამეტრები"
+
+msgid "Structure"
+msgstr "სტრუქტურა"
+
+msgid "The slogan of the site."
+msgstr "საიტის სლოგანი."
+
+msgid "You are not allowed to access this page."
+msgstr ""
+"თქვენ არ გაგაჩნიათ "
+"წვდომის უფლება ამ "
+"გვერდისთვის."
+
+msgid "Connection method"
+msgstr "კავშირის მეთოდი"
+
+msgid "Enter connection settings"
+msgstr ""
+"შეიყვანეთ კავშირის "
+"პარამეტრები"
+
+msgid "Change connection type"
+msgstr ""
+"კავშირის პარამეტრების "
+"შეცვლა"
+
+msgid "Site under maintenance"
+msgstr "საიტი რემონტშია"
+
+msgid "Table of files"
+msgstr "ფაილების ცხრილი"
+
+msgid "Text formats"
+msgstr "ტექსტის ფორმატები"
+
+msgid "Starting a discussion"
+msgstr "დისკუსიის დაწყება"
+
+msgid "Select a new effect"
+msgstr "აირჩიეთ ახალი ეფექტი"
+
+msgid "Style name"
+msgstr "სტილის სახელი"
+
+msgid "Update effect"
+msgstr "ეფექტის განახლება"
+
+msgid "Add effect"
+msgstr "ეფექტის დამატება"
+
+msgctxt "Long month name"
+msgid "January"
+msgstr "იანვარი"
+
+msgctxt "Long month name"
+msgid "February"
+msgstr "თებერვალი"
+
+msgctxt "Long month name"
+msgid "March"
+msgstr "მარტი"
+
+msgctxt "Long month name"
+msgid "April"
+msgstr "აპრილი"
+
+msgctxt "Long month name"
+msgid "May"
+msgstr "მაისი"
+
+msgctxt "Long month name"
+msgid "June"
+msgstr "ივნისი"
+
+msgctxt "Long month name"
+msgid "July"
+msgstr "ივლისი"
+
+msgctxt "Long month name"
+msgid "August"
+msgstr "აგვისტო"
+
+msgctxt "Long month name"
+msgid "September"
+msgstr "სექტემბერი"
+
+msgctxt "Long month name"
+msgid "October"
+msgstr "ოქტომბერი"
+
+msgctxt "Long month name"
+msgid "November"
+msgstr "ნოემბერი"
+
+msgctxt "Long month name"
+msgid "December"
+msgstr "დეკემბერი"
+
+msgid "Short format"
+msgstr "მოკლე ფორმატი"
+
+msgid "Medium format"
+msgstr "საშუალო ფორმატი"
+
+msgid "Long format"
+msgstr "გრძელი ფორმატი"
+
+msgid "Managing modules"
+msgstr "მოდულების მართვა"
+
+msgid "Public files"
+msgstr "საჯარო ფაილები"
+
+msgid "Temporary files"
+msgstr "დროებითი ფაილები"
+
+msgid "Update modules"
+msgstr "მოდულების განახლება"
+
+msgid "Delete IP address"
+msgstr "IP მისამართის წაშლა"
+
+msgid "Regional and language"
+msgstr "რეგიონი და ენა"
+
+msgid "Database support"
+msgstr ""
+"მონაცემთა ბაზის "
+"მხარდაჭერა"
+
+msgid "Site details"
+msgstr "საიტის დეტალები"
+
+msgid "Text Formats"
+msgstr "ტექსტის ფორმატები"
+
+msgid "Hot topic, new comments"
+msgstr ""
+"პოპულარული თემა, ახალი "
+"კომენტარები"
+
+msgid "Hot topic"
+msgstr "პოპულარული თემა"
+
+msgid "Normal topic"
+msgstr "ჩვეულებრივი თემა"
+
+msgid "Closed topic"
+msgstr "დახურული თემა"
+
+msgid "Nothing"
+msgstr "არაფერი"
+
+msgid "Next steps"
+msgstr "შემდეგი საფეხურები"
+
+msgid "Database system"
+msgstr "მონაცემთა ბაზის სისტემა"
+
+msgid "Database system version"
+msgstr "მონაცემთა ბაზის ვერსია"
+
+msgid "All"
+msgstr "ყველა"
+
+msgid "Enter your email address or username."
+msgstr ""
+"შეიყვანეთ თქვენი "
+"ელ.ფოსტის მისამართი"
+
+msgid "Email or username"
+msgstr "შეიყვანეთ ელ.ფოსტა "
+
+msgid "Enter the password that accompanies your email address."
+msgstr "შეიყვანეთ პაროლი "
+
+msgid "Create new account"
+msgstr "რეგისტრაცია"
+
+msgid "Reset your password"
+msgstr "პაროლის აღდგენა"
+
+msgid "Show"
+msgstr "ჩვენება"
+
+msgid ""
+"A valid email address. All emails from the system will be sent to this "
+"address. The email address is not made public and will only be used if "
+"you wish to receive a new password or wish to receive certain news or "
+"notifications by email."
+msgstr ""
+"შეიყვანეთ თქვენი ელ.ფოსტა. "
+"ყველა შეტყობინება "
+"მოგივათ მითითებულ "
+"მისამართზე. ინფორმაცია "
+"კონფიდენციალურია და "
+"იქნება გამოყენებული "
+"მხოლოდ თქვენი "
+"სურვილისამებრ ახალი "
+"პაროლის და "
+"შეტყობინებების "
+"მისაღებად."
+
+msgid "Recommendations to make your password stronger:"
+msgstr ""
+"ძლიერი პაროლისთვის "
+"გაითვალისწინეთ:"
+
+msgid "Make it at least 12 characters"
+msgstr "გახადეთ 12 სიმბოლოზე მეტი"
+
+msgid "Add lowercase letters"
+msgstr ""
+"დაამატეთ დაბალი "
+"რეგისტრის ასოები"
+
+msgid "Add uppercase letters"
+msgstr ""
+"დაამატეთ მაღალი "
+"რეგისტრის ასოები "
+
+msgid "Add numbers"
+msgstr "დაამატეთ ციფრები"
+
+msgid "Add punctuation"
+msgstr "დაამატეთ სასვენი ნიშნები"
+
+msgid "Make it different from your username"
+msgstr ""
+"პაროლი არ უნდა ემთხვეოდეს "
+"მომხმარებლის სახელს"
+
+msgid "Weak"
+msgstr "სუსტი"
+
+msgid "Strong"
+msgstr "ძლიერი"
+
+msgid "1 new"
+msgid_plural "@count new"
+msgstr[0] "1 ახალი"
+msgstr[1] "@count ახალი"
+
+msgid "Sizes"
+msgstr "ზომები"
+
+msgid "Provide a password for the new account in both fields."
+msgstr "შეიყვანეთ პაროლი"
+
+msgid ""
+"Password reset instructions will be sent to your registered email "
+"address."
+msgstr ""
+"პაროლის აღდგენის "
+"ინსტრუქციის სანახავად "
+"შეამოწმეთ თქვენი ელ.ფოსტა"
+

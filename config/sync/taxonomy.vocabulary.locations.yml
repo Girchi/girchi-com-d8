@@ -1,9 +1,0 @@
-uuid: 88c4236a-0463-4b38-962f-fb159adcac01
-langcode: und
-status: true
-dependencies: {  }
-name: Locations
-vid: locations
-description: ''
-hierarchy: 1
-weight: 0

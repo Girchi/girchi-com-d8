@@ -9,6 +9,7 @@ dependencies:
     - field.field.user.user.field_phone
     - field.field.user.user.field_politician
     - field.field.user.user.field_referral
+    - field.field.user.user.field_referral_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -24,17 +25,12 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  contact:
-    weight: 10
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_first_name:
-    weight: 5
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -42,7 +38,7 @@ content:
     type: string_textfield
     region: content
   field_last_name:
-    weight: 4
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -50,7 +46,7 @@ content:
     type: string_textfield
     region: content
   field_personal_id:
-    weight: 8
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -58,21 +54,21 @@ content:
     type: string_textfield
     region: content
   field_phone:
-    weight: 7
+    weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
   field_politician:
-    weight: 6
+    weight: 5
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_referral:
-    weight: 9
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -80,20 +76,23 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_referral_url:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   path:
     type: path
-    weight: 3
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-  translation:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   user_picture:
     type: image_image
     weight: 0
@@ -103,6 +102,8 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  contact: true
   google_analytics: true
   langcode: true
   language: true
+  translation: true

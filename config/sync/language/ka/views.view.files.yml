@@ -46,7 +46,3 @@ display:
             next: 'შემდეგი ›'
           expose:
             items_per_page_options_all_label: '- ყველა -'
-      arguments:
-        fid:
-          exception:
-            title: ყველა

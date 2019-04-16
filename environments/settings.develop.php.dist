@@ -36,7 +36,7 @@ assert_options(ASSERT_ACTIVE, TRUE);
 /**
  * Enable local development services.
  */
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/services.local.yml';
 
 /**
  * Show all error messages, with backtrace information.
@@ -126,11 +126,11 @@ $config['devel.settings']['debug_mail_directory'] = 'public://tmp';
  * Database settings
  */
 $databases['default']['default'] = array (
-  'database' => 'omedia_drupal',
-  'username' => 'root',
-  'password' => '',
-  'prefix' => 'omdrpl_',
-  'host' => '127.0.0.1',
+  'database' => 'girchi',
+  'username' => 'girchi',
+  'password' => 'girchi',
+  'prefix' => 'girchidrpl_',
+  'host' => 'mariadb',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
@@ -141,11 +141,13 @@ $databases['default']['default'] = array (
  * @see https://www.drupal.org/node/1992030
  */
 $settings['trusted_host_patterns'][] = '^localhost$';
+$settings['trusted_host_patterns'][] = '^.+\.localhost$';
 $settings['trusted_host_patterns'][] = '^.+\.omedialab\.com$';
-$settings['trusted_host_patterns'][] = '^.+\.dev$';
+$settings['trusted_host_patterns'][] = '^.+\.girchi\.com$';
 
 /**
  * Config indicator
  */
 $config['environment_indicator.indicator']['name'] = 'DEVELOPMENT';
 $config['config_split.config_split.dev']['status'] = TRUE;
+$settings['custom_translations_directory'] = '../custom-translations';

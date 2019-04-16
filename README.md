@@ -14,8 +14,10 @@
 1. `git clone git@github.com:Girchi/girchi-com-d8.git`;
 2. `cd girchi-com-d8`;
 3. `docker-compose up -d`;
-4. `docker-compose exec php composer install`;
-5. `docker-compose exec php drush si --existing-config --account-pass=1234 -y -vvv`
+4. `./scripts/pre-install.sh`
+5. `docker-compose exec php composer install`;
+6. `docker-compose exec php drush si --existing-config --account-pass=1234 -y -vvv`
+7. `docker-compose exec php drush language-import`
 
 ინსტალაციის შემდეგ პროექტის უნდა მუშაობდეს შემდეგ მისამართზე: [http://girchi.docker.localhost](http://girchi.docker.localhost)
 

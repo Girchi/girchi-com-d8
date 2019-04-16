@@ -1,0 +1,20 @@
+uuid: 703335f7-6730-469f-9e89-da6845a91110
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_referral_url
+  module:
+    - user
+id: user.user.field_referral_url
+field_name: field_referral_url
+entity_type: user
+bundle: user
+label: 'Referral URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -212,6 +212,7 @@
     "drupal/diff": "^1.0@RC",
     "drupal/disable_messages": "^1.0",
     "drupal/dropzonejs": "dev-1.x",
+    "drupal/drush_language": "^1.0@RC",
     "drupal/editor_advanced_link": "^1.4",
     "drupal/editor_file": "^1.2",
     "drupal/email_registration": "^1.0@RC",

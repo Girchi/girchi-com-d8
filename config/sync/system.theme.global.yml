@@ -9,9 +9,9 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: ''
+  path: logo.png
   url: ''
-  use_default: true
+  use_default: false
 _core:
   default_config_hash: 9rAU4Pku7eMBQxauQqAgjzlcicFZ2As6zEa6zvTlCB8
 langcode: ka

@@ -3,16 +3,18 @@ schemas:
 _core:
   default_config_hash: 1uFogeFphl0Hg6oVCacZZ8mM_0wMZ7PS_RrmLbK5tf0
 favicon:
-  mimetype: image/vnd.microsoft.icon
-  path: ''
+  mimetype: image/png
+  path: logo.png
+  url: 'http://girchi.docker.localhost/themes/contrib/bootstrap/favicon.ico'
+  use_default: false
+logo:
+  path: logo.png
   url: ''
-  use_default: true
+  use_default: false
 features:
   comment_user_picture: true
   comment_user_verification: true
   favicon: true
   node_user_picture: true
-logo:
-  path: ''
-  url: ''
-  use_default: true
+table_responsive: '-1'
+table: ''

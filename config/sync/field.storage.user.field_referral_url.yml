@@ -1,14 +1,16 @@
-uuid: c6e0e94b-1d69-42e3-8731-95850fd8fdae
-langcode: ka
+uuid: 2e49415f-3265-4ed0-bc00-85a17f28a495
+langcode: en
 status: true
 dependencies:
   module:
-    - taxonomy
-id: taxonomy_term.field_table_adjustments
-field_name: field_table_adjustments
-entity_type: taxonomy_term
-type: string_long
+    - user
+id: user.field_referral_url
+field_name: field_referral_url
+entity_type: user
+type: string
 settings:
+  max_length: 255
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false
