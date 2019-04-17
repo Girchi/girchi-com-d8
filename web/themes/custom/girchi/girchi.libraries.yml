@@ -1,1 +1,8 @@
 global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/global.css: {}
+  js:
+    js/global.js: {}
+  dependencies:
