@@ -5,6 +5,8 @@
  * Functions to support theming in the girchi theme.
  */
 
+include drupal_get_path('theme', 'girchi') . '/girchi.theme-suggestions.inc';
+
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
