@@ -1,0 +1,10 @@
+name: Girchi
+type: theme
+description: 'Custom theme for Girchi portal'
+package: Girchi
+core: 8.x
+libraries:
+  - girchi/global-styling
+ 
+base theme: false
+
