@@ -8,3 +8,7 @@ libraries:
  
 base theme: false
 
+regions:
+  header: Header
+  content: Content
+  footer: Footer
