@@ -16,6 +16,7 @@ permissions:
   - 'administer taxonomy'
   - 'administer users'
   - 'assign content_manager role'
+  - 'assign manager role'
   - 'create article content'
   - 'delete any article content'
   - 'delete article revisions'
