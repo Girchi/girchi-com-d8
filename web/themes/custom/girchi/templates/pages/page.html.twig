@@ -1,0 +1,21 @@
+{% block page_head %}
+
+    {% if page.header %}
+        {{ page.header }}
+    {% endif %}
+
+{% endblock %}
+
+{% block page_main %}
+
+    {% if page.content %}
+        {{ page.content }}
+    {% endif %}
+
+{% endblock %}
+
+{% block page_foot %}
+
+    {{ page.footer }}
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if not label_hidden %}
+  {{ label }}
+{% endif %}
+{% if items%}
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,10 @@
+{#
+  Blank block without markup.
+  See HOOK_theme_suggestions_block_alter() in girchimenu--main.html.twig.theme to attach this template to your block by its ID.
+#}
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {{ content }}
