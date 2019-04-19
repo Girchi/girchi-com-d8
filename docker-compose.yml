@@ -214,7 +214,7 @@ services:
 #      - ./:/var/www/html
 #    command: sh -c 'yarn install && yarn run start'
 
-  ui-builder:
+  ui_builder:
     image: node:$NODE_TAG
     container_name: "${PROJECT_NAME}_ui_builder"
     volumes:
