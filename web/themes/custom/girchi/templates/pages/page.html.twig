@@ -1,0 +1,27 @@
+{% block page_head %}
+    {% if page.header_nav %}
+        {{ page.header_nav }}
+    {% endif %}
+{% endblock %}
+
+{% block page_main %}
+
+    {% if page.content_top %}
+        {{ page.content_top }}
+    {% endif %}
+
+    {% if page.content %}
+        {{ page.content }}
+    {% endif %}
+
+    {% if page.content_bottom %}
+        {{ page.content_bottom }}
+    {% endif %}
+
+{% endblock %}
+
+{% block page_foot %}
+
+    {{ page.footer }}
+
+{% endblock %}

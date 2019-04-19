@@ -1,0 +1,20 @@
+{#
+/**
+ * CLEAN template for views - unformatted list.
+ * Views rows get wrapper div's only if rows should have default classes.
+ * So if your custom class is not applied, turn on Show default classess on views rows.
+ *
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+  {% if default_row_class %}
+    <div{{ row.attributes.addClass(['views-row']) }}>
+  {% endif %}
+      {{ row.content }}
+  {% if default_row_class %}
+    </div>
+  {% endif %}
+{% endfor %}

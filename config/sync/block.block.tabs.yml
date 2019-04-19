@@ -1,0 +1,20 @@
+uuid: 419828eb-e61e-4d60-b790-e2f9132c578f
+langcode: ka
+status: true
+dependencies:
+  theme:
+    - girchi
+id: tabs
+theme: girchi
+region: header_nav
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

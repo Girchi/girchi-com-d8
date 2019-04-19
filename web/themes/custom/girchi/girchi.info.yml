@@ -1,0 +1,20 @@
+name: Girchi
+type: theme
+description: 'Custom theme for Girchi portal'
+package: Girchi
+core: 8.x
+libraries:
+  - girchi/global-styling
+
+base theme: false
+
+regions:
+  header: Header
+  header_nav: Header Navigation
+  content_top: Content Top
+  content: Content
+  content_bottom: Content Bottom
+  sidebar_primary: Primary Sidebar
+  sidebar_secondary: Secondary Sidebar
+  footer_nav: Footer Navigation
+  footer: Footer

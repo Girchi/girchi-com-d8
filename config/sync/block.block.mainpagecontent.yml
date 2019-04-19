@@ -1,0 +1,20 @@
+uuid: 928136c2-05ea-440b-93ae-ba5c2b2fa820
+langcode: ka
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - girchi
+id: mainpagecontent
+theme: girchi
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: visible
+visibility: {  }
