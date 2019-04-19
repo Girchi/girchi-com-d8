@@ -1,0 +1,20 @@
+uuid: a34e8216-89f8-4832-a162-da80c7b6ff35
+langcode: ka
+status: true
+dependencies:
+  module:
+    - social_auth
+  theme:
+    - girchi
+id: socialauthlogin_2
+theme: girchi
+region: content_top
+weight: -2
+provider: null
+plugin: social_auth_login
+settings:
+  id: social_auth_login
+  label: 'Social Auth Login'
+  provider: social_auth
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 7375c902-65b4-4648-8817-ece29a5c1377
+langcode: ka
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - girchi
+id: mainnavigation
+theme: girchi
+region: header_nav
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

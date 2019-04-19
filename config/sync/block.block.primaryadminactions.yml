@@ -1,0 +1,18 @@
+uuid: 536908a2-0853-4ba9-9e4d-ddc4d944bb08
+langcode: ka
+status: true
+dependencies:
+  theme:
+    - girchi
+id: primaryadminactions
+theme: girchi
+region: header_nav
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
