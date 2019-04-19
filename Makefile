@@ -34,11 +34,9 @@ logs:
 	@docker-compose logs -f $(filter-out $@,$(MAKECMDGOALS))
 
 build-ui:
-	@docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_ui_builder' --format "{{ .ID }}") sh -c 'rm -rf $(UI_TITLE)/ && git clone $(UI_REPO) && cd $(UI_TITLE)/ && yarn && yarn build'
+	@rm -rf ./front/{*,.[^.]*}
+	@docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_ui_builder' --format "{{ .ID }}") sh -c 'git clone $(UI_REPO) . && yarn && yarn build'
 	sudo chown $(USER):$(USER) ./front -R
-	@rm -rf ./front/$(UI_TITLE)/.git/
-	@cp -r ./front/$(UI_TITLE)/{*,.[^.]*} ./front
-	@rm -rf ./front/$(UI_TITLE)
 	@echo -e "\n\nGirchi UI successfully built in ./front folder!"
 
 install:
