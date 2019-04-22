@@ -2,6 +2,14 @@
 
 use Drupal\block\Entity\Block;
 
+function girchi_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+    if($hook == 'form' && !empty($variables['element']['#theme'][0])) {
+        $suggestions[] = 'form__' . $variables['element']['#theme'][0];
+    }
+}
+
+
+
 /**
  * Implements hook_theme_suggestions_user_alter().
  */
