@@ -45,7 +45,7 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url('<front>') }}">
                 <i class="icon-girchi-logo navbar-brand-lg mr-lg-4"></i>
                 <span
                         class="navbar-text text-success text-uppercase font-weight-bold d-none d-lg-inline"
@@ -66,12 +66,12 @@
             <div class="collapse navbar-collapse" id="navbarAuth">
                 <div class="ml-auto">
                     <a
-                            href="/user/login"
+                            href="{{ url("user.login") }}"
                             class="btn btn-success mr-lg-2 text-uppercase"
                     >
                         შესვლა
                     </a>
-                    <a href="/user/register" class="btn btn-warning text-uppercase">
+                    <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
                         რეგისტრაცია
                     </a>
                 </div>
