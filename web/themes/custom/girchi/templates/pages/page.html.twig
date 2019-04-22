@@ -1,7 +1,5 @@
 {% block page_head %}
-    {% if page.header_nav %}
-        {{ page.header_nav }}
-    {% endif %}
+    {% include '@girchi/header.htlm.twig' %}
 {% endblock %}
 
 {% block page_main %}
@@ -21,7 +19,5 @@
 {% endblock %}
 
 {% block page_foot %}
-
-    {{ page.footer }}
-
+    {% include '@girchi/footer.html.twig' %}
 {% endblock %}

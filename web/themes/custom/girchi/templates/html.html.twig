@@ -1,5 +1,6 @@
   {%
   set body_classes = [
+    'bg-light-silver',
     logged_in ? 'user-logged-in',
     not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
     node_type ? 'page-node',

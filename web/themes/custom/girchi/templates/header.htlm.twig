@@ -1,0 +1,85 @@
+{# Start of GeD Progress #}
+<div class="progress ged-progress d-none d-lg-flex">
+    <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 0%;"
+            aria-valuenow="60"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-used="500000"
+    >
+        <span class="progress-bar-label">
+          უკვე გაცემულია
+          <span class="progress-bar-value d-inline-flex align-items-center">
+            <i class="icon-ged"></i>0</span
+          >
+        </span>
+    </div>
+    <div class="progress-bar-total">
+        <span class="progress-bar-label">
+          განკუთვნილია
+          <span class="progress-bar-value d-inline-flex align-items-center">
+            <i class="icon-ged"></i>5 000 000 000</span
+          >
+        </span>
+    </div>
+</div>
+{#  End of GeD Progress #}
+
+<!-- Start of header -->
+<header class="bg-white">
+    <div class="container">
+        <!-- Start of nav -->
+        <nav
+                class="navbar navbar-expand-lg navbar-light border-bottom p-0 py-lg-4"
+        >
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="icon-girchi-logo navbar-brand-lg mr-lg-4"></i>
+                <span
+                        class="navbar-text text-success text-uppercase font-weight-bold d-none d-lg-inline"
+                >გირჩი</span
+                >
+            </a>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarAuth"
+                    aria-controls="navbarAuth"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="icon-user auth-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarAuth">
+                <div class="ml-auto">
+                    <a
+                            href="/user/login"
+                            class="btn btn-success mr-lg-2 text-uppercase"
+                    >
+                        შესვლა
+                    </a>
+                    <a href="/user/register" class="btn btn-warning text-uppercase">
+                        რეგისტრაცია
+                    </a>
+                </div>
+            </div>
+        </nav>
+        {% if page.header_nav %}
+            {{ page.header_nav }}
+        {% endif %}
+    </div>
+</header>
+<!-- End of header -->
