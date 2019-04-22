@@ -10,8 +10,8 @@ dependencies:
     - girchi
 id: useraccountmenu
 theme: girchi
-region: header_nav
-weight: 0
+region: content_top
+weight: -3
 provider: null
 plugin: 'system_menu_block:account'
 settings:

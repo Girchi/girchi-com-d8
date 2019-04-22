@@ -6,8 +6,8 @@ dependencies:
     - girchi
 id: tabs
 theme: girchi
-region: header_nav
-weight: 0
+region: content_top
+weight: -1
 provider: null
 plugin: local_tasks_block
 settings:

@@ -6,8 +6,8 @@ dependencies:
     - girchi
 id: primaryadminactions
 theme: girchi
-region: header_nav
-weight: 0
+region: content_top
+weight: -2
 provider: null
 plugin: local_actions_block
 settings:

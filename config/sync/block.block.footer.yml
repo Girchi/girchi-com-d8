@@ -1,22 +1,22 @@
-uuid: 7375c902-65b4-4648-8817-ece29a5c1377
+uuid: df6ea150-9285-4201-ae44-87faf5416bb2
 langcode: ka
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.footer
   module:
     - system
   theme:
     - girchi
-id: mainnavigation
+id: footer
 theme: girchi
-region: header_nav
-weight: -4
+region: footer
+weight: 0
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:footer'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Main navigation'
+  id: 'system_menu_block:footer'
+  label: Footer
   provider: system
   label_display: '0'
   level: 1
