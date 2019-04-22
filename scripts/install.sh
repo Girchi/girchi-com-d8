@@ -30,4 +30,4 @@ docker-compose exec php drush si --existing-config --account-pass=1234  -y -vvv
 echo -e "\n${BLUE}[6/6] Importing translations...\n\v${NONE}"
 docker-compose exec php drush language-import
 
-echo -e "\n${BLUE}HGirchi Website is ready${NONE} ${GREEN}\n\vWebsite${NONE}  - " ${GREEN}${WEBSITE}${NONE}"${GREEN}\n\vMailHog${NONE} - " ${GREEN}${MAILHOG}${NONE}"${GREEN}\n\vphpMyAdmin${NONE} - " ${GREEN}${PMA}${NONE}"\n"
+echo -e "\n${BLUE}Girchi Website is ready${NONE} ${GREEN}\n\vWebsite${NONE}  - " ${GREEN}${WEBSITE}${NONE}"${GREEN}\n\vMailHog${NONE} - " ${GREEN}${MAILHOG}${NONE}"${GREEN}\n\vphpMyAdmin${NONE} - " ${GREEN}${PMA}${NONE}"\n"
