@@ -35,6 +35,6 @@ if [[ -d "$DEP_THEME_PATH" ]]; then
     cp ${DEP_IMG_PATH}/* ${DEST_IMG_PATH}/
     cp ${DEP_FONTS_PATH}/* ${DEST_FONTS_PATH}/
 else
-    echo -e "\e[0;5;41m ERROR: Dist folder don't found! Please, run make build-ui and then composer install\e[00m"
+    echo -e "\e[0;5;41m ERROR: Dist folder not found! Please, run make build-ui and then composer install.\e[00m"
     exit 1
 fi
