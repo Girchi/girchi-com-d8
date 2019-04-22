@@ -24,20 +24,24 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-<nav class="navbar navbar-expand-lg navbar-light mx-n2 p-0 py-lg-4">
-    <div class="collapse navbar-collapse" id="navbarMenu">
+<nav class="navbar navbar-expand-lg navbar-dark mx-n2 border-bottom d-none d-lg-flex">
 {{ menus.menu_links(items, attributes, 0) }}
-        {% macro menu_links(items, attributes, menu_level) %}
-            {% import _self as menus %}
-            {% if items %}
-                    {# no UL for level1 (see page.tpl) #}
-                    <ul class="navbar-nav text-uppercase">
-                {% for item in items %}
-                    <li class = "nav-item">
-                            <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
-                    </li>
-                {% endfor %}
-            {% endif %}
-        {% endmacro %}
-    </div>
+
+{% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% if items %}
+            <ul class="navbar-nav font-size-1 text-uppercase">
+        {% for item in items %}
+            {%
+                set classes = [
+                'nav-item',
+            ]
+            %}
+            <li{{ item.attributes.addClass(classes) }}>
+                    <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+            </ul>
+    {% endif %}
+{% endmacro %}
 </nav>
