@@ -7,6 +7,7 @@ default: up
 DRUPAL_ROOT ?= /var/www/html/web
 
 up:
+	@mkdir -p front
 	@echo "Starting up containers for $(PROJECT_NAME)..."
 	docker-compose pull
 	docker-compose up -d --remove-orphans
@@ -34,8 +35,10 @@ logs:
 	@docker-compose logs -f $(filter-out $@,$(MAKECMDGOALS))
 
 build-ui:
-	@rm -rf ./front/{*,.[^.]*}
-	@docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_ui_builder' --format "{{ .ID }}") sh -c 'git clone $(UI_REPO) . && yarn && yarn build'
+	@mkdir -p front
+	@cd front && sudo rm -rf `ls -Ab` && cd ..
+	@git clone $(UI_REPO) front
+	@docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_ui_builder' --format "{{ .ID }}") sh -c 'yarn && yarn build'
 	sudo chown $(USER):$(USER) ./front -R
 	@echo -e "\n\nGirchi UI successfully built in ./front folder!"
 
