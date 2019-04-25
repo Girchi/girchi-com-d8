@@ -1,3 +1,33 @@
 .fix{
   margin: 0 !important;
 }
+
+.ui-autocomplete {
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+
+.ui-autocomplete:not(:focus) a{
+  color:black;
+  background: none;
+  border: none;
+  text-decoration: none;
+
+}
+
+.ui-menu .ui-menu-item{
+  margin-top: 10px;
+}
+
+.js input.form-autocomplete {
+  background-image:  none;
+}
+
+
+.js input.form-autocomplete.ui-autocomplete-loading {
+  background-image: none;
+}
+

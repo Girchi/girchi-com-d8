@@ -72,34 +72,41 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
 
 
   if ($form_id == "user_register_form") {
-    unset($form['account']['mail']['#title']);
-    unset($form['account']['mail']['#description']);
+
+      $currentUser = Drupal::currentUser()->getRoles();
+      if( reset($currentUser) == "anonymous") {
+
+          unset($form['account']['mail']['#title']);
+          unset($form['account']['mail']['#description']);
 
 
-    $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg login';
-    $form['account']['mail']['#attributes']['id'][] = 'email';
-    $form['account']['mail']['#attributes']['placeholder'][] = t('Enter Email');
+          $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg fix';
+          $form['account']['mail']['#attributes']['id'][] = 'email';
+          $form['account']['mail']['#attributes']['placeholder'][] = t('Enter Email');
 
-    unset($form['field_referral']['widget'][0]['target_id']['#title']);
-    unset($form['field_referral']['widget'][0]['target_id']['#description']);
-    unset($form['field_referral']['widget']['#title']);
-    unset($form['field_referral']['widget']['#description']);
+          unset($form['field_referral']['widget'][0]['target_id']['#title']);
+          unset($form['field_referral']['widget'][0]['target_id']['#description']);
+          unset($form['field_referral']['widget']['#title']);
+          unset($form['field_referral']['widget']['#description']);
 
+
+
+          $form['field_referral']['widget'][0]['target_id']['#attributes']['class'][] = 'form-control form-control-lg fix';
+          $form['field_referral']['widget'][0]['target_id']['#attributes']['id'][] = 'referral';
+          $form['field_referral']['widget'][0]['target_id']['#attributes']['placeholder'][] = 'მიუთითეთ Referral-ი';
+
+          $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-warning text-uppercase mt-4 fix';
+          $form['#after_build'][] = 'girchi_utils_after_build';
+
+      }
       if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
           === 'supporters_registration') {
           $form['field_referral']['widget']['#access'] = false;
 
           $form['field_referral']['widget'][0]['target_id']['#default_value'] = User::load(Drupal::currentUser()->id());
+          $form['#after_build'][] = 'girchi_utils_after_build';
+
       }
-
-    $form['field_referral']['widget'][0]['target_id']['#attributes']['class'][] = 'form-control form-control-lg login';
-    $form['field_referral']['widget'][0]['target_id']['#attributes']['id'][] = 'referral';
-    $form['field_referral']['widget'][0]['target_id']['#attributes']['placeholder'][] = 'მიუთითეთ Referral-ი';
-
-    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-warning text-uppercase mt-4 login';
-    $form['#after_build'][] = 'girchi_utils_after_build';
-
-
   }
 
 
@@ -117,7 +124,7 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
       $form['pass']['#attributes']['id'][] = 'password';
       $form['pass']['#attributes']['placeholder'][] = t('Enter password');
 
-      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 login';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
   }
 
 
@@ -133,13 +140,13 @@ function girchi_utils_after_build($form, &$form_state) {
   unset($form['account']['pass']['pass1']['#title']);
   unset($form['account']['pass']['#attached']['drupalSettings']['password']['showStrengthIndicator']);
 
-  $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg login';
+  $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg fix';
   $form['account']['pass']['pass1']['#attributes']['id'][] = 'password';
   $form['account']['pass']['pass1']['#attributes']['placeholder'][] = t('Enter password');
 
 
   unset($form['account']['pass']['pass2']['#title']);
-  $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg login';
+  $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg fix';
   $form['account']['pass']['pass2']['#attributes']['id'][] = 'password2';
   $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
 

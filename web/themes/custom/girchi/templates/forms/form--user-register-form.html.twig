@@ -1,0 +1,100 @@
+<form{{ attributes }}>
+    {{ element.form_build_id }}
+    {{ element.form_token }}
+    {{ element.form_id }}
+
+    <div class="container">
+        <div class="py-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8 col-lg-6 m-auto">
+                            <h5
+                                    class="card-title text-center text-success font-weight-bold text-uppercase"
+                            >
+                                {{ 'Register'|t }}
+                            </h5>
+                            <h6 class="card-subtitle text-center">
+                                {{ 'Select a politician, specify the percentage with which you support him/her and take part in establishing the party listing.'|t }}
+                                .
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
+                            <a href="{{ url('social_auth_facebook.redirect_to_fb') }}"
+                               class="btn btn-block d-flex align-items-center justify-content-center btn-with-icon btn-lg btn-purple text-uppercase my-4"
+                            >
+                                <i
+                                        class="icon-social-facebook-circular-button font-size-4"
+                                ></i>
+                                FACEBOOK {{ 'Authorisation'|t }}
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="card-divider my-0"/>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
+                            <form class="my-4">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">{{ 'Email'|t }}</label>
+
+                                    {{ element.account.mail }}
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="password">{{ 'Password'|t }}</label>
+
+                                    {{ element.account.pass.pass1 }}
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="password-confirmation"
+                                    >{{ 'Confirm Password'|t }}</label
+                                    >
+                                    {{ element.account.pass.pass2 }}
+                                </div>
+                                <div
+                                        class="border bg-dark-white border-dashed rounded px-4 pt-4  mb-4 mt-4"
+                                >
+                                    <h6 class="text-uppercase text-success font-weight-bold">
+                                        {{ 'Enter your referral'|t }}
+                                    </h6>
+                                    <p class="font-size-1 text-grey my-3">
+                                        {{ 'You can also use Referral to refer to the person who informed you about us and you decided to register.'|t }}
+                                    </p>
+                                    <div class="form-group">
+
+                                        {{ element.field_referral }}
+                                        <small
+                                                id="referralHelp"
+                                                class="form-text text-muted mx-0 my-3"
+                                        >{{ '* Referral is not required'|t }}
+                                        </small
+                                        >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-checkbox">
+                                      <span class="form-checkbox-input">
+                                          <input
+                                                  type="checkbox"
+                                                  class="form-control"
+                                                  id="exampleCheck1"
+                                          />
+                                      </span>
+                                      <label class="form-checkbox-label" for="exampleCheck1"
+                                      >{{ 'I read and agree to the terms and conditions'|t }}</label>
+                                    </span>
+                                </div>
+
+
+                                {{ element.actions.submit }}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
