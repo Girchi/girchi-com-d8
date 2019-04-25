@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-04-25 10:30+0000\n"
-"PO-Revision-Date: 2019-04-25 10:30+0000\n"
+"POT-Creation-Date: 2019-04-25 14:56+0000\n"
+"PO-Revision-Date: 2019-04-25 14:56+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -308,7 +308,7 @@ msgid "Account Name"
 msgstr "მომხმარებლის სახელი"
 
 msgid "Password"
-msgstr "მიუთითეთ პაროლი"
+msgstr "პაროლი"
 
 msgid "Block settings"
 msgstr "ბლოკის პარამეტრები"
@@ -569,7 +569,7 @@ msgid "Configure"
 msgstr "კონფიგურირება"
 
 msgid "Email"
-msgstr "მიუთითეთ ელ. ფოსტა"
+msgstr "ელ. ფოსტა"
 
 msgid "Files"
 msgstr "ფაილები"
@@ -3140,12 +3140,6 @@ msgstr ""
 msgid "Personal ID"
 msgstr "მიუთითეთ პირადი ნომერი"
 
-msgid "First Name"
-msgstr "სახელი"
-
-msgid "Last Name"
-msgstr "გვარი"
-
 msgid "First name"
 msgstr "მიუთითეთ სახელი"
 
@@ -3164,4 +3158,27 @@ msgstr ""
 
 msgid "Amount of GeD"
 msgstr "მიუთითეთ GeD-ების რაოდენობა"
+
+msgid "First Name"
+msgstr "სახელი"
+
+msgid "Last Name"
+msgstr "გვარი"
+
+msgid "Enter Email"
+msgstr "მიუთითეთ ელ.ფოსტა"
+
+msgid "Enter password"
+msgstr "მიუთითეთ პაროლი "
+
+msgid "Authorisation"
+msgstr "ავტორიზაცია"
+
+msgid "Password recovery"
+msgstr "აღდგენა"
+
+msgid "Don't have an Girchi account? Register now"
+msgstr ""
+"არ გაქვთ ანგარიში? გაიარეთ "
+"რეგისტრაცია მარტივად"
 
