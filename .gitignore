@@ -56,4 +56,6 @@ config/excluded/*
 # Certs
 /certs/
 
+# Ignore generated markup files
 front
+web/themes/custom/girchi/dist

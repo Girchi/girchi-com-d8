@@ -14,14 +14,16 @@ DEP_FONTS_PATH="$DEP_THEME_PATH/fonts"
 
 # Destination paths
 DEST_THEME_PATH="$BASE_DIR/../web/themes/custom/girchi"
-DEST_CSS_PATH="$DEST_THEME_PATH/css"
-DEST_JS_PATH="$DEST_THEME_PATH/js"
-DEST_IMG_PATH="$DEST_THEME_PATH/images"
+DEST_DIST_PATH="$DEST_THEME_PATH/dist"
+DEST_CSS_PATH="$DEST_DIST_PATH/css"
+DEST_JS_PATH="$DEST_DIST_PATH/js"
+DEST_IMG_PATH="$DEST_DIST_PATH/images"
 DEST_FONTS_PATH="$DEST_CSS_PATH/fonts"
 
 # Check if DEP_THEME_PATH exists
 if [[ -d "$DEP_THEME_PATH" ]]; then
     # Create destination directories if they don't exists
+    mkdir -p ${DEST_DIST_PATH}
     mkdir -p ${DEST_CSS_PATH}
     mkdir -p ${DEST_JS_PATH}
     mkdir -p ${DEST_IMG_PATH}
