@@ -233,6 +233,7 @@
     "drupal/masquerade_float_block": "^1.0@alpha",
     "drupal/media_entity": "^1.6",
     "drupal/media_entity_image": "^1.2",
+    "drupal/menu_export": "^1.2",
     "drupal/menu_trail_by_path": "^1.1",
     "drupal/metatag": "^1.0",
     "drupal/migrate_tools": "^2.0",

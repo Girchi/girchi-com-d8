@@ -47,6 +47,7 @@ module:
   masquerade: 0
   masquerade_float_block: 0
   media: 0
+  menu_export: 0
   menu_ui: 0
   metatag: 0
   metatag_facebook: 0

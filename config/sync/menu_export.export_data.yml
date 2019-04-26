@@ -1,0 +1,132 @@
+1:
+  id:
+    value: '1'
+  uuid:
+    value: 7b11e1ef-afc2-4572-8739-0f139341fa6f
+  langcode:
+    value: ka
+  bundle:
+    value: menu_link_content
+  enabled:
+    value: '1'
+  title:
+    value: 'ჩემი რეგისტრანტები'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/admin/supporter-registrants'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1556266884'
+  default_langcode:
+    value: '1'
+  metatag: false
+  content_translation_source:
+    value: und
+  content_translation_outdated:
+    value: '0'
+  content_translation_uid:
+    target_id: '1'
+  content_translation_status:
+    value: '1'
+  content_translation_created:
+    value: '1556266884'
+6:
+  id:
+    value: '6'
+  uuid:
+    value: 58a6f9c3-fc00-4fee-ba84-0f5e8fedfc88
+  langcode:
+    value: ka
+  bundle:
+    value: menu_link_content
+  enabled:
+    value: '1'
+  title:
+    value: 'მხარდამჭერის რეგისტრაცია'
+  description: false
+  menu_name:
+    value: supporter-menu
+  link:
+    uri: 'internal:/supporters-registration'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1556272436'
+  default_langcode:
+    value: '1'
+  metatag: false
+  content_translation_source:
+    value: und
+  content_translation_outdated:
+    value: '0'
+  content_translation_uid:
+    target_id: '1'
+  content_translation_status:
+    value: '1'
+  content_translation_created:
+    value: '1556272436'
+7:
+  id:
+    value: '7'
+  uuid:
+    value: 790220bf-0a12-4db9-9b0a-1622ba3bb1d1
+  langcode:
+    value: ka
+  bundle:
+    value: menu_link_content
+  enabled:
+    value: '1'
+  title:
+    value: 'ჩემი მხარდამჭერები'
+  description: false
+  menu_name:
+    value: supporter-menu
+  link:
+    uri: 'internal:/admin/supporter-registrants'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1556272494'
+  default_langcode:
+    value: '1'
+  metatag: false
+  content_translation_source:
+    value: und
+  content_translation_outdated:
+    value: '0'
+  content_translation_uid:
+    target_id: '1'
+  content_translation_status:
+    value: '1'
+  content_translation_created:
+    value: '1556272494'
