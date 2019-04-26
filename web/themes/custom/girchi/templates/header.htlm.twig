@@ -65,6 +65,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarAuth">
                 <div class="ml-auto">
+                    {% if logged_in %}
+                        <a href="{{ url("user.logout") }}" class="btn btn-warning text-uppercase">
+                            გამოსვლა
+                        </a>
+                    {% else %}
                     <a
                             href="{{ url("user.login") }}"
                             class="btn btn-success mr-lg-2 text-uppercase"
@@ -74,6 +79,7 @@
                     <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
                         რეგისტრაცია
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </nav>

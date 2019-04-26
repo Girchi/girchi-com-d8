@@ -44,6 +44,8 @@ module:
   link: 0
   locale: 0
   mailsystem: 0
+  masquerade: 0
+  masquerade_float_block: 0
   media: 0
   menu_ui: 0
   metatag: 0

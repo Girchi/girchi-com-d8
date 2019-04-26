@@ -1,0 +1,8 @@
+uuid: e5ffb432-2b64-405b-b66d-682e81419a98
+langcode: ka
+status: true
+dependencies: {  }
+id: supporter-menu
+label: 'მისიონერის მენიუ'
+description: ''
+locked: false

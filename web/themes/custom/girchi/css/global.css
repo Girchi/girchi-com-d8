@@ -31,3 +31,11 @@
   background-image: none;
 }
 
+#block-useraccountmenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#block-useraccountmenu ul a {
+    color: green;
+}

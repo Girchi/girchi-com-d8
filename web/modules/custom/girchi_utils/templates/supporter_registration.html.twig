@@ -1,92 +1,101 @@
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-xs-12 col-md-8 col-lg-6 m-auto">
-                <h5
+<div class="my-3 my-sm-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-lg-6 m-auto">
+                    <h5
                         class="card-title text-center text-success font-weight-bold text-uppercase"
-                >
-                    რეგისტრაცია
-                </h5>
-                <h6 class="card-subtitle text-center mb-5">
-                    აირჩიეთ პოლიტიკოსი, მიუთითეთ თქვენი წონის რამდენი %-ით უჭერთ
-                    მას მხარს და მიიღე მონაწილეობა პარტიული სიის ჩამოყალიბებაში.
-                </h6>
-                <!-- Start of success message -->
-                <!-- <div class="text-center">
-                  <span class="icon rounded bg-light text-success mb-2">
-                    <i class="icon-checked"></i>
-                  </span>
-                  <h5
-                    class="card-title  text-success font-weight-bold text-uppercase mb-0"
-                  >
-                    გიორგი ბერიძე
-                  </h5>
-                  <h6 class="card-subtitle  mb-5">
-                    წარმატებით დარეგისტრირდა
-                  </h6>
-                </div> -->
-                <!-- End of success message -->
+                    >
+                        რეგისტრაცია
+                    </h5>
+                    <h6 class="card-subtitle text-center mb-5">
+                        აირჩიეთ პოლიტიკოსი, მიუთითეთ თქვენი წონის რამდენი %-ით უჭერთ
+                        მას მხარს და მიიღე მონაწილეობა პარტიული სიის ჩამოყალიბებაში.
+                    </h6>
+                    <!-- Start of success message -->
+                    <!-- <div class="text-center">
+                      <span class="icon rounded bg-light text-success mb-2">
+                        <i class="icon-checked"></i>
+                      </span>
+                      <h5
+                        class="card-title  text-success font-weight-bold text-uppercase mb-0"
+                      >
+                        გიორგი ბერიძე
+                      </h5>
+                      <h6 class="card-subtitle  mb-5">
+                        წარმატებით დარეგისტრირდა
+                      </h6>
+                    </div> -->
+                    <!-- End of success message -->
+                </div>
+            </div>
+
+            <hr class="card-divider my-0"/>
+            <div class="row">
+                <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
+                    <form {{ attributes }} method="post">
+                        {{ form.form_build_id }}
+                        {{ form.form_token }}
+                        {{ form.form_id }}
+
+                        <div class="form-group">
+                            <label class="form-label" for="id-number"
+                            >{{ "Personal ID"  | t }}</label
+                            >
+                            {{ form.field_personal_id }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="fist-name">{{ "First name" | t }}</label>
+                            {{ form.field_first_name }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="last-name">{{ "Last name" | t }}</label>
+                            {{ form.field_last_name }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="birth-date"
+                            >{{ "Date of birth" | t }}</label
+                            >
+                            {{ form.field_date_of_birth }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone-number"
+                            >{{ "Phone number" | t }}</label
+                            >
+                            {{ form.field_phone }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">{{ "Email" | t }}</label>
+                            {{ form.account.mail }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">{{ "Password" | t }}</label>
+                            {{ form.account.pass.pass1 }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password-confirmation"
+                            >{{ "Confirm password" | t }}</label
+                            >
+                            {{ form.account.pass.pass2 }}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ged"
+                            >{{ "Amount of GeD" | t }}</label
+                            >
+                            {{ form.field_ged }}
+                            {{ form.field_referral }}
+                        </div>
+                        {{ form.actions.submit }}
+                    </form>
+                    <hr class="mx-0 my-4 my-sm-5 mx-sm-n5">
+                    <a href="{{ url('<front>') }}/admin/supporter-registrants" class="btn btn-lg  d-none d-sm-block btn-block btn-success text-uppercase">
+                        დარეგისტრირებულთა სია
+                    </a>
+                    <a href="#" class="btn btn-md d-block d-sm-none btn-block btn-success text-uppercase">
+                        დარეგისტრირებულთა სია
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<hr class="card-divider my-0"/>
-<div class="row">
-    <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
-        <form {{ attributes }} method="post">
-            {{ form.form_build_id }}
-            {{ form.form_token }}
-            {{ form.form_id }}
-
-            <div class="form-group">
-                <label class="form-label" for="id-number"
-                >{{ "Personal ID"  | t }}</label
-                >
-                {{ form.field_personal_id }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="fist-name">{{ "First name" | t }}</label>
-                {{ form.field_first_name }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="last-name">{{ "Last name" | t }}</label>
-                {{ form.field_last_name }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="birth-date"
-                >{{ "Date of birth" | t }}</label
-                >
-                {{ form.field_date_of_birth }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="phone-number"
-                >{{ "Phone number" | t }}</label
-                >
-                {{ form.field_phone }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="email">{{ "Email" | t }}</label>
-                {{ form.account.mail }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="password">{{ "Password" | t }}</label>
-                {{ form.account.pass.pass1 }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="password-confirmation"
-                >{{ "Confirm password" | t }}</label
-                >
-                {{ form.account.pass.pass2 }}
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="ged"
-                >{{ "Amount of GeD" | t }}</label
-                >
-                {{ form.field_ged }}
-                {{ form.field_referral }}
-            </div>
-            {{ form.actions.submit }}
-        </form>
     </div>
 </div>

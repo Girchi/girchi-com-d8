@@ -28,7 +28,7 @@ mode: default
 content:
   field_date_of_birth:
     weight: 16
-    label: hidden
+    label: above
     settings:
       format_type: medium
       timezone_override: ''
@@ -37,7 +37,7 @@ content:
     region: content
   field_first_name:
     weight: 1
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -45,7 +45,7 @@ content:
     region: content
   field_ged:
     weight: 15
-    label: hidden
+    label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -54,7 +54,7 @@ content:
     region: content
   field_last_name:
     weight: 2
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -62,7 +62,7 @@ content:
     region: content
   field_personal_id:
     weight: 3
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -70,7 +70,7 @@ content:
     region: content
   field_phone:
     weight: 4
-    label: hidden
+    label: above
     settings:
       title: ''
     third_party_settings: {  }
@@ -78,9 +78,9 @@ content:
     region: content
   field_politician:
     weight: 5
-    label: hidden
+    label: above
     settings:
-      format: unicode-yes-no
+      format: yes-no
       format_custom_true: ''
       format_custom_false: ''
     third_party_settings: {  }
@@ -88,7 +88,7 @@ content:
     region: content
   field_referral:
     weight: 6
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
@@ -96,12 +96,17 @@ content:
     region: content
   field_referral_url:
     weight: 13
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  masquerade:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   member_for:
     weight: 5
     region: content
@@ -115,6 +120,6 @@ content:
       image_style: thumbnail
       image_link: content
     third_party_settings: {  }
-    label: hidden
+    label: above
 hidden:
   langcode: true
