@@ -6,6 +6,7 @@ dependencies:
     - system.menu.account
   module:
     - system
+    - user
   theme:
     - girchi
 id: useraccountmenu
@@ -27,3 +28,14 @@ visibility:
     pages: '/user/*'
     negate: false
     context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      manager: manager
+      content_manager: content_manager
+      missioner: missioner
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
