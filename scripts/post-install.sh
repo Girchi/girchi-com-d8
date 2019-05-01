@@ -30,7 +30,7 @@ if [[ -d "$DEP_THEME_PATH" ]]; then
     mkdir -p ${DEST_FONTS_PATH}
 
     # Copy files
-    cp ${DEP_CSS_PATH}/bundle-*.css ${DEST_CSS_PATH}/custom.css
+    cp ${DEP_CSS_PATH}/bundle-*.css ${DEST_CSS_PATH}/global.css
     #cp ${DEP_CSS_PATH}/bundle-*.js.map ${DEST_CSS_PATH}/custom.css.map
     cp ${DEP_JS_PATH}/bundle-*.js ${DEST_JS_PATH}/script.js
     #cp ${DEP_JS_PATH}/bundle-*.js.map ${DEST_JS_PATH}/script.js.map
