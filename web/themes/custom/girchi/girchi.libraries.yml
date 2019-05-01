@@ -2,9 +2,9 @@ global-styling:
   version: 1.x
   css:
     theme:
-      css/global.css: {}
-      dist/css/custom.css: {}
+      css/custom.css: {}
+      dist/css/global.css: {}
   js:
     js/global.js: {}
-    dist/js/script.js: {}
+    dist/js/script.js: {weight: -999}
   dependencies:
