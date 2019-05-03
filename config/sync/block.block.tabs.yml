@@ -7,7 +7,7 @@ dependencies:
 id: tabs
 theme: girchi
 region: header
-weight: -2
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

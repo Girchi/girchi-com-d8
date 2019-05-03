@@ -7,7 +7,7 @@ dependencies:
 id: primaryadminactions
 theme: girchi
 region: header
-weight: -3
+weight: -5
 provider: null
 plugin: local_actions_block
 settings:

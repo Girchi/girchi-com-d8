@@ -16,6 +16,11 @@ targetEntityType: user
 bundle: user
 mode: user_header
 content:
+  masquerade:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   user_picture:
     type: image
     weight: 0

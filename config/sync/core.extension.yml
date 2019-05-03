@@ -41,6 +41,7 @@ module:
   hierarchical_term_formatter: 0
   image: 0
   language: 0
+  layout_discovery: 0
   link: 0
   locale: 0
   mailsystem: 0
@@ -58,6 +59,10 @@ module:
   om_twig_helpers: 0
   options: 0
   page_cache: 0
+  page_manager: 0
+  page_manager_ui: 0
+  panels: 0
+  panels_ipe: 0
   path: 0
   role_delegation: 0
   serialization: 0

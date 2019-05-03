@@ -1,0 +1,28 @@
+uuid: 59edd6a0-5295-433d-87f1-4032ccc9c4f7
+langcode: ka
+status: true
+dependencies:
+  config:
+    - page_manager.page.front_page
+  module:
+    - panels
+id: front_page-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: 64afcd0f-acd0-400b-b706-89d9ee914382
+  label: null
+  weight: 0
+  layout: one_column
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: front_page-panels_variant-0
+  builder: standard
+page: front_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
