@@ -1,0 +1,12 @@
+one_column:
+  label: 'Girchi Main Page'
+  category: 'My Layouts'
+  template: templates/girchi-main
+  default_region: content
+  regions:
+    content_top:
+      label: Content Top
+    content:
+      label: Content
+    content_bottom:
+      label: Content Bottom
