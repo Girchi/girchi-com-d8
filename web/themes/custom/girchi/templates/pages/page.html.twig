@@ -1,10 +1,10 @@
 {% block page_head %}
     {% include '@girchi/header.htlm.twig' %}
 {% endblock %}
+<div class="container">
+    <div class="py-5">
+        {% block page_main %}
 
-{% block page_main %}
-    <div class="container">
-        <div class="py-5">
             {% if page.content_top %}
                 {{ page.content_top }}
             {% endif %}
@@ -16,10 +16,10 @@
             {% if page.content_bottom %}
                 {{ page.content_bottom }}
             {% endif %}
-        </div>
-    </div>
-{% endblock %}
 
+        {% endblock %}
+    </div>
+</div>
 {% block page_foot %}
     {% include '@girchi/footer.html.twig' %}
 {% endblock %}
