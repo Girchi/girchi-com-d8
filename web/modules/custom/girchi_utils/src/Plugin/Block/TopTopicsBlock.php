@@ -31,14 +31,13 @@ class  TopTopicsBlock extends BlockBase
 
         /** @var NodeStorage $node_storage */
         $node_storage = $em->getStorage('node');
-
         $last_published_nodes = $node_storage->getQuery()
             ->condition('type', 'article')
             ->condition('status', 1)
             ->sort('created',"DESC")
             ->range(0,10)
             ->execute();
-        
+
         if (!empty($last_published_nodes)) {
 
             $last_published_nodes_ent = Node::loadMultiple($last_published_nodes);
@@ -51,8 +50,12 @@ class  TopTopicsBlock extends BlockBase
                 '#slider_topics' => $slider_topics,
                 '#bottom_topics' => $bottom_topics,
             );
-
+        }else {
+            return array(
+                '#theme' => 'top_topics'
+            );
         }
+
 
 
     }
