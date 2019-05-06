@@ -5,12 +5,22 @@ dependencies:
   config:
     - page_manager.page.front_page
   module:
+    - girchi_utils
     - panels
 id: front_page-panels_variant-0
 label: Panels
 variant: panels_variant
 variant_settings:
-  blocks: {  }
+  blocks:
+    80d19135-f4da-4e84-b15e-d4ccdedbcac5:
+      id: top_topics_block
+      label: 'Top topics block'
+      provider: girchi_utils
+      label_display: '0'
+      region: content
+      weight: 0
+      uuid: 80d19135-f4da-4e84-b15e-d4ccdedbcac5
+      context_mapping: {  }
   id: panels_variant
   uuid: 64afcd0f-acd0-400b-b706-89d9ee914382
   label: null
