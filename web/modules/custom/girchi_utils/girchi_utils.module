@@ -42,6 +42,7 @@ function girchi_utils_entity_form_display_alter(&$form_display, $context) {
   }
 }
 
+
 /**
  * Implements hook_theme().
  *
@@ -62,6 +63,15 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
       'template' => 'supporter_registration',
       'render element' => 'form',
     ],
+      'top_topics' => [
+      'variables' =>
+        [
+            'slider_topics' => NULL,
+            'bottom_topics' => NULL
+        ],
+      'template' => 'top_topics',
+//      'render element' => 'block',
+    ]
   ];
 
   return $templates;

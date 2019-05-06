@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+
+        <div class="position-relative mb-3 mb-sm-4">
+            <div
+                    class="owl-carousel owl-theme news-carousel rounded overflow-hidden"
+            >
+                {% for slider_topic in slider_topics %}
+
+                    {{ print_entity('node',slider_topic.id,'slider') }}
+
+                {% endfor %}
+            </div>
+
+            <div
+                    class="news-carousel-dots owl-dots position-absolute w-100 position-bottom-0 position-left-0 z-index-2 py-3"
+            ></div>
+
+            <button
+                    class="news-carousel-prev d-none d-md-block btn text-white font-size-7 shadow-none position-absolute position-left-0 z-index-3 position-center-y"
+            >
+                <i class="icon-angle-pointing-to-left"></i>
+            </button>
+
+            <button
+                    class="news-carousel-next d-none d-md-block btn text-white font-size-7  shadow-none position-absolute position-right-0 z-index-3 position-center-y"
+            >
+                <i class="icon-angle-arrow-pointing-to-right"></i>
+            </button>
+
+        </div>
+        <div class="d-none d-lg-block">
+            <div class="row">
+
+                {% for bottom_topic in bottom_topics %}
+                    <div class="col-md-6">
+                        {{ print_entity('node',bottom_topic.id,'under_slider') }}
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
