@@ -34,12 +34,11 @@ class  TopTopicsBlock extends BlockBase
 
         $last_published_nodes = $node_storage->getQuery()
             ->condition('type', 'article')
-            ->condition('created', strtotime('-' . 3 . ' days'), '>')
-            ->condition('created', time(), '<')
             ->condition('status', 1)
+            ->sort('created',"DESC")
+            ->range(0,10)
             ->execute();
-
-
+        
         if (!empty($last_published_nodes)) {
 
             $last_published_nodes_ent = Node::loadMultiple($last_published_nodes);
