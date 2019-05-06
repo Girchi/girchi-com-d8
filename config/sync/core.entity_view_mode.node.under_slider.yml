@@ -1,0 +1,10 @@
+uuid: 4022511b-d0b2-4f52-85ee-8aafb938cb8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.under_slider
+label: 'Under Slider'
+targetEntityType: node
+cache: true
