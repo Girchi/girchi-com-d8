@@ -1,0 +1,30 @@
+{% set image_uri = node.field_image.0.entity.uri.value %}
+
+<div class="media media-column">
+    <div class="media-thumb w-100 rounded overflow-hidden">
+        <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="media-thumb-link">
+            <img src="{{image_style_url(image_uri , 'under_slider')}}" class="w-100" alt="..." />
+        </a>
+        <div
+                class="position-absolute position-bottom-0 pb-3 position-left-0 w-100 px-4 z-index-3 overlay-100"
+        >
+                        <span
+                                class="text-grey mb-2 font-size-1 d-flex align-items-center"
+                        >
+                          <i
+                                  class="icon-clock-circular-outline mr-1
+                    "
+                          ></i>
+                          {{ node.getCreatedTime| format_date('article_short') }}</span
+                        >
+            <h6>
+                <a
+                        href="{{ path('entity.node.canonical', {'node': node.id}) }}"
+                        class="text-white text-decoration-none font-weight-bold font-size-base"
+                >
+                    {{ node.label }}
+                </a>
+            </h6>
+        </div>
+    </div>
+</div>
