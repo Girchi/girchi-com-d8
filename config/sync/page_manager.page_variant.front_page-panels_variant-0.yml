@@ -21,6 +21,15 @@ variant_settings:
       weight: 0
       uuid: 80d19135-f4da-4e84-b15e-d4ccdedbcac5
       context_mapping: {  }
+    5c7092ba-b6f6-44cf-ac0a-a164d2f63d7e:
+      id: top_videos_block
+      label: 'Videos block'
+      provider: girchi_utils
+      label_display: visible
+      region: content
+      weight: 1
+      uuid: 5c7092ba-b6f6-44cf-ac0a-a164d2f63d7e
+      context_mapping: {  }
   id: panels_variant
   uuid: 64afcd0f-acd0-400b-b706-89d9ee914382
   label: null
