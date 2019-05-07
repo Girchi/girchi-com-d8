@@ -71,7 +71,15 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
         ],
       'template' => 'top_topics',
 //      'render element' => 'block',
-    ]
+    ],
+    'top_videos' => [
+      'variables' =>
+        [
+            'top_videos' => NULL,
+        ],
+      'template' => 'top_videos',
+
+    ],
   ];
 
   return $templates;
