@@ -1,6 +1,6 @@
 include .env
 
-.PHONY: up down stop prune ps shell drush logs build-ui install 
+.PHONY: up down stop prune ps shell drush logs build-ui update-ui install
 
 default: up
 
@@ -41,6 +41,10 @@ build-ui:
 	@docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_ui_builder' --format "{{ .ID }}") sh -c 'yarn && yarn build'
 	sudo chown $(USER):$(USER) ./front -R
 	@echo -e "\n\nGirchi UI successfully built in ./front folder!"
+
+update-ui:
+	make build-ui
+	./scripts/update_ui.sh
 
 install:
 	./scripts/install.sh

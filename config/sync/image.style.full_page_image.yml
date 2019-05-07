@@ -1,0 +1,15 @@
+uuid: 7fe5e5de-9bfc-4826-a5e0-968d1b500606
+langcode: ka
+status: true
+dependencies: {  }
+name: full_page_image
+label: 'Full page image'
+effects:
+  052e1acd-5312-464f-a076-28cc24f93048:
+    uuid: 052e1acd-5312-464f-a076-28cc24f93048
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 848
+      height: 476
+      anchor: center-center

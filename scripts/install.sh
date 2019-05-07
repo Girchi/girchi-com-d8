@@ -18,7 +18,7 @@ echo -e "${BLUE}[2/8] Starting up containers...\n\v${NONE}"
 make up
 
 echo -e "\n${BLUE}[3/8] Building UI Project...\n\v${NONE}"
-make build-ui
+make update-ui
 
 echo -e "\n${BLUE}[4/8] Running pre-install script...\n\v${NONE}"
 ./scripts/pre-install.sh
