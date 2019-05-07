@@ -14,7 +14,7 @@
                 />
             </a>
             {% if is_video  == 'On' %}
-                <span class="media-date font-size-1">2:41</span>
+                {#<span class="media-date font-size-1">2:41</span>#}
             {% endif %}
         </div>
         <div class="media-body">
@@ -31,12 +31,17 @@
                           {{ node.createdtime|format_date('omedia_short') }} </span>
             {% for category in  content.field_category %}
                 {% if category['#title'] %}
+
                     <a
                             href="#"
                             class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
                     >{{category}}</a>
                 {% endif %}
             {% endfor %}
+            <a
+                    href="#"
+                    class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+            >{{ content.field_category.0['#title'] }}</a>
         </div>
     </div>
     <!-- End of media -->
