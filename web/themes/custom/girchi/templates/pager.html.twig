@@ -1,0 +1,62 @@
+{% set lastpage = items.last.href | split('=') %}
+{% if items %}
+    <div class="card-footer border-top p-0 d-flex align-items-center justify-content-between">
+        {% if items.previous %}
+        <a href="{{ items.previous.href }}"
+           class="projects-carousel-prev btn py-3 shadow-none rounded-0 text-dark-silver border-right">
+            <i class="icon-angle-pointing-to-left"></i>
+        </a>
+        {% else  %}
+            <a href="#"
+               class="disabled projects-carousel-prev btn py-3 shadow-none rounded-0 text-dark-silver border-right">
+                <i class="icon-angle-pointing-to-left"></i>
+            </a>
+        {% endif %}
+        <nav aria-label="...">
+            <ul class="pagination m-0">
+                {# Add an ellipsis if there are further previous pages. #}
+                {% if ellipses.previous %}
+                    <li class="page-item">
+                        <a href="{{ items.first.href }}" class="page-link">
+                            {{ items.first.text }}
+                        </a>
+                    </li>
+                    <li class="page-item px-2" aria-current="page">
+                        ...
+                    </li>
+                {% endif %}
+                {# Now generate the actual pager piece. #}
+                {% for key, item in items.pages %}
+                    <li class="page-item{{ current == key ? ' active' : '' }}">
+                        <a href="{{ item.href }}" class="page-link">
+                            {{ key }}
+                        </a>
+                    </li>
+                {% endfor %}
+                {# Add an ellipsis if there are further next pages. #}
+                {% if ellipses.next %}
+                    <li class="page-item px-2" aria-current="page">
+                        ...
+                    </li>
+                    <li class="page-item">
+                        <a href="{{ items.last.href }}" class="page-link">
+                            {{ lastpage[1] + 1 }}
+                        </a>
+                    </li>
+                {% endif %}
+                {# Print next item if we are not on the last page. #}
+            </ul>
+        </nav>
+        {% if items.next %}
+            <a href="{{ items.next.href }}"
+               class="projects-carousel-next btn py-3 shadow-none rounded-0 text-dark-silver border-left">
+                <i class="icon-angle-arrow-pointing-to-right"></i>
+            </a>
+        {% else %}
+            <a href="#"
+               class="projects-carousel-next btn py-3 shadow-none rounded-0 text-dark-silver border-left">
+                <i class="icon-angle-arrow-pointing-to-right"></i>
+            </a>
+        {% endif %}
+    </div>
+{% endif %}
