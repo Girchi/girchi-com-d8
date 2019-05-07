@@ -531,7 +531,7 @@ display:
             description: ''
             use_operator: false
             operator: field_tags_target_id_op
-            identifier: field_tags_target_id
+            identifier: tag
             required: false
             remember: false
             multiple: false
