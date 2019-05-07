@@ -312,12 +312,10 @@
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "./scripts/post-install.sh"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "./scripts/post-install.sh"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "project-install": "./scripts/project-install.sh",
     "project-install:prod": "./scripts/project-install.sh prod"
