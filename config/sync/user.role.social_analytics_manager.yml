@@ -6,4 +6,13 @@ id: social_analytics_manager
 label: 'Social Analytics Manager'
 weight: -4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access toolbar'
+  - 'add JS snippets for google analytics'
+  - 'administer google analytics'
+  - 'administer google tag manager'
+  - 'administer statistics'
+  - 'configure facebook_pixel'
+  - 'use PHP for google analytics tracking visibility'
+  - 'view post access counter'
+  - 'view the administration theme'
