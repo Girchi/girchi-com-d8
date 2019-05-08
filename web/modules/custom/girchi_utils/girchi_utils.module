@@ -84,6 +84,13 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 ],
             'template' => 'top_videos',
         ],
+        'tags_block' => [
+            'variables' =>
+                [
+                    'tags' => NULL,
+                ],
+            'template' => 'tags_block',
+        ],
     ];
 
   return $templates;

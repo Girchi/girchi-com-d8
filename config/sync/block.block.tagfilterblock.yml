@@ -1,0 +1,20 @@
+uuid: d51cf96e-d7ad-4dea-a01b-98be3ad5d9a5
+langcode: ka
+status: false
+dependencies:
+  module:
+    - girchi_utils
+  theme:
+    - girchi
+id: tagfilterblock
+theme: girchi
+region: content
+weight: 0
+provider: null
+plugin: tag_filter_block
+settings:
+  id: tag_filter_block
+  label: 'Tag filter block'
+  provider: girchi_utils
+  label_display: '0'
+visibility: {  }

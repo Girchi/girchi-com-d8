@@ -1,0 +1,12 @@
+<div class="card overflow-hidden mt-3 mt-xl-4">
+    <div
+            class="card-header font-size-2 text-uppercase d-flex px-3 px-xl-4 font-weight-bold text-grey"
+    >
+        ტეგები
+    </div>
+    <div class="card-body p-3 p-xl-4">
+    {% for tag in tags %}
+        {{ print_entity('taxonomy_term', tag.tid , 'teaser' )  }}
+    {% endfor %}
+    </div>
+</div>
