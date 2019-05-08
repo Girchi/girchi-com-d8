@@ -1,0 +1,9 @@
+uuid: 967779f3-5f77-4a8d-973c-baff1ff8a947
+langcode: ka
+status: true
+dependencies: {  }
+id: social_analytics_manager
+label: 'Social Analytics Manager'
+weight: -4
+is_admin: null
+permissions: {  }

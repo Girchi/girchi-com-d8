@@ -1,0 +1,14 @@
+uuid: 39dbcb18-2ad8-459e-97ff-961273e7ecb9
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.social_analytics_manager
+  module:
+    - user
+id: user_remove_role_action.social_analytics_manager
+label: 'Remove the Social Analytics Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: social_analytics_manager

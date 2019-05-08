@@ -1,0 +1,14 @@
+uuid: c76935b4-39fd-462c-8f7c-28cd16ac069d
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.social_analytics_manager
+  module:
+    - user
+id: user_add_role_action.social_analytics_manager
+label: 'Add the Social Analytics Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: social_analytics_manager
