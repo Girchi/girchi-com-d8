@@ -1,0 +1,15 @@
+uuid: a0b27ef7-dad4-40db-bdb5-7ab69e43a20d
+langcode: ka
+status: true
+dependencies: {  }
+name: top_videos
+label: 'Top videos'
+effects:
+  7622a3d3-de75-4b23-8edd-993ef7f6ce63:
+    uuid: 7622a3d3-de75-4b23-8edd-993ef7f6ce63
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 208
+      height: 117
+      anchor: center-center

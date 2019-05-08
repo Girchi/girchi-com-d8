@@ -1,0 +1,4 @@
+services:
+  girchi_utils.taxonomy_term_tree:
+    class: Drupal\girchi_utils\TaxonomyTermTree
+    arguments: ['@entity_type.manager']

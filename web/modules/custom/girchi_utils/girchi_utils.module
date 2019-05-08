@@ -53,24 +53,38 @@ function girchi_utils_entity_form_display_alter(&$form_display, $context) {
  * @return array
  */
 function girchi_utils_theme($existing, $type, $theme, $path) {
-  $templates = [
-    'supporter_registration' => [
-      'variables' =>
-        [
-          'form' => NULL,
+    $templates = [
+        'supporter_registration' => [
+            'variables' =>
+                [
+                    'form' => NULL,
+                ],
+            'template' => 'supporter_registration',
+            'render element' => 'form',
         ],
-      'template' => 'supporter_registration',
-      'render element' => 'form',
-    ],
-      'top_topics' => [
-      'variables' =>
-        [
-            'slider_topics' => NULL,
-            'bottom_topics' => NULL
+        'top_topics' => [
+            'variables' =>
+                [
+                    'slider_topics' => NULL,
+                    'bottom_topics' => NULL
+                ],
+            'template' => 'top_topics',
         ],
-      'template' => 'top_topics',
-    ]
-  ];
+        'categories_block' => [
+            'variables' =>
+                [
+                    'categories' => NULL,
+                ],
+            'template' => 'categories_block',
+        ],
+        'top_videos' => [
+            'variables' =>
+                [
+                    'top_videos' => NULL,
+                ],
+            'template' => 'top_videos',
+        ],
+    ];
 
   return $templates;
 }

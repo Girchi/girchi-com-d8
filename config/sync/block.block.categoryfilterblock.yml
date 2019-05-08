@@ -1,0 +1,20 @@
+uuid: 68071d91-b083-4a8b-acd2-d7477bc07ab9
+langcode: ka
+status: false
+dependencies:
+  module:
+    - girchi_utils
+  theme:
+    - girchi
+id: categoryfilterblock
+theme: girchi
+region: header
+weight: 0
+provider: null
+plugin: category_filter_block
+settings:
+  id: category_filter_block
+  label: 'Category filter block'
+  provider: girchi_utils
+  label_display: '0'
+visibility: {  }

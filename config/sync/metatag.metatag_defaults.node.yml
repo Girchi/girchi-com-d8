@@ -7,6 +7,16 @@ _core:
 id: node
 label: Content
 tags:
-  title: '[node:title] | [site:name]'
   description: '[node:summary]'
+  title: '[node:title] | [site:name]'
   canonical_url: '[node:url]'
+  fb_app_id: '303239883689419'
+  og_title: '[node:title]'
+  og_url: '[node:url]'
+  og_description: '[node:body]'
+  og_image: '[node:field_image]'
+  twitter_cards_title: '[node:title]'
+  twitter_cards_type: summary
+  twitter_cards_image: '[node:field_image]'
+  twitter_cards_description: '[node:fbody]'
+  twitter_cards_page_url: '[node:url]'

@@ -3226,3 +3226,15 @@ msgstr ""
 "გასაგრძელებლად საჭიროა "
 "დაეთანხმოთ საიტის წესებს!"
 
+msgid "Share"
+msgstr "გაზიარება"
+
+msgid "Print"
+msgstr "ამობეჭვდა"
+
+msgid "Video blog"
+msgstr "ვიდეო ბლოგი"
+
+msgid "All videos"
+msgstr "ყველა ვიდეო"
+
