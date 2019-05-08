@@ -7,6 +7,7 @@ label: 'Social Analytics Manager'
 weight: -4
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access toolbar'
   - 'add JS snippets for google analytics'
   - 'administer google analytics'
