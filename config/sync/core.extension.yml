@@ -37,6 +37,7 @@ module:
   girchi_referral: 0
   girchi_utils: 0
   google_analytics: 0
+  google_tag: 0
   hal: 0
   help: 0
   hierarchical_term_formatter: 0
