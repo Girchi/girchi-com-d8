@@ -1,14 +1,19 @@
 {% set image_uri = node.field_image.0.entity.uri.value %}
-
-<div class="card mt-3 mt-lg-0 mb-2 mb-lg-3 font-size-3">
-    <div class="card-body p-0">
-        <img
-                src="{{ image_style_url(image_uri , 'full_page_image') }}"
-                class="w-100"
-                alt=""
-        />
-        <div class="p-3 p-lg-4">
-            <div class="mb-3 mb-lg-4">
+<div class="row flex-column-reverse flex-lg-row">
+    <div class="col-md-12 col-lg-3">
+        {{ print_block('categoryfilterblock') }}
+        {{ print_block('tagfilterblock') }}
+    </div>
+    <div class="col-md-12 col-lg-9">
+        <div class="card mt-3 mt-lg-0 mb-2 mb-lg-3 font-size-3">
+            <div class="card-body p-0">
+                <img
+                        src="{{ image_style_url(image_uri , 'full_page_image') }}"
+                        class="w-100"
+                        alt=""
+                />
+                <div class="p-3 p-lg-4">
+                    <div class="mb-3 mb-lg-4">
                     <span
                             class="text-grey font-size-1 d-inline-flex align-items-center"
                     >
@@ -18,67 +23,69 @@
                       ></i>
                       {{ node.getCreatedTime| format_date('article_short') }}</span
                     >
-                {% for category in  content.field_category %}
-                    {% if category['#title'] %}
+                        {% for category in  content.field_category %}
+                            {% if category['#title'] %}
 
+                                <a
+                                        href="#"
+                                        class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                >{{ category }}</a>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                    <h4
+                            class="font-size-5 font-size-lg-7 font-weight-bold line-height-1-2"
+                    >
+                        {{ node.label }}
+                    </h4>
+                    <div class="my-3 my-lg-4">
+                        {{ content.body }}
+
+                        {% if content.field_video_url %}
+                            {{ content.field_video_url }}
+                        {% endif %}
+                    </div>
+
+
+                    <div class="d-print-none">
+                        {% for item in content.field_tags['#items'] %}
+                            {{ print_entity('taxonomy_term', item.target_id , 'teaser' ) }}
+                        {% endfor %}
+                    </div>
+
+                    <hr class="d-print-none"/>
+
+                    <div class="pt-1 d-print-none">
                         <a
                                 href="#"
-                                class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
-                        >{{ category }}</a>
-                    {% endif %}
-                {% endfor %}
+                                class="btn btn-outline-secondary bg-hover-dark-white d-flex d-lg-inline-flex mb-2 mb-lg-0  text-uppercase align-items-center btn-with-icon px-3 mr-0 mr-lg-2 share facebook justify-content-center justify-content-lg-start"
+                        ><i
+                                    class="icon-social-facebook-circular-button font-size-6 mr-2 line-height-1-3 ml-n1 text-purple"
+                            ></i>
 
-            </div>
-            <h4
-                    class="font-size-5 font-size-lg-7 font-weight-bold line-height-1-2"
-            >
-                {{ node.label }}
-            </h4>
-            <div class="my-3 my-lg-4">
-                {{ content.body }}
-
-                {% if content.field_video_url %}
-                    {{ content.field_video_url }}
-                {% endif %}
-            </div>
-
-
-            <div class="d-print-none">
-                {% for item in content.field_tags['#items'] %}
-                    {{ print_entity('taxonomy_term', item.target_id , 'teaser' ) }}
-                {% endfor %}
-            </div>
-
-            <hr class="d-print-none"/>
-
-            <div class="pt-1 d-print-none">
-                <a
-                        href="#"
-                        class="btn btn-outline-secondary bg-hover-dark-white d-flex d-lg-inline-flex mb-2 mb-lg-0  text-uppercase align-items-center btn-with-icon px-3 mr-0 mr-lg-2 share facebook justify-content-center justify-content-lg-start"
-                ><i
-                            class="icon-social-facebook-circular-button font-size-6 mr-2 line-height-1-3 ml-n1 text-purple"
-                    ></i>
-
-                    <span class="text-grey text-uppercase ">{{ 'Share'|t }}</span>
-                </a>
-                <a
-                        href="#"
-                        class="btn btn-outline-secondary bg-hover-dark-white d-flex d-lg-inline-flex mb-2 mb-lg-0  align-items-center mr-0 mr-lg-2 btn-with-icon px-3 share twitter justify-content-center justify-content-lg-start"
-                ><i
-                            class="icon-social-twitter-circular-button font-size-6 mr-2 line-height-1-3 text-light-blue ml-n1"
-                    ></i>
-                    <span class="text-grey text-uppercase ">tweet</span>
-                </a>
-                <a
-                        href="#"
-                        onclick="window.print();return false;"
-                        class="btn btn-outline-secondary bg-hover-dark-white d-flex d-lg-inline-flex mb-2 mb-lg-0  align-items-center btn-with-icon px-3 justify-content-center justify-content-lg-start"
-                >
-                    <i
-                            class="icon-print font-size-6 mr-2 line-height-1-3 text-grey ml-n1"
-                    ></i>
-                    <span class="text-grey text-uppercase ">{{ 'Print'|t }}</span>
-                </a>
+                            <span class="text-grey text-uppercase ">{{ 'Share'|t }}</span>
+                        </a>
+                        <a
+                                href="#"
+                                class="btn btn-outline-secondary bg-hover-dark-white d-flex d-lg-inline-flex mb-2 mb-lg-0  align-items-center mr-0 mr-lg-2 btn-with-icon px-3 share twitter justify-content-center justify-content-lg-start"
+                        ><i
+                                    class="icon-social-twitter-circular-button font-size-6 mr-2 line-height-1-3 text-light-blue ml-n1"
+                            ></i>
+                            <span class="text-grey text-uppercase ">tweet</span>
+                        </a>
+                        <a
+                                href="#"
+                                onclick="window.print();return false;"
+                                class="btn btn-outline-secondary bg-hover-dark-white d-flex d-lg-inline-flex mb-2 mb-lg-0  align-items-center btn-with-icon px-3 justify-content-center justify-content-lg-start"
+                        >
+                            <i
+                                    class="icon-print font-size-6 mr-2 line-height-1-3 text-grey ml-n1"
+                            ></i>
+                            <span class="text-grey text-uppercase ">{{ 'Print'|t }}</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
