@@ -1,0 +1,50 @@
+{% if top_videos %}
+
+    <div class="my-3 my-sm-4">
+        <div class="card mb-3 mb-sm-4 font-size-3">
+            <div
+                    class="card-header font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4"
+            >
+                {{ "Video blog"|t }}
+                <a
+                        href="#"
+                        class="ml-auto card-view-all font-weight-normal text-grey text-decoration-none text-nowrap"
+                >{{ "All videos"|t }}<i class="icon-arrow-right2 text-dark-silver"></i>
+                </a>
+            </div>
+            <div class="card-body p-0 p-lg-4">
+                <div class="owl-carousel owl-theme video-carousel p-3 p-lg-0">
+                    {% for top_video in top_videos %}
+
+                        {{ print_entity('node',top_video.id,'teaser_video') }}
+
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div
+                    class="card-footer border-top p-0 d-flex justify-content-between"
+            >
+                <button
+                        class="video-carousel-prev btn py-3 shadow-none rounded-0 text-dark-silver border-right"
+                >
+                    <i class="icon-angle-pointing-to-left"></i>
+                </button>
+                <div
+                        class="video-carousel-dots owl-dots d-flex align-items-center"
+                ></div>
+                <button
+                        class="video-carousel-next btn py-3 shadow-none rounded-0 text-dark-silver border-left"
+                >
+                    <i class="icon-angle-arrow-pointing-to-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+{% else %}
+
+    <p class="display-1">{{ "There is no content"|t }}</p>
+
+{% endif %}
