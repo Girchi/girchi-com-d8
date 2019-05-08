@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-06 15:12+0000\n"
-"PO-Revision-Date: 2019-05-06 15:12+0000\n"
+"POT-Creation-Date: 2019-05-08 08:20+0000\n"
+"PO-Revision-Date: 2019-05-08 08:20+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,9 @@ msgstr "ტექსტის ფორმატი"
 
 msgid "Language"
 msgstr "ენა"
+
+msgid "Page"
+msgstr "გვერდი"
 
 msgid "Menu"
 msgstr "მენიუ"
@@ -660,9 +663,6 @@ msgstr "სათაურის გადაწერა"
 
 msgid "CSS class"
 msgstr "CSS კლასი"
-
-msgid "Page"
-msgstr "გვერდი"
 
 msgid "View arguments"
 msgstr "არგუმენტების ნახვა"
@@ -3219,4 +3219,10 @@ msgstr ""
 
 msgid "There is no content"
 msgstr "კონტენტი არ არსებობს "
+
+msgid "You must agree to the terms and conditions before register"
+msgstr ""
+"რეგისტრაციის "
+"გასაგრძელებლად საჭიროა "
+"დაეთანხმოთ საიტის წესებს!"
 

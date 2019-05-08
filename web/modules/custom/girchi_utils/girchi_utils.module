@@ -37,7 +37,6 @@ function girchi_utils_entity_form_display_alter(&$form_display, $context) {
         ->getStorage('entity_form_display');
 
       $form_display = $storage->loadUnchanged('user.user.supporters_registration');
-
     }
   }
 }
@@ -70,7 +69,6 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
             'bottom_topics' => NULL
         ],
       'template' => 'top_topics',
-//      'render element' => 'block',
     ]
   ];
 
@@ -79,16 +77,12 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
 
 
 function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
-
   if ($form_id == "user_register_form") {
-
       $currentUser = Drupal::currentUser()->getRoles();
       if( reset($currentUser) == "anonymous") {
 
           unset($form['account']['mail']['#title']);
           unset($form['account']['mail']['#description']);
-
 
           $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg fix';
           $form['account']['mail']['#attributes']['id'][] = 'email';
@@ -99,8 +93,6 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
           unset($form['field_referral']['widget']['#title']);
           unset($form['field_referral']['widget']['#description']);
 
-
-
           $form['field_referral']['widget'][0]['target_id']['#attributes']['class'][] = 'form-control form-control-lg fix';
           $form['field_referral']['widget'][0]['target_id']['#attributes']['id'][] = 'referral';
           $form['field_referral']['widget'][0]['target_id']['#attributes']['placeholder'][] = 'მიუთითეთ Referral-ი';
@@ -108,7 +100,19 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
           $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-warning text-uppercase mt-4 fix';
           $form['#after_build'][] = 'girchi_utils_after_build';
 
+          //Add terms and conditions checkbox
+          $form['account']['terms_and_conditions'] = [
+            '#type' => 'checkbox',
+            '#required' => TRUE,
+            '#default_value' => FALSE,
+          ];
+
+          $form['account']['terms_and_conditions']['#attributes']['class'][] = 'form-control';
+
+          //Add terms and conditions validation
+          $form['#validate'][] = 'terms_and_conditions_validate';
       }
+
       if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
           === 'supporters_registration') {
           $form['field_referral']['widget']['#access'] = false;
@@ -160,6 +164,19 @@ function girchi_utils_after_build($form, &$form_state) {
   $form['account']['pass']['pass2']['#attributes']['id'][] = 'password2';
   $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
 
+  unset($form['account']['terms_and_conditions']['#theme_wrappers']);
 
   return $form;
+}
+
+/**
+ * Validate terms and conditions checkbox
+ *
+ * @param $form
+ * @param $form_state
+ */
+function terms_and_conditions_validate($form, &$form_state){
+  if($form['account']['terms_and_conditions']['#value'] !== 1) {
+    \Drupal::messenger()->addWarning(t('You must agree to the terms and conditions before register'));
+  }
 }
