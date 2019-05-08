@@ -222,7 +222,7 @@
     "drupal/flood_unblock": "^1.4",
     "drupal/focal_point": "^1.0@beta",
     "drupal/geolocation": "^1.10",
-    "drupal/google_analytics": "^2.1",
+    "drupal/google_analytics": "^3.0",
     "drupal/hierarchical_term_formatter": "^1.0@beta",
     "drupal/image_formatter_link_to_image_style": "^1.0",
     "drupal/inline_entity_form": "^1.0@beta",

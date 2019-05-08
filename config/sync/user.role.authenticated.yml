@@ -15,6 +15,7 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'opt-in or out of google analytics tracking'
   - 'search content'
   - 'use text format basic_html'
   - 'view error messages'
