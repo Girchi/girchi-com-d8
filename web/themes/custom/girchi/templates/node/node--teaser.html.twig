@@ -3,7 +3,7 @@
     <!-- Start of media -->
     <div class="media media-column mb-4">
         <div class="media-thumb w-100 rounded overflow-hidden">
-            <a href="news-details.html" class="media-thumb-link">
+            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="media-thumb-link">
                 {% if is_video  == 'On' %}
                     <i class="icon-play-button media-play"></i>
                 {% endif %}
@@ -20,7 +20,7 @@
         <div class="media-body">
             <h6 class="mt-2 font-size-base line-height-1-3">
                 <a
-                        href="news-details.html"
+                        href="{{ path('entity.node.canonical', {'node': node.id}) }}"
                         class="text-decoration-none d-block font-weight-bold">
                     {{ label }}
                 </a>
