@@ -30,6 +30,7 @@ module:
   embed: 0
   entity: 0
   entity_reference_revisions: 0
+  facebook_pixel: 0
   field: 0
   field_ui: 0
   file: 0
