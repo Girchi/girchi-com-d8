@@ -45,6 +45,325 @@
     {% else %}
         <p class="display-1">{{ "There is no content"|t }}</p>
     {% endif %}
+    <div class="col-md-12 col-lg-4">
+        <div class="row">
+            <div class="col-sm-12 col-md-5 col-lg-12">
+                <!-- Start of banner -->
+                <div
+                    class="frozen rounded position-relative banner banner-default banner-sm-wide banner-md-default h-100 banner-bg-center banner-bg-donate"
+                >
+                    <div
+                        class="position-absolute position-top-0 position-left-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-3"
+                    >
+                        <h4 class="text-white text-uppercase font-weight-bold">
+                            გახდი პარტნიორი
+                        </h4>
+                        <p class="text-white font-size-2 text-center mb-3 mb-md-4">
+                            დააფინანსე გირჩი, მიიღე შესაბამისი რაოდენობის GeD-ები და
+                            მოხვდი ლიდერბორდში
+                        </p>
+                        <a href="#" class="btn btn-warning  btn-lg text-uppercase">
+                            დააფინანსე
+                        </a>
+                    </div>
+                </div>
+                <!-- End of banner -->
+            </div>
+
+            <div class="col-sm-12 col-md-7 col-lg-12">
+                <!-- Start of card -->
+                <div
+                    class="frozen card mt-3 mt-sm-4 mt-md-0 mt-lg-4 font-size-3"
+                >
+                    <div
+                        class="card-header font-size-3 text-uppercase font-weight-bold d-flex px-3 px-xl-4"
+                    >
+                        ტოპ პარტნიორები
+
+                        <a
+                            href="#"
+                            class="ml-auto card-view-all font-weight-normal text-grey text-decoration-none text-nowrap"
+                        >სრული სია
+                            <i class="icon-arrow-right2 text-dark-silver"></i>
+                        </a>
+                    </div>
+                    <div class="card-body p-3 py-md-3 px-xl-4">
+                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link font-weight-bold text-uppercase active"
+                                    id="daily-tab"
+                                    data-toggle="tab"
+                                    href="#daily"
+                                    role="tab"
+                                    aria-controls="daily"
+                                    aria-selected="true"
+                                >დღის</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link font-weight-bold text-uppercase"
+                                    id="weekly-tab"
+                                    data-toggle="tab"
+                                    href="#weekly"
+                                    role="tab"
+                                    aria-controls="weekly"
+                                    aria-selected="false"
+                                >კვირის</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link font-weight-bold text-uppercase"
+                                    id="monthly-tab"
+                                    data-toggle="tab"
+                                    href="#monthly"
+                                    role="tab"
+                                    aria-controls="monthly"
+                                    aria-selected="false"
+                                >თვის</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link font-weight-bold text-uppercase"
+                                    id="total-tab"
+                                    data-toggle="tab"
+                                    href="#total"
+                                    role="tab"
+                                    aria-controls="total"
+                                    aria-selected="false"
+                                >სულ</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div
+                                class="tab-pane fade show active"
+                                id="daily"
+                                role="tabpanel"
+                                aria-labelledby="daily-tab"
+                            >
+                                <ul class="list-group list-group-flush mt-2">
+                                    <li
+                                        class="list-group-item d-flex align-items-center px-0"
+                                    >
+                            <span
+                                class="font-size-6 font-size-xl-7 text-dark-silver mr-2 mr-xl-3"
+                            >1</span
+                            >
+                                        <div class="d-flex w-100 align-items-center">
+                                            <a
+                                                href="#"
+                                                class="rounded-circle overflow-hidden d-inline-block"
+                                            >
+                                                <img
+                                                    src="{{ base_path }}/themes/custom/girchi/dist/css/images/i.metreveli.jpg"
+                                                    class="rounded"
+                                                    alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                                    ირაკლი
+                                                    <span class="d-block font-weight-bold"
+                                                    >მეტრეველი</span
+                                                    >
+                                                </a>
+                                            </h6>
+                                            <span
+                                                class="text-success font-size-4 font-size-xl-5 font-weight-bold ml-auto"
+                                            >5 300 ₾</span
+                                            >
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex align-items-center px-0"
+                                    >
+                            <span
+                                class="font-size-6 font-size-xl-7 text-dark-silver mr-2 mr-xl-3"
+                            >2</span
+                            >
+                                        <div class="d-flex w-100 align-items-center">
+                                            <a
+                                                href="#"
+                                                class="rounded-circle overflow-hidden d-inline-block"
+                                            >
+                                                <img
+                                                    src="{{ base_path }}/themes/custom/girchi/dist/css/images/i.metreveli.jpg"
+                                                    class="rounded"
+                                                    alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                                    ირაკლი
+                                                    <span class="d-block font-weight-bold"
+                                                    >მეტრეველი</span
+                                                    >
+                                                </a>
+                                            </h6>
+                                            <span
+                                                class="text-success font-size-4 font-size-xl-5 font-weight-bold ml-auto"
+                                            >5 300 ₾</span
+                                            >
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex align-items-center px-0"
+                                    >
+                            <span
+                                class="font-size-6 font-size-xl-7 text-dark-silver mr-2 mr-xl-3"
+                            >3</span
+                            >
+                                        <div class="d-flex w-100 align-items-center">
+                                            <a
+                                                href="#"
+                                                class="rounded-circle overflow-hidden d-inline-block"
+                                            >
+                                                <img
+                                                    src="{{ base_path }}/themes/custom/girchi/dist/css/images/i.metreveli.jpg"
+                                                    class="rounded"
+                                                    alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                                    ირაკლი
+                                                    <span class="d-block font-weight-bold"
+                                                    >მეტრეველი</span
+                                                    >
+                                                </a>
+                                            </h6>
+                                            <span
+                                                class="text-success font-size-4 font-size-xl-5 font-weight-bold ml-auto"
+                                            >5 300 ₾</span
+                                            >
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex align-items-center px-0"
+                                    >
+                            <span
+                                class="font-size-6 font-size-xl-7 text-dark-silver mr-2 mr-xl-3"
+                            >4</span
+                            >
+                                        <div class="d-flex w-100 align-items-center">
+                                            <a
+                                                href="#"
+                                                class="rounded-circle overflow-hidden d-inline-block"
+                                            >
+                                                <img
+                                                    src="{{ base_path }}/themes/custom/girchi/dist/css/images/i.metreveli.jpg"
+                                                    class="rounded"
+                                                    alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                                    ირაკლი
+                                                    <span class="d-block font-weight-bold"
+                                                    >მეტრეველი</span
+                                                    >
+                                                </a>
+                                            </h6>
+                                            <span
+                                                class="text-success font-size-4 font-size-xl-5 font-weight-bold ml-auto"
+                                            >5 300 ₾</span
+                                            >
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex align-items-center px-0"
+                                    >
+                            <span
+                                class="font-size-6 font-size-xl-7 text-dark-silver mr-2 mr-xl-3"
+                            >5</span
+                            >
+                                        <div class="d-flex w-100 align-items-center">
+                                            <a
+                                                href="#"
+                                                class="rounded-circle overflow-hidden d-inline-block"
+                                            >
+                                                <img
+                                                    src="{{ base_path }}/themes/custom/girchi/dist/css/images/i.metreveli.jpg"
+                                                    class="rounded"
+                                                    alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                                    ირაკლი
+                                                    <span class="d-block font-weight-bold"
+                                                    >მეტრეველი</span
+                                                    >
+                                                </a>
+                                            </h6>
+                                            <span
+                                                class="text-success font-size-4 font-size-xl-5 font-weight-bold ml-auto"
+                                            >5 300 ₾</span
+                                            >
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="weekly"
+                                role="tabpanel"
+                                aria-labelledby="weekly-tab"
+                            >
+                                weekly
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="monthly"
+                                role="tabpanel"
+                                aria-labelledby="monthly-tab"
+                            >
+                                monthly
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="total"
+                                role="tabpanel"
+                                aria-labelledby="total-tab"
+                            >
+                                total
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card -->
+            </div>
+        </div>
+    </div>
 </div>
 
 

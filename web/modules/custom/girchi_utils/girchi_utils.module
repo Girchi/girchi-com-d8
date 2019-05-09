@@ -201,3 +201,11 @@ function terms_and_conditions_validate($form, &$form_state){
     \Drupal::messenger()->addWarning(t('You must agree to the terms and conditions before register'));
   }
 }
+
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function girchi_utils_preprocess_block(&$variables) {
+  $variables['base_path'] = base_path();
+}
