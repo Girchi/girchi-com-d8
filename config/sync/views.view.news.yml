@@ -570,7 +570,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: ''
+          value: All
           group: 1
           exposed: true
           expose:
@@ -579,8 +579,8 @@ display:
             description: ''
             use_operator: false
             operator: field_is_video_value_op
-            identifier: is_video
-            required: true
+            identifier: video
+            required: false
             remember: false
             multiple: false
             remember_roles:

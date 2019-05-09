@@ -1,4 +1,4 @@
-{% set lastpage = items.last.href | split('=') %}
+{#{% set lastpage = items.last.href | split('=') %}#}
 {% if items %}
     <div class="card-footer border-top p-0 d-flex align-items-center justify-content-between">
         {% if items.previous %}
@@ -40,7 +40,7 @@
                     </li>
                     <li class="page-item">
                         <a href="{{ items.last.href }}" class="page-link">
-                            {{ lastpage[1] + 1 }}
+{#                            {{ lastpage[1] + 1 }}#}
                         </a>
                     </li>
                 {% endif %}
