@@ -217,6 +217,7 @@
     "drupal/editor_file": "^1.2",
     "drupal/email_registration": "^1.0@RC",
     "drupal/environment_indicator": "3.x-dev",
+    "drupal/facebook_comments": "^1.0",
     "drupal/facebook_pixel": "^1.0@alpha",
     "drupal/field_group": "^1.0",
     "drupal/file_browser": "dev-1.x",

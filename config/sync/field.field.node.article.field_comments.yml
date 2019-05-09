@@ -1,0 +1,22 @@
+uuid: 2655a3e5-5a18-4914-9ba3-ad790619cb4b
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments
+    - node.type.article
+  module:
+    - facebook_comments
+id: node.article.field_comments
+field_name: field_comments
+entity_type: node
+bundle: article
+label: კომენტარები
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: facebook_comments

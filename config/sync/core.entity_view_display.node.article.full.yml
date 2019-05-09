@@ -6,12 +6,14 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.field_category
+    - field.field.node.article.field_comments
     - field.field.node.article.field_image
     - field.field.node.article.field_is_video
     - field.field.node.article.field_tags
     - field.field.node.article.field_video_url
     - node.type.article
   module:
+    - facebook_comments
     - image
     - text
     - user
@@ -24,21 +26,32 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_category:
     type: entity_reference_label
-    weight: 6
+    weight: 5
     region: content
     label: above
     settings:
       link: true
     third_party_settings: {  }
+  field_comments:
+    type: facebook_comments_formatter
+    weight: 6
+    region: content
+    label: above
+    settings:
+      facebook_comments_style: light
+      facebook_comments_width: 100%
+      facebook_comments_amount: '15'
+      facebook_comments_width_fluid: 0
+    third_party_settings: {  }
   field_image:
     type: image
-    weight: 3
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -47,7 +60,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_label
-    weight: 5
+    weight: 4
     region: content
     label: above
     settings:
@@ -55,7 +68,7 @@ content:
     third_party_settings: {  }
   field_video_url:
     type: video_embed_field_video
-    weight: 4
+    weight: 3
     region: content
     label: hidden
     settings:
