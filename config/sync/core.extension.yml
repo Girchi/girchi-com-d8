@@ -75,6 +75,7 @@ module:
   social_auth: 0
   social_auth_facebook: 0
   statistics: 0
+  straw: 0
   swiftmailer: 0
   system: 0
   taxonomy: 0
