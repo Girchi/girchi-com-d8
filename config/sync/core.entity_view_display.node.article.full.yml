@@ -45,9 +45,9 @@ content:
     label: above
     settings:
       facebook_comments_style: light
-      facebook_comments_width: 100%
-      facebook_comments_amount: '15'
-      facebook_comments_width_fluid: 0
+      facebook_comments_width: null
+      facebook_comments_width_fluid: true
+      facebook_comments_amount: 15
     third_party_settings: {  }
   field_image:
     type: image

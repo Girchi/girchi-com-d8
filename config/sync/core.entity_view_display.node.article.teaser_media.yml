@@ -31,6 +31,7 @@ content:
 hidden:
   body: true
   field_category: true
+  field_comments: true
   field_image: true
   field_tags: true
   field_video_url: true

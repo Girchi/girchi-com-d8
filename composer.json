@@ -233,7 +233,6 @@
     "drupal/linkit": "^4.3",
     "drupal/mailchimp": "^1.7",
     "drupal/masquerade": "^2.0@beta",
-    "drupal/masquerade_float_block": "^1.0@alpha",
     "drupal/media_entity": "^1.6",
     "drupal/media_entity_image": "^1.2",
     "drupal/menu_export": "^1.2",
