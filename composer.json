@@ -255,7 +255,7 @@
     "drupal/social_auth_facebook": "^1.0",
     "drupal/static_server": "^1.2",
     "drupal/statistics_counter": "1.x-dev",
-    "drupal/straw": "^1.0",
+    "drupal/straw": "^1.2",
     "drupal/swiftmailer": "^1.0@beta",
     "drupal/taxonomy_container": "^1.0",
     "drupal/telephone_validation": "^2.2",
