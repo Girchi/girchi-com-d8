@@ -98,7 +98,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
 
 
 function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-    $currentUser = Drupal::currentUser()->getRoles(1);
+    $currentUser = Drupal::currentUser()->getRoles();
 
   if ($form_id == "user_register_form") {
 
