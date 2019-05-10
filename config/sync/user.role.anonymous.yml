@@ -18,4 +18,5 @@ permissions:
   - 'view error messages'
   - 'view media'
   - 'view status messages'
+  - 'view user mail field'
   - 'view warning messages'
