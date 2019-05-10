@@ -1,0 +1,25 @@
+uuid: 60bf1fcf-71c3-4a48-aeb7-1a0e84ea155d
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.similar_news
+  module:
+    - views
+  theme:
+    - girchi
+id: views_block__similar_news_block_1
+theme: girchi
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:similar_news-block_1'
+settings:
+  id: 'views_block:similar_news-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }
