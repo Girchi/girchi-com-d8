@@ -205,7 +205,7 @@
     "drupal/contact_storage": "^1.0@beta",
     "drupal/context": "^4.0@beta",
     "drupal/context_groups": "^1.0",
-    "drupal/core": "^8.6",
+    "drupal/core": "^8.7",
     "drupal/csv_serialization": "^1.0",
     "drupal/default_content": "^1.0@alpha",
     "drupal/devel": "^1.0@RC",
