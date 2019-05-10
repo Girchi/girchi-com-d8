@@ -88,11 +88,14 @@
 
                     <hr class="d-print-none"/>
 
-                    <div class="pt-3 d-print-none">
-                        {{ content.field_comments }}
-                    </div>
+
                 </div>
             </div>
+        </div>
+        <hr class="d-print-none"/>
+        {{ print_block('views_block__similar_news_block_1') }}
+        <div class="pt-3 d-print-none">
+            {{ content.field_comments }}
         </div>
     </div>
 </div>
