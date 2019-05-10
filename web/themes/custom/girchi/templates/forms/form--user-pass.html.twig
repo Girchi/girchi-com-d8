@@ -1,0 +1,37 @@
+<form{{ attributes }}>
+
+    {{ element.form_build_id }}
+    {{ element.form_token }}
+    {{ element.form_id }}
+
+    <div class="container">
+        <div class="my-3 my-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8 col-lg-6 m-auto">
+                            <h5 class="card-title text-center text-success font-weight-bold text-uppercase">
+                                {{ 'Reset password'|t }}
+                            </h5>
+                        </div>
+                    </div>
+
+                    <hr class="card-divider my-0"/>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
+                            <form class="my-4">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">{{ 'Email'|t }}</label>
+                                    {{ element.name }}
+                                </div>
+
+                                {{ element.actions.submit }}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

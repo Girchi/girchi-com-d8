@@ -9,7 +9,7 @@ dependencies:
 id: tagfilterblock
 theme: girchi
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: tag_filter_block
 settings:

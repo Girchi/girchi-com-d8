@@ -59,7 +59,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 [
                     'form' => NULL,
                 ],
-            'template' => 'supporter_registration',
+            'template' => 'supporter-registration',
             'render element' => 'form',
         ],
         'top_topics' => [
@@ -68,28 +68,28 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                     'slider_topics' => NULL,
                     'bottom_topics' => NULL
                 ],
-            'template' => 'top_topics',
+            'template' => 'top-topics',
         ],
         'categories_block' => [
             'variables' =>
                 [
                     'categories' => NULL,
                 ],
-            'template' => 'categories_block',
+            'template' => 'categories-block',
         ],
         'top_videos' => [
             'variables' =>
                 [
                     'top_videos' => NULL,
                 ],
-            'template' => 'top_videos',
+            'template' => 'top-videos',
         ],
         'tags_block' => [
             'variables' =>
                 [
                     'tags' => NULL,
                 ],
-            'template' => 'tags_block',
+            'template' => 'tags-block',
         ],
     ];
 
@@ -164,6 +164,7 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
       $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
   }
 
+
     if ($form_id == "user_form") {
 
        if(!Drupal::currentUser()->hasPermission('admin')){
@@ -171,8 +172,18 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
 
        }
     }
+  // Password reset form
+  if ($form_id == "user_pass") {
+      // Unset email title
+      unset($form['name']['#title']);
+      // Add classes to email input
+      $form['name']['#attributes']['class'][] = 'form-control form-control-lg fix';
+      $form['name']['#attributes']['id'][] = 'email';
+      $form['name']['#attributes']['placeholder'][] = t('Enter Email');
 
-
+      // Add classes to submit button
+      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
+  }
 }
 
 function girchi_utils_after_build($form, &$form_state) {

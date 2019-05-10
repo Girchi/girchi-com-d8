@@ -1,10 +1,12 @@
 {% set image_uri = node.field_image.0.entity.uri.value %}
-
+{% set is_video = content.field_is_video.0['#markup'] %}
 
 <div class="media media-column">
     <div class="media-thumb w-100">
         <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="media-thumb-link">
+            {% if is_video  == 'On' %}
             <i class="icon-play-button media-play"></i>
+            {% endif %}
             <img src="{{image_style_url(image_uri , 'top_videos')}}" class="w-100" alt="..." />
         </a>
         {#<span class="media-date font-size-1">2:41</span>#}
