@@ -98,8 +98,10 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
 
 
 function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    $currentUser = Drupal::currentUser()->getRoles(1);
+
   if ($form_id == "user_register_form") {
-      $currentUser = Drupal::currentUser()->getRoles();
+
       if( reset($currentUser) == "anonymous") {
 
           unset($form['account']['mail']['#title']);
@@ -161,6 +163,14 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
 
       $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
   }
+
+    if ($form_id == "user_form") {
+
+       if(!Drupal::currentUser()->hasPermission('admin')){
+           $form['field_ged']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+
+       }
+    }
 
 
 }
