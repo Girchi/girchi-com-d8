@@ -342,12 +342,9 @@
       "drupal/block_node": {
         "Add route context to block": "patches/block_node_cache_contexts.patch"
       },
-      "drupal/email_registration": {
-        "Username is changing when admin edits profile": "https://www.drupal.org/files/issues/2019-04-02/email_registration-strange_username_logic_after_rc6_release-3024558-62.patch"
-      },
       "drupal/core": {
-        "Fix Entity reference autocomplete with fields": "https://www.drupal.org/files/issues/2018-03-09/drupal-use_view_output_for_entityreference_options-2174633-206.patch",
-        "Access user emails " : "https://www.drupal.org/files/issues/2018-12-04/role_based_email_access-drupal-8-6-2799049-17.patch"
+	    "Access user emails " : "https://www.drupal.org/files/issues/2019-04-26/drupal-2799049-30-new-permission-view-user-mail.patch",
+        "Fix Entity reference autocomplete with fields": "https://www.drupal.org/files/issues/2019-04-16/2174633-views-273.patch"
       }
     },
     "installer-paths": {
