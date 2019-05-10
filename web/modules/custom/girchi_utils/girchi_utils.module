@@ -59,7 +59,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 [
                     'form' => NULL,
                 ],
-            'template' => 'supporter_registration',
+            'template' => 'supporter-registration',
             'render element' => 'form',
         ],
         'top_topics' => [
@@ -68,28 +68,28 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                     'slider_topics' => NULL,
                     'bottom_topics' => NULL
                 ],
-            'template' => 'top_topics',
+            'template' => 'top-topics',
         ],
         'categories_block' => [
             'variables' =>
                 [
                     'categories' => NULL,
                 ],
-            'template' => 'categories_block',
+            'template' => 'categories-block',
         ],
         'top_videos' => [
             'variables' =>
                 [
                     'top_videos' => NULL,
                 ],
-            'template' => 'top_videos',
+            'template' => 'top-videos',
         ],
         'tags_block' => [
             'variables' =>
                 [
                     'tags' => NULL,
                 ],
-            'template' => 'tags_block',
+            'template' => 'tags-block',
         ],
     ];
 
