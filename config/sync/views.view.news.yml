@@ -117,6 +117,7 @@ display:
       row:
         type: 'entity:node'
         options:
+          relationship: none
           view_mode: teaser
       fields:
         title:
@@ -646,6 +647,7 @@ display:
         operator: AND
         groups:
           1: AND
+      group_by: false
     cache_metadata:
       max-age: -1
       contexts:
