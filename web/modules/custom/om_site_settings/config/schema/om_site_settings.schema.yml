@@ -3,22 +3,4 @@
 om_site_settings.site_settings:
   type: config_object
   label: 'Site Settings'
-  mapping:
-    facebook_url:
-      type: string
-      label: 'Facebook page URL'
-    twitter_url:
-      type: string
-      label: 'Twitter account URL'
-    youtube_url:
-      type: string
-      label: 'YouTube channel URL'
-    instagram_url:
-      type: string
-      label: 'Instagram account URL'
-    linkedin_url:
-      type: string
-      label: 'LinkedIn page URL'
-    footer_text:
-      type: label
-      label: 'Footer text'
+

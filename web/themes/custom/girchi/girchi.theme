@@ -18,6 +18,7 @@ function girchi_preprocess_html(array &$variables) {
   /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
     $variables['head_title'] = $variables['head_title_array']['name'];
   }*/
+
 }
 
 /**
@@ -41,7 +42,29 @@ function girchi_page_attachments_alter(array &$page) {
  */
 function girchi_preprocess_page(array &$variables) {
 
+
+
 }
+
+/**
+ * Implements hook_preprocess_user() for page.html.twig.
+ */
+function girchi_preprocess_user(array &$variables) {
+    $userId = \Drupal::currentUser()->id();
+    $userAvatar = \Drupal\user\Entity\User::load($userId)->get('user_picture')->entity->url();
+    $variables['user_id'] = $userId;
+    $variables['profile_picture_url'] = $userAvatar;
+
+    //config for user sidebar settings
+    $omediaConfig = \Drupal::config('om_site_settings.site_settings');
+    $showGed = $omediaConfig->get('user_sidebar_ged');
+    $showMember = $omediaConfig->get('user_sidebar_member');
+
+    $variables['show_ged'] = $showGed;
+    $variables['show_member'] = $showMember;
+
+}
+
 
 /**
  * Implements hook_theme_suggestions_page_alter().
