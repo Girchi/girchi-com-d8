@@ -1,0 +1,71 @@
+uuid: 272fdad0-bf65-4846-83f4-21e4628511f3
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.minimal
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_ged
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_personal_id
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_politician
+    - field.field.user.user.field_referral
+    - field.field.user.user.field_referral_url
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.minimal
+targetEntityType: user
+bundle: user
+mode: minimal
+content:
+  field_first_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ged:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_last_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: above
+hidden:
+  field_date_of_birth: true
+  field_personal_id: true
+  field_phone: true
+  field_politician: true
+  field_referral: true
+  field_referral_url: true
+  langcode: true
+  masquerade: true
+  member_for: true

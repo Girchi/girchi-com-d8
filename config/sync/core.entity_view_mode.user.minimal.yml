@@ -1,0 +1,10 @@
+uuid: 3c4190bb-5244-4443-ad11-099f9e8bc662
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.minimal
+label: Minimal
+targetEntityType: user
+cache: true
