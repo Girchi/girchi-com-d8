@@ -91,6 +91,13 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 ],
             'template' => 'tags-block',
         ],
+      'user_sidebar' => [
+        'variables' =>
+          [
+            'current_user' =>NULL,
+          ],
+        'template' => 'user_sidebar',
+      ],
     ];
 
   return $templates;
