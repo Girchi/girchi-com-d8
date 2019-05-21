@@ -51,11 +51,18 @@ function girchi_preprocess_page(array &$variables) {
  */
 function girchi_preprocess_user(array &$variables) {
     $userId = \Drupal::currentUser()->id();
-    $userAvatar = \Drupal\user\Entity\User::load($userId)->get('user_picture')->entity->url();
-    $variables['user_id'] = $userId;
-    $variables['profile_picture_url'] = $userAvatar;
 
-    //config for user sidebar settings
+    $avatarEntity = \Drupal\user\Entity\User::load($userId)->get('user_picture')->entity;
+    if($avatarEntity) {
+      $userAvatar = $avatarEntity->url();
+      $variables['profile_picture_url'] = $userAvatar;
+    }else{
+      $userAvatar = 'https://banner2.kisspng.com/20180705/kwk/kisspng-computer-icons-user-avatar-clip-art-simple-icon-5b3dc2f094d281.3228171615307742566096.jpg';
+      $variables['profile_picture_url'] = $userAvatar;
+    }
+    $variables['user_id'] = $userId;
+
+  //config for user sidebar settings
     $omediaConfig = \Drupal::config('om_site_settings.site_settings');
     $showGed = $omediaConfig->get('user_sidebar_ged');
     $showMember = $omediaConfig->get('user_sidebar_member');
