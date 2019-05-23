@@ -1,30 +1,32 @@
-{% for type, messages in message_list %}
-    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
+<div class="container">
+    {% for type, messages in message_list %}
+        <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
 
-        {# Get alert type from message type #}
-        {% if type == 'error' %}
-            {% set alertType = 'danger' %}
-        {% elseif type == 'success' %}
-            {% set alertType = 'success' %}
-        {% elseif type == 'warning' %}
-            {% set alertType = 'warning' %}
-        {% else %}
-            {% set alertType = 'primary' %}
-        {% endif %}
-
-        <div class="alert alert-{{ alertType }}" role="alert">
-            {% if status_headings[type] %}
-                <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-            {% endif %}
-            {% if messages|length > 1 %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
+            {# Get alert type from message type #}
+            {% if type == 'error' %}
+                {% set alertType = 'danger' %}
+            {% elseif type == 'success' %}
+                {% set alertType = 'success' %}
+            {% elseif type == 'warning' %}
+                {% set alertType = 'warning' %}
             {% else %}
-                {{ messages|first }}
+                {% set alertType = 'primary' %}
             {% endif %}
+
+            <div class="alert alert-{{ alertType }}" role="alert">
+                {% if status_headings[type] %}
+                    <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+                {% endif %}
+                {% if messages|length > 1 %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ messages|first }}
+                {% endif %}
+            </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
+</div>
