@@ -91,7 +91,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 ],
             'template' => 'tags-block',
         ],
-      'user_sidebar' => [
+      'user_profile' => [
         'variables' =>
           [
             'user_id' =>NULL,
@@ -102,7 +102,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
             'ged' => NULL,
             'member' => NULL
           ],
-        'template' => 'user_sidebar',
+        'template' => 'user_profile',
       ],
     ];
 

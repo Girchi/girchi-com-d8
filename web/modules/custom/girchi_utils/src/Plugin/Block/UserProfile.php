@@ -6,14 +6,14 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 /**
- * Provides a 'UserSidebar' block.
+ * Provides a 'UserProfile' block.
  *
  * @Block(
- *  id = "user_sidebar",
- *  admin_label = @Translation("User sidebar"),
+ *  id = "user_profile",
+ *  admin_label = @Translation("User profile"),
  * )
  */
-class UserSidebar extends BlockBase {
+class UserProfile extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -21,14 +21,14 @@ class UserSidebar extends BlockBase {
   public function blockForm($form, FormStateInterface $form_state)
   {
 
-    $form['user_sidebar_ged'] = [
+    $form['user_profile_ged'] = [
         '#type' => 'checkbox',
-        '#title' => 'Show Ged on User profile sidebar',
+        '#title' => 'Show Ged',
         '#default_value' => isset($this->configuration['ged']) ? $this->configuration['ged'] : 1  ,
     ];
-    $form['user_sidebar_member'] = [
+    $form['user_profile_member'] = [
         '#type' => 'checkbox',
-        '#title' => 'Show Member statistic on User profile sidebar',
+        '#title' => 'Show Member',
         '#default_value' => isset($this->configuration['member']) ? $this->configuration['member'] : 1
     ];
     return $form;
@@ -36,8 +36,8 @@ class UserSidebar extends BlockBase {
 
   public function blockSubmit($form, FormStateInterface $form_state) {
 
-    $this->configuration['ged'] = $form_state->getValue('user_sidebar_ged');
-    $this->configuration['member'] = $form_state->getValue('user_sidebar_member');
+    $this->configuration['ged'] = $form_state->getValue('user_profile_ged');
+    $this->configuration['member'] = $form_state->getValue('user_profile_member');
   }
 
   /**
@@ -60,12 +60,12 @@ class UserSidebar extends BlockBase {
     }
 
     $build = [];
-    $build['user_sidebar']['#markup'] = 'Implement UserSidebar.';
+    $build['user_profile']['#markup'] = 'Implement UserProfile.';
 
     return array(
-      '#theme' => 'user_sidebar',
-      '#title' => t('User sidebar'),
-      '#description' => 'sidebar for users profile',
+      '#theme' => 'user_profile',
+      '#title' => t('User Profile'),
+      '#description' => 'User profile block',
       '#ged' => $this->configuration['ged'],
       '#member'=> $this->configuration['member'],
       '#user_id' => $currentUserId,
