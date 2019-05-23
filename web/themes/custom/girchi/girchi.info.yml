@@ -13,7 +13,6 @@ regions:
   header_nav: Header Navigation
   content_top: Content Top
   content: Content
-  sidebar: Sidebar
   content_bottom: Content Bottom
   sidebar_primary: Primary Sidebar
   sidebar_secondary: Secondary Sidebar
