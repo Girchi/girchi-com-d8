@@ -96,22 +96,6 @@ class SiteSettingsForm extends ConfigFormBase
             60 * 60 * 12 => '12 Hours',
             60 * 60 * 24 => '24 Hours',
         ];
-        // Promo popup
-        $form['user_sidebar'] = [
-            '#type' => 'details',
-            '#open' => true,
-            '#title' => 'User sidebar profile settings',
-        ];
-        $form['user_sidebar']['user_sidebar_ged'] = [
-            '#type' => 'checkbox',
-            '#title' => 'Show Ged on User profile sidebar',
-            '#default_value' => $config->get('user_sidebar_ged'),
-        ];
-        $form['user_sidebar']['user_sidebar_member'] = [
-            '#type' => 'checkbox',
-            '#title' => 'Show Member statistic on User profile sidebar',
-            '#default_value' => $config->get('user_sidebar_member'),
-        ];
 
         return parent::buildForm($form, $form_state);
     }

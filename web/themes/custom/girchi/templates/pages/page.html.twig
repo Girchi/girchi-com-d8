@@ -13,6 +13,11 @@
                 {{ page.content }}
             {% endif %}
 
+
+            {% if page.sidebar %}
+                {{ page.sidebar }}
+            {% endif %}
+
             {% if page.content_bottom %}
                 {{ page.content_bottom }}
             {% endif %}
