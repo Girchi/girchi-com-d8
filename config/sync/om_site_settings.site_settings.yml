@@ -1,0 +1,15 @@
+facebook_url: ''
+twitter_url: ''
+youtube_url: ''
+instagram_url: ''
+linkedin_url: ''
+footer_text: ''
+langcode: en
+_core:
+  default_config_hash: NkdNpcz0u9s1KM7wnP-gPGF_HA8Yz_hZhCXkWOeroNQ
+contact_info_phone: '+995 551 677 772'
+contact_info_email: INFO@GIRCHI.COM
+social_media_facebook: 'https://www.facebook.com/GirchiParty/'
+social_media_twitter: ''
+social_media_instagram: 'https://www.instagram.com/girchiparty/'
+social_media_youtube: 'https://www.youtube.com/channel/UC6o6176a756vk1nZuzAXy5g'

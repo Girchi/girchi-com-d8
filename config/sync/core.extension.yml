@@ -60,6 +60,7 @@ module:
   node: 0
   om_code_embed: 0
   om_content_authoring: 0
+  om_site_settings: 0
   om_twig_helpers: 0
   options: 0
   page_cache: 0
