@@ -97,6 +97,53 @@ class SiteSettingsForm extends ConfigFormBase
             60 * 60 * 24 => '24 Hours',
         ];
 
+        $form['contact_info'] = [
+            '#type' => 'details',
+            '#open' => true,
+            '#title' => t('Contact information'),
+        ];
+        $form['contact_info']['contact_info_phone'] = [
+            '#description' => t('Enter your contact phone number'),
+            '#type' => 'textfield',
+            '#title' => t('Contact phone'),
+            '#default_value' => $config->get('contact_info_phone'),
+        ];
+        $form['contact_info']['contact_info_email'] = [
+            '#description' => t('Enter your contact email address'),
+            '#type' => 'textfield',
+            '#title' => t('Contact Email'),
+            '#default_value' => $config->get('contact_info_email'),
+        ];
+        $form['social_media'] = [
+            '#type' => 'details',
+            '#open' => true,
+            '#title' => t('Social Media'),
+        ];
+        $form['social_media']['social_media_facebook'] = [
+            '#description' => t('Enter your facebook page url'),
+            '#type' => 'textfield',
+            '#title' => t('Facebook page url'),
+            '#default_value' => $config->get('social_media_facebook'),
+        ];
+        $form['social_media']['social_media_twitter'] = [
+            '#description' => t('Enter your twitter page url'),
+            '#type' => 'textfield',
+            '#title' => t('Twitter profile url'),
+            '#default_value' => $config->get('social_media_twitter'),
+        ];
+        $form['social_media']['social_media_instagram'] = [
+            '#description' => t("Enter your instagram page url"),
+            '#type' => 'textfield',
+            '#title' => t('Instagram profile url'),
+            '#default_value' => $config->get('social_media_instagram')
+        ];
+        $form['social_media']['social_media_youtube'] = [
+            '#description' => t('Enter your youtube channel url'),
+            '#type' => 'textfield',
+            '#title' => t('Youtube chanel url'),
+            '#default_value' => $config->get('social_media_youtube')
+        ];
+
         return parent::buildForm($form, $form_state);
     }
     /**
@@ -113,9 +160,14 @@ class SiteSettingsForm extends ConfigFormBase
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
         parent::submitForm($form, $form_state);
+
         $fields = [
-            'user_sidebar_ged',
-            'user_sidebar_member'
+            'contact_info_phone',
+            'contact_info_email',
+            'social_media_facebook',
+            'social_media_twitter',
+            'social_media_instagram',
+            'social_media_youtube',
         ];
 
         foreach ($fields as $field_key) {

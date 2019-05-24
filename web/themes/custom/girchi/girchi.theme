@@ -42,7 +42,17 @@ function girchi_page_attachments_alter(array &$page) {
  */
 function girchi_preprocess_page(array &$variables) {
 
+    //get config from site settings
+    $config = \Drupal::config('om_site_settings.site_settings');
 
+    $variables['footer_config'] = [
+        'phone' => $config->get('contact_info_phone'),
+        'email' => $config->get('contact_info_email'),
+        'facebook' => $config->get('social_media_facebook'),
+        'twitter' => $config->get('social_media_twitter'),
+        'instagram' => $config->get('social_media_instagram'),
+        'youtube' => $config->get('social_media_youtube'),
+    ];
 
 }
 

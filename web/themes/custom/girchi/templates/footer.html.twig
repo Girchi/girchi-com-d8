@@ -1,7 +1,6 @@
 <!-- Start of footer -->
 <footer>
     <!-- Start of footer 1st row -->
-
     <div class="bg-white">
         <div class="container">
             <nav class="navbar py-3 flex-column flex-lg-row">
@@ -22,36 +21,53 @@
                 <ul
                         class="navbar-list list-unstyled d-inline-flex font-size-3 ml-lg-auto mr-lg-3 mb-0"
                 >
+                    {% if footer_config.phone %}
                     <li class="navbar-list-item">
                         <i class="icon-smartphone"></i>
-                        <a href="tel:+995551677772">+995 551 677 772</a>
+                        <a href="tel:{{ footer_config.phone }}">{{ footer_config.phone }}</a>
                     </li>
+                    {% endif %}
+                    {% if footer_config.email %}
                     <li class="navbar-list-item">
                         <i class="icon-envelope"></i>
-                        <a href="mailto:info@girchi.com" class="text-uppercase"
-                        >info@girchi.com</a
+                        <a href="mailto:{{ footer_config.email }}" class="text-uppercase"
+                        >{{ footer_config.email }}</a
                         >
                     </li>
+                    {% endif %}
                 </ul>
 
                 <ul
                         class="navbar-list list-unstyled d-inline-flex font-size-3 mb-0"
                 >
+                    {% if footer_config.facebook %}
                     <li class="navbar-list-item">
-                        <a href="https://www.facebook.com/GirchiParty/" target="_blank" class="text-decoration-none">
+                        <a href="{{ footer_config.facebook  }}" target="_blank" class="text-decoration-none">
                             <i class="icon-social-facebook-circular-button"></i
                             ></a>
                     </li>
+                    {% endif %}
+                    {% if footer_config.twitter %}
                     <li class="navbar-list-item">
-                        <a href="https://www.instagram.com/girchiparty/" target="_blank" class="text-decoration-none">
+                        <a href="{{ footer_config.twitter }}" target="_blank" class="text-decoration-none">
                             <i class="icon-social-twitter-circular-button"></i
                             ></a>
                     </li>
+                    {% endif %}
+                    {% if footer_config.instagram %}
+                        <li class="navbar-list-item">
+                            <a href="{{ footer_config.instagram }}" target="_blank" class="text-decoration-none">
+                                <i class="icon-social-twitter-circular-button"></i
+                                ></a>
+                        </li>
+                    {% endif %}
+                    {% if footer_config.youtube %}
                     <li class="navbar-list-item">
-                        <a href="https://www.youtube.com/channel/UC6o6176a756vk1nZuzAXy5g" target="_blank" class="text-decoration-none"
+                        <a href="{{ footer_config.youtube }}" target="_blank" class="text-decoration-none"
                         ><i class="icon-social-youtube-circular-button"></i
                             ></a>
                     </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
