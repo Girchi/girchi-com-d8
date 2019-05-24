@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-10 09:02+0000\n"
-"PO-Revision-Date: 2019-05-10 09:02+0000\n"
+"POT-Creation-Date: 2019-05-24 12:32+0000\n"
+"PO-Revision-Date: 2019-05-24 12:32+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -334,9 +334,6 @@ msgstr "სურათი"
 msgid "Types"
 msgstr "ტიპები"
 
-msgid "Hierarchy"
-msgstr "იერარქია"
-
 msgid "Required"
 msgstr "სავალდებულო"
 
@@ -639,6 +636,9 @@ msgid "Content type for child pages"
 msgstr ""
 "კონტენტის ტიპი შვილობილი "
 "გვერდებისთვის"
+
+msgid "All"
+msgstr "ყველა"
 
 msgid "Done"
 msgstr "დასრულება"
@@ -1246,6 +1246,11 @@ msgstr "კომენტარები"
 
 msgid "Full"
 msgstr "სრული"
+
+msgid "1 new"
+msgid_plural "@count new"
+msgstr[0] "1 ახალი"
+msgstr[1] "@count ახალი"
 
 msgid "Condition"
 msgstr "პირობა"
@@ -1860,6 +1865,9 @@ msgstr "დაიწერა"
 
 msgid "Hidden"
 msgstr "დამალული"
+
+msgid "Show"
+msgstr "ჩვენება"
 
 msgid "Site language"
 msgstr "საიტის ენა"
@@ -2524,8 +2532,8 @@ msgstr "გვერდი ვერ მოიძებნა"
 msgid "More help"
 msgstr "მეტი დახმარება"
 
-msgid "Add terms"
-msgstr "ტერმინების დამატება"
+msgid "Sizes"
+msgstr "ზომები"
 
 msgid "« first"
 msgstr "« პირველი"
@@ -2800,15 +2808,6 @@ msgstr "საიტის ინსტალაცია"
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
 
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
-
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
 
@@ -3042,8 +3041,23 @@ msgstr "მონაცემთა ბაზის სისტემა"
 msgid "Database system version"
 msgstr "მონაცემთა ბაზის ვერსია"
 
-msgid "All"
-msgstr "ყველა"
+msgid "Active"
+msgstr "აქტიური"
+
+msgid "Hierarchy"
+msgstr "იერარქია"
+
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
 
 msgid "Enter your email address or username."
 msgstr ""
@@ -3061,9 +3075,6 @@ msgstr "რეგისტრაცია"
 
 msgid "Reset your password"
 msgstr "პაროლის აღდგენა"
-
-msgid "Show"
-msgstr "ჩვენება"
 
 msgid ""
 "A valid email address. All emails from the system will be sent to this "
@@ -3117,14 +3128,6 @@ msgstr "სუსტი"
 
 msgid "Strong"
 msgstr "ძლიერი"
-
-msgid "1 new"
-msgid_plural "@count new"
-msgstr[0] "1 ახალი"
-msgstr[1] "@count ახალი"
-
-msgid "Sizes"
-msgstr "ზომები"
 
 msgid "Provide a password for the new account in both fields."
 msgstr "შეიყვანეთ პაროლი"
@@ -3240,4 +3243,60 @@ msgstr "ყველა ვიდეო"
 
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
+
+msgid "Facebook page url"
+msgstr ""
+"\r\n"
+"Facebook გვერდის მისამართი"
+
+msgid "Enter your facebook page url"
+msgstr ""
+"შეიყვანეთ facebook გვერდის "
+"მისამართი"
+
+msgid "Twitter profile url"
+msgstr "Twitter პროფილის მისამართი"
+
+msgid "Enter your twitter page url"
+msgstr ""
+"შეიყვანეთ twitter გვერდის "
+"მისამართი"
+
+msgid "Instagram profile url"
+msgstr "Instagram გვერდის მისამართი"
+
+msgid "Enter your instagram page url"
+msgstr ""
+"შეიყვანეთ instagram  გვერდის "
+"მისამართი"
+
+msgid "Youtube chanel url"
+msgstr "Youtube არხის მისამართი"
+
+msgid "Social Media"
+msgstr "სოციალური მედია"
+
+msgid "Enter your youtube channel url"
+msgstr ""
+"შეიყვანეთ youtube არხის  "
+"მისამართი"
+
+msgid "Contact phone"
+msgstr "საკონტაქტო ნომერი"
+
+msgid "Enter your contact phone number"
+msgstr ""
+"შეიყვანეთ საკონტაქტო "
+"ტელეფონის ნომერი"
+
+msgid "Contact information"
+msgstr "საკონტაქტო ინფორმაცია"
+
+msgid "Enter your contact email address"
+msgstr ""
+"შეიყვანეთ საკონტაქტო "
+"ელ-ფოსტის მისმართი"
+
+msgid "Contact Email"
+msgstr "საკონტაქტო ელ-ფოსტა"
 
