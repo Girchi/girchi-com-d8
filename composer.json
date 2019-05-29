@@ -349,6 +349,9 @@
       },
       "drupal/video_embed_facebook": {
         "iframe fix": "https://www.drupal.org/files/issues/2019-05-13/facebook_embed_field.patch"
+      },
+      "drupal/page_manager": {
+        "Fix title change bug": "https://www.drupal.org/files/issues/2018-04-17/page_manager-page-label-not-editable-2830464-10.patch"
       }
     },
     "installer-paths": {
