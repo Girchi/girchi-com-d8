@@ -70,6 +70,8 @@ module:
   panels_ipe: 0
   path: 0
   role_delegation: 0
+  search_api: 0
+  search_api_db: 0
   serialization: 0
   shortcut: 0
   social_api: 0

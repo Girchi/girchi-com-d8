@@ -1,0 +1,17 @@
+uuid: 22c014a7-561c-4c92-ad48-790b2d928239
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: girchi
+name: Girchi
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: partial
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true
