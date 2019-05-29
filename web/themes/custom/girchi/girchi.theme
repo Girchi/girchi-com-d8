@@ -163,6 +163,19 @@ function girchi_preprocess_node(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_views_view().
+ */
+function girchi_preprocess_views_view(&$variables) {
+    $termID = $variables['exposed']['category']['#value'];
+    if ($termID){
+        $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($termID);
+        $variables['categoryName'] = $term->name->value;
+    }
+
+}
+
+
+/**
  * Implements hook_preprocess_form().
  */
 function girchi_preprocess_form(array &$variables) {
