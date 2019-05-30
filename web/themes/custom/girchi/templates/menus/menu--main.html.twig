@@ -40,4 +40,12 @@
             {% endif %}
         {% endmacro %}
     </div>
+    <form class="navbar-search mt-3 mt-lg-0  ml-auto mr-2 text-right border-bottom border-bottom-lg-0 pb-3 pb-lg-0" action="/search" type="GET">
+        <div class="navbar-search-input bg-white rounded-oval pr-4 border-secondary border overflow-hidden w-100 w-lg-200 max-w-lg-200 w-lg-500" style="display: block;">
+            <input type="text" name="search_text" placeholder="ძებნა..." class="border-0 py-1 m-1 px-3 outline-none font-size-3 text-success w-100">
+        </div>
+        <button class="navbar-search-btn border-0 p-0 outline-none bg-transparent line-height-0-9 m-2 p-1 text-dark-silver">
+            <i class="icon-search"></i>
+        </button>
+    </form>
 </nav>
