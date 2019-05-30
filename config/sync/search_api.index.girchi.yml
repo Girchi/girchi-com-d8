@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_category
     - field.storage.node.field_tags
     - search_api.server.girchi
   module:
@@ -23,19 +22,11 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  field_category:
-    label: Category
-    datasource_id: 'entity:node'
-    property_path: field_category
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_category
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
     property_path: field_tags
-    type: integer
+    type: text
     dependencies:
       config:
         - field.storage.node.field_tags
