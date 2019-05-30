@@ -1,0 +1,23 @@
+uuid: 51b31058-ac66-45a2-b226-781252556a46
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_featured
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.field_featured
+field_name: field_featured
+entity_type: taxonomy_term
+bundle: tags
+label: Featured
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ჩართვა
+  off_label: გამორთვა
+field_type: boolean
