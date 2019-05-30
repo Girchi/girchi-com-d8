@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-29 08:50+0000\n"
-"PO-Revision-Date: 2019-05-29 08:50+0000\n"
+"POT-Creation-Date: 2019-05-30 11:07+0000\n"
+"PO-Revision-Date: 2019-05-30 11:07+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -333,6 +333,9 @@ msgstr "სურათი"
 
 msgid "Types"
 msgstr "ტიპები"
+
+msgid "Hierarchy"
+msgstr "იერარქია"
 
 msgid "Required"
 msgstr "სავალდებულო"
@@ -2535,6 +2538,9 @@ msgstr "მეტი დახმარება"
 msgid "Sizes"
 msgstr "ზომები"
 
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
 msgid "« first"
 msgstr "« პირველი"
 
@@ -2808,6 +2814,15 @@ msgstr "საიტის ინსტალაცია"
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
 
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
+
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
 
@@ -3044,21 +3059,6 @@ msgstr "მონაცემთა ბაზის ვერსია"
 msgid "Active"
 msgstr "აქტიური"
 
-msgid "Hierarchy"
-msgstr "იერარქია"
-
-msgid "Add terms"
-msgstr "ტერმინების დამატება"
-
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
-
 msgid "Enter your email address or username."
 msgstr ""
 "შეიყვანეთ თქვენი "
@@ -3247,23 +3247,45 @@ msgstr "შენახვა"
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
-msgid "Become a politician"
-msgstr "გახდი პოლიტიკოსი"
-
-msgid "Become a politician, get enough votes and get into the party list"
+msgid "Further instructions have been sent to your email address."
 msgstr ""
-"გახდი პოლიტიკოსი, "
-"დააგროვე ხმების "
-"საკმარისი რაოდენობა და "
-"მოხვდი პარტიულ სიაში"
-
-msgid "Want to be politician"
-msgstr "მინდა პოლიტიკოსობა"
+"შემდგომი ინსტრუქციები "
+"გაიგზავნა თქვენი "
+"ელექტრონული ფოსტის "
+"მისამართით."
 
 msgid "The changes have been saved."
 msgstr ""
 "ცვლილებები წარმატებით "
 "შეინახა"
+
+msgid "Current password"
+msgstr "მიმდინარე პაროლი"
+
+msgid ""
+"A welcome message with further instructions has been sent to your "
+"email address."
+msgstr ""
+"მისასალმებელი წერილი "
+"შემდგომი ინსტრუქციებით "
+"გაიგზავნა ელ.ფოსტის "
+"მისამართზე."
+
+msgid ""
+"Unrecognized username or password. <a href=\":password\">Forgot your "
+"password?</a>"
+msgstr ""
+"არასწორი სახელი ან პაროლი. "
+"<a href=\":password\">დაგავიწყდა "
+"პაროლი?</a>"
+
+msgid "Girchi"
+msgstr "გირჩი"
+
+msgid "General settings for this site."
+msgstr ""
+"საიტის ზოგადი "
+"პარამეტრები."
 
 msgid "Contact phone"
 msgstr "საკონტაქტო ნომერი"
@@ -3321,11 +3343,94 @@ msgstr ""
 msgid "Social Media"
 msgstr "სოციალური მედია"
 
+msgid "General settings"
+msgstr "ძირითადი პარამეტრები."
+
+msgid "Become a politician"
+msgstr "გახდი პოლიტიკოსი"
+
+msgid "Become a politician, get enough votes and get into the party list"
+msgstr ""
+"გახდი პოლიტიკოსი, "
+"დააგროვე ხმების "
+"საკმარისი რაოდენობა და "
+"მოხვდი პარტიულ სიაში"
+
+msgid "Want to be politician"
+msgstr "მინდა პოლიტიკოსობა"
+
 msgid "Edit user"
 msgstr "პარამეტრების შეცვლა"
 
 msgid "Change Password"
 msgstr "პაროლის შეცვლა"
+
+msgid "Login"
+msgstr "შესვლა"
+
+msgid "I want to be a politician"
+msgstr "მინდა პოლიტიკოსობა"
+
+msgid "Personal number"
+msgstr "პირადი ნომერი"
+
+msgid "Address"
+msgstr "მისამართი"
+
+msgid "New password"
+msgstr "ახალი პაროლი"
+
+msgid "Retype password"
+msgstr "გაიმეორეთ პაროლი"
+
+msgid "members in total"
+msgstr "წევრს შორის"
+
+msgid "More Freedom"
+msgstr "მეტი თავისუფლება"
+
+msgid "all rights reserved. Girchi"
+msgstr ""
+"ყველა უფლება დაცულია. "
+"გირჩი"
+
+msgid "Categories"
+msgstr "კატეგორიები"
+
+msgid "Become a partner"
+msgstr "გახდი პარტნიორი"
+
+msgid "Fund the GIRCHI, get the relevant GeDs and hit the leaderboard"
+msgstr ""
+"დააფინანსე გირჩი, მიიღე "
+"შესაბამისი რაოდენობის "
+"GeD-ები და მოხვდი "
+"ლიდერბორდში"
+
+msgid "Donate"
+msgstr "დააფინანსე"
+
+msgid "Top partners"
+msgstr "ტოპ პარტნიორები"
+
+msgid "Full list"
+msgstr "სრული სია"
+
+msgid "Week"
+msgstr "კვირის"
+
+msgid "Similar news"
+msgstr "მსგავსი სიახლეები"
+
+msgid ""
+"You have just used your one-time login link. Your account is now "
+"active and you are authenticated."
+msgstr ""
+"თქვენ ახლახანს "
+"გამოიყენეთ თქვენი "
+"ერთჯერადი შესვლა. თქვენი "
+"ანგარიში აქტიურია და "
+"თქვენ დამოწმებული ხართ."
 
 msgid "Display user interface"
 msgstr ""
@@ -3337,4 +3442,7 @@ msgstr ""
 "მომხმარებლის "
 "შესვლა/რეგისტრაცია "
 "ღილაკების გამოჩენა "
+
+msgid "ძებნა..."
+msgstr "Search..."
 
