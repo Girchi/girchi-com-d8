@@ -3488,3 +3488,7 @@ msgstr "Search..."
 msgid "Search..."
 msgstr "ძებნა..."
 
+msgid "News"
+msgstr "სიახლეები"
+
+
