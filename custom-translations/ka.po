@@ -1138,7 +1138,7 @@ msgid "User login"
 msgstr "მომხმარებლის ავტორიზაცია"
 
 msgid "Log in"
-msgstr "სისტემაში შესვლა"
+msgstr "შესვლა"
 
 msgid "Link text"
 msgstr "ბმულის ტექსტი"
@@ -3155,9 +3155,7 @@ msgstr ""
 "თარიღი"
 
 msgid "Phone number"
-msgstr ""
-"მიუთითეთ ტელეფონის "
-"ნომერი"
+msgstr "ტელეფონის ნომერი"
 
 msgid "Amount of GeD"
 msgstr "მიუთითეთ GeD-ების რაოდენობა"
@@ -3365,6 +3363,11 @@ msgstr "პარამეტრების შეცვლა"
 msgid "Change Password"
 msgstr "პაროლის შეცვლა"
 
+msgid "General settings for this site."
+msgstr ""
+"საიტის ზოგადი "
+"პარამეტრები."
+
 msgid "Login"
 msgstr "შესვლა"
 
@@ -3377,6 +3380,10 @@ msgstr "პირადი ნომერი"
 msgid "Address"
 msgstr "მისამართი"
 
+
+msgid "Current password"
+msgstr "მიმდინარე პაროლი"
+
 msgid "New password"
 msgstr "ახალი პაროლი"
 
@@ -3385,6 +3392,11 @@ msgstr "გაიმეორეთ პაროლი"
 
 msgid "members in total"
 msgstr "წევრს შორის"
+
+
+msgid "Girchi"
+msgstr "გირჩი"
+
 
 msgid "More Freedom"
 msgstr "მეტი თავისუფლება"
@@ -3423,6 +3435,23 @@ msgid "Similar news"
 msgstr "მსგავსი სიახლეები"
 
 msgid ""
+"Unrecognized username or password. <a href=\":password\">Forgot your "
+"password?</a>"
+msgstr ""
+"არასწორი სახელი ან პაროლი. "
+"<a href=\":password\">დაგავიწყდა "
+"პაროლი?</a>"
+
+msgid ""
+"A welcome message with further instructions has been sent to your "
+"email address."
+msgstr ""
+"მისასალმებელი წერილი "
+"შემდგომი ინსტრუქციებით "
+"გაიგზავნა ელ.ფოსტის "
+"მისამართზე."
+
+msgid ""
 "You have just used your one-time login link. Your account is now "
 "active and you are authenticated."
 msgstr ""
@@ -3431,6 +3460,16 @@ msgstr ""
 "ერთჯერადი შესვლა. თქვენი "
 "ანგარიში აქტიურია და "
 "თქვენ დამოწმებული ხართ."
+
+msgid "Further instructions have been sent to your email address."
+msgstr ""
+"შემდგომი ინსტრუქციები "
+"გაიგზავნა თქვენი "
+"ელექტრონული ფოსტის "
+"მისამართით."
+
+msgid "General settings"
+msgstr "ძირითადი პარამეტრები."
 
 msgid "Display user interface"
 msgstr ""

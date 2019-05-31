@@ -31,7 +31,7 @@
                                 type="button"
                                 class="position-absolute position-bottom-0 w-100 bg-transparent border-0 overlay-240 font-size-3 py-3 text-uppercase text-white"
                         >
-                            შეცვლა
+                            {{ "Change" | t }}
                         </button>
                         <input
                                 type="file"
@@ -50,7 +50,7 @@
                               <label
                                       class="form-checkbox-label text-success font-size-3 text-uppercase w-auto"
                                       for="edit-field-politician-value"
-                              >მინდა პოლიტიკოსობა</label
+                              >{{ "I want to be a politician" | t }}</label
                               >
                           </span>
                         </div>
@@ -62,34 +62,34 @@
                     <div class="px-0 px-sm-8 pl-xl-0 pr-xl-4 mt-4 my-lg-0">
                         <div class="form-group mb-2">
                             <label class="form-label" for="first-name"
-                            >სახელი</label
+                            >{{ "Name" | t }}</label
                             >
                             {{ element.field_first_name }}
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="last-name"
-                            >გვარი</label
+                            >{{ "Last Name" | t }}</label
                             >
                             {{ element.field_last_name }}
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="id-number"
-                            >პირადი ნომერი</label
+                            >{{ "Personal number" | t }}</label
                             >
                             {{ element.field_personal_id }}
                         </div>
                         <div class="form-group mb-2">
-                            <label class="form-label" for="email">ელ.ფოსტა</label>
+                            <label class="form-label" for="email">{{ "Email" | t }}</label>
                             {{ element.account.mail }}
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="address"
-                            >მისამართი</label>
+                            >{{ "Address" | t }}</label>
                             {{ element.field_address }}
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="phone"
-                            >ტელეფონის ნომერი</label
+                            >{{ "Phone number" | t }}</label
                             >
                             {{ element.field_phone }}
                         </div>
@@ -101,22 +101,23 @@
                         </h5>
                         <div class="form-group mb-2">
                             <label class="form-label" for="address"
-                            >მიმდინარე პაროლი</label>
+                            >{{ "Current password" | t }}</label>
                             {{ element.account.current_pass }}
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="address"
-                            >ახალი პაროლი</label>
+                            >{{ "New password" | t }}</label>
                             {{ element.account.pass.pass1 }}
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="address"
-                            >გაიმეორეთ პაროლი</label>
+                            >{{ "Retype password" | t }}</label>
                             {{ element.account.pass.pass2 }}
                         </div>
                         {{ element.actions.submit }}
                     </div>
                 </div>
+            </div>
         </form>
     </div>
 </div>

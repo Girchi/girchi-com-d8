@@ -152,7 +152,7 @@ function girchi_theme_suggestions_fieldset_alter(array &$suggestions, array $var
 function girchi_preprocess_node(array &$variables) {
     // Default to turning off byline/submitted.
     //$variables['display_submitted'] = FALSE;
-    if ($variables['node']->getType() == 'article' && $variables['view_mode'] == 'teaser') {
+    if ($variables['node']->getType() == 'article') {
         $terms = [];
         $taxonomy_terms = $variables['node']->get('field_category')->referencedEntities();
         foreach ($taxonomy_terms as $term) {
