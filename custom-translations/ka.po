@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-31 09:20+0000\n"
-"PO-Revision-Date: 2019-05-31 09:20+0000\n"
+"POT-Creation-Date: 2019-05-31 12:46+0000\n"
+"PO-Revision-Date: 2019-05-31 12:46+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3242,6 +3242,9 @@ msgstr "ყველა ვიდეო"
 msgid "Save"
 msgstr "შენახვა"
 
+msgid "News"
+msgstr "სიახლეები"
+
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
@@ -3363,11 +3366,6 @@ msgstr "პარამეტრების შეცვლა"
 msgid "Change Password"
 msgstr "პაროლის შეცვლა"
 
-msgid "General settings for this site."
-msgstr ""
-"საიტის ზოგადი "
-"პარამეტრები."
-
 msgid "Login"
 msgstr "შესვლა"
 
@@ -3383,6 +3381,7 @@ msgstr "მისამართი"
 
 msgid "Current password"
 msgstr "მიმდინარე პაროლი"
+
 
 msgid "New password"
 msgstr "ახალი პაროლი"
@@ -3435,23 +3434,6 @@ msgid "Similar news"
 msgstr "მსგავსი სიახლეები"
 
 msgid ""
-"Unrecognized username or password. <a href=\":password\">Forgot your "
-"password?</a>"
-msgstr ""
-"არასწორი სახელი ან პაროლი. "
-"<a href=\":password\">დაგავიწყდა "
-"პაროლი?</a>"
-
-msgid ""
-"A welcome message with further instructions has been sent to your "
-"email address."
-msgstr ""
-"მისასალმებელი წერილი "
-"შემდგომი ინსტრუქციებით "
-"გაიგზავნა ელ.ფოსტის "
-"მისამართზე."
-
-msgid ""
 "You have just used your one-time login link. Your account is now "
 "active and you are authenticated."
 msgstr ""
@@ -3460,16 +3442,6 @@ msgstr ""
 "ერთჯერადი შესვლა. თქვენი "
 "ანგარიში აქტიურია და "
 "თქვენ დამოწმებული ხართ."
-
-msgid "Further instructions have been sent to your email address."
-msgstr ""
-"შემდგომი ინსტრუქციები "
-"გაიგზავნა თქვენი "
-"ელექტრონული ფოსტის "
-"მისამართით."
-
-msgid "General settings"
-msgstr "ძირითადი პარამეტრები."
 
 msgid "Display user interface"
 msgstr ""
@@ -3487,6 +3459,10 @@ msgstr "Search..."
 
 msgid "Search..."
 msgstr "ძებნა..."
+
+msgid "All news"
+msgstr "ყველა სიახლე"
+
 
 msgid "News"
 msgstr "სიახლეები"

@@ -38,7 +38,7 @@ variant_settings:
       region: content
       weight: 1
       uuid: e9fb317c-f842-43fc-9a5c-de17bfe61877
-      category_select: '31'
+      category_select: all
       context_mapping: {  }
   id: panels_variant
   uuid: 64afcd0f-acd0-400b-b706-89d9ee914382

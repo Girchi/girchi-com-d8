@@ -3,7 +3,7 @@ langcode: ka
 status: true
 dependencies: {  }
 id: front_page
-label: 'მთავარი გვერდი'
+label: 'Front Page'
 description: ''
 use_admin_theme: false
 path: /front

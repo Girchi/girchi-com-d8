@@ -1,0 +1,10 @@
+label: სიახლეები
+display:
+  default:
+    display_title: სიახლეები
+    display_options:
+      filters:
+        status:
+          expose:
+            description: ''
+      title: სიახლეები

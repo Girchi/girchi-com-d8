@@ -102,19 +102,26 @@ function girchi_utils_theme($existing, $type, $theme, $path)
                 ],
             'template' => 'politician-block',
         ],
-        'user_profile' => [
+      'user_profile' => [
+        'variables' =>
+          [
+            'user_id' =>NULL,
+            'user_first_name' =>NULL,
+            'user_last_name' =>NULL,
+            'user_ged' =>NULL,
+            'user_profile_picture' =>NULL,
+            'ged' => NULL,
+            'member' => NULL,
+            'user_count' => NULL
+          ],
+        'template' => 'user_profile',
+      ],
+        'front_page_articles' => [
             'variables' =>
                 [
-                    'user_id' => NULL,
-                    'user_first_name' => NULL,
-                    'user_last_name' => NULL,
-                    'user_ged' => NULL,
-                    'user_profile_picture' => NULL,
-                    'ged' => NULL,
-                    'member' => NULL,
-                    'user_count' => NULL
+                    'articles' => NULL,
                 ],
-            'template' => 'user_profile',
+            'template' => 'front-page-articles',
         ],
         'lead_partners' => [
             'variables' =>
