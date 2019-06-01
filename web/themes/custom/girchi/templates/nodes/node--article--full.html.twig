@@ -1,10 +1,15 @@
 {% set image_uri = node.field_image.0.entity.uri.value %}
 <div class="row flex-column-reverse flex-lg-row">
     <div class="col-md-12 col-lg-3">
-        {{ print_block('categoryfilterblock') }}
+        <div class="card overflow-hidden d-none d-lg-block">
+            {{ print_block('categoryfilterblock') }}
+        </div>
         {{ print_block('tagfilterblock') }}
     </div>
     <div class="col-md-12 col-lg-9">
+        <div class="card overflow-hidden d-block d-lg-none">
+            {{ print_block('categoryfilterblock') }}
+        </div>
         <div class="card mt-3 mt-lg-0 mb-2 mb-lg-3 font-size-3">
             <div class="card-body p-0">
                 {% if node.field_show_internal_image.value %}
