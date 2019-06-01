@@ -24,19 +24,43 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-<nav class="navbar navbar-expand-lg navbar-light mx-n2 p-0 py-lg-4">
-    <div class="collapse navbar-collapse" id="navbarMenu">
+<nav class="navbar navbar-expand-lg navbar-light mx-n2 p-0">
+    <div class="collapse navbar-collapse text-center text-lg-left"
+      id="navbarMenu"
+    >
+    <a class="navbar-brand d-none line-height-1-2" href="index.html">
+            <i class="icon-girchi-logo navbar-brand-lg ml-3 mr-4 font-size-8"></i>
+          </a>
 {{ menus.menu_links(items, attributes, 0) }}
         {% macro menu_links(items, attributes, menu_level) %}
             {% import _self as menus %}
             {% if items %}
                     {# no UL for level1 (see page.tpl) #}
-                    <ul class="navbar-nav text-uppercase">
+            <ul class="navbar-nav text-uppercase border-top border-bottom border-top-lg-0 border-bottom-lg-0 mx-2 py-2 py-lg-0 m-lg-0 text-center text-lg-left">
                 {% for item in items %}
-                    <li class = "nav-item">
-                            <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+                    <li class = "nav-item {{ item.below ? 'is-dropdown' : ''}} {{ item.in_active_trail ? 'active' : ''}}">
+                        <a href="{{ item.url }}" class="nav-link py-3 py-lg-4 font-weight-bold">{{ item.title }}
+                            {% if item.below %}
+                                <i class="icon-arrow-down-sign-to-navigate font-size-1 text-dark-silver mx-2"></i>
+                            {% endif %}
+                        </a>
+
+                        {% if item.below %}
+                            <ul class="nav-dropdown py-2">
+                                    {% for below_item in item.below %}
+                                        <li class="nav-dropdown-item {{ below_item.in_active_trail ? 'active' : ''}}">
+                                            <a
+                                                class="nav-dropdown-link py-2 px-4 font-weight-bold"
+                                                href="{{ below_item.url }}"
+                                                >{{ below_item.title }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
                 {% endfor %}
+            </ul>
             {% endif %}
         {% endmacro %}
     </div>
