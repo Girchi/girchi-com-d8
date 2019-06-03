@@ -28,10 +28,17 @@ class  CategoryFilterBlock extends BlockBase
     {
         $categories_tree =  Drupal::service('girchi_utils.taxonomy_term_tree')->load('news_categories');
         $current_category = \Drupal::request()->query->get('category');
+        $path = \Drupal::service('path.alias_manager')->getPathByAlias('/media/news/14-ad-huic-melior-ymo');
+
+        if(preg_match('/node\/(\d+)/', $path, $matches)) {
+          $node = \Drupal\node\Entity\Node::load($matches[1]);
+          $current_category = $node->get('field_category')[0]->entity->id();
+        }
+
         return array(
                 '#theme' => 'categories_block',
                 '#categories' => $categories_tree,
-                '#current_category' => $current_category
+                '#current_category' => $current_category,
             );
 
     }
