@@ -34,7 +34,7 @@
     <div class="container">
         <!-- Start of nav -->
         <nav
-                class="navbar navbar-expand-lg navbar-light border-bottom p-0 py-lg-4"
+                class="navbar navbar-expand-lg navbar-light border-bottom border-bottom-0 border-bottom-lg-1 p-0 py-lg-4"
         >
             <button
                     class="navbar-toggler"
@@ -45,9 +45,9 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
             >
-                <span class="navbar-toggler-icon"></span>
+                <i class="icon-menu-three-horizontal-lines-symbol"></i>
             </button>
-            <a class="navbar-brand d-flex align-items-center" href="{{ url('<front>') }}">
+            <a class="navbar-brand d-flex align-items-center line-height-1-2 my-2 my-lg-0" href="{{ url('<front>') }}">
                 <i class="icon-girchi-logo navbar-brand-lg mr-lg-4"></i>
                 <span
                         class="navbar-text text-success text-uppercase font-weight-bold d-none d-lg-inline"
@@ -66,7 +66,6 @@
                 <span class="icon-user auth-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarAuth">
-                <div class="ml-auto">
                     {% if logged_in %}
                         <div class="d-flex align-items-center ml-auto py-3 py-lg-0 border-top-1 border-top-lg-0">
                             <a href="#" class="rounded-circle overflow-hidden d-inline-block">
@@ -94,23 +93,103 @@
                         </div>
                     {% else %}
                         {% if header_config.enable_user_ui %}
-                            <a
-                                    href="{{ url("user.login") }}"
-                                    class="btn btn-success mr-lg-2 text-uppercase"
+                            <div
+                                    class="ml-auto py-3 py-lg-0 border-top border-top-lg-0 text-center"
                             >
-                                {{ "Log in" | t}}
-                            </a>
-                            <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
-                                {{ "Register" | t}}
-                            </a>
+                                <a
+                                        href="{{ url("user.login") }}"
+                                        class="btn btn-success mr-md-2 text-uppercase btn-block d-md-inline-block  w-100 max-w-md-210 w-lg-auto"
+                                >
+                                    {{ "Log in" | t }}
+                                </a>
+                                <a href="{{ url("user.register") }}"
+                                   class="btn btn-warning text-uppercase btn-block d-md-inline-block w-100 max-w-md-210 w-lg-auto mt-md-0">
+                                    {{ "Register" | t }}
+                                </a>
+                            </div>
                         {% endif %}
                     {% endif %}
-                </div>
             </div>
         </nav>
-        {% if page.header_nav %}
-            {{ page.header_nav }}
-        {% endif %}
+    </div>
+
+    <div class="sticky-navbar-wrapper">
+        <div class="sticky-navbar bg-white">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light mx-n2 p-0">
+                    <div
+                            class="collapse navbar-collapse text-center text-lg-left"
+                            id="navbarMenu"
+                    >
+                        <a
+                                class="navbar-brand d-none line-height-1-2"
+                                href="{{ url('<front>') }}"
+                        >
+                            <i
+                                    class="icon-girchi-logo navbar-brand-lg ml-3 mr-4 font-size-8"
+                            ></i>
+                        </a>
+
+                        {% if page.header_nav %}
+                            {{ page.header_nav }}
+                        {% endif %}
+
+                        {% if logged_in %}
+                            <div class="user-panel d-none align-items-center ml-auto">
+                                <a href="#" class="rounded-circle overflow-hidden d-inline-block">
+                                    <img src="{{ user_header.user_picture }}" class="rounded" alt="..." width="50"
+                                         height="50">
+                                </a>
+                                <h6 class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3">
+                                    <a href="{{ url("user.page") }}"
+                                       class="text-decoration-none d-inline-block text-hover-success">
+                                        {% if user_header.first_name %}
+                                            {{ user_header.first_name }}
+                                            <span class="font-weight-bold">{{ user_header.last_name }}</span>
+                                        {% else %}
+                                            <span class="font-weight-bold">{{ user_header.user_name }}</span>
+                                        {% endif %}
+                                        <span class="d-flex align-items-center font-size-3 text-success"><i
+                                                    class="icon-ged line-height-1-1"></i>
+                                    <span class="font-weight-bold line-height-0-7 ml-1">{{ user_header.ged }}</span></span>
+                                    </a>
+                                </h6>
+                                <a href="{{ url("user.logout") }}"
+                                   class="btn ml-auto ml-lg-2 btn-outline-light-silver btn-lg text-dark-silver font-size-5 rounded-circle line-height-0-2 px-2 line-height-md-0-6 px-md-3">
+                                    <i class="icon-logout mx-1"></i>
+                                </a>
+                            </div>
+                        {% else %}
+                            {% if header_config.enable_user_ui %}
+                                <div class="auth d-none ml-auto text-center">
+                                    <a
+                                            href="{{ url("user.login") }}"
+                                            class="btn btn-success mr-md-2 text-uppercase"
+                                    >
+                                        შესვლა
+                                    </a>
+                                    <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
+                                        რეგისტრაცია
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        <form class="navbar-search mt-3 mt-lg-0  ml-auto mr-2 text-right border-bottom border-bottom-lg-0 pb-3 pb-lg-0"
+                              action="{{ path('view.search.page_1') }}" type="GET">
+                            <div class="navbar-search-input bg-white rounded-oval pr-4 border-secondary border overflow-hidden w-100 w-lg-200 max-w-lg-200 w-lg-500"
+                                 style="display: block;">
+                                <input type="text" name="search_text" placeholder="{{ 'Search...' | t }}"
+                                       class="border-0 py-1 m-1 px-3 outline-none font-size-3 text-success w-100" id="search-text">
+                            </div>
+                            <button class="navbar-search-btn border-0 p-0 outline-none bg-transparent line-height-0-9 m-2 p-1 text-dark-silver search-submit" type="submit">
+                                <i class="icon-search"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
     </div>
 </header>
 <!-- End of header -->

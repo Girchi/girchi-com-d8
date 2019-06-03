@@ -57,4 +57,15 @@ $(document).ready(function () {
           $(this).removeClass('collapsed')
         })
       }
+
+    $('.search-submit').on('click',e => {
+        if($('#search-text').val()){
+            $('.navbar-search-input ')
+                .fadeIn()
+                .removeClass('border-white')
+                .addClass('border-secondary')
+                .addClass('w-lg-500');
+            $('.navbar-search').submit();
+        }
+    })
 });

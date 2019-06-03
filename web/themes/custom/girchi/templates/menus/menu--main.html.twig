@@ -24,13 +24,7 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-<nav class="navbar navbar-expand-lg navbar-light mx-n2 p-0">
-    <div class="collapse navbar-collapse text-center text-lg-left"
-      id="navbarMenu"
-    >
-    <a class="navbar-brand d-none line-height-1-2" href="index.html">
-            <i class="icon-girchi-logo navbar-brand-lg ml-3 mr-4 font-size-8"></i>
-          </a>
+
 {{ menus.menu_links(items, attributes, 0) }}
         {% macro menu_links(items, attributes, menu_level) %}
             {% import _self as menus %}
@@ -63,13 +57,5 @@
             </ul>
             {% endif %}
         {% endmacro %}
-    </div>
-    <form class="navbar-search mt-3 mt-lg-0  ml-auto mr-2 text-right border-bottom border-bottom-lg-0 pb-3 pb-lg-0" action="{{ path('view.search.page_1') }}" type="GET">
-        <div class="navbar-search-input bg-white rounded-oval pr-4 border-secondary border overflow-hidden w-100 w-lg-200 max-w-lg-200 w-lg-500" style="display: block;">
-            <input type="text" name="search_text" placeholder="{{ 'Search...' | t  }}" class="border-0 py-1 m-1 px-3 outline-none font-size-3 text-success w-100">
-        </div>
-        <button class="navbar-search-btn border-0 p-0 outline-none bg-transparent line-height-0-9 m-2 p-1 text-dark-silver">
-            <i class="icon-search"></i>
-        </button>
-    </form>
-</nav>
+
+

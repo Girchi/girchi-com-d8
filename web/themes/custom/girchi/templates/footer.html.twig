@@ -5,32 +5,34 @@
         <div class="container">
             <nav class="navbar py-3 flex-column flex-lg-row">
                 <a
-                        class="navbar-brand d-flex align-items-center text-uppercase"
+                        class="navbar-brand d-flex align-items-center text-uppercase mb-2 mb-lg-0"
                         href="{{ url("<front>") }}"
                 >
                     <i
                             class="icon-girchi-logo-alt navbar-brand-sm text-success mr-3"
                     ></i>
-                    <span class="text-success font-weight-bold font-size-3"
+                    <span class="text-success font-weight-bold font-size-3 font-size-lg-4"
                     >{{ "Girchi" | t }}</span
                     >
-                    <span class="text-warning  border-left py-1 ml-3 pl-3 font-size-3"
+                    <span class="text-warning  border-left py-1 ml-3 pl-3 font-size-3 font-size-lg-4"
                     >{{ "More Freedom"| t }}</span
                     >
                 </a>
                 <ul
-                        class="navbar-list list-unstyled d-inline-flex font-size-3 ml-lg-auto mr-lg-3 mb-0"
+                        class="navbar-list list-unstyled d-inline-flex font-size-4 ml-lg-auto mr-lg-3 mb-0 border-top border-bottom border-top-lg-0 border-bottom-lg-0 py-2 py-lg-0"
                 >
                     {% if footer_config.phone %}
-                    <li class="navbar-list-item">
-                        <i class="icon-smartphone"></i>
-                        <a href="tel:{{ footer_config.phone }}">{{ footer_config.phone }}</a>
-                    </li>
+                        <li class="navbar-list-item">
+                            <i class="icon-smartphone font-size-5 font-size-sm-7 font-size-lg-8"></i>
+                            <a href="tel:{{ footer_config.phone }}"
+                               class="mx-2 mx-sm-3 font-size-2 font-size-sm-3 font-size-lg-4 text-decoration-none">{{ footer_config.phone }}</a>
+                        </li>
                     {% endif %}
                     {% if footer_config.email %}
                     <li class="navbar-list-item">
-                        <i class="icon-envelope"></i>
-                        <a href="mailto:{{ footer_config.email }}" class="text-uppercase"
+                        <i class="icon-envelope font-size-5 font-size-sm-7 font-size-lg-8"></i>
+                        <a href="mailto:{{ footer_config.email }}"
+                           class="text-uppercase mx-1 mx-sm-3 font-size-2 font-size-sm-3 font-size-lg-4 text-decoration-none"
                         >{{ footer_config.email }}</a
                         >
                     </li>
@@ -38,33 +40,33 @@
                 </ul>
 
                 <ul
-                        class="navbar-list list-unstyled d-inline-flex font-size-3 mb-0"
+                        class="navbar-list list-unstyled d-inline-flex font-size-2 mb-0 mt-2 mt-lg-0"
                 >
                     {% if footer_config.facebook %}
                     <li class="navbar-list-item">
                         <a href="{{ footer_config.facebook  }}" target="_blank" class="text-decoration-none">
-                            <i class="icon-social-facebook-circular-button"></i
+                            <i class="icon-social-facebook-circular-button text-hover-purple"></i
                             ></a>
                     </li>
                     {% endif %}
                     {% if footer_config.twitter %}
                     <li class="navbar-list-item">
                         <a href="{{ footer_config.twitter }}" target="_blank" class="text-decoration-none">
-                            <i class="icon-social-twitter-circular-button"></i
+                            <i class="icon-social-twitter-circular-button text-hover-light-blue"></i
                             ></a>
                     </li>
                     {% endif %}
                     {% if footer_config.instagram %}
                         <li class="navbar-list-item">
                             <a href="{{ footer_config.instagram }}" target="_blank" class="text-decoration-none">
-                                <i class="icon-social-twitter-circular-button"></i
+                                <i class="icon-social-twitter-circular-button text-hover-light-blue"></i
                                 ></a>
                         </li>
                     {% endif %}
                     {% if footer_config.youtube %}
                     <li class="navbar-list-item">
                         <a href="{{ footer_config.youtube }}" target="_blank" class="text-decoration-none"
-                        ><i class="icon-social-youtube-circular-button"></i
+                        ><i class="icon-social-youtube-circular-button text-hover-danger"></i
                             ></a>
                     </li>
                     {% endif %}
@@ -75,7 +77,7 @@
 
     <div class="container">
         {{ page.footer }}
-        <div class="py-4">
+        <div class="py-lg-4 py-3">
             <p
                     class="text-grey font-size-1 text-uppercase text-center text-lg-left mb-0"
             >

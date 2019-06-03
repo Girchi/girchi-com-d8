@@ -29,12 +29,6 @@
                     class="text-grey font-size-1 d-inline-flex align-items-center">
                           <i class="icon-clock-circular-outline mr-1"></i>
                           {{ node.createdtime|format_date('omedia_short') }} </span>
-            {% for term, id in terms %}
-                <a
-                        href="{{ path('view.news.page_1') }}?category={{ id }}"
-                        class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
-                >{{ term }}</a>
-            {% endfor %}
         </div>
     </div>
     <!-- End of media -->
