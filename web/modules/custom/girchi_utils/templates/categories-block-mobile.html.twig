@@ -1,4 +1,4 @@
-<div class="card overflow-hidden d-none d-lg-block">
+<div class="card overflow-hidden d-block d-lg-none">
     <div class="card-header d-flex px-3 px-xl-4">
                 <span
                         class="d-none d-md-block font-size-2 text-uppercase font-weight-bold text-grey"
@@ -45,12 +45,12 @@
                                   data-toggle="collapse"
                                   role="button"
                                   aria-expanded="true"
-                                  aria-controls="nav-item-{{ key }}"
+                                  aria-controls="nav-item-{{ key }}-1"
                                   class="icon-arrow-down-sign-to-navigate font-size-1 text-dark-silver bg-transparent border-0 outline-none m-0 p-0"
                           ></button>
                         </span>
 
-                                <div class="collapse show" id="nav-item-{{ key }}">
+                                <div class="collapse show" id="nav-item-{{ key }}-1">
                                     {% if value.children %}
                                         <ul
                                                 class="list-group list-group-flush  list-unstyled pl-3 pl-md-4 mb-3 mb-md-4 d-inline-block"
@@ -83,11 +83,11 @@
                                   data-toggle="collapse"
                                   role="button"
                                   aria-expanded="false"
-                                  aria-controls="nav-item-{{ key }}"
+                                  aria-controls="nav-item-{{ key }}-1"
                                   class="icon-arrow-down-sign-to-navigate font-size-1 text-dark-silver bg-transparent border-0 outline-none m-0 p-0"
                           ></button>
                         </span>
-                                <div class="collapse" id="nav-item-{{ key }}">
+                                <div class="collapse" id="nav-item-{{ key }}-1">
                                     {% if value.children %}
                                         <ul
                                                 class="list-group list-group-flush  list-unstyled pl-3 pl-md-4 mb-3 mb-md-4 d-inline-block"
