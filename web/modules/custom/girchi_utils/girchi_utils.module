@@ -120,6 +120,7 @@ function girchi_utils_theme($existing, $type, $theme, $path)
             'variables' =>
                 [
                     'articles' => NULL,
+                    'category' => NULL,
                 ],
             'template' => 'front-page-articles',
         ],

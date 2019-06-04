@@ -84,11 +84,17 @@ class FrontNewsBlock extends BlockBase
             $articles = Node::loadMultiple($lastest_articles);
             krsort($articles);
 
-            return array(
+            $template = [
                 '#theme' => 'front_page_articles',
                 '#articles' => $articles,
+            ];
 
-            );
+            $category = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($category_id);
+            if($category) {
+                $template['#category'] = $category->getName();
+            }
+
+            return $template;
         }else {
             return array(
                 '#theme' => 'top_videos'
