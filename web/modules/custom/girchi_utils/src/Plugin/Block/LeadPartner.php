@@ -4,6 +4,7 @@ namespace Drupal\girchi_utils\Plugin\Block;
 
 use Drupal\Console\Bootstrap\Drupal;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\taxonomy\Entity\Term;
 
@@ -55,7 +56,7 @@ class LeadPartner extends BlockBase {
    * {@inheritdoc}
    */
   public function getCacheTags() {
-      return Drupal\Core\Cache\Cache::mergeTags(parent::getCacheTags(), ['taxonomy_term_list:lead_partner']);
+      return Cache::mergeTags(parent::getCacheTags(), ['taxonomy_term_list:lead_partner']);
   }
 
 }

@@ -38,6 +38,6 @@ class  CategoryFilterBlock extends BlockBase
      * {@inheritdoc}
      */
     public function getCacheContexts() {
-      return Cache::mergeContexts(parent::getCacheContexts(), ['url.query_args']);
+      return Cache::mergeContexts(parent::getCacheContexts(), ['url']);
     }
 }
