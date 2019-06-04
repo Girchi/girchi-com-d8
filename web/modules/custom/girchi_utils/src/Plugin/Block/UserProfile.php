@@ -3,6 +3,7 @@
 namespace Drupal\girchi_utils\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 /**
@@ -44,7 +45,6 @@ class UserProfile extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-
     $currentUserId = \Drupal::currentUser()->id();
     $currentUser = User::load($currentUserId);
     $currentUserFirstName = $currentUser->get('field_first_name')->value;
@@ -79,6 +79,13 @@ class UserProfile extends BlockBase {
       '#user_profile_picture' => $currentUserAvatar,
       '#user_count' => $numberOfUsers,
     );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['user']);
   }
 
 }
