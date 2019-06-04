@@ -17,4 +17,5 @@ politician_checkbox_text:
   value: ''
   format: basic_html
 ui_config: 0
-enable_user_ui: 1
+enable_user_ui: 0
+copyright_text: ''

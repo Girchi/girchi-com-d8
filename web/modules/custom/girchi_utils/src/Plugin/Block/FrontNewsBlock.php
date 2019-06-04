@@ -94,9 +94,11 @@ class FrontNewsBlock extends BlockBase
 
     }
 
-    public function getCacheMaxAge()
-    {
-        // set block cache max age 3 hours and then invalidate.
-        return 10800;
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheTags() {
+      return Drupal\Core\Cache\Cache::mergeTags(parent::getCacheTags(), ['node_list']);
     }
+
 }

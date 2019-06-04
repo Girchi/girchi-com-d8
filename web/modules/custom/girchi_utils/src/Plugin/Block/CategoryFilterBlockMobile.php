@@ -10,15 +10,17 @@ use Drupal\node\Entity\Node;
 use Drupal\node\NodeStorage;
 use Drupal;
 /**
- * Provides a 'CategoryFilterBlock' block.
+ * Provides a 'CategoryFilterBlockMobile' block.
  *
  * @Block(
- *  id = "category_filter_block",
- *  admin_label = @Translation("Category filter block"),
+ *  id = "category_filter_block_mobile",
+ *  admin_label = @Translation("Category filter block mobile"),
  * )
  */
-class  CategoryFilterBlock extends BlockBase
+class  CategoryFilterBlockMobile extends BlockBase
 {
+
+
     /**
      * {@inheritdoc}
      */
@@ -27,17 +29,19 @@ class  CategoryFilterBlock extends BlockBase
         $categories_tree =  Drupal::service('girchi_utils.taxonomy_term_tree')->load('news_categories');
         $current_category = \Drupal::request()->query->get('category');
         return array(
-                '#theme' => 'categories_block',
+                '#theme' => 'categories_block_mobile',
                 '#categories' => $categories_tree,
                 '#current_category' => $current_category
             );
 
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getCacheContexts() {
-      return Cache::mergeContexts(parent::getCacheContexts(), ['url.query_args']);
+    public function getCacheMaxAge()
+    {
+        // set block cache max age 3 hours and then invalidate.
+        return 10800;
     }
+
+
+
 }
