@@ -19,8 +19,6 @@ use Drupal;
  */
 class  CategoryFilterBlock extends BlockBase
 {
-
-
     /**
      * {@inheritdoc}
      */
@@ -43,12 +41,10 @@ class  CategoryFilterBlock extends BlockBase
 
     }
 
-    public function getCacheMaxAge()
-    {
-        // set block cache max age 3 hours and then invalidate.
-        return 10800;
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheContexts() {
+      return Cache::mergeContexts(parent::getCacheContexts(), ['url.query_args']);
     }
-
-
-
 }

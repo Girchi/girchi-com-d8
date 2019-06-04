@@ -24,7 +24,7 @@ class LeadPartner extends BlockBase {
       $query = \Drupal::entityQuery('taxonomy_term')
           ->condition('vid', 'lead_partner')
           ->condition('status', 1)
-          ->sort('field_weight',"DESC")
+          ->sort('field_weight',"ASC")
           ->range(0,10);
 
       $tids = $query->execute();
@@ -49,6 +49,13 @@ class LeadPartner extends BlockBase {
           '#theme' => 'lead_partners',
           '#leadPartner' => $final_partners,
       );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+      return Drupal\Core\Cache\Cache::mergeTags(parent::getCacheTags(), ['taxonomy_term_list:lead_partner']);
   }
 
 }

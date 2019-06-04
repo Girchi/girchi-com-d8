@@ -78,6 +78,7 @@ function girchi_preprocess_page(array &$variables) {
         'twitter' => $config->get('social_media_twitter'),
         'instagram' => $config->get('social_media_instagram'),
         'youtube' => $config->get('social_media_youtube'),
+        'copyright' => $config->get('copyright_text'),
     ];
 
     $variables['header_config'] = [

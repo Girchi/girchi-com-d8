@@ -49,6 +49,7 @@ class  TagFilterBlock extends BlockBase
                 ->condition('vid', 'tags')
                 ->range(0,10)
                 ->condition('status', 1);
+            $tids = $query->execute();
         }
 
         if(!empty($tids)) {
@@ -65,12 +66,10 @@ class  TagFilterBlock extends BlockBase
 
     }
 
-    public function getCacheMaxAge()
-    {
-        // set block cache max age 3 hours and then invalidate.
-        return 10800;
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheContexts() {
+      return Cache::mergeContexts(parent::getCacheContexts(), ['url.query_args']);
     }
-
-
-
 }

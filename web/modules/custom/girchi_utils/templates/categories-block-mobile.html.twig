@@ -1,0 +1,114 @@
+<div class="card overflow-hidden d-block d-lg-none">
+    <div class="card-header d-flex px-3 px-xl-4">
+                <span
+                        class="d-none d-md-block font-size-2 text-uppercase font-weight-bold text-grey"
+                >{{ "Categories"|t }}</span
+                >
+        <button
+                class="navbar-toggler d-flex d-md-none"
+                type="button"
+                data-toggle="collapse"
+                data-target="#categories"
+                aria-controls="categories"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+                  <span
+                          class="font-size-2 text-uppercase font-weight-bold text-grey"
+                  >{{ "Categories"|t }}</span
+                  >
+            <i
+                    class="icon-menu-three-horizontal-lines-symbol font-size-4 text-success"
+            ></i>
+        </button>
+    </div>
+    <div class="card-body p-0">
+        <nav class="navbar navbar-expand-lg p-0 d-block">
+            <div class="collapse navbar-collapse" id="categories">
+                <ul
+                        class="nav-vertical list-group list-group-flush font-weight-bold w-100"
+                >
+                    {% for key, value in categories %}
+
+                        {% if current_category is not empty and value.tid == current_category or current_category in value.children |keys %}
+                            <li class="list-group-item p-0">
+                        <span
+                                class="py-3 px-3 px-md-4 d-block list-group-item-action active expanded"
+                        >
+                          <a
+                                  class="text-uppercase font-size-3 text-decoration-none"
+                                  href="{{ path('view.news.page_1') }}?category={{ value.tid }}"
+                          >
+                            {{ value.name }}
+                          </a>
+                          <button
+                                  data-toggle="collapse"
+                                  role="button"
+                                  aria-expanded="true"
+                                  aria-controls="nav-item-{{ key }}-1"
+                                  class="icon-arrow-down-sign-to-navigate font-size-1 text-dark-silver bg-transparent border-0 outline-none m-0 p-0"
+                          ></button>
+                        </span>
+
+                                <div class="collapse show" id="nav-item-{{ key }}-1">
+                                    {% if value.children %}
+                                        <ul
+                                                class="list-group list-group-flush  list-unstyled pl-3 pl-md-4 mb-3 mb-md-4 d-inline-block"
+                                        >
+                                            {% for child in value.children %}
+                                                <li class=" {{ child.tid == current_category ? "active" : "" }} py-2 px-3 font-size-2">
+                                                    <a
+                                                            href="{{ path('view.news.page_1') }}?category={{ child.tid }}"
+                                                            class=" text-decoration-none text-hover-light-green"
+                                                    >{{ child.name }}</a
+                                                    >
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="list-group-item p-0">
+                        <span
+                                class="py-3 px-3 px-md-4 d-block list-group-item-action"
+                        >
+                          <a
+                                  class="text-uppercase font-size-3 text-decoration-none"
+                                  href="{{ path('view.news.page_1') }}?category={{ value.tid }}"
+                          >
+                            {{ value.name }}
+                          </a>
+                          <button
+                                  data-toggle="collapse"
+                                  role="button"
+                                  aria-expanded="false"
+                                  aria-controls="nav-item-{{ key }}-1"
+                                  class="icon-arrow-down-sign-to-navigate font-size-1 text-dark-silver bg-transparent border-0 outline-none m-0 p-0"
+                          ></button>
+                        </span>
+                                <div class="collapse" id="nav-item-{{ key }}-1">
+                                    {% if value.children %}
+                                        <ul
+                                                class="list-group list-group-flush  list-unstyled pl-3 pl-md-4 mb-3 mb-md-4 d-inline-block"
+                                        >
+                                            {% for child in value.children %}
+                                                <li class="py-2 px-3 font-size-2">
+                                                    <a
+                                                            href="{{ path('view.news.page_1') }}?category={{ child.tid }}"
+                                                            class=" text-decoration-none text-hover-light-green"
+                                                    >{{ child.name }}</a
+                                                    >
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

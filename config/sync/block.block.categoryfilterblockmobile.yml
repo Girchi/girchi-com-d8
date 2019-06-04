@@ -1,0 +1,20 @@
+uuid: c1d5467f-f4c5-4065-9149-402243cfde25
+langcode: en
+status: true
+dependencies:
+  module:
+    - girchi_utils
+  theme:
+    - girchi
+id: categoryfilterblockmobile
+theme: girchi
+region: content
+weight: 0
+provider: null
+plugin: category_filter_block_mobile
+settings:
+  id: category_filter_block_mobile
+  label: 'Category filter block mobile'
+  provider: girchi_utils
+  label_display: visible
+visibility: {  }

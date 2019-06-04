@@ -81,6 +81,14 @@ function girchi_utils_theme($existing, $type, $theme, $path)
                 ],
             'template' => 'categories-block',
         ],
+        'categories_block_mobile' => [
+            'variables' =>
+                [
+                    'categories' => NULL,
+                    'current_category' => NULL
+                ],
+            'template' => 'categories-block-mobile',
+        ],
         'top_videos' => [
             'variables' =>
                 [

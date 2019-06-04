@@ -144,11 +144,20 @@ class SiteSettingsForm extends ConfigFormBase
             '#title' => t('Youtube chanel url'),
             '#default_value' => $config->get('social_media_youtube')
         ];
+
         $form['general_settings'] = [
             '#type' => 'details',
             '#open' => true,
             '#title' => t('General settings'),
         ];
+
+        $form['general_settings']['copyright_text'] = [
+            '#description' => t('Enter copyright text'),
+            '#type' => 'textfield',
+            '#title' => t('Copyright text'),
+            '#default_value' => $config->get('copyright_text')
+        ];
+
         $form['general_settings']['enable_user_ui'] = [
             '#description' => t('Display user login/register buttons'),
             '#type' => 'checkbox',
@@ -187,7 +196,8 @@ class SiteSettingsForm extends ConfigFormBase
             'social_media_instagram',
             'social_media_youtube',
             'politician_checkbox_text',
-            'enable_user_ui'
+            'enable_user_ui',
+            'copyright_text'
         ];
 
         foreach ($fields as $field_key) {
