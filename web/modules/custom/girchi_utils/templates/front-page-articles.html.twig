@@ -1,10 +1,10 @@
 {% if articles %}
     <div class="my-3 my-sm-4">
-        <div class="card mb-3 mb-sm-4 font-size-3">
+        <div class="card mb-3 mb-sm-4 font-size-3 content-carousel">
             <div
                     class="card-header font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4"
             >
-                {{ "News"|t }}
+                {{ category ? category : 'News'|t }}
                 <a
                         href="{{ path('view.news.page_1')}}"
                         class="ml-auto card-view-all font-weight-normal text-grey text-decoration-none text-nowrap"
@@ -23,15 +23,15 @@
                     class="card-footer border-top p-0 d-flex justify-content-between"
             >
                 <button
-                        class="front-news-carousel-prev btn py-3 shadow-none rounded-0 text-dark-silver border-right"
+                        class="carousel-prev btn py-3 shadow-none rounded-0 text-dark-silver border-right"
                 >
                     <i class="icon-angle-pointing-to-left"></i>
                 </button>
                 <div
-                        class="front-news-carousel-dots owl-dots d-flex align-items-center"
+                        class="carousel-dots owl-dots d-flex align-items-center"
                 ></div>
                 <button
-                        class="front-news-carousel-next btn py-3 shadow-none rounded-0 text-dark-silver border-left"
+                        class="carousel-next btn py-3 shadow-none rounded-0 text-dark-silver border-left"
                 >
                     <i class="icon-angle-arrow-pointing-to-right"></i>
                 </button>

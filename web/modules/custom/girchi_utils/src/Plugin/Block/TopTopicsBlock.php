@@ -62,6 +62,6 @@ class  TopTopicsBlock extends BlockBase
      * {@inheritdoc}
      */
     public function getCacheTags() {
-        return Drupal\Core\Cache\Cache::mergeTags(parent::getCacheTags(), ['node_list']);
+        return Cache::mergeTags(parent::getCacheTags(), ['node_list']);
     }
 }

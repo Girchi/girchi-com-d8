@@ -7,6 +7,7 @@ namespace Drupal\girchi_utils\Plugin\Block;
 use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeStorage;
 
@@ -66,6 +67,6 @@ class TopVideosBlock extends BlockBase
      * {@inheritdoc}
      */
     public function getCacheTags() {
-        return Drupal\Core\Cache\Cache::mergeTags(parent::getCacheTags(), ['node_list']);
+        return Cache::mergeTags(parent::getCacheTags(), ['node_list']);
     }
 }

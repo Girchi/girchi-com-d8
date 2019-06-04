@@ -8,6 +8,7 @@ use Drupal;
 use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeStorage;
@@ -77,30 +78,28 @@ class FrontNewsBlock extends BlockBase
                 ->execute();
         }
 
-
-
-        if (!empty($lastest_articles)) {
-
             $articles = Node::loadMultiple($lastest_articles);
             krsort($articles);
 
-            return array(
+            $template = [
                 '#theme' => 'front_page_articles',
                 '#articles' => $articles,
+            ];
 
-            );
-        }else {
-            return array(
-                '#theme' => 'top_videos'
-            );
-        }
+            $category = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($category_id);
+            if($category) {
+                $template['#category'] = $category->getName();
+            }
+
+            return $template;
+
     }
 
     /**
      * {@inheritdoc}
      */
     public function getCacheTags() {
-      return Drupal\Core\Cache\Cache::mergeTags(parent::getCacheTags(), ['node_list']);
+      return Cache::mergeTags(parent::getCacheTags(), ['node_list']);
     }
 
 }
