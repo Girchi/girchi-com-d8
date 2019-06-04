@@ -77,10 +77,6 @@ class FrontNewsBlock extends BlockBase
                 ->execute();
         }
 
-
-
-        if (!empty($lastest_articles)) {
-
             $articles = Node::loadMultiple($lastest_articles);
             krsort($articles);
 
@@ -95,13 +91,6 @@ class FrontNewsBlock extends BlockBase
             }
 
             return $template;
-        }else {
-            return array(
-                '#theme' => 'top_videos'
-            );
-        }
-
-
 
     }
 
