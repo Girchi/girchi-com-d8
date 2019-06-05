@@ -18,7 +18,7 @@ variant_settings:
       provider: girchi_utils
       label_display: '0'
       region: content
-      weight: -1
+      weight: -2
       uuid: 80d19135-f4da-4e84-b15e-d4ccdedbcac5
       context_mapping: {  }
     5c7092ba-b6f6-44cf-ac0a-a164d2f63d7e:
@@ -27,18 +27,48 @@ variant_settings:
       provider: girchi_utils
       label_display: visible
       region: content
-      weight: 0
+      weight: -1
       uuid: 5c7092ba-b6f6-44cf-ac0a-a164d2f63d7e
       context_mapping: {  }
     e9fb317c-f842-43fc-9a5c-de17bfe61877:
       id: front_news_block
-      label: 'Front news block'
+      label: სიახლეები
+      provider: girchi_utils
+      label_display: visible
+      region: content
+      weight: 0
+      uuid: e9fb317c-f842-43fc-9a5c-de17bfe61877
+      category_select: all
+      context_mapping: {  }
+    70207433-00a0-4356-aca0-d5239e3aefeb:
+      id: front_news_block
+      label: 'თავისუფალი ბაზარი'
       provider: girchi_utils
       label_display: visible
       region: content
       weight: 1
-      uuid: e9fb317c-f842-43fc-9a5c-de17bfe61877
-      category_select: all
+      uuid: 70207433-00a0-4356-aca0-d5239e3aefeb
+      category_select: '28'
+      context_mapping: {  }
+    9823bd7f-7165-40f0-9624-241aeb6bbbfd:
+      id: front_news_block
+      label: პროცესი
+      provider: girchi_utils
+      label_display: visible
+      region: content
+      weight: 2
+      uuid: 9823bd7f-7165-40f0-9624-241aeb6bbbfd
+      category_select: '26'
+      context_mapping: {  }
+    3c3f3e3b-418b-49e8-9cbf-7108522fb62c:
+      id: front_news_block
+      label: 'გირჩის აზრით'
+      provider: girchi_utils
+      label_display: visible
+      region: content
+      weight: 3
+      uuid: 3c3f3e3b-418b-49e8-9cbf-7108522fb62c
+      category_select: '27'
       context_mapping: {  }
   id: panels_variant
   uuid: 64afcd0f-acd0-400b-b706-89d9ee914382
