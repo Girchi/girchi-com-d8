@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-06-03 14:38+0000\n"
-"PO-Revision-Date: 2019-06-03 14:38+0000\n"
+"POT-Creation-Date: 2019-06-05 20:37+0000\n"
+"PO-Revision-Date: 2019-06-05 20:37+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3378,9 +3378,6 @@ msgstr "პირადი ნომერი"
 msgid "Address"
 msgstr "მისამართი"
 
-msgid "Current password"
-msgstr "მიმდინარე პაროლი"
-
 msgid "New password"
 msgstr "ახალი პაროლი"
 
@@ -3389,9 +3386,6 @@ msgstr "გაიმეორეთ პაროლი"
 
 msgid "members in total"
 msgstr "წევრს შორის"
-
-msgid "Girchi"
-msgstr "გირჩი"
 
 msgid "More Freedom"
 msgstr "მეტი თავისუფლება"
@@ -3456,7 +3450,6 @@ msgstr "Search..."
 msgid "Search..."
 msgstr "ძებნა..."
 
-
 msgid "Politicians"
 msgstr "პოლიტიკოსები"
 
@@ -3466,6 +3459,6 @@ msgstr "პარტნიორები"
 msgid "All news"
 msgstr "ყველა სიახლე"
 
-msgid "News"
-msgstr "სიახლეები"
-`
+msgid "Last month Top partners"
+msgstr "წინა თვის ტოპ პარტნიორები"
+
