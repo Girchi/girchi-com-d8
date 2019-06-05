@@ -8,17 +8,17 @@ dependencies:
 id: basic_page
 label: 'Basic page'
 type: 'canonical_entities:node'
-pattern: '/page/[node:title]'
+pattern: '[customtoken:page-type]/[node:title]'
 selection_criteria:
-  02e4d5fd-5ddd-481d-8986-d0046128ed5d:
+  b8cfaa52-f14c-4f10-a293-88de596f801b:
     id: node_type
     bundles:
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: 02e4d5fd-5ddd-481d-8986-d0046128ed5d
-  cb50a20a-7db3-49cb-b168-5bd77711ef10:
+    uuid: b8cfaa52-f14c-4f10-a293-88de596f801b
+  3d8106ff-bbb7-4077-b9e6-82fa750284ef:
     id: language
     langcodes:
       en: en
@@ -26,7 +26,7 @@ selection_criteria:
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: cb50a20a-7db3-49cb-b168-5bd77711ef10
+    uuid: 3d8106ff-bbb7-4077-b9e6-82fa750284ef
 selection_logic: and
 weight: -10
 relationships:

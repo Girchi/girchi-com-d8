@@ -1,15 +1,15 @@
-uuid: 0681d9bf-a906-437f-8074-8ef674503553
+uuid: 3df854d1-af9e-43c4-ab10-23d1d9bbcb25
 langcode: ka
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_title
+    - field.storage.paragraph.field_subject_line
     - paragraphs.paragraphs_type.basic_text
-id: paragraph.basic_text.field_title
-field_name: field_title
+id: paragraph.basic_text.field_subject_line
+field_name: field_subject_line
 entity_type: paragraph
 bundle: basic_text
-label: Title
+label: 'Subject Line'
 description: ''
 required: false
 translatable: false

@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.basic_text.field_body
     - field.field.paragraph.basic_text.field_image
+    - field.field.paragraph.basic_text.field_subject_line
     - field.field.paragraph.basic_text.field_tags
-    - field.field.paragraph.basic_text.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.basic_text
   module:
@@ -33,6 +33,14 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_subject_line:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_tags:
     weight: 2
     settings:
@@ -41,14 +49,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_title:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
 hidden:
   created: true

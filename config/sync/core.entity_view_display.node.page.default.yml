@@ -3,6 +3,7 @@ langcode: ka
 status: true
 dependencies:
   config:
+    - field.field.node.page.field_is_about
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
@@ -30,4 +31,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_is_about: true
   langcode: true

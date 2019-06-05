@@ -1,11 +1,11 @@
-uuid: 8007be95-3056-4b03-b7bf-512c6a33b238
+uuid: b7ee1b48-355d-4241-948b-9ddafb619041
 langcode: ka
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_title
-field_name: field_title
+id: paragraph.field_subject_line
+field_name: field_subject_line
 entity_type: paragraph
 type: string
 settings:

@@ -3,6 +3,7 @@ langcode: ka
 status: true
 dependencies:
   config:
+    - field.field.node.page.field_is_about
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
@@ -17,13 +18,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_is_about:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_paragraphs:
     type: entity_reference_paragraphs
-    weight: 122
+    weight: 10
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -42,7 +50,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -50,21 +58,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 121
+    weight: 9
     third_party_settings: {  }
     region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -76,13 +84,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
