@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-31 12:46+0000\n"
-"PO-Revision-Date: 2019-05-31 12:46+0000\n"
+"POT-Creation-Date: 2019-06-05 13:38+0000\n"
+"PO-Revision-Date: 2019-06-05 13:38+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -333,9 +333,6 @@ msgstr "სურათი"
 
 msgid "Types"
 msgstr "ტიპები"
-
-msgid "Hierarchy"
-msgstr "იერარქია"
 
 msgid "Required"
 msgstr "სავალდებულო"
@@ -2538,9 +2535,6 @@ msgstr "მეტი დახმარება"
 msgid "Sizes"
 msgstr "ზომები"
 
-msgid "Add terms"
-msgstr "ტერმინების დამატება"
-
 msgid "« first"
 msgstr "« პირველი"
 
@@ -2814,15 +2808,6 @@ msgstr "საიტის ინსტალაცია"
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
 
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
-
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
 
@@ -3058,6 +3043,21 @@ msgstr "მონაცემთა ბაზის ვერსია"
 
 msgid "Active"
 msgstr "აქტიური"
+
+msgid "Hierarchy"
+msgstr "იერარქია"
+
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
 
 msgid "Enter your email address or username."
 msgstr ""
@@ -3378,11 +3378,6 @@ msgstr "პირადი ნომერი"
 msgid "Address"
 msgstr "მისამართი"
 
-
-msgid "Current password"
-msgstr "მიმდინარე პაროლი"
-
-
 msgid "New password"
 msgstr "ახალი პაროლი"
 
@@ -3391,11 +3386,6 @@ msgstr "გაიმეორეთ პაროლი"
 
 msgid "members in total"
 msgstr "წევრს შორის"
-
-
-msgid "Girchi"
-msgstr "გირჩი"
-
 
 msgid "More Freedom"
 msgstr "მეტი თავისუფლება"
@@ -3463,8 +3453,9 @@ msgstr "ძებნა..."
 msgid "All news"
 msgstr "ყველა სიახლე"
 
+msgid "Ged amount"
+msgstr "Ged-ების რაოდენობა"
 
-msgid "News"
-msgstr "სიახლეები"
-
+msgid "Enter referral"
+msgstr "მიუთითეთ რეფერალი"
 
