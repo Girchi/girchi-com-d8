@@ -1,0 +1,51 @@
+uuid: ca8d36ea-b2c9-4a53-94a0-cd9053864cab
+langcode: en
+status: true
+dependencies:
+  module:
+    - girchi_ged_transactions
+    - user
+id: ged_transactions_entity.ged_transactions_entity.default
+targetEntityType: ged_transactions_entity
+bundle: ged_transactions_entity
+mode: default
+content:
+  Description:
+    label: above
+    type: basic_string
+    region: content
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  ged_amount:
+    label: above
+    type: number_unformatted
+    region: content
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  referral:
+    label: above
+    type: author
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    label: above
+    type: string
+    region: content
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  name: true
