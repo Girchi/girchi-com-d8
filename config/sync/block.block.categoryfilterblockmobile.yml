@@ -1,6 +1,6 @@
 uuid: c1d5467f-f4c5-4065-9149-402243cfde25
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - girchi_utils
