@@ -8,6 +8,48 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\user\Entity\User;
+use Drupal\Core\Render\BubbleableMetadata;
+
+/**
+ * Implements hook_token_info().
+ */
+function girchi_utils_token_info() {
+  $type = [
+    'name' => t('Girchi Token'),
+    'description' => t('Tokens for Girchi.'),
+  ];
+
+  $node['page-type'] = [
+    'name' => t("Page type"),
+    'description' => t('To determine page type, basic page or about page'),
+  ];
+
+
+  return [
+    'types' => ['customtoken' => $type],
+    'tokens' => ['customtoken' => $node],
+  ];
+}
+
+function girchi_utils_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+
+  if ($type == 'customtoken' && !empty($data['node'])) {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'page-type':
+          if($data['node']->getType() == 'page' && $data['node']->field_is_about->value == 1) {
+            $replacements[$original] = '/about';
+          } else {
+            $replacements[$original] = '/page';
+          }
+          break;
+      }
+    }
+  }
+  return $replacements;
+
+}
 
 /**
  * Implements hook_help().
