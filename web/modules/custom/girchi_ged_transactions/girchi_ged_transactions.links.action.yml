@@ -1,0 +1,5 @@
+entity.ged_transactions_entity.add_form:
+  route_name: entity.ged_transactions_entity.add_form
+  title: 'Add Ged transactions entity'
+  appears_on:
+    - entity.ged_transactions_entity.collection

@@ -1,0 +1,22 @@
+# Ged transactions entity routing definition
+ged_transactions_entity.settings_tab:
+  route_name: ged_transactions_entity.settings
+  title: 'Settings'
+  base_route: ged_transactions_entity.settings
+
+entity.ged_transactions_entity.canonical:
+  route_name: entity.ged_transactions_entity.canonical
+  base_route: entity.ged_transactions_entity.canonical
+  title: 'View'
+
+entity.ged_transactions_entity.edit_form:
+  route_name: entity.ged_transactions_entity.edit_form
+  base_route: entity.ged_transactions_entity.canonical
+  title: 'Edit'
+
+entity.ged_transactions_entity.delete_form:
+  route_name:  entity.ged_transactions_entity.delete_form
+  base_route:  entity.ged_transactions_entity.canonical
+  title: Delete
+  weight: 10
+

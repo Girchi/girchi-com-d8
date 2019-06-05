@@ -1,0 +1,19 @@
+add ged transactions entity entities:
+  title: 'Create new Ged transactions entity entities'
+
+administer ged transactions entity entities:
+  title: 'Administer Ged transactions entity entities'
+  description: 'Allow to access the administration form to configure Ged transactions entity entities.'
+  restrict access: true
+
+delete ged transactions entity entities:
+  title: 'Delete Ged transactions entity entities'
+
+edit ged transactions entity entities:
+  title: 'Edit Ged transactions entity entities'
+
+view published ged transactions entity entities:
+  title: 'View published Ged transactions entity entities'
+
+view unpublished ged transactions entity entities:
+  title: 'View unpublished Ged transactions entity entities'

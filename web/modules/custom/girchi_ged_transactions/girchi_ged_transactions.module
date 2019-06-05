@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains girchi_ged_transactions.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function girchi_ged_transactions_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the girchi_ged_transactions module.
+    case 'help.page.girchi_ged_transactions':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module for ged transactions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function girchi_ged_transactions_theme() {
+  return [
+    'girchi_ged_transactions' => [
+      'render element' => 'children',
+    ],
+  ];
+}

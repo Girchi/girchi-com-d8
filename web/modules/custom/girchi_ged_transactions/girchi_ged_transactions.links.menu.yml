@@ -1,0 +1,14 @@
+
+# Ged transactions entity menu items definition
+entity.ged_transactions_entity.collection:
+  title: 'Ged transactions entity list'
+  route_name: entity.ged_transactions_entity.collection
+  description: 'List Ged transactions entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+ged_transactions_entity.admin.structure.settings:
+  title: 'Ged transactions entity settings'
+  description: 'Configure Ged transactions entity entities'
+  route_name: ged_transactions_entity.settings
+  parent: system.admin_structure
