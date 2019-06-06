@@ -1,0 +1,9 @@
+uuid: 0454814b-fcf5-4142-a3be-527074718a27
+langcode: ka
+status: true
+dependencies: {  }
+id: board_member_partner
+label: 'Board member (partner)'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

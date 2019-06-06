@@ -4,16 +4,20 @@
     >
         {{ "Tags"|t }}
     </div>
-    <div class="card-body p-3 p-xl-4">
+    <div class="card-body px-3 px-xl-4 py-2 py-xl-34">
         {% if tags is not empty %}
-        {% for tag in tags %}
-{#        {{ print_entity('taxonomy_term', tag.tid , 'teaser' )  }}#}
-        <a
-            href="{{ path('view.news.page_1')}}?tag={{ tag.tid }}"
-            class="btn border-secondary btn-outline-grey bg-transparent
-        d-inline-block btn-sm mb-2 text-hover-light-green border-hover-light-green"
-        >{{ tag.name }}</a>
-        {% endfor %}
+        <ul class="list-unstyled">
+            {% for tag in tags %}
+    {#        {{ print_entity('taxonomy_term', tag.tid , 'teaser' )  }}#}
+                <li>
+                      <a
+                      href="{{ path('view.news.page_1')}}?tag={{ tag.tid }}"
+                      class="text-light-green d-block font-size-2 font-weight-bold text-decoration-none"
+                      ># {{ tag.name }}</a
+                    >
+                </li>
+            {% endfor %}
+        </ul>
         {% endif %}
     </div>
 </div>

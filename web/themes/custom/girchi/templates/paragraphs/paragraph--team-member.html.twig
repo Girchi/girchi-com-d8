@@ -1,0 +1,60 @@
+<div class="media flex-column flex-sm-row mt-2">
+    <div class="media-thumb max-w-sm-250">
+        <div class="overlay rounded overflow-hidden">
+            <img src="{{ image_style_url(data.img_uri, 'team_member') }}" class="w-100" alt=""/>
+        </div>
+        <div
+                class="position-absolute position-bottom-0 position-left-0 w-100 px-3 z-index-2"
+        >
+            <h5
+                    class="mt-2 py-2 text-decoration-none d-block font-weight-bold text-white text-uppercase line-height-1-2"
+            >
+                <span class="d-block font-weight-bold">{{ data.first_name }}</span>
+                <span class="font-size-5">{{ data.last_name }}</span>
+            </h5>
+        </div>
+    </div>
+    <div class="media-body mt-3 mt-sm-0 ml-sm-4">
+        <h5 class="mt-0 font-weight-bold">
+            {{ content.field_position }}
+        </h5>
+        <p>
+            {{ content.field_body }}
+        </p>
+        <hr class="my-2"/>
+        <ul
+                class="navbar-list list-unstyled d-inline-flex font-size-2 mb-0"
+        >
+            <li class="navbar-list-item">
+                <a
+                        href="{{ data.facebook_link }}"
+                        target="_blank"
+                        class="text-decoration-none"
+                >
+                    <i
+                            class="icon-social-facebook-circular-button text-hover-purple"
+                    ></i
+                    ></a>
+            </li>
+            <li class="navbar-list-item">
+                <a
+                        href="{{ data.twitter }}"
+                        target="_blank"
+                        class="text-decoration-none"
+                >
+                    <i
+                            class="icon-social-twitter-circular-button text-hover-light-blue"
+                    ></i
+                    ></a>
+            </li>
+            <li class="navbar-list-item">
+                <a
+                        href="mailto:{{ data.email }}"
+                        target="_blank"
+                        class="text-decoration-none"
+                ><i class="icon-email text-hover-success"></i
+                    ></a>
+            </li>
+        </ul>
+    </div>
+</div>

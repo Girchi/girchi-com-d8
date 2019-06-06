@@ -1,0 +1,19 @@
+uuid: 616d632f-1362-4a56-8172-d837db80e077
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_facebook_link
+    - paragraphs.paragraphs_type.team_member
+id: paragraph.team_member.field_facebook_link
+field_name: field_facebook_link
+entity_type: paragraph
+bundle: team_member
+label: 'Facebook link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

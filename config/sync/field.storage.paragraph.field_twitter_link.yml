@@ -1,0 +1,21 @@
+uuid: cc680637-5b4b-4ce0-a92b-9fbd2e5d848c
+langcode: ka
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_twitter_link
+field_name: field_twitter_link
+entity_type: paragraph
+type: string
+settings:
+  max_length: 1500
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

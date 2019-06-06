@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-06-05 13:38+0000\n"
-"PO-Revision-Date: 2019-06-05 13:38+0000\n"
+"POT-Creation-Date: 2019-06-05 20:37+0000\n"
+"PO-Revision-Date: 2019-06-05 20:37+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -20,9 +20,6 @@ msgstr "ლექსიკონი"
 
 msgid "Description"
 msgstr "აღწერა"
-
-msgid "Content"
-msgstr "კონტენტი"
 
 msgid "User"
 msgstr "მომხმარებელი"
@@ -109,6 +106,9 @@ msgstr "დადასტურება"
 
 msgid "Operations"
 msgstr "ოპერაციები"
+
+msgid "Content"
+msgstr "კონტენტი"
 
 msgid "Attribute"
 msgstr "ატრიბუტი"
@@ -3450,12 +3450,22 @@ msgstr "Search..."
 msgid "Search..."
 msgstr "ძებნა..."
 
-msgid "All news"
-msgstr "ყველა სიახლე"
+msgid "Politicians"
+msgstr "პოლიტიკოსები"
+
 
 msgid "Ged amount"
 msgstr "Ged-ების რაოდენობა"
 
 msgid "Enter referral"
 msgstr "მიუთითეთ რეფერალი"
+
+msgid "Partners"
+msgstr "პარტნიორები"
+
+msgid "All news"
+msgstr "ყველა სიახლე"
+
+msgid "Last month Top partners"
+msgstr "წინა თვის ტოპ პარტნიორები"
 

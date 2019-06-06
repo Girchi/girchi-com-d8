@@ -5,6 +5,7 @@
  * Functions to support theming in the girchi theme.
  */
 
+use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\user\Entity\User;
 
@@ -184,6 +185,17 @@ function girchi_preprocess_node(array &$variables) {
         }
         $variables['terms']  = $terms;
     }
+  if ($variables['node']->getType() == 'page') {
+    $current_url = Url::fromRoute('<current>');
+    $path = $current_url->toString();
+    $show_sidebar = false;
+    $splited_path = explode('/', $path);
+    if(in_array('about', $splited_path)) {
+      $show_sidebar = true;
+    }
+    $variables['show_sidebar'] = $show_sidebar;
+  }
+
 }
 
 /**
@@ -245,3 +257,81 @@ function girchi_preprocess_taxonomy_term(&$variables) {
     $variables['term_id'] = $term_id;
 }
 
+function girchi_preprocess_paragraph(&$variables)
+{
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->getParagraphType()->id() == 'basic_text') {
+    $label = $paragraph->getParentEntity()->label();
+    $created_date = $paragraph->getParentEntity()->getCreatedTime();
+    $img_uri = $paragraph->field_image && $paragraph->field_image->first() ? $paragraph->field_image->first()->entity->getFileUri() : '';
+    $img_url = file_create_url($img_uri);
+    $variables['data'] = [
+        'label' => $label,
+        'created_date' => $created_date,
+        'img_uri' => $img_uri
+    ];
+  }
+
+  /**
+   * For 'team member' paragraph
+   */
+
+  if ($paragraph->getParagraphType()->id() == 'team_member') {
+    $img_uri = $paragraph->field_image && $paragraph->field_image->first() ? $paragraph->field_image->first()->entity->getFileUri() : '';
+    $full_name = $paragraph->field_name->first()->value;
+    $full_name = explode(' ', $full_name);
+    $first_name = $full_name[0];
+    $last_name = $full_name[1];
+    $facebook_link = $paragraph->field_facebook_link->first()->value;
+    $twitter_link = $paragraph->field_twitter_link->first()->value;
+    $email = $paragraph->field_email->first()->value;
+    $variables['data'] = [
+        'img_uri' => $img_uri,
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'facebook_link' => $facebook_link,
+        'twitter' => $twitter_link,
+        'email' => $email
+    ];
+  }
+
+  /**
+   * For 'board' paragraph
+   */
+
+  if ($paragraph->getParagraphType()->id() == 'board') {
+    $label = $paragraph->getParentEntity()->label();
+    foreach ($paragraph->field_paragraphs as $inner_paragraph) {
+      $paragraph_id = $inner_paragraph->entity->getParagraphType()->id();
+      $variables['data'][$paragraph_id][] = $inner_paragraph->view();
+    }
+    $variables['data']['label'] = $label;
+  }
+
+  /**
+   * For 'board member' paragraph
+   */
+  if ($paragraph->getParagraphType()->id() == 'board_member_partner' || $paragraph->getParagraphType()->id() == 'board_member_politician') {
+    $img_uri = $paragraph->field_image && $paragraph->field_image->first() ? $paragraph->field_image->first()->entity->getFileUri() : '';
+    $full_name = $paragraph->field_name->first()->value;
+    $full_name = explode(' ', $full_name);
+    $first_name = $full_name[0];
+    $last_name = $full_name[1];
+    $variables['data'] = [
+        'img_uri' => $img_uri,
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+    ];
+  }
+}
+
+
+function girchi_preprocess_menu(array &$variables)
+{
+  if (isset($variables['menu_name']) && $variables['menu_name'] == 'about-us') {
+    $current_url = Url::fromRoute('<current>');
+    $path = $current_url->toString();
+    $variables['current_path'] = $path;
+  }
+}

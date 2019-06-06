@@ -72,7 +72,6 @@ class FrontNewsBlock extends BlockBase
                 ->condition('type', 'article')
                 ->condition('status', 1)
                 ->condition('field_category', $category_id, '=')
-                ->condition('field_is_video', '0')
                 ->sort('created',"DESC")
                 ->range(0,10)
                 ->execute();

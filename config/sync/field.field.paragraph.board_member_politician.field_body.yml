@@ -1,0 +1,21 @@
+uuid: e225988d-4923-48f5-9c80-a9d2d5cf2111
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.board_member_politician
+  module:
+    - text
+id: paragraph.board_member_politician.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: board_member_politician
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,15 @@
+uuid: be7132d0-127d-412d-aedd-aa15657cdded
+langcode: ka
+status: true
+dependencies: {  }
+name: team_member
+label: 'Team member'
+effects:
+  a52222a0-0b2d-4ac8-af7e-30c9d22338ae:
+    uuid: a52222a0-0b2d-4ac8-af7e-30c9d22338ae
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 280
+      anchor: center-center

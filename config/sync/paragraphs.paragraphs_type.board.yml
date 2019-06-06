@@ -1,0 +1,9 @@
+uuid: 4f6ccff5-603e-46a0-b5b9-1679dc333bb7
+langcode: en
+status: true
+dependencies: {  }
+id: board
+label: Board
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

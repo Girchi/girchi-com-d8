@@ -4,12 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.page_header
-    - field.field.node.page.field_header_image
-    - field.field.node.page.field_icon
-    - field.field.node.page.field_image
-    - field.field.node.page.field_redirect
-    - field.field.node.page.field_show_sidebar
-    - field.field.node.page.field_url_slug
     - node.type.page
   module:
     - user
@@ -21,11 +15,6 @@ bundle: page
 mode: page_header
 content: {  }
 hidden:
-  field_header_image: true
-  field_icon: true
-  field_image: true
-  field_redirect: true
-  field_show_sidebar: true
-  field_url_slug: true
+  field_paragraphs: true
   langcode: true
   links: true

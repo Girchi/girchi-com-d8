@@ -1,25 +1,25 @@
-uuid: 2171d7c9-ffb4-4601-a14d-8f24e5846820
+uuid: e4180e8c-ac11-4cdf-836c-16843b4347f0
 langcode: ka
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - node.type.page
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.board_member_politician
   module:
     - content_translation
     - image
 third_party_settings:
   content_translation:
     translation_sync:
-      file: file
+      file: '0'
       alt: '0'
       title: '0'
-id: node.page.field_image
+id: paragraph.board_member_politician.field_image
 field_name: field_image
-entity_type: node
-bundle: page
-label: 'Social Image'
-description: 'Shown when shared on social networks (facebook, twitter, etc.)'
+entity_type: paragraph
+bundle: board_member_politician
+label: Image
+description: ''
 required: false
 translatable: true
 default_value: {  }

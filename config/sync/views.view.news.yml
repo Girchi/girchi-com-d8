@@ -107,7 +107,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          quantity: 3
       style:
         type: default
         options:

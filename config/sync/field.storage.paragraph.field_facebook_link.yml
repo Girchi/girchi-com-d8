@@ -1,15 +1,15 @@
-uuid: c52ffa59-ae0b-4d7b-a3a0-ecd8a52c9a53
+uuid: 78c40ca3-4e78-47e5-a9ba-70d9655e5d7e
 langcode: ka
 status: true
 dependencies:
   module:
-    - node
-id: node.field_icon
-field_name: field_icon
-entity_type: node
+    - paragraphs
+id: paragraph.field_facebook_link
+field_name: field_facebook_link
+entity_type: paragraph
 type: string
 settings:
-  max_length: 255
+  max_length: 1500
   is_ascii: false
   case_sensitive: false
 module: core

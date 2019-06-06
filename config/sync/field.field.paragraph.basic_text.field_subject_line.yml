@@ -1,0 +1,19 @@
+uuid: 3df854d1-af9e-43c4-ab10-23d1d9bbcb25
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subject_line
+    - paragraphs.paragraphs_type.basic_text
+id: paragraph.basic_text.field_subject_line
+field_name: field_subject_line
+entity_type: paragraph
+bundle: basic_text
+label: 'Subject Line'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

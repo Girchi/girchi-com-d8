@@ -1,0 +1,19 @@
+uuid: 7124857b-0706-4040-9162-b3c65496f2f1
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_twitter_link
+    - paragraphs.paragraphs_type.team_member
+id: paragraph.team_member.field_twitter_link
+field_name: field_twitter_link
+entity_type: paragraph
+bundle: team_member
+label: 'Twitter link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,20 +1,27 @@
-uuid: 40e09e27-3093-4c01-a7f5-9bee96a47320
+uuid: df1ed354-37cd-4843-96cd-c6b74a87eabc
 langcode: ka
 status: true
 dependencies:
   config:
-    - field.storage.node.field_header_image
-    - node.type.page
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.basic_text
   module:
+    - content_translation
     - image
-id: node.page.field_header_image
-field_name: field_header_image
-entity_type: node
-bundle: page
-label: 'Header Image'
-description: 'Displays at 1920x270px.'
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: paragraph.basic_text.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: basic_text
+label: Image
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,7 +31,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: false
-  alt_field_required: false
+  alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:

@@ -1,13 +1,13 @@
-uuid: 923e6116-e460-4bde-b058-d24a640564be
+uuid: fac20865-8022-477d-bada-5d120ed570fa
 langcode: ka
 status: true
 dependencies:
   module:
-    - node
-id: node.field_show_sidebar
-field_name: field_show_sidebar
-entity_type: node
-type: boolean
+    - paragraphs
+id: paragraph.field_email
+field_name: field_email
+entity_type: paragraph
+type: email
 settings: {  }
 module: core
 locked: false

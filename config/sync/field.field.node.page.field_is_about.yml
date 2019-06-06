@@ -1,0 +1,23 @@
+uuid: 35c0a5f3-c59e-4d86-a536-1d710917e3d4
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_about
+    - node.type.page
+id: node.page.field_is_about
+field_name: field_is_about
+entity_type: node
+bundle: page
+label: 'Is About'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ჩართვა
+  off_label: გამორთვა
+field_type: boolean

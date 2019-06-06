@@ -1,0 +1,63 @@
+uuid: 850d5ec7-1316-46b4-8d3a-1b3c505453a2
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.board_member_partner.field_body
+    - field.field.paragraph.board_member_partner.field_description
+    - field.field.paragraph.board_member_partner.field_image
+    - field.field.paragraph.board_member_partner.field_name
+    - field.field.paragraph.board_member_partner.field_position
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.board_member_partner
+  module:
+    - image
+    - text
+id: paragraph.board_member_partner.default
+targetEntityType: paragraph
+bundle: board_member_partner
+mode: default
+content:
+  field_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_description:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_position:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

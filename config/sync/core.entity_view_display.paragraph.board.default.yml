@@ -1,0 +1,24 @@
+uuid: 658eb527-c3c3-4a58-8d69-065f48212825
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.board.field_paragraphs
+    - paragraphs.paragraphs_type.board
+  module:
+    - entity_reference_revisions
+id: paragraph.board.default
+targetEntityType: paragraph
+bundle: board
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

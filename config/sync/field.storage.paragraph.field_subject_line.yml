@@ -1,15 +1,15 @@
-uuid: ffdab9c9-0c4e-4047-a85e-ffb2d7590de6
+uuid: b7ee1b48-355d-4241-948b-9ddafb619041
 langcode: ka
 status: true
 dependencies:
   module:
-    - node
-id: node.field_url_slug
-field_name: field_url_slug
-entity_type: node
+    - paragraphs
+id: paragraph.field_subject_line
+field_name: field_subject_line
+entity_type: paragraph
 type: string
 settings:
-  max_length: 60
+  max_length: 255
   is_ascii: false
   case_sensitive: false
 module: core

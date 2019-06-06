@@ -1,0 +1,40 @@
+{% set body_classes = show_sidebar ? 'col-md-12 col-lg-9' : 'col-md-12 col-lg-12' %}
+
+<div class="row flex-column-reverse flex-lg-row">
+    {% if show_sidebar %}
+    <div class="col-md-12 col-lg-3">
+        <!-- Start of card -->
+        <div class="card overflow-hidden d-none d-lg-block">
+            <div class="card-header d-flex px-3 px-xl-4">
+                <span
+                        class="d-none d-lg-block font-size-2 text-uppercase font-weight-bold text-grey"
+                >ჩვენს შესახებ</span
+                >
+                <button
+                        class="navbar-toggler d-flex d-lg-none"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#categories"
+                        aria-controls="categories"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+                  <span
+                          class="font-size-2 text-uppercase font-weight-bold text-grey"
+                  >ჩვენს შესახებ</span
+                  >
+                    <i
+                            class="icon-menu-three-horizontal-lines-symbol font-size-4 text-success"
+                    ></i>
+                </button>
+            </div>
+                <div class="card-body p-0">
+                    {{ print_block('chvensshesakheb') }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div {{ attributes.addClass(body_classes) }}>
+        {{ content }}
+    </div>
+</div>

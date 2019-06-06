@@ -1,0 +1,59 @@
+uuid: 18d13202-cc4f-4bf7-a614-8cb576276791
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.board_member_partner.field_body
+    - field.field.paragraph.board_member_partner.field_description
+    - field.field.paragraph.board_member_partner.field_image
+    - field.field.paragraph.board_member_partner.field_name
+    - field.field.paragraph.board_member_partner.field_position
+    - paragraphs.paragraphs_type.board_member_partner
+  module:
+    - image
+    - text
+id: paragraph.board_member_partner.default
+targetEntityType: paragraph
+bundle: board_member_partner
+mode: default
+content:
+  field_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_description:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_position:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

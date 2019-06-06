@@ -9,7 +9,7 @@ dependencies:
 id: userprofile
 theme: girchi
 region: sidebar_primary
-weight: -6
+weight: -7
 provider: null
 plugin: user_profile
 settings:

@@ -1,0 +1,15 @@
+uuid: ca0b3b4a-d310-4dca-ba97-69611a9532f2
+langcode: ka
+status: true
+dependencies: {  }
+name: board_member
+label: 'Board member'
+effects:
+  f69a7bed-50ff-4ccc-a11f-283ebd339c05:
+    uuid: f69a7bed-50ff-4ccc-a11f-283ebd339c05
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 60
+      height: 60
+      anchor: center-center

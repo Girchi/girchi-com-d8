@@ -1,0 +1,48 @@
+uuid: b6243fe8-8710-42eb-8544-f5096985d4b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.board
+    - paragraphs.paragraphs_type.board_member_partner
+    - paragraphs.paragraphs_type.board_member_politician
+  module:
+    - entity_reference_revisions
+id: paragraph.board.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: board
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      board_member_partner: board_member_partner
+      board_member_politician: board_member_politician
+    target_bundles_drag_drop:
+      board:
+        weight: 5
+        enabled: false
+      basic_text:
+        weight: 6
+        enabled: false
+      team:
+        weight: 7
+        enabled: false
+      team_member:
+        weight: 8
+        enabled: false
+      board_member_partner:
+        enabled: true
+        weight: 9
+      board_member_politician:
+        enabled: true
+        weight: 10
+field_type: entity_reference_revisions

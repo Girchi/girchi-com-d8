@@ -1,0 +1,29 @@
+uuid: 4e628359-96d3-4a2a-9aae-e039d041ccad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.team.field_team_members
+    - paragraphs.paragraphs_type.team
+  module:
+    - paragraphs
+id: paragraph.team.default
+targetEntityType: paragraph
+bundle: team
+mode: default
+content:
+  field_team_members:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,77 @@
+uuid: 0b5bf703-9369-4562-9da0-995ca9c81943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.team_member.field_body
+    - field.field.paragraph.team_member.field_email
+    - field.field.paragraph.team_member.field_facebook_link
+    - field.field.paragraph.team_member.field_image
+    - field.field.paragraph.team_member.field_name
+    - field.field.paragraph.team_member.field_position
+    - field.field.paragraph.team_member.field_twitter_link
+    - paragraphs.paragraphs_type.team_member
+  module:
+    - image
+    - text
+id: paragraph.team_member.default
+targetEntityType: paragraph
+bundle: team_member
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_email:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_facebook_link:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_position:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_twitter_link:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,59 @@
+uuid: 3b38103d-fafc-4db3-baf9-712fef930352
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.board_member_politician.field_body
+    - field.field.paragraph.board_member_politician.field_description
+    - field.field.paragraph.board_member_politician.field_image
+    - field.field.paragraph.board_member_politician.field_name
+    - field.field.paragraph.board_member_politician.field_position
+    - paragraphs.paragraphs_type.board_member_politician
+  module:
+    - image
+    - text
+id: paragraph.board_member_politician.default
+targetEntityType: paragraph
+bundle: board_member_politician
+mode: default
+content:
+  field_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_description:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_position:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

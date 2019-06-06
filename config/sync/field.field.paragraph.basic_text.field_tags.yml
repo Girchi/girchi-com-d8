@@ -1,0 +1,29 @@
+uuid: 3835cf7b-3544-4c38-8c8e-2f12cb957a95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tags
+    - paragraphs.paragraphs_type.basic_text
+    - taxonomy.vocabulary.tags
+id: paragraph.basic_text.field_tags
+field_name: field_tags
+entity_type: paragraph
+bundle: basic_text
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

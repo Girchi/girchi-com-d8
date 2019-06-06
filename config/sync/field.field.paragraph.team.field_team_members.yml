@@ -1,0 +1,46 @@
+uuid: c20aa709-fff5-413c-ab27-f1b478ed1724
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_team_members
+    - paragraphs.paragraphs_type.team
+    - paragraphs.paragraphs_type.team_member
+  module:
+    - entity_reference_revisions
+id: paragraph.team.field_team_members
+field_name: field_team_members
+entity_type: paragraph
+bundle: team
+label: 'Team members'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      team_member: team_member
+    target_bundles_drag_drop:
+      team:
+        weight: 3
+        enabled: false
+      basic_text:
+        weight: 4
+        enabled: false
+      board:
+        weight: 7
+        enabled: false
+      board_member_partner:
+        weight: 9
+        enabled: false
+      board_member_politician:
+        weight: 10
+        enabled: false
+      team_member:
+        enabled: true
+        weight: 10
+field_type: entity_reference_revisions

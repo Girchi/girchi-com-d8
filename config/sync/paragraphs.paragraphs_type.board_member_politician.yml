@@ -1,0 +1,9 @@
+uuid: 8f1d9a23-b42d-4b04-a913-69c8ec8675c3
+langcode: ka
+status: true
+dependencies: {  }
+id: board_member_politician
+label: 'Board member (politician)'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

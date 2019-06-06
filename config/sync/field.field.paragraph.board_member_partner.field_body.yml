@@ -1,0 +1,21 @@
+uuid: c2c3b811-9d13-468e-9047-92e735d50bd1
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.board_member_partner
+  module:
+    - text
+id: paragraph.board_member_partner.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: board_member_partner
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

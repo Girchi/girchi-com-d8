@@ -1,0 +1,34 @@
+uuid: beedbb59-9aa5-4140-84fc-346a974c7442
+langcode: ka
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: basic_page
+label: 'Basic page'
+type: 'canonical_entities:node'
+pattern: '[customtoken:page-type]/[node:title]'
+selection_criteria:
+  b8cfaa52-f14c-4f10-a293-88de596f801b:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b8cfaa52-f14c-4f10-a293-88de596f801b
+  3d8106ff-bbb7-4077-b9e6-82fa750284ef:
+    id: language
+    langcodes:
+      en: en
+      ka: ka
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 3d8106ff-bbb7-4077-b9e6-82fa750284ef
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: ენა
