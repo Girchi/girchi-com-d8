@@ -8,6 +8,7 @@ dependencies:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_ged
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_my_party_list
     - field.field.user.user.field_personal_id
     - field.field.user.user.field_phone
     - field.field.user.user.field_politician
@@ -18,6 +19,7 @@ dependencies:
   module:
     - datetime
     - image
+    - reference_value_pair
     - telephone
     - user
 _core:
@@ -68,6 +70,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_my_party_list:
+    weight: 52
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: reference_value_formatter
     region: content
   field_personal_id:
     weight: 3
