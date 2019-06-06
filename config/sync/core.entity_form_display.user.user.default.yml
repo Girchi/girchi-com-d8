@@ -8,6 +8,7 @@ dependencies:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_ged
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_my_party_list
     - field.field.user.user.field_personal_id
     - field.field.user.user.field_phone
     - field.field.user.user.field_politician
@@ -19,6 +20,7 @@ dependencies:
     - datetime
     - image
     - path
+    - reference_value_pair
     - telephone
     - user
 _core:
@@ -69,6 +71,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_my_party_list:
+    weight: 16
+    settings:
+      size_er: 60
+      placeholder_er: ''
+      match_operator: CONTAINS
+      size_value: 60
+      placeholder_value: ''
+    third_party_settings: {  }
+    type: reference_value_autocomplete_widget
     region: content
   field_personal_id:
     weight: 3
