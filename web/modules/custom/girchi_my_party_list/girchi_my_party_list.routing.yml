@@ -5,6 +5,7 @@ girchi_my_party_list.party_list_controller_partyList:
     _title: 'My Party List'
   requirements:
     _permission: 'access content'
+    _role: 'authenticated'
 
 girchi_my_party_list.party_list_controller_getUsers:
   path: '/api/party-list/my-supported-members'
@@ -13,7 +14,7 @@ girchi_my_party_list.party_list_controller_getUsers:
     _title: 'Get users'
   requirements:
     _permission: 'access content'
-
+    _role: 'authenticated'
 
 girchi_my_party_list.party_list_controller_updateUser:
   path: '/api/party-list/submit'
@@ -22,3 +23,4 @@ girchi_my_party_list.party_list_controller_updateUser:
     _title: 'Update user'
   requirements:
     _permission: 'access content'
+    _role: 'authenticated'

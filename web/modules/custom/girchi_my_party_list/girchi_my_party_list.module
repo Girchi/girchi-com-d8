@@ -31,9 +31,9 @@ function girchi_my_party_list_theme() {
     'girchi_my_party_list' => [
       'render element' => 'children',
       'variables' => [
-        'myPartyList' => NULL,
-        'maxPercentage' => NULL,
-        'topPoliticians' => NULL,
+        'my_partyList' => NULL,
+        'max_percentage' => NULL,
+        'top_politicians' => NULL,
       ],
     ],
   ];

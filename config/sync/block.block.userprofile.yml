@@ -23,6 +23,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/user/*\r\n/partylist"
+    pages: "/user/*\r\n/api/party-list"
     negate: false
     context_mapping: {  }

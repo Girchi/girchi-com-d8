@@ -20,5 +20,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_is_about: true
   field_paragraphs: true
   langcode: true
