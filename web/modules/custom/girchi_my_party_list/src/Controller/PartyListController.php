@@ -98,7 +98,7 @@ class PartyListController extends ControllerBase {
     public function getUsers(Request $request) {
       $currentUserId = $this->currentUser()->id();
       $politicanUids = $this->getChosenPoliticians($currentUserId);
-
+      $userArray = [];
 
       $user = $request->get('user');
       $firstName = $lastName = $user;
