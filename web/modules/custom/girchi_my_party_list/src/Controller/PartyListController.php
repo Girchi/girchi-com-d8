@@ -68,12 +68,15 @@ class PartyListController extends ControllerBase {
     }
 
     $chosenPoliticians = $this->getChosenPoliticians($currentUserId);
+
     $userStorage = $this->entityTypeManager->getStorage('user');
     $users = $userStorage->getQuery()
       ->condition('field_politician', 1)
-      ->condition('uid', $chosenPoliticians, 'NOT IN')
-      ->range(0,10)
-      ->execute();
+      ->range(0,10);
+    if(!empty($chosenPoliticians)) {
+      $users->condition('uid', $chosenPoliticians, 'NOT IN');
+    }
+    $users = $users->execute();
     $topPoliticians = $this->getUsersInfo($users);
     return [
       '#type' => 'markup',
@@ -95,6 +98,7 @@ class PartyListController extends ControllerBase {
     public function getUsers(Request $request) {
       $currentUserId = $this->currentUser()->id();
       $politicanUids = $this->getChosenPoliticians($currentUserId);
+
 
       $user = $request->get('user');
       $firstName = $lastName = $user;
@@ -223,9 +227,9 @@ class PartyListController extends ControllerBase {
       $currentUser = $this->entityTypeManager->getStorage('user')->load($userId);
       $chosenPoliticians = $currentUser->get('field_my_party_list')->referencedEntities();
       foreach ($chosenPoliticians as $politician) {
-        $politicanUids[] = $politician->id();
+        $politicianUids[] = $politician->id();
       }
-      return $politicanUids;
+      return $politicianUids;
     }
 }
 
