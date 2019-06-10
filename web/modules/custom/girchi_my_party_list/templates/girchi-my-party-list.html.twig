@@ -22,7 +22,7 @@
                 >
                 <span
                         class="d-block font-size-8 text-nowrap font-weight-bold text-warning line-height-1-0 pl-available-percentage"
-                >{{ maxPercentage }}%</span
+                >{{ max_percentage }}%</span
                 >
                 <span
                         class="text-uppercase text-grey font-size-1 text-nowrap"
@@ -34,7 +34,7 @@
         <hr class="mx-md-n4  mt-3 mt-md-4" />
         <form action="{{ path('girchi_my_party_list.party_list_controller_updateUser') }}" method="post">
             <ul class="list-group my-3 my-md-4 pl-group">
-                {% for partyMember in myPartyList  %}
+                {% for partyMember in my_party_list  %}
                     <li class="list-group-item pl-group-item">
                         <div class="d-flex w-100 align-items-center py-0 py-sm-3 px-0 flex-wrap flex-md-nowrap">
                             <div class="rounded-circle overflow-hidden d-inline-block mx-auto mx-sm-0 mb-3 mb-sm-0">
@@ -87,7 +87,7 @@
                                 title="{{ 'Select a politician' | t }}"
                                 data-none-results-text="{{ 'Nothing found' | t }}"
                         >
-                            {% for politician in topPoliticians %}
+                            {% for politician in top_politicians %}
                             <option
                                 value="{{ politician.id }}"
                                 data-content='
