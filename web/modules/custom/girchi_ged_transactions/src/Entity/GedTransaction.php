@@ -318,8 +318,8 @@ class GedTransaction extends ContentEntityBase implements GedTransactionInterfac
 
     //calculate GeD amount
     $service = \Drupal::service('girchi_ged_transactions.ged_agregator_service');
-    $newTransactionArray = $service->calculateAndUpdateTotalGeds($uID);
-    $newTransaction = $newTransactionArray['ged_amount'];
+    $newTransaction = $service->calculateAndUpdateTotalGeds($uID);
+    
 
     //Get GeD amount of destination user
     $account = \Drupal\user\Entity\User::load($uID);

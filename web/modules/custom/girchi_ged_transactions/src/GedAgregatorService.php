@@ -17,6 +17,6 @@ class GedAgregatorService
 
     $result = $query->fetchAssoc();
 
-    return $result;
+    return $result['ged_amount'];
   }
 }
