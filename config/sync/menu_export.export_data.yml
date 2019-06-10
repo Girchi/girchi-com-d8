@@ -1,3 +1,58 @@
-account:
-  0: ''
-  122b95f0-3237-4044-bcca-d017c96d2eab: 'a:27:{s:4:"uuid";a:1:{s:5:"value";s:36:"122b95f0-3237-4044-bcca-d017c96d2eab";}s:11:"revision_id";a:1:{s:5:"value";s:1:"1";}s:8:"langcode";a:1:{s:5:"value";s:2:"en";}s:6:"bundle";a:1:{s:5:"value";s:17:"menu_link_content";}s:16:"revision_created";a:1:{s:5:"value";s:10:"1560171076";}s:13:"revision_user";a:1:{s:9:"target_id";s:1:"0";}s:20:"revision_log_message";a:1:{s:5:"value";s:0:"";}s:7:"enabled";a:1:{s:5:"value";s:1:"1";}s:5:"title";a:1:{s:5:"value";s:13:"My Party list";}s:11:"description";a:1:{s:5:"value";s:0:"";}s:9:"menu_name";a:1:{s:5:"value";s:7:"account";}s:4:"link";a:3:{s:3:"uri";s:24:"internal:/api/party-list";s:5:"title";s:0:"";s:7:"options";a:0:{}}s:8:"external";a:1:{s:5:"value";s:1:"0";}s:10:"rediscover";a:1:{s:5:"value";s:1:"1";}s:6:"weight";a:1:{s:5:"value";s:1:"0";}s:8:"expanded";a:1:{s:5:"value";s:1:"0";}s:6:"parent";a:1:{s:5:"value";s:0:"";}s:7:"changed";a:1:{s:5:"value";s:10:"1560171102";}s:16:"default_langcode";a:1:{s:5:"value";s:1:"1";}s:16:"revision_default";a:1:{s:5:"value";s:1:"1";}s:29:"revision_translation_affected";a:1:{s:5:"value";s:1:"1";}s:7:"metatag";b:0;s:26:"content_translation_source";a:1:{s:5:"value";s:3:"und";}s:28:"content_translation_outdated";a:1:{s:5:"value";s:1:"0";}s:23:"content_translation_uid";a:1:{s:9:"target_id";s:1:"1";}s:26:"content_translation_status";a:1:{s:5:"value";s:1:"1";}s:27:"content_translation_created";a:1:{s:5:"value";s:10:"1560171076";}}'
+1:
+  id:
+    value: '1'
+  uuid:
+    value: 122b95f0-3237-4044-bcca-d017c96d2eab
+  revision_id:
+    value: '1'
+  langcode:
+    value: en
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1560171076'
+  revision_user:
+    target_id: '0'
+  revision_log_message:
+    value: ''
+  enabled:
+    value: '1'
+  title:
+    value: 'My Party list'
+  description:
+    value: ''
+  menu_name:
+    value: account
+  link:
+    uri: 'internal:/user/party-list'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent:
+    value: ''
+  changed:
+    value: '1560174301'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+  content_translation_source:
+    value: und
+  content_translation_outdated:
+    value: '0'
+  content_translation_uid:
+    target_id: '1'
+  content_translation_status:
+    value: '1'
+  content_translation_created:
+    value: '1560171076'
