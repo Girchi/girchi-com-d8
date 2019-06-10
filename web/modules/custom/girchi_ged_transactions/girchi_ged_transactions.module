@@ -10,7 +10,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function girchi_ged_transactions_help($route_name, RouteMatchInterface $route_match) {
+function girchi_ged_transactions_help($route_name, RouteMatchInterface $route_match)
+{
   switch ($route_name) {
     // Main module help for the girchi_ged_transactions module.
     case 'help.page.girchi_ged_transactions':
@@ -26,10 +27,41 @@ function girchi_ged_transactions_help($route_name, RouteMatchInterface $route_ma
 /**
  * Implements hook_theme().
  */
-function girchi_ged_transactions_theme() {
+function girchi_ged_transactions_theme()
+{
   return [
     'girchi_ged_transactions' => [
       'render element' => 'children',
     ],
   ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function girchi_ged_transactions_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id == 'ged_transaction_add_form') {
+    $form['#validate'][] = 'negative_balance_validation';
+  }
+}
+
+function negative_balance_validation(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  $uGeDArray = $form_state->getValue('ged_amount');
+  $uGed = (int)$uGeDArray[0]['value'];
+
+  if ($uGed < 0) {
+
+    $uidArray = $form_state->getValue('user');
+    $uID = (int)$uidArray[0]['target_id'];
+
+    //calculate GeD amount
+    $service = \Drupal::service('girchi_ged_transactions.ged_agregator_service');
+    $userGeds = (int)$service->calculateAndUpdateTotalGeds($uID);
+
+    if (($userGeds + $uGed) < 0) {
+      $form_state->setErrorByName('ged_amount', t('User balance can not be negative!'));
+    }
+  }
 }
