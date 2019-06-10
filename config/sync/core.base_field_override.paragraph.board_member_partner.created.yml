@@ -1,19 +1,18 @@
-uuid: 2cbd43b7-5a85-483d-84e1-86039dafdc64
-langcode: ka
+uuid: 3f04b7fd-a18d-4ab6-9d7b-04fbf1a59508
+langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_position
     - paragraphs.paragraphs_type.board_member_partner
-id: paragraph.board_member_partner.field_position
-field_name: field_position
+id: paragraph.board_member_partner.created
+field_name: created
 entity_type: paragraph
 bundle: board_member_partner
-label: Position
-description: ''
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: created

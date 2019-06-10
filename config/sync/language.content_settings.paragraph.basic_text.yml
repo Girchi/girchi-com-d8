@@ -1,9 +1,9 @@
-uuid: e612ae4a-f92c-4c53-8ffe-28f6f069cf7a
-langcode: ka
+uuid: a1efd797-c8d3-46c2-ab0f-866afe123204
+langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.lead_partner
+    - paragraphs.paragraphs_type.basic_text
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.lead_partner
-target_entity_type_id: taxonomy_term
-target_bundle: lead_partner
+id: paragraph.basic_text
+target_entity_type_id: paragraph
+target_bundle: basic_text
 default_langcode: site_default
 language_alterable: false

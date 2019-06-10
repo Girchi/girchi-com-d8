@@ -1,19 +1,18 @@
-uuid: 632e80b5-0b24-4374-a640-b9669ec42ef6
-langcode: ka
+uuid: afccf0ca-7b15-4014-a25d-5355dbfd8217
+langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_name
     - paragraphs.paragraphs_type.board_member_politician
-id: paragraph.board_member_politician.field_name
-field_name: field_name
+id: paragraph.board_member_politician.created
+field_name: created
 entity_type: paragraph
 bundle: board_member_politician
-label: Name
-description: ''
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: created

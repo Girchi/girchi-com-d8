@@ -1,9 +1,9 @@
-uuid: e612ae4a-f92c-4c53-8ffe-28f6f069cf7a
-langcode: ka
+uuid: 63acf714-8fb8-478e-9309-ba53022d3c3b
+langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.lead_partner
+    - paragraphs.paragraphs_type.board_member_politician
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.lead_partner
-target_entity_type_id: taxonomy_term
-target_bundle: lead_partner
+id: paragraph.board_member_politician
+target_entity_type_id: paragraph
+target_bundle: board_member_politician
 default_langcode: site_default
 language_alterable: false
