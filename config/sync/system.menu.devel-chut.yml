@@ -1,8 +1,0 @@
-uuid: 0127f0c2-1b17-47eb-8927-68ede7578d20
-langcode: en
-status: true
-dependencies: {  }
-id: devel-chut
-label: chut
-description: 'Description of chut'
-locked: false

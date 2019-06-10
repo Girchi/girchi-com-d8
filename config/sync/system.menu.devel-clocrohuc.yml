@@ -1,8 +1,0 @@
-uuid: 37ac52ac-7965-4dec-92db-3fa5a821cf28
-langcode: en
-status: true
-dependencies: {  }
-id: devel-clocrohuc
-label: clocrohuc
-description: 'Description of clocrohuc'
-locked: false
