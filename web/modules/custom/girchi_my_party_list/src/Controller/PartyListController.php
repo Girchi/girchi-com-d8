@@ -158,7 +158,7 @@ class PartyListController extends ControllerBase {
       $userInfo = array_map(function($tag) {
         return [
           'target_id' => $tag['politician'],
-          'value' => $tag['percentage']
+          'value' => $tag['percentage'] ? $tag['percentage'] : 0
         ];
       }, $userList);
 
