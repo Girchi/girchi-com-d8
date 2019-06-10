@@ -130,10 +130,12 @@ class PartyListController extends ControllerBase {
 
         $users = $userStorage->getQuery()
           ->condition($nameConditions)
-          ->condition('uid', $politicanUids, 'NOT IN')
           ->condition('field_politician', 1, '=')
-          ->range(0,10)
-          ->execute();
+          ->range(0,10);
+        if(!empty($politicanUids)) {
+          $users->condition('uid', $politicanUids, 'NOT IN');
+        }
+        $users = $users->execute();
 
         $userArray = $this->getUsersInfo($users);
       }
