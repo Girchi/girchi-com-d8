@@ -3,7 +3,7 @@ $(document).ready(function () {
         let keyword = e.target.value;
         $.ajax({
             type: "GET",
-            url: "/getusers?user=" + keyword,
+            url: "/api/party-list/my-supported-members?user=" + keyword,
         })
             .done((data) => {
                 console.log(data);
