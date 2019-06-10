@@ -153,7 +153,7 @@ class PartyListController extends ControllerBase {
    */
     public function updateUser(Request $request) {
       $currentUser =  $this->entityTypeManager->getStorage('user')->load($this->currentUser()->id());
-      $userList = $request->get('list');
+      $userList = $request->get('list') ? $request->get('list') : [];
 
       $userInfo = array_map(function($tag) {
         return [
@@ -181,25 +181,29 @@ class PartyListController extends ControllerBase {
     public function  getUsersInfo($users)
     {
       $userArray = [];
-      foreach ($users as $user) {
-        $user = User::Load($user);
-        $firstName = $user->get('field_first_name')->value;
-        $lastName = $user->get('field_last_name')->value;
-        $imgUrl = '';
-        if(!empty($user->get('user_picture')[0])) {
-          $imgId = $user->get('user_picture')[0]->getValue()['target_id'];
-          $imgFile = File::load($imgId);
+      if(!empty($users)) {
+        foreach ($users as $user) {
+          $user = User::Load($user);
+          if($user != null) {
+            $firstName = $user->get('field_first_name')->value;
+            $lastName = $user->get('field_last_name')->value;
+            $imgUrl = '';
+            if(!empty($user->get('user_picture')[0])) {
+              $imgId = $user->get('user_picture')[0]->getValue()['target_id'];
+              $imgFile = File::load($imgId);
 
-          $style = $this->entityTypeManager()->getStorage('image_style')->load('party_member');
-          $imgUrl = $style->buildUrl($imgFile->getFileUri());
+              $style = $this->entityTypeManager()->getStorage('image_style')->load('party_member');
+              $imgUrl = $style->buildUrl($imgFile->getFileUri());
+            }
+            $uid = $user->id();
+            $userArray[] = [
+              "id" => $uid,
+              "firstName" => $firstName,
+              "lastName" => $lastName,
+              "imgUrl" => $imgUrl
+            ];
+          }
         }
-        $uid = $user->id();
-        $userArray[] = [
-          "id" => $uid,
-          "firstName" => $firstName,
-          "lastName" => $lastName,
-          "imgUrl" => $imgUrl
-        ];
       }
       return $userArray;
     }
@@ -213,8 +217,11 @@ class PartyListController extends ControllerBase {
    * @throws PluginNotFoundException
    */
     public function getUserInfo($userId) {
-      return $this->getUsersInfo([$userId]);
+      if(!empty($userId)) {
+        return $this->getUsersInfo([$userId]);
+      }
     }
+
 
   /**
    * Get user chosen politician by uid
