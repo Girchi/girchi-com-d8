@@ -81,7 +81,7 @@ class PartyListController extends ControllerBase {
     return [
       '#type' => 'markup',
       '#theme' => 'girchi_my_party_list',
-      '#my_part_list' => $myPartyList,
+      '#my_party_list' => $myPartyList,
       '#max_percentage' => $maxPercentage,
       '#top_politicians' => $topPoliticians
     ];
