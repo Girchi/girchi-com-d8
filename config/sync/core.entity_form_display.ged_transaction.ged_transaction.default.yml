@@ -1,0 +1,53 @@
+uuid: 14191182-798e-4fa0-833a-e335a0659300
+langcode: en
+status: true
+dependencies:
+  module:
+    - girchi_ged_transactions
+id: ged_transaction.ged_transaction.default
+targetEntityType: ged_transaction
+bundle: ged_transaction
+mode: default
+content:
+  Description:
+    type: string_textarea
+    settings:
+      placeholder: ''
+      rows: 5
+    region: content
+    weight: 4
+    third_party_settings: {  }
+  ged_amount:
+    type: number
+    settings:
+      placeholder: ''
+    region: content
+    weight: 3
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    region: content
+    weight: 1
+    third_party_settings: {  }
+  user:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  name: true
+  user_id: true
