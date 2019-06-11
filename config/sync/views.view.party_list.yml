@@ -11,6 +11,7 @@ dependencies:
   module:
     - image
     - user
+    - views_infinite_scroll
 id: party_list
 label: 'Party list'
 module: views
@@ -52,12 +53,15 @@ display:
           sort_asc_label: Asc
           sort_desc_label: აღწერა
       pager:
-        type: mini
+        type: infinite_scroll
         options:
-          items_per_page: 10
+          items_per_page: 2
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: ‹‹
+            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -66,9 +70,9 @@ display:
             items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
+          views_infinite_scroll:
+            button_text: 'Load More'
+            automatically_load_content: true
       style:
         type: default
       row:
@@ -249,10 +253,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: image_url
           settings:
             image_style: party_member
-            image_link: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -396,6 +399,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
