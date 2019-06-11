@@ -38,5 +38,13 @@ $(document).ready(function () {
                 .addClass('w-lg-500');
             $('.navbar-search').submit();
         }
+    });
+
+    const path = window.location.href;
+
+    $('#drupal-side-menu a').each((i,element)=>{
+        if(element.href === path){
+            $(element).addClass('active');
+        }
     })
 });
