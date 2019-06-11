@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -43,7 +44,14 @@ function girchi_ged_transactions_form_alter(&$form, \Drupal\Core\Form\FormStateI
 {
   if ($form_id == 'ged_transaction_add_form') {
     $form['#validate'][] = 'negative_balance_validation';
+    $form['actions']['submit']['#submit'][] = 'girchi_ged_transactions_redirect';
   }
+}
+
+function girchi_ged_transactions_redirect($form, \Drupal\Core\Form\FormStateInterface $form_state){
+  $url = Url::fromUserInput('/admin/ged-transaction');
+  $form_state->setRedirectUrl($url);
+  return;
 }
 
 function negative_balance_validation(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
