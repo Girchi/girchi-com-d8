@@ -55,10 +55,10 @@ display:
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 2
+          items_per_page: 10
           offset: 0
           id: 0
-          total_pages: null
+          total_pages: 15
           tags:
             previous: ‹‹
             next: ››
