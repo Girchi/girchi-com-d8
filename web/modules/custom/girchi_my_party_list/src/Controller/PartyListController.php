@@ -9,7 +9,6 @@ use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Session\AccountProxy;
 use Drupal\file\Entity\File;
-use Drupal\girchi_my_party_list\PartyListCalculatorService;
 use Drupal\reference_value_pair\Plugin\Field\FieldType\ReferenceValuePair;
 use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -31,19 +30,13 @@ class PartyListController extends ControllerBase {
    */
   protected $entityTypeManager;
 
-  /**
-   * @var PartyListCalculatorService $partyListCalculatorService
-   */
-  protected $partyListCalculator;
 
   /**
    * Constructs a new PartyListController object.
    * @param EntityTypeManagerInterface $entity_type_manager
-   * @param PartyListCalculatorService $partyListCalculatorService
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager,PartyListCalculatorService $partyListCalculatorService) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
-    $this->partyListCalculator = $partyListCalculatorService;
   }
 
   /**
@@ -52,7 +45,6 @@ class PartyListController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
         $container->get('entity_type.manager'),
-        $container->get('girchi_my_party_list.party_list_calculator')
     );
   }
 
@@ -65,7 +57,6 @@ class PartyListController extends ControllerBase {
    * @throws PluginNotFoundException
    */
   public function partyList() {
-    $this->partyListCalculator->calculate();
     $currentUserId = $this->currentUser()->id();
     $currentUser = $this->entityTypeManager->getStorage('user')->load($currentUserId);
     $myPartyList = [];
