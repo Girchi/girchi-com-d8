@@ -14,8 +14,6 @@ permissions:
   - 'administer ged_transaction display'
   - 'administer ged_transaction fields'
   - 'administer ged_transaction form display'
-  - 'delete ged transaction entities'
-  - 'edit ged transaction entities'
   - 'view published ged transaction entities'
   - 'view the administration theme'
   - 'view unpublished ged transaction entities'
