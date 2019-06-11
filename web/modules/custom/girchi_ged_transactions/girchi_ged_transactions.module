@@ -52,7 +52,6 @@ function negative_balance_validation(&$form, \Drupal\Core\Form\FormStateInterfac
   $uGed = (int)$uGeDArray[0]['value'];
 
   if ($uGed < 0) {
-
     $uidArray = $form_state->getValue('user');
     $uID = (int)$uidArray[0]['target_id'];
 
@@ -63,5 +62,25 @@ function negative_balance_validation(&$form, \Drupal\Core\Form\FormStateInterfac
     if (($userGeds + $uGed) < 0) {
       $form_state->setErrorByName('ged_amount', t('User balance can not be negative!'));
     }
+  }
+}
+
+
+/**
+ * Implements hook_entity_presave().
+ */
+function girchi_ged_transactions_entity_presave(Drupal\Core\Entity\EntityInterface $entity)
+{
+  if($entity->getEntityType()->id() == 'ged_transaction')  {
+    $uGed = (int)$entity->get('ged_amount')->value;
+    $uId = (int)$entity->get('user')->target_id;
+
+    $account = \Drupal\user\Entity\User::load($uId);
+    $firsName = $account->get('field_first_name')->value;
+    $lastName = $account->get('field_last_name')->value;
+
+    $newTitle = $firsName . ' ' . $lastName . ' '. $uGed.' GeD';
+
+    $title = $entity->set('title', $newTitle)->value;
   }
 }
