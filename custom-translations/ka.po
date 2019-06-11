@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-06-06 14:23+0000\n"
-"PO-Revision-Date: 2019-06-06 14:23+0000\n"
+"POT-Creation-Date: 2019-06-11 09:19+0000\n"
+"PO-Revision-Date: 2019-06-11 09:19+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3041,6 +3041,9 @@ msgstr "მონაცემთა ბაზის სისტემა"
 msgid "Database system version"
 msgstr "მონაცემთა ბაზის ვერსია"
 
+msgid "Ged amount"
+msgstr "Ged-ების რაოდენობა"
+
 msgid "Active"
 msgstr "აქტიური"
 
@@ -3464,7 +3467,4 @@ msgstr "წინა თვის ტოპ პარტნიორები"
 
 msgid "Referral"
 msgstr "რეფერალი"
-
-msgid "Ged amount"
-msgstr "Ged-ების რაოდენობა"
 
