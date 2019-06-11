@@ -4,6 +4,7 @@ namespace Drupal\girchi_my_party_list;
 
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\user\Entity\User;
 use Drupal\user\UserStorage;
@@ -41,7 +42,7 @@ class PartyListCalculatorService
       /** @var UserStorage $users */
       $user_storage = $this->entityTypeManager->getStorage('user');
       $user_ids = $user_storage->getQuery()
-        ->condition('field_ged', '1', '>')
+        ->condition('field_ged', '0', '>')
         ->condition('field_my_party_list', '0', '>')
         ->execute();
       $users = $user_storage->loadMultiple($user_ids);
@@ -63,10 +64,14 @@ class PartyListCalculatorService
         foreach ($user_rating as $uid => $ged_amount) {
           /** @var User $politician */
           $politician = $user_storage->load($uid);
-
           $politician->set('field_rating_in_party_list', $rating_number);
-          $politician->save();
-          $rating_number++;
+
+          try {
+            $politician->save();
+            $rating_number++;
+          } catch (EntityStorageException $e) {
+            \Drupal::logger('girchi_my_party_list')->error($e->getMessage()); ;
+          }
         }
       }
     } catch (InvalidPluginDefinitionException $e) {
