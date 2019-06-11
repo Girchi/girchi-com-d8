@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
 use Drupal\user\Entity\User;
 use Drupal\Core\Render\BubbleableMetadata;
 
@@ -364,7 +365,10 @@ function terms_and_conditions_validate($form, &$form_state)
  */
 function girchi_utils_preprocess_block(&$variables)
 {
-    $variables['base_path'] = base_path();
+  $variables['base_path'] = base_path();
+  $current_url = Url::fromRoute('<current>');
+  $path = $current_url->toString();
+  $variables['current_path'] = $path;
 }
 
 function girchi_utils_user_form_submit(&$form, FormStateInterface $form_state)

@@ -39,12 +39,4 @@ $(document).ready(function () {
             $('.navbar-search').submit();
         }
     });
-
-    const path = window.location.href;
-
-    $('#drupal-side-menu a').each((i,element)=>{
-        if(element.href === path){
-            $(element).addClass('active');
-        }
-    })
 });
