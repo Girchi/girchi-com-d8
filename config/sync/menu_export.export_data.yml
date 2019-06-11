@@ -11,19 +11,6 @@
     value: menu_link_content
   revision_created:
     value: '1560179640'
-3:
-  id:
-    value: '3'
-  uuid:
-    value: a852e6a4-376b-4565-9d46-5d45c6f9e2b5
-  revision_id:
-    value: '2'
-  langcode:
-    value: ka
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1560185029'
   revision_user: false
   revision_log_message: false
   enabled:
@@ -35,12 +22,6 @@
     value: admin
   link:
     uri: 'internal:/admin/ged-transaction'
-    value: 'ჩემი პარტიული სია'
-  description: false
-  menu_name:
-    value: account
-  link:
-    uri: 'internal:/user/party-list'
     title: ''
     options: {  }
   external:
@@ -49,15 +30,12 @@
     value: '1'
   weight:
     value: '2'
-    value: '0'
   expanded:
     value: '0'
   parent:
     value: system.admin
   changed:
     value: '1560179756'
-
-    value: '1560185029'
   default_langcode:
     value: '1'
   revision_default:
@@ -75,4 +53,3 @@
     value: '1'
   content_translation_created:
     value: '1560179640'
-    value: '1560185029'

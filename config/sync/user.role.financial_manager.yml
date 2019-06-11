@@ -7,7 +7,6 @@ label: 'Financial manager'
 weight: -3
 is_admin: null
 permissions:
-  - 'access administration pages'
   - 'access toolbar'
   - 'add ged transaction entities'
   - 'administer ged transaction entities'
