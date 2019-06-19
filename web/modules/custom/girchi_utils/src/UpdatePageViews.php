@@ -68,7 +68,7 @@ class UpdatePageViews
       "dimensionFilterClauses" => [
         'filters' => [
           "dimension_name" => "ga:pagepath",
-          "operator" => "ENDS_WITH", // valid operators can be found here: https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#FilterLogicalOperator
+          "operator" => "PARTIAL", // valid operators can be found here: https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#FilterLogicalOperator
           "expressions" => $url,
         ]
       ]
@@ -120,7 +120,7 @@ class UpdatePageViews
 
       $url = \Drupal::service('path.alias_manager')->getAliasByPath($path, $langcode);
 
-      $viewsCount = self::_apiCall($url);
+      $viewsCount = self::_apiCall('/ge' . $url);
 
       if ($viewsCount !== null) {
         $results[$url] = $viewsCount;
