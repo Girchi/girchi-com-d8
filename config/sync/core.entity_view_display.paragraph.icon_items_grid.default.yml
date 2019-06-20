@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.icon_items_grid.field_icon_item
     - field.field.paragraph.icon_items_grid.field_style
+    - field.field.paragraph.icon_items_grid.field_title
     - paragraphs.paragraphs_type.icon_items_grid
   module:
     - entity_reference_revisions
@@ -29,5 +30,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }

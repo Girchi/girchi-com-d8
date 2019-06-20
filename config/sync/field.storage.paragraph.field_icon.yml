@@ -23,6 +23,9 @@ settings:
     -
       value: icon-pencil-case
       label: icon-pencil-case
+    -
+      value: icon-teacher
+      label: icon-teacher
   allowed_values_function: ''
 module: options
 locked: false
