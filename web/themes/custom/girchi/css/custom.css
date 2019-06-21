@@ -54,3 +54,6 @@ html{
     height: 100%;
 }
 
+.card-body .my-3 img {
+    max-width: 100%;
+}
