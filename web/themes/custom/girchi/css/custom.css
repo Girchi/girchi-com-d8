@@ -61,3 +61,12 @@ html{
 .webform-submission-teacher-registration-form input{
     margin: 0!important;
 }
+
+.article-body .my-3 img {
+    max-width: 100%;
+}
+
+.article-body .my-3 iframe {
+    width: 100%;
+}
+

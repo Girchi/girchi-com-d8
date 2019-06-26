@@ -11,7 +11,7 @@ use Drupal\Core\Url;
 use Drupal\user\Entity\User;
 use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\webform\WebformSubmissionInterface;
-
+use Drupal\taxonomy\Entity\Term;
 /**
  * Implements hook_token_info().
  */
@@ -176,6 +176,29 @@ function girchi_utils_theme($existing, $type, $theme, $path)
         [
           'articles' => NULL,
           'category' => NULL,
+      'user_profile' => [
+        'variables' =>
+          [
+            'user_id' =>NULL,
+            'user_first_name' =>NULL,
+            'user_last_name' =>NULL,
+            'user_ged' =>NULL,
+            'user_profile_picture' =>NULL,
+            'ged' => NULL,
+            'member' => NULL,
+            'user_count' => NULL,
+            'user_rank' => NULL,
+            'is_avatar' =>NULL
+          ],
+        'template' => 'user_profile',
+      ],
+        'front_page_articles' => [
+            'variables' =>
+                [
+                    'articles' => NULL,
+                    'category' => NULL,
+                ],
+            'template' => 'front-page-articles',
         ],
       'template' => 'front-page-articles',
     ],
@@ -307,7 +330,64 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
       $form['actions']['submit']['#submit'][] = 'girchi_utils_user_form_submit';
       $form['#after_build'][] = 'girchi_utils_after_build';
 
+    if ($form_id == "user_form") {
+        if (!Drupal::currentUser()->hasPermission('admin')) {
+            $form['field_ged']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+            /** Unset titles */
+            unset($form['account']['mail']['#title']);
+            unset($form['field_first_name']['widget']['0']['value']['#title']);
+            unset($form['field_last_name']['widget']['0']['value']['#title']);
+            unset($form['field_date_of_birth']['widget']['0']['value']['#title']);
+            unset($form['field_phone']['widget']['0']['value']['#title']);
+            unset($form['field_personal_id']['widget']['0']['value']['#title']);
+            unset($form['field_address']['widget']['0']['value']['#title']);
+            unset($form['field_politician']['widget']['value']['#title']);
+            unset($form['account']['current_pass']['#title']);
 
+            /** Unset descriptions */
+            unset($form['account']['mail']['#description']);
+            unset($form['account']['current_pass']['#description']);
+
+            /** Set classes for inputs */
+            $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['account']['current_pass']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['account']['mail']['#attributes']['id'][] = 'email';
+            $form['account']['mail']['#attributes']['placeholder'][] = t('Enter Email');
+            $form['field_personal_id']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['field_first_name']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['field_last_name']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['field_phone']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['field_address']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+            $form['field_politician']['#attributes']['class'][] = 'form-control';
+            $form['field_politician']['widget']['value']['#attributes']['class'][] = 'form-control';
+            $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4';
+
+            $form['field_politician']['#theme_wrappers'] = array();
+
+            /** Get politician text from settings.*/
+            $form['politician_text'] = array(
+                '#type' => 'html',
+                '#markup' => $config->get('politician_checkbox_text')['value'],
+                '#theme' => ''
+            );
+
+            $form['actions']['submit']['#submit'][] = 'girchi_utils_user_form_submit';
+            $form['#after_build'][] = 'girchi_utils_after_build';
+
+
+        }
+    }
+    // Password reset form
+    if ($form_id == "user_pass") {
+        // Unset email title
+        unset($form['name']['#title']);
+        // Add classes to email input
+        $form['name']['#attributes']['class'][] = 'form-control form-control-lg fix';
+        $form['name']['#attributes']['id'][] = 'email';
+        $form['name']['#attributes']['placeholder'][] = t('Enter Email');
+
+        // Add classes to submit button
+        $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
     }
   }
   // Password reset form
@@ -408,6 +488,43 @@ function girchi_utils_cron()
    */
   $rankRaiting = Drupal::service('girchi_utils.ged_raiting');
   $rankRaiting->calculateRankRating();
+
+}
+
+/**
+ * Implements hook_simple_sitemap_links_alter().
+ */
+function girchi_utils_simple_sitemap_links_alter(array &$links, $sitemap_variant)
+{
+  $term_url_mapping = [
+    'news_categories' => 'news?category=',
+    'tags' => 'news?tag=',
+  ];
+
+  foreach ($links as $key => $link) {
+    if (
+      isset($link['meta']['entity_info']['entity_type'])
+      && $link['meta']['entity_info']['entity_type'] === 'taxonomy_term'
+    ) {
+      $tid = $link['meta']['entity_info']['id'];
+
+      // Get taxonomy term bundle.
+      $term = Term::load($tid);
+      $term_bundle = $term->bundle();
+
+      $old_path = $link['meta']['path'];
+      $new_path = $term_url_mapping[$term_bundle] . $tid;
+
+      $links[$key]['meta']['path'] = $new_path;
+      $links[$key]['url'] = str_replace($old_path, $new_path, $links[$key]['url']);
+
+      foreach ($link['alternate_urls'] as $k => $alt_url) {
+        $links[$key]['alternate_urls'][$k] = str_replace($old_path, $new_path, $alt_url);
+      }
+
+    }
+  }
+
 }
 
 
