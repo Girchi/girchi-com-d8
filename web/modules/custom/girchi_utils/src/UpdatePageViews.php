@@ -8,12 +8,12 @@ use Google_Service_AnalyticsReporting;
 use Google_Service_AnalyticsReporting_GetReportsRequest;
 
 /**
- *
+ * UpdatePageViews.
  */
 class UpdatePageViews {
 
   /**
-   *
+   * Api Call.
    */
   private static function _apiCall($url) {
     $reports = self::_getReports($url);
@@ -25,7 +25,9 @@ class UpdatePageViews {
   /**
    * Initializes an Analytics Reporting API V4 service object.
    *
-   * @return \Google_Service_AnalyticsReporting An authorized Analytics Reporting API V4 service object.
+   * @return \Google_Service_AnalyticsReporting
+   *
+   *   An authorized Analytics Reporting API V4 service object.
    *
    * @throws \Google_Exception
    */
