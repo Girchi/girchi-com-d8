@@ -17,12 +17,8 @@ include drupal_get_path('theme', 'girchi') . '/girchi.theme-suggestions.inc';
 function girchi_preprocess_html(array &$variables) {
   /* Add class to html tag */
   // $variables['html_attributes']->addClass('no-js');
-  // Don't display the site name twice on the front page
-  // (and potentially others)
-  /*if (isset($variables['head_title_array']['title']) &&
-  isset($variables['head_title_array']['name']) &&
-  ($variables['head_title_array']['title'] ==
-  $variables['head_title_array']['name'])) {
+  // Don't display the site name twice on the front page (and potentially others)
+  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
   $variables['head_title'] = $variables['head_title_array']['name'];
   }*/
 
@@ -142,6 +138,18 @@ function girchi_preprocess_page(array &$variables) {
     ];
     $variables['#cache']['contexts'][] = 'session';
   }
+
+  $node = \Drupal::request()->attributes->get('node');
+  if (isset($node) && $node->getType() == 'promo_page') {
+    $webform                           = \Drupal::entityTypeManager()->getStorage('webform')->load('student_registration');
+    $view_builder                      = \Drupal::service('entity_type.manager')->getViewBuilder('webform');
+    $build                             = $view_builder->view($webform);
+    $variables['student_registration'] = $build;
+    $webform                           = \Drupal::entityTypeManager()->getStorage('webform')->load('teacher_registration');
+    $view_builder                      = \Drupal::service('entity_type.manager')->getViewBuilder('webform');
+    $build                             = $view_builder->view($webform);
+    $variables['teacher_registration'] = $build;
+  }
 }
 
 /**
@@ -163,8 +171,7 @@ function girchi_preprocess_block(array &$variables) {
  */
 function girchi_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
   /*$element = $variables['element'];
-  if (isset($element['#attributes']['class']) &&
-  in_array('form-composite', $element['#attributes']['class'])) {
+  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
   $suggestions[] = 'fieldset__form_composite';
   }*/
 }
@@ -257,12 +264,11 @@ function girchi_preprocess_details(array &$variables) {
  * Implements hook_preprocess_menu_local_task().
  */
 function girchi_preprocess_menu_local_task(array &$variables) {
-  // $variables['element']['#link']['url']
-  // ->setOption('attributes', ['class'=>'rounded']);
+  // $variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
 
 /**
- * Implements hook_preprocess_taxonomy_term().
+ *
  */
 function girchi_preprocess_taxonomy_term(&$variables) {
   $term_id = $variables['elements']['#taxonomy_term']->id();
@@ -270,7 +276,7 @@ function girchi_preprocess_taxonomy_term(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_paragraph().
+ *
  */
 function girchi_preprocess_paragraph(&$variables) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
@@ -287,7 +293,10 @@ function girchi_preprocess_paragraph(&$variables) {
     ];
   }
 
-  // For 'team member' paragraph.
+  /**
+   * For 'team member' paragraph
+   */
+
   if ($paragraph->getParagraphType()->id() == 'team_member') {
     $img_uri = $paragraph->field_image && $paragraph->field_image->first() ? $paragraph->field_image->first()->entity->getFileUri() : '';
     $full_name = $paragraph->field_name->first()->value;
@@ -307,7 +316,10 @@ function girchi_preprocess_paragraph(&$variables) {
     ];
   }
 
-  // For 'board' paragraph.
+  /**
+   * For 'board' paragraph
+   */
+
   if ($paragraph->getParagraphType()->id() == 'board') {
     $label = $paragraph->getParentEntity()->label();
     foreach ($paragraph->field_paragraphs as $inner_paragraph) {
@@ -317,7 +329,9 @@ function girchi_preprocess_paragraph(&$variables) {
     $variables['data']['label'] = $label;
   }
 
-  // For 'board member' paragraph.
+  /**
+   * For 'board member' paragraph
+   */
   if ($paragraph->getParagraphType()->id() == 'board_member_partner' || $paragraph->getParagraphType()->id() == 'board_member_politician') {
     $img_uri = $paragraph->field_image && $paragraph->field_image->first() ? $paragraph->field_image->first()->entity->getFileUri() : '';
     $full_name = $paragraph->field_name->first()->value;
@@ -352,7 +366,7 @@ function girchi_preprocess_paragraph(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_menu().
+ *
  */
 function girchi_preprocess_menu(array &$variables) {
   if (isset($variables['menu_name']) && $variables['menu_name'] == 'about-us') {
