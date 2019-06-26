@@ -176,39 +176,15 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 [
                   'articles' => NULL,
                   'category' => NULL,
-                  'user_profile' => [
-                    'variables' =>
-                            [
-                              'user_id' => NULL,
-                              'user_first_name' => NULL,
-                              'user_last_name' => NULL,
-                              'user_ged' => NULL,
-                              'user_profile_picture' => NULL,
-                              'ged' => NULL,
-                              'member' => NULL,
-                              'user_count' => NULL,
-                              'user_rank' => NULL,
-                              'is_avatar' => NULL,
-                            ],
-                    'template' => 'user_profile',
-                  ],
-                  'front_page_articles' => [
-                    'variables' =>
-                            [
-                              'articles' => NULL,
-                              'category' => NULL,
-                            ],
-                    'template' => 'front-page-articles',
-                  ],
-                  'template' => 'front-page-articles',
                 ],
-      'lead_partners' => [
-        'variables' =>
-                    [
-                      'leadPartner' => NULL,
-                    ],
-        'template' => 'lead-partners',
-      ],
+      'template' => 'front-page-articles',
+    ],
+    'lead_partners' => [
+      'variables' =>
+                [
+                  'leadPartner' => NULL,
+                ],
+      'template' => 'lead-partners',
     ],
   ];
 
@@ -402,34 +378,33 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
       $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
     }
   }
+}
 
-  /**
-   *
-   */
-  function girchi_utils_after_build($form, &$form_state) {
-    if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
-          === 'supporters_registration') {
+/**
+ *
+ */
+function girchi_utils_after_build($form, &$form_state) {
+  if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
+        === 'supporters_registration') {
 
-      $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg fix';
-    }
-
-    unset($form['account']['pass']['pass1']['#title']);
-    unset($form['account']['pass']['#attached']['drupalSettings']['password']['showStrengthIndicator']);
-
-    $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg fix';
-    $form['account']['pass']['pass1']['#attributes']['id'][] = 'password';
-    $form['account']['pass']['pass1']['#attributes']['placeholder'][] = t('Enter password');
-
-    unset($form['account']['pass']['pass2']['#title']);
-    $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg fix';
-    $form['account']['pass']['pass2']['#attributes']['id'][] = 'password2';
-    $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
-
-    unset($form['account']['terms_and_conditions']['#theme_wrappers']);
-
-    return $form;
+    $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg fix';
   }
 
+  unset($form['account']['pass']['pass1']['#title']);
+  unset($form['account']['pass']['#attached']['drupalSettings']['password']['showStrengthIndicator']);
+
+  $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg fix';
+  $form['account']['pass']['pass1']['#attributes']['id'][] = 'password';
+  $form['account']['pass']['pass1']['#attributes']['placeholder'][] = t('Enter password');
+
+  unset($form['account']['pass']['pass2']['#title']);
+  $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg fix';
+  $form['account']['pass']['pass2']['#attributes']['id'][] = 'password2';
+  $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
+
+  unset($form['account']['terms_and_conditions']['#theme_wrappers']);
+
+  return $form;
 }
 
 /**
