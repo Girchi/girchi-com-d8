@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\file\Entity\File;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\user\Entity\User;
 
@@ -120,19 +121,24 @@ function girchi_preprocess_page(array &$variables) {
     // Logged in use header
    if($currentUserId = \Drupal::currentUser()->id()){
        $account = User::load($currentUserId);
+       /** @var File $avatarEntity */
        $avatarEntity = $account->{'user_picture'}->entity;
        if($avatarEntity) {
-           $currentUserAvatar = $avatarEntity->url();
+           $currentUserAvatar = $avatarEntity->getFileUri();
+           $isAvatar= true;
        }else{
-           $currentUserAvatar = file_create_url( drupal_get_path('theme', 'girchi') . '/images/avatar.png');
+           $currentUserAvatar =  file_create_url(drupal_get_path('theme', 'girchi') . '/images/avatar.png');
+           $isAvatar=false;
        }
        $variables['user_header'] = [
            'first_name' => $account->{'field_first_name'}->value,
            'last_name' => $account->{'field_last_name'}->value,
            'ged' => $account->{'field_ged'}->value ? $account->{'field_ged'}->value : 0,
            'user_picture' => $currentUserAvatar,
-           'user_name' => $account->{'name'}->value
+           'user_name' => $account->{'name'}->value,
+           'is_avatar'=>$isAvatar
        ];
+       $variables['#cache']['contexts'][] = 'session';
    }
 
    $node = \Drupal::request()->attributes->get('node');
@@ -200,6 +206,11 @@ function girchi_preprocess_node(array &$variables) {
     $variables['show_sidebar'] = $show_sidebar;
   }
 
+  if ($variables['node']->getType() == 'article' && $variables['view_mode'] == 'full') {
+    $views_count = \Drupal::service('statistics.storage.node')->fetchView($variables['node']->id());
+    $total_view_count = $views_count ? $views_count->getTotalCount() : 0;
+    $variables['total_view_count'] = $total_view_count;
+  }
 }
 
 /**
@@ -226,6 +237,12 @@ function girchi_preprocess_form(array &$variables)
 {
     $config = \Drupal::config('om_site_settings.site_settings');
     $variables['enable_user_ui'] =  $config->get('enable_user_ui');
+
+    if($variables['attributes']['id'] == 'user-form'){
+      $social_auth = \Drupal::service('social_auth_facebook.persistent_data_handler');
+      $show_password_change = $social_auth->get('access_token') ? FALSE : TRUE;
+      $variables['show_password_change'] = $show_password_change;
+    }
 }
 
 /**

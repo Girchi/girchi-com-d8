@@ -3554,4 +3554,14 @@ msgstr "სთ"
 
 msgid "Estimated price in month:"
 msgstr "სავარაუდო ფასი თვეში:"
+=======
+msgid "Registration"
+msgstr "რეგისტრაცია"
+
+msgid "Student"
+msgstr "ბავშვის"
+
+msgid "Teacher"
+msgstr "მასწავლებლის"
+
 
