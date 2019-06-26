@@ -176,7 +176,8 @@ function girchi_utils_theme($existing, $type, $theme, $path)
         [
           'articles' => NULL,
           'category' => NULL,
-      'template' => 'front-page-articles',
+    ],
+        'template' => 'front-page-articles',
     ],
     'lead_partners' => [
       'variables' =>
@@ -185,7 +186,6 @@ function girchi_utils_theme($existing, $type, $theme, $path)
         ],
       'template' => 'lead-partners',
     ],
-  ]
   ];
 
   return $templates;
