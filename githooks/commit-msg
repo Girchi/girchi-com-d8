@@ -1,3 +1,4 @@
+#!/bin/sh
 #
 # Run the hook command.
 # Note: this will be replaced by the real command during copy.
