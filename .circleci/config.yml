@@ -13,6 +13,10 @@ jobs:
           name: make phpcs global
           command: | 
             export PATH="$PATH:$HOME/.composer/vendor/bin"
+      - run:
+          name: check coder
+          command: |
+            composer global show -P
       - run: 
           name: register drupal standart
           command: |
