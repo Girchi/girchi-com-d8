@@ -5,5 +5,4 @@ jobs:
       - image: circleci/php
     steps:
       - checkout
-      - export PATH=~/.composer/vendor/bin:$PATH
-      - composer global require drupal/coder	 
+      - composer require drupal/coder	 
