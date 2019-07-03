@@ -22,6 +22,6 @@ jobs:
           command: |
             phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
       - run:
-          name: check installed standarts
+          name: run PHPCS tests
           command: |
-            phpcs -i
+            phpcs  --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md
