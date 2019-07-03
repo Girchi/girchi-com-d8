@@ -18,9 +18,9 @@ jobs:
           command: |
             composer global show -P
       - run:
-          name: check dir
+          name: check ls
           command: |
-            pwd 
+            ls 
       - run:   
           name: register drupal standart
           command: |
