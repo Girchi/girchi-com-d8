@@ -24,4 +24,4 @@ jobs:
       - run:
           name: run PHPCS tests
           command: |
-            phpcs  --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md
+            phpcs  --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md ./
