@@ -6,3 +6,6 @@ jobs:
     steps:
       - checkout
       - run: echo "composer global require drupal/coder"	 
+      - run: echo "export PATH="$PATH:$HOME/.composer/vendor/bin""
+      - run: echo "phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer"
+      - run: echo "phpcs -i"
