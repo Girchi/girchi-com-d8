@@ -12,16 +12,8 @@ jobs:
       - run:
           name: install drupal coder
           command: | 
-            composer global require drupal/coder	 
-      - run:
-          name: make phpcs global
-          command: | 
-            export PATH="$PATH:$HOME/.composer/vendor/bin"
-      - run:   
-          name: register drupal standart
-          command: |
-            phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+            composer global require drupal/coder
       - run:
           name: run PHPCS tests
           command: |
-            phpcs  --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md ./
+            bash ./.circleci/phpcs.sh
