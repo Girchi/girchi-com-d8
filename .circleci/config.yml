@@ -5,7 +5,19 @@ jobs:
       - image: circleci/php
     steps:
       - checkout
-      - run: echo "composer global require drupal/coder"	 
-      - run: echo "export PATH="$PATH:$HOME/.composer/vendor/bin""
-      - run: echo "phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer"
-      - run: echo "phpcs -i"
+      - run:
+          name: install drupal coder
+          command: | 
+            composer global require drupal/coder	 
+      - run:
+          name: make phpcs global
+          command: | 
+            export PATH="$PATH:$HOME/.composer/vendor/bin"
+      - run: 
+          name: register drupal standart
+          command: |
+            phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+      - run:
+          name: check installed standarts
+          command: |
+            phpcs -i
