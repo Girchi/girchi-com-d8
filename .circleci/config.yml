@@ -5,4 +5,5 @@ jobs:
       - image: circleci/php
     steps:
       - checkout
-      - composer require drupal/coder	 
+      - composer --version
+	 
