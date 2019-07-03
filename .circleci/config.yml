@@ -5,4 +5,4 @@ jobs:
       - image: circleci/php
     steps:
       - checkout
-      - composer --version	 
+      - echo "composer global require drupal/coder"	 
