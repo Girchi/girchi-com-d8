@@ -13,19 +13,11 @@ jobs:
           name: make phpcs global
           command: | 
             export PATH="$PATH:$HOME/.composer/vendor/bin"
-      - run:
-          name: check coder
-          command: |
-            composer global show -P
-      - run:
-          name: check ls
-          command: |
-            ls 
       - run:   
           name: register drupal standart
           command: |
-            phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+            ./vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
       - run:
           name: check installed standarts
           command: |
-            phpcs -i
+            ./vendor/bin/phpcs -i
