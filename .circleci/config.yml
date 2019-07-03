@@ -5,6 +5,11 @@ jobs:
       - image: circleci/php
     steps:
       - checkout
+      - run:
+          name: update & upgrade
+          command: |
+            sudo apt-get update 
+            sudo apt-get upgrade
       - run: 
           name: install php extentions
           command: |
