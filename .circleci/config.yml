@@ -5,5 +5,4 @@ jobs:
       - image: circleci/php
     steps:
       - checkout
-      - composer --version
-	 
+      - composer --version	 
