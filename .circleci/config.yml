@@ -2,9 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: drupal
+      - image: circleci/php
     steps:
       - checkout
+      - run: 
+          name: install php extentions
+          command: |
+            sudo apt-get install php7.*-gd
+            sudo apt-get install php7.*-intl
+            sudo apt-get install php7.*-xsl
       - run:
           name: install dependencies
           command: |
