@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install dependencies
+          command: |
+            composer install
+      - run:
           name: install drupal coder
           command: | 
             composer global require drupal/coder	 
@@ -16,8 +20,8 @@ jobs:
       - run:   
           name: register drupal standart
           command: |
-            ./vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+            phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
       - run:
           name: check installed standarts
           command: |
-            ./vendor/bin/phpcs -i
+            phpcs -i
