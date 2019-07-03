@@ -21,7 +21,7 @@ jobs:
           name: check dir
           command: |
             pwd 
-      - run   
+      - run:   
           name: register drupal standart
           command: |
             phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
