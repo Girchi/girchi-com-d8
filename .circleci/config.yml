@@ -6,3 +6,4 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
+      - run: composer --version
