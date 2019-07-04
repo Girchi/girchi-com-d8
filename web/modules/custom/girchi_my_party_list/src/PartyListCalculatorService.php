@@ -7,6 +7,7 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactory;
+
 /**
  * Class PartyListCalculatorService.
  */
@@ -32,6 +33,9 @@ class PartyListCalculatorService {
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *
    *   Entity Type Manager.
+   * @param \Drupal\Core\Logger\LoggerChannelFactory $loggerFactory
+   *
+   *   Logger factory.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerChannelFactory $loggerFactory) {
     $this->entityTypeManager = $entity_type_manager;
@@ -46,14 +50,18 @@ class PartyListCalculatorService {
       // Array for full party list.
       $user_rating = [];
 
-      /** @var \Drupal\user\Entity\UserStorage $users */
+      /**
+      * @var \Drupal\user\Entity\UserStorage $users
+      */
       $user_storage = $this->entityTypeManager->getStorage('user');
       $user_ids = $user_storage->getQuery()
         ->condition('field_ged', '0', '>')
         ->condition('field_my_party_list', '0', '>')
         ->execute();
       $users = $user_storage->loadMultiple($user_ids);
-      /** @var \Drupal\user\Entity\User $user */
+      /**
+      * @var \Drupal\user\Entity\User $user
+      */
       if (!empty($users)) {
         foreach ($users as $user) {
 
@@ -69,7 +77,9 @@ class PartyListCalculatorService {
         arsort($user_rating);
         $rating_number = 1;
         foreach ($user_rating as $uid => $ged_amount) {
-          /** @var \Drupal\user\Entity\User $politician */
+          /**
+          * @var \Drupal\user\Entity\User $politician
+          */
           $politician = $user_storage->load($uid);
           $politician->set('field_rating_in_party_list', $rating_number);
           $politician->set('field_political_ged', $ged_amount);
