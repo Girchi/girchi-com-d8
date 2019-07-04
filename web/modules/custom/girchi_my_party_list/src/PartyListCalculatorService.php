@@ -6,7 +6,7 @@ use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-
+use Drupal\Core\Logger\LoggerChannelFactory;
 /**
  * Class PartyListCalculatorService.
  */
@@ -20,14 +20,22 @@ class PartyListCalculatorService {
   protected $entityTypeManager;
 
   /**
+   * Logger Factory.
+   *
+   * @var \Drupal\Core\Logger\LoggerChannelFactory
+   */
+  protected $loggerFactory;
+
+  /**
    * Constructs a new PartyListCalculatorService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *
    *   Entity Type Manager.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerChannelFactory $loggerFactory) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->loggerFactory = $loggerFactory->get('girchi_my_party_list');
   }
 
   /**
@@ -64,22 +72,22 @@ class PartyListCalculatorService {
           /** @var \Drupal\user\Entity\User $politician */
           $politician = $user_storage->load($uid);
           $politician->set('field_rating_in_party_list', $rating_number);
-
+          $politician->set('field_political_ged', $ged_amount);
           try {
             $politician->save();
             $rating_number++;
           }
           catch (EntityStorageException $e) {
-            \Drupal::logger('girchi_my_party_list')->error($e->getMessage()); ;
+            $this->loggerFactory->error($e->getMessage());
           }
         }
       }
     }
     catch (InvalidPluginDefinitionException $e) {
-      \Drupal::logger('girchi_my_party_list')->error($e->getMessage()); ;
+      $this->loggerFactory->error($e->getMessage());
     }
     catch (PluginNotFoundException $e) {
-      \Drupal::logger('girchi_my_party_list')->error($e->getMessage()); ;
+      $this->loggerFactory->error($e->getMessage());
     }
 
   }
