@@ -5,6 +5,7 @@
  * Contains girchi_ged_transactions.module.
  */
 
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\user\Entity\User;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -93,4 +94,19 @@ function girchi_ged_transactions_entity_presave(EntityInterface $entity) {
 
     $title = $entity->set('title', $newTitle)->value;
   }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function girchi_ged_transactions_cron()
+{
+  $summaryGedCalculation = Drupal::service('girchi_ged_transactions.summarygedcalculation');
+  $gedCalc = $summaryGedCalculation->summaryGedCalculation();
+  /** @var ConfigFactory $configFactory */
+  $configFactory = Drupal::service('config.factory');
+  $configFactory->getEditable('om_site_settings.site_settings')
+                ->set('ged_summary',$gedCalc['gedValue'])
+                ->set('ged_percentage',$gedCalc['gedPercentage'])
+                ->save();
 }
