@@ -5,6 +5,7 @@ namespace Drupal\girchi_ged_transactions;
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Logger\LoggerChannelFactory;
 
 /**
  * Class SummaryGedCalculationService.
@@ -19,17 +20,29 @@ class SummaryGedCalculationService {
   protected $entityTypeManager;
 
   /**
-   * Constructs a new PartyListCalculatorService object.
+   * Logger Factory.
+   *
+   * @var \Drupal\Core\Logger\LoggerChannelFactory
+   */
+  protected $loggerFactory;
+
+  /**
+   * Constructs a new SummaryGedCalculationService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *
    *   Entity type manager.
+   * @param \Drupal\Core\Logger\LoggerChannelFactory $loggerFactory
+   *   Logger messages.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerChannelFactory $loggerFactory) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->loggerFactory = $loggerFactory->get('girchi_ged_transactions');
   }
 
-  public function summaryGedCalculation(){
+  /**
+   * SummaryGedCalculation.
+   */
+  public function summaryGedCalculation() {
     $users = NULL;
     $gedValue = 0;
     $arr = [];
@@ -42,8 +55,8 @@ class SummaryGedCalculationService {
       $users = $user_storage->loadMultiple($user_ids);
 
       foreach ($users as $user) {
-         $gedArray = $user->get('field_ged')->getValue();
-         $gedValue = $gedValue + (int)$gedArray[0]['value'];
+        $gedArray = $user->get('field_ged')->getValue();
+        $gedValue = $gedValue + (int) $gedArray[0]['value'];
       }
 
       $gedPercentage = $gedValue / 50000000;
@@ -55,17 +68,12 @@ class SummaryGedCalculationService {
 
     }
     catch (InvalidPluginDefinitionException $e) {
-      \Drupal::logger('girchi_ged_transactions')->error($e->getMessage());
-
+      $this->loggerFactory->error($e->getMessage());
     }
     catch (PluginNotFoundException $e) {
-      \Drupal::logger('girchi_ged_transactions')->error($e->getMessage());
-
+      $this->loggerFactory->error($e->getMessage());
     }
     return $arr;
   }
-
-
-
 
 }
