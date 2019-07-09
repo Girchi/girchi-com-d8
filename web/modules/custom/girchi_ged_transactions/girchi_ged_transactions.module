@@ -69,7 +69,7 @@ function negative_balance_validation(&$form, FormStateInterface $form_state) {
 
     // Calculate GeD amount.
     $service = \Drupal::service('girchi_ged_transactions.ged_agregator_service');
-    $userGeds = (int) $service->calculateAndUpdateTotalGeds($uID);
+    $userGeds = $service->calculateAndUpdateTotalGeds($uID);
 
     if (($userGeds + $uGed) < 0) {
       $form_state->setErrorByName('ged_amount', t('User balance can not be negative!'));
@@ -82,7 +82,7 @@ function negative_balance_validation(&$form, FormStateInterface $form_state) {
  */
 function girchi_ged_transactions_entity_presave(EntityInterface $entity) {
   if ($entity->getEntityType()->id() == 'ged_transaction') {
-    $uGed = (int) $entity->get('ged_amount')->value;
+    $uGed = $entity->get('ged_amount')->value;
     $uId = (int) $entity->get('user')->target_id;
 
     $account = User::load($uId);
@@ -91,6 +91,6 @@ function girchi_ged_transactions_entity_presave(EntityInterface $entity) {
 
     $newTitle = $firsName . ' ' . $lastName . ' ' . $uGed . ' GeD';
 
-    $title = $entity->set('title', $newTitle)->value;
+    $entity->set('title', $newTitle)->value;
   }
 }

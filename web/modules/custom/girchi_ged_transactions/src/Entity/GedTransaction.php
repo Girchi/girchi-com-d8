@@ -217,7 +217,7 @@ class GedTransaction extends ContentEntityBase implements GedTransactionInterfac
       ->setDescription(t('The time that the entity was last edited.'));
 
     // My custom fields.
-    $fields['ged_amount'] = BaseFieldDefinition::create('integer')
+    $fields['ged_amount'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Ged amount'))
       ->setTranslatable(TRUE)
       ->setDisplayOptions('form', [
@@ -292,6 +292,30 @@ class GedTransaction extends ContentEntityBase implements GedTransactionInterfac
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
+    $fields['transaction_type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Transaction Type'))
+      ->setSetting('target_type', 'taxonomy_term')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', ['target_bundles' => ['transaction_type' => 'transaction_type']])
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'author',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     return $fields;
   }
 
@@ -309,7 +333,7 @@ class GedTransaction extends ContentEntityBase implements GedTransactionInterfac
 
     // Get GeD amount of destination user.
     $account = User::load($uID);
-    $currentGeDAmount = $account->set('field_ged', $newTransaction);
+    $account->set('field_ged', $newTransaction);
     $account->save();
 
     parent::postSave($storage);
