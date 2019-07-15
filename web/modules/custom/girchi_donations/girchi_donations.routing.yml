@@ -1,0 +1,11 @@
+
+girchi_donations.donations_controller_index:
+  path: '/donate'
+  defaults:
+    _controller: '\Drupal\girchi_donations\Controller\DonationsController::index'
+    _title: 'Donate'
+    _form: '\Drupal\girchi_donations\Form\SingleDonationForm'
+  requirements:
+    _permission: 'access content'
+
+  
