@@ -177,6 +177,19 @@ class SiteSettingsForm extends ConfigFormBase
             '#default_value' => $config->get('google_analytics_view_id')
         ];
 
+        $form['donation'] = [
+            '#type' => 'details',
+            '#open' => true,
+            '#title' => t('Donation settings'),
+        ];
+        $form['donation']['donation_right_block'] = [
+            '#description' => t('Right block text'),
+            '#type' => 'text_format',
+            '#title' => t('Page text'),
+            '#format'=> 'full_html',
+            '#default_value' => $config->get('donation_right_block')['value']
+        ];
+
         return parent::buildForm($form, $form_state);
     }
     /**
@@ -205,6 +218,7 @@ class SiteSettingsForm extends ConfigFormBase
             'enable_user_ui',
             'copyright_text',
             'google_analytics_view_id',
+            'donation_right_block'
         ];
 
         foreach ($fields as $field_key) {
