@@ -217,7 +217,7 @@ class GedTransaction extends ContentEntityBase implements GedTransactionInterfac
       ->setDescription(t('The time that the entity was last edited.'));
 
     // My custom fields.
-    $fields['ged_amount'] = BaseFieldDefinition::create('integer')
+    $fields['ged_amount'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Ged amount'))
       ->setTranslatable(TRUE)
       ->setDisplayOptions('form', [
