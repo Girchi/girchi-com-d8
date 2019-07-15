@@ -1,8 +1,0 @@
-uuid: 7994debe-d3bd-4e5d-a457-3bcf24a3422e
-langcode: ka
-status: true
-dependencies: {  }
-name: 'Transaction Type'
-vid: transaction_type
-description: ''
-weight: 0
