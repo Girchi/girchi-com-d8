@@ -1,0 +1,7 @@
+services:
+  girchi_donations.donation_utils:
+    class: Drupal\girchi_donations\Utils\DonationUtils
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.factory'
+      - '@string_translation'

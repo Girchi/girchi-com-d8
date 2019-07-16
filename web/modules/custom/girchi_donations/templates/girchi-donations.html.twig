@@ -45,7 +45,6 @@
                                             aria-controls="multiple-donation"
                                             aria-selected="false"
                                     >
-{#                                        მრავალჯერადი#}
                                         {{ 'Multiple'|t }}
                                     </a
                                     >
@@ -120,6 +119,14 @@
                                             >
                                             <div class="form-control form-control-lg">
                                                         {{ form_single.donation_aim }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="politicians"
+                                            >{{ 'Donation to politician'|t }}</label
+                                            >
+                                            <div class="form-control form-control-lg">
+                                                {{ form_single.politicians}}
                                             </div>
                                         </div>
                                         {{ form_single.submit }}
@@ -210,6 +217,14 @@
                                             >
                                             <div class="form-control form-control-lg">
                                                 {{ form_multiple.donation_aim }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="politicians"
+                                            >{{ 'Donation to politician'|t }}</label
+                                            >
+                                            <div class="form-control form-control-lg">
+                                                {{ form_single.politicians}}
                                             </div>
                                         </div>
                                         {{ form_multiple.submit }}

@@ -2,9 +2,9 @@
 
 namespace Drupal\girchi_donations\Form;
 
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\girchi_donations\Utils\DonationUtils;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -12,21 +12,22 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class MultipleDonationForm extends FormBase {
 
+
   /**
-   * Drupal\Core\Entity\EntityTypeManagerInterface definition.
+   * Utils service.
    *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\girchi_donations\Utils\DonationUtils
    */
-  protected $entityTypeManager;
+  private $donationUtils;
 
   /**
    * Constructs a new UserController object.
    *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   Entity Type Manager.
+   * @param \Drupal\girchi_donations\Utils\DonationUtils $donationUtils
+   *   Donation Utils.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->entityTypeManager = $entity_type_manager;
+  public function __construct(DonationUtils $donationUtils) {
+    $this->donationUtils = $donationUtils;
   }
 
   /**
@@ -34,7 +35,7 @@ class MultipleDonationForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-        $container->get('entity_type.manager')
+        $container->get('girchi_donations.donation_utils')
     );
   }
 
@@ -50,7 +51,8 @@ class MultipleDonationForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $options = $this->getTerms();
+    $politicians = $this->donationUtils->getPoliticians();
+    $options = $this->donationUtils->getTerms();
 
     $form['amount'] = [
       '#type' => 'number',
@@ -86,6 +88,11 @@ class MultipleDonationForm extends FormBase {
       '#options' => $options,
       '#required' => TRUE,
     ];
+    $form['politicians'] = [
+      '#type' => 'select',
+      '#options' => $politicians,
+      '#required' => TRUE,
+    ];
     $form['submit'] = [
       '#type' => 'submit',
       '#attributes' => [
@@ -115,24 +122,6 @@ class MultipleDonationForm extends FormBase {
       drupal_set_message($key . ': ' . $value);
     }
 
-  }
-
-  /**
-   * Function for getting terms of donation_issues.
-   */
-  private function getTerms() {
-    /** @var \Drupal\taxonomy\TermStorage  $term_storage */
-    $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
-    $terms = $term_storage->loadTree('donation_issues');
-
-    $options = [];
-    if ($terms) {
-      foreach ($terms as $term) {
-        $options[$term->tid] = $this->t($term->name);
-      }
-    }
-
-    return $options;
   }
 
 }
