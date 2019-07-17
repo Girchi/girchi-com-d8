@@ -241,7 +241,11 @@ function girchi_preprocess_form(array &$variables) {
   $user = User::load($current_user_id);
 
   if ($variables['attributes']['id'] == 'user-form') {
-    $social_auth_check = $user->get('field_social_auth_password')->getValue()[0]['value'];
+    if($user->get('field_social_auth_password')->getValue()){
+      $social_auth_check = $user->get('field_social_auth_password')->getValue()[0]['value'];
+    }else {
+      $social_auth_check = FALSE;
+    }
     $social_auth = \Drupal::service('social_auth.data_handler');
     $social_auth_token_check = $social_auth->get('social_auth_facebook_access_token') ;
     if(!$social_auth_check && $social_auth_token_check){
