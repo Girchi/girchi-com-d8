@@ -5,3 +5,4 @@ services:
       - '@entity_type.manager'
       - '@logger.factory'
       - '@string_translation'
+      - '@language_manager'

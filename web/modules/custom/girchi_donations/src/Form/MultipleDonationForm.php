@@ -86,12 +86,14 @@ class MultipleDonationForm extends FormBase {
     $form['donation_aim'] = [
       '#type' => 'select',
       '#options' => $options,
-      '#required' => TRUE,
+      '#required' => FALSE,
+      '#empty_value' => '',
     ];
     $form['politicians'] = [
       '#type' => 'select',
       '#options' => $politicians,
-      '#required' => TRUE,
+      '#required' => FALSE,
+      '#empty_value' => '',
     ];
     $form['submit'] = [
       '#type' => 'submit',

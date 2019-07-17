@@ -191,7 +191,7 @@
                                                         class="text-success font-size-5 d-flex pl-3 pt-2"
                                                 >
                                                     <i class="icon-ged"></i>
-                                                    <span class="ml-1">15 000</span>
+                                                    <span class="ml-1" id="ged-place-2">0</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -224,7 +224,7 @@
                                             >{{ 'Donation to politician'|t }}</label
                                             >
                                             <div class="form-control form-control-lg">
-                                                {{ form_single.politicians}}
+                                                {{ form_multiple.politicians}}
                                             </div>
                                         </div>
                                         {{ form_multiple.submit }}
@@ -235,7 +235,7 @@
                     </div>
                     <div class="col-md-12 col-lg-6">
                         <div class="px-md-8 px-lg-3 px-xl-5 py-2 py-md-3  py-xl-4">
-                            {{ right_block | raw  }}
+                            {{ right_block | raw | t  }}
                         </div>
                     </div>
                 </div>

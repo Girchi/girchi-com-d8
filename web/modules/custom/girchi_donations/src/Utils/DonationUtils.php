@@ -7,6 +7,7 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\StringTranslation\TranslationManager;
+use Drupal\language\ConfigurableLanguageManager;
 
 /**
  * Utilities service for donations.
@@ -34,6 +35,13 @@ class DonationUtils {
   protected $translationManager;
 
   /**
+   * Language.
+   *
+   * @var \Drupal\language\ConfigurableLanguageManager
+   */
+  protected $languageManager;
+
+  /**
    * Constructor for service.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -42,13 +50,17 @@ class DonationUtils {
    *   Logger.
    * @param \Drupal\Core\StringTranslation\TranslationManager $translationManager
    *   Translation.
+   * @param \Drupal\language\ConfigurableLanguageManager $languageManager
+   *   LanguageManager.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager,
                               LoggerChannelFactoryInterface $loggerFactory,
-                              TranslationManager $translationManager) {
+                              TranslationManager $translationManager,
+                              ConfigurableLanguageManager $languageManager) {
     $this->entityTypeManager = $entity_type_manager;
     $this->loggerFactory = $loggerFactory;
     $this->translationManager = $translationManager;
+    $this->languageManager = $languageManager;
   }
 
   /**
@@ -89,12 +101,18 @@ class DonationUtils {
     try {
       /** @var \Drupal\taxonomy\TermStorage  $term_storage */
       $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
-      $terms = $term_storage->loadTree('donation_issues');
+      $terms = $term_storage->loadTree('donation_issues', 0, NULL, TRUE);
       $options = [];
-
       if ($terms) {
+        /** @var \Drupal\taxonomy\Entity\Term $term */
         foreach ($terms as $term) {
-          $options[$term->tid] = $this->translationManager->translate($term->name);
+          $language = $this->languageManager->getCurrentLanguage()->getId();
+          if ($language === 'ka' && $term->hasTranslation('ka')) {
+            $options[$term->id()] = $term->getTranslation('ka')->getName();
+          }
+          else {
+            $options[$term->id()] = $term->getName();
+          }
         }
       }
       return $options;
