@@ -51,7 +51,6 @@ class SingleDonationForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $politicians = $this->donationUtils->getPoliticians();
-    // dump($politicians);die;
     $options = $this->donationUtils->getTerms();
 
     $form['amount'] = [

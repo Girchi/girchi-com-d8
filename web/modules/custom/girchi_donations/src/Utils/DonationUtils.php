@@ -67,12 +67,12 @@ class DonationUtils {
    * Function for getting politicians.
    */
   public function getPoliticians() {
+    $options = [];
     try {
-
       /** @var \Drupal\user\UserStorage $user_storage */
       $user_storage = $this->entityTypeManager->getStorage('user');
       $politicians = $user_storage->loadByProperties(['field_politician' => TRUE]);
-      $options = [];
+
       if ($politicians) {
         /** @var \Drupal\user\Entity\User $politician */
         foreach ($politicians as $politician) {
@@ -91,18 +91,18 @@ class DonationUtils {
       $this->loggerFactory->get('girchi_donations')->error($e->getMessage());
     }
 
-    return NULL;
+    return $options;
   }
 
   /**
    * Function for getting terms of donation_issues.
    */
   public function getTerms() {
+    $options = [];
     try {
       /** @var \Drupal\taxonomy\TermStorage  $term_storage */
       $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
       $terms = $term_storage->loadTree('donation_issues', 0, NULL, TRUE);
-      $options = [];
       if ($terms) {
         /** @var \Drupal\taxonomy\Entity\Term $term */
         foreach ($terms as $term) {
@@ -124,7 +124,7 @@ class DonationUtils {
       $this->loggerFactory->get('girchi_donations')->error($e->getMessage());
     }
 
-    return NULL;
+    return $options;
 
   }
 
