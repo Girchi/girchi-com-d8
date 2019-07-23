@@ -67,7 +67,6 @@ function girchi_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function girchi_preprocess_page(array &$variables) {
-
   // Get config from site settings.
   $config = \Drupal::config('om_site_settings.site_settings');
 
@@ -88,35 +87,36 @@ function girchi_preprocess_page(array &$variables) {
   // Get current route name.
   $route_name = \Drupal::routeMatch()->getRouteName();
 
-  // If current route is user page and user exists.
-  if ($route_name === 'entity.user.canonical'
-        && $user = \Drupal::routeMatch()->getParameter('user')
-    ) {
-    // Get uid from route.
-    $uid = (int) $user->id();
-    // Get current uid.
-    $current_uid = (int) $user = \Drupal::currentUser()->id();
-
-    // If the uid from the URL matches with the current uid,
-    // redirect to the user edit form, otherwise - to the main page.
-    if ($uid === $current_uid) {
-      $redirect_path = Url::fromRoute(
-            'entity.user.edit_form',
-            ['user' => $current_uid]
-        )->toString();
-    }
-    else {
-      $redirect_path = '/';
-    }
-
-    // Redirect to given utl.
-    $response = new RedirectResponse($redirect_path);
-    $response->send();
-  }
+//  // If current route is user page and user exists.
+//  if ($route_name === 'entity.user.canonical'
+//        && $user = \Drupal::routeMatch()->getParameter('user')
+//    ) {
+//    // Get uid from route.
+//    $uid = (int) $user->id();
+//    // Get current uid.
+//    $current_uid = (int) $user = \Drupal::currentUser()->id();
+//
+//    // If the uid from the URL matches with the current uid,
+//    // redirect to the user edit form, otherwise - to the main page.
+//    if ($uid === $current_uid) {
+//      $redirect_path = Url::fromRoute(
+//            'entity.user.edit_form',
+//            ['user' => $current_uid]
+//        )->toString();
+//    }
+//    else {
+//      $redirect_path = '/';
+//    }
+//
+//    // Redirect to given utl.
+//    $response = new RedirectResponse($redirect_path);
+//    $response->send();
+//  }
 
   // End Redirect from user profile.
   // Logged in use header.
   if ($currentUserId = \Drupal::currentUser()->id()) {
+    /** @var User $account */
     $account = User::load($currentUserId);
     /** @var \Drupal\file\Entity\File $avatarEntity */
     $avatarEntity = $account->{'user_picture'}->entity;
@@ -128,6 +128,8 @@ function girchi_preprocess_page(array &$variables) {
       $currentUserAvatar = file_create_url(drupal_get_path('theme', 'girchi') . '/images/avatar.png');
       $isAvatar = FALSE;
     }
+
+//    dump($currentCoverPhotoAvatar);die;
     $variables['user_header'] = [
       'first_name' => $account->{'field_first_name'}->value,
       'last_name' => $account->{'field_last_name'}->value,
@@ -135,8 +137,55 @@ function girchi_preprocess_page(array &$variables) {
       'user_picture' => $currentUserAvatar,
       'user_name' => $account->{'name'}->value,
       'is_avatar' => $isAvatar,
+      'uid' => $account->id()
     ];
     $variables['#cache']['contexts'][] = 'session';
+  }
+
+  $user = \Drupal::routeMatch()->getParameter('user');
+  if ($user instanceof \Drupal\user\Entity\User) {
+    $uid = $user->id();
+    //check if profile picture exists. if not, get default avatar
+    $profilePicture = get_user_avatar($user);
+    //check if cover photo exists. if not, get default image
+    $coverPhotoAvatar = get_default_cover_photo($user);
+
+    $referralsImage = [];
+    $service = \Drupal::service('girchi_referral.get_user_referrals');
+    $referralsArray = $service->getUserReferrals($uid);
+    $referralCount = (int)$referralsArray['referralCount'];
+    $userRefferals = $referralsArray['referralUsers'];
+    foreach ($userRefferals as $userRefferal){
+      $referralId = $userRefferal->id();
+      $referralUser = User::load($referralId);
+      //check if referral user has profile picture
+      if ($referralUser->get('user_picture')->entity) {
+        $profilePictureEntity = $referralUser->get('user_picture')->entity;
+        $referralProfilePicture = $profilePictureEntity->getFileUri();
+        $referralsImage[] = $referralProfilePicture;
+      }
+      else {
+        $referralProfilePicture = null;
+        $referralsImage[] = $referralProfilePicture;
+
+      }
+    }
+
+    $variables['user'] = [
+      'field_cover_photo' => $coverPhotoAvatar,
+      'user_picture' => $profilePicture,
+      'first_name' => $user->get('field_first_name')->value,
+      'last_name' => $user->get('field_last_name')->value,
+      'referrals_profile_picture' => $referralsImage,
+      'referralCount' => $referralCount,
+      'rating_in_party_list' => $user->get('field_rating_in_party_list')->value,
+      'political_ged' => $user->get('field_political_ged')->value,
+      'user_rank' => $user->get('field_rank')->value
+
+
+
+
+    ];
   }
 
   $node = \Drupal::request()->attributes->get('node');
@@ -374,4 +423,31 @@ function girchi_preprocess_menu(array &$variables) {
     $path = $current_url->toString();
     $variables['current_path'] = $path;
   }
+}
+
+
+function get_user_avatar($user){
+  if ($user->get('user_picture')->entity) {
+    $profilePictureEntity = $user->get('user_picture')->entity;
+    $profilePicture = $profilePictureEntity->getFileUri();
+  }
+  else {
+    $profilePicture = null;
+  }
+
+  return $profilePicture;
+
+}
+
+function get_default_cover_photo($user){
+  if ($user->get('field_cover_photo')->entity) {
+    $coverPhotoEntity = $user->get('field_cover_photo')->entity;
+    $coverPhotoAvatar = $coverPhotoEntity->getFileUri();
+  }
+  else {
+    $coverPhotoAvatar = null;
+  }
+
+  return $coverPhotoAvatar;
+
 }

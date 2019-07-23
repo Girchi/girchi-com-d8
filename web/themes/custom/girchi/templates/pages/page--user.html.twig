@@ -1,0 +1,1260 @@
+{% block page_head %}
+    {% include '@girchi/header.htlm.twig' %}
+{% endblock %}
+<div class="container">
+    <!-- Start of card -->
+    <div class="card my-3 my-lg-4 overflow-hidden">
+        <div class="card-body p-0">
+            <img
+                    src="{{ user.field_cover_photo ? image_style_url(user.field_cover_photo, 'politicials_cover') : theme_path() ~ "/images/cover.jpg" }}"
+                    class="d-none d-md-block"
+                    width="100%"
+                    alt="ზურაბ ჯაფარიძე"
+            />
+            <img
+                    src="{{ user.field_cover_photo ? image_style_url(user.field_cover_photo, 'politicials_cover_sm') : theme_path() ~ "/images/cover-sm.png" }}"
+                    class="d-block d-md-none"
+                    width="100%"
+                    alt="ზურაბ ჯაფარიძე"
+            />
+            <div
+                    class="bg-gradient p-3 d-flex justify-content-center justify-content-lg-between align-items-center flex-column flex-lg-row"
+            >
+                <div
+                        class="position-relative position-lg-absolute w-150-px h-150-px w-md-220-px h-md-220-px mt-n10 mt-md-n14 mt-lg-0"
+                >
+                    <div
+                            class="w-150-px h-150-px w-md-220-px h-md-220-px overflow-hidden rounded-circle bg-white border-4 border-solid border-white"
+                    >
+                    <img
+                            src="{{ user.user_picture ? image_style_url(user.user_picture, 'politicials_profile_picture') : theme_path() ~ "/images/avatar.png" }}"
+                            width="100%"
+                            alt="ზურაბ ჯაფარიძე"
+                    />
+                    </div>
+                    <span
+                            class="w-50-px h-50-px bg-warning rounded-circle position-absolute position-right-n1 position-center-y text-white font-size-6 font-weight-bold d-flex justify-content-center align-items-center"
+                    >{{ user.user_rank < 10 ? '0' ~ user.user_rank : user.user_rank  }}</span
+                    >
+                </div>
+                <div class="w-220-px d-none d-lg-block"></div>
+                <h4
+                        class="font-size-4 font-size-md-6 text-white text-uppercase my-3 my-lg-0 m-0 mr-lg-auto ml-lg-5"
+                >
+                    {{ user.first_name ~ " " ~ user.last_name }}
+                </h4>
+                <div class="mb-n5 pb-2 p-lg-0 m-lg-0 d-inline-block">
+                    <a
+                            href="#"
+                            class="btn btn-warning text-uppercase btn-lg ml-lg-auto text-nowrap"
+                    >
+                        დააფინანსე პოლიტიკოსი
+                    </a>
+                </div>
+            </div>
+            <div
+                    class="p-3 d-flex mt-4 mt-lg-0 flex-wrap flex-lg-nowrap justify-content-between align-items-center"
+            >
+                <div class="w-220-px mr-4 d-none d-lg-block"></div>
+                <div
+                        class="text-center text-lg-left d-flex flex-column mx-lg-3 w-50 w-lg-auto border-right border-right-lg-0 px-3 px-md-4 py-1 p-lg-0"
+                >
+                    <label
+                            class="m-0 font-size-1 font-size-md-2 text-uppercase text-grey line-height-1-2 line-height-md-1-8"
+                    >პოლიტიკური წონა</label
+                    >
+                    <span
+                            class="text-warning font-weight-bold font-size-4 font-size-md-5 line-height-1-5 line-height-md-0-9"
+                    >{{ user.rating_in_party_list }}
+                <i
+                        class="icon-ged line-height-1-1 font-size-md-4 font-size-3"
+                ></i
+                ></span>
+                </div>
+                <div
+                        class="text-center text-lg-left d-flex flex-column mx-lg-3 w-50 w-lg-auto px-3 px-md-4 px-lg-0"
+                >
+                    <label
+                            class="m-0 font-size-1 font-size-md-2 text-uppercase text-grey line-height-1-2 line-height-md-1-8"
+                    >გამომუშავებული GeD-ები</label
+                    >
+                    <span
+                            class="text-success font-weight-bold font-size-4 font-size-md-5 line-height-1-5 line-height-md-0-9"
+                    >{{ user.political_ged }}
+                <i
+                        class="icon-ged line-height-1-1 font-size-md-4 font-size-3"
+                ></i
+                ></span>
+                </div>
+                <div
+                        class="pt-3 pt-lg-0 mt-3 mt-lg-0 border-top border-top-lg-0 ml-lg-auto d-flex align-items-center justify-content-center justify-content-lg-start w-100 w-lg-auto"
+                >
+                    <label
+                            class="m-0 mr-2 font-size-2 text-uppercase text-grey line-height-1-8"
+                    >რეფერალები</label
+                    >
+
+                    <ul class="list-unstyled m-0 align-items-center d-flex">
+
+                        {%
+                            for image in user.referrals_profile_picture
+                        %}
+                            <li class="d-none d-md-inline-flex align-items-center mr-n2">
+                                <a
+                                        href="#"
+                                        class="rounded-circle overflow-hidden d-inline-block border-solid border-2 border-white"
+                                >
+                                    <img
+                                            src= "{{ image ?  image_style_url(image, 'avatar_xs') : theme_path() ~ '/images/avatar.png' }}"
+                                            class="rounded"
+                                            width="34"
+                                            alt="..."
+                                    />
+                                </a>
+                            </li>
+                        {% endfor %}
+                        {% if (user.referralCount - 5)> 0 %}
+                            <li class="d-inline-flex align-items-center">
+                                <a
+                                        href="#"
+                                        class="btn btn-light btn-sm m-1 px-2 ml-2 bg-hover-success text-hover-white"
+                                >
+                                    {{ '+' ~ (user.referralCount - 5) }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of card -->
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="d-block d-md-flex d-lg-block mb-3">
+                <!-- Start of card -->
+                <div
+                        class="card overflow-hidden w-auto w-md-50 w-lg-auto mr-md-2 m-lg-0"
+                >
+                    <div class="card-body p-0">
+                        <div class="media">
+                            <div
+                                    class="media-thumb w-100 rounded rounded-bottom-0 overflow-hidden "
+                            >
+                                <a href="news-details.html" class="media-thumb-link">
+                                    <i class="icon-play-button media-play"></i>
+                                    <img
+                                            src="./images/video-blog.jpg"
+                                            class="w-100"
+                                            alt="..."
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-n4 position-relative">
+                            <a
+                                    href="#"
+                                    class="btn btn-warning text-uppercase ml-md-auto text-nowrap mt-2 position-relative pl-4"
+                            >
+                                <i
+                                        class="icon-play-button font-size-5 position-absolute position-left-8-px position-top-3-px"
+                                ></i>
+                                <span class="ml-2">გაიცანი პოლიტიკოსი</span>
+                            </a>
+                        </div>
+                        <h6
+                                class="text-uppercase font-weight-bold text-center py-3 mt-1 border-bottom"
+                        >
+                            ინტრო
+                        </h6>
+                        <div class="p-3">
+                            <p class="text-center font-size-3 m-0">
+                                დაიბადა თბილისში. დაამთავრა თბილისის სამედიცინო ინსტიტუტი
+                                "მომავლის ექიმი" 1999 წელს; საქართველოს საზოგადოებრივ
+                                საქმეთა ინსტიტუტი სახელმწიფო მმართველობის სპეციალობით 2005
+                                წელს.
+                            </p>
+                            <div class="text-center pb-3 mt-2 border-bottom">
+                                <a
+                                        href="#"
+                                        class="btn mt-2 border-secondary btn-outline-grey bg-transparent d-inline-block mr-1 btn-sm mb-2 text-hover-light-green border-hover-light-green"
+                                >
+                                    სრული ბიოგრაფია
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li class="font-size-8 px-1">
+                                <a href="#" target="_blank" class="text-decoration-none">
+                                    <i
+                                            class="icon-social-facebook-circular-button text-purple"
+                                    ></i
+                                    ></a>
+                            </li>
+                            <li class="font-size-8 px-1">
+                                <a href="#" target="_blank" class="text-decoration-none">
+                                    <i
+                                            class="icon-social-twitter-circular-button text-light-blue"
+                                    ></i
+                                    ></a>
+                            </li>
+                            <li class="font-size-8 px-1">
+                                <a href="#" target="_blank" class="text-decoration-none">
+                                    <i class="icon-email text-success"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End of card -->
+                <!-- Start of card -->
+                <div
+                        class="card overflow-hidden my-3 my-md-0 my-xl-4 w-auto w-md-50 w-lg-auto ml-md-2 m-lg-0"
+                >
+                    <div
+                            class="card-header font-size-2 text-uppercase d-flex px-3 px-xl-3 font-weight-bold text-grey"
+                    >
+                <span
+                        class="d-none d-md-block font-size-2 text-uppercase font-weight-bold text-grey"
+                >პირადი პარტიული სია</span
+                >
+                        <button
+                                class="d-flex justify-content-between w-100 d-md-none bg-transparent border-0"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#private-party-list"
+                                aria-controls="private-party-list"
+                                aria-expanded="false"
+                                aria-label="Toggle private party list"
+                        >
+                  <span
+                          class="font-size-2 text-uppercase text-grey font-weight-bold"
+                  >პირადი პარტიული სია</span
+                  >
+                            <i
+                                    class="icon-arrow-down-sign-to-navigate font-size-3 text-grey collapse-icon"
+                            ></i>
+                        </button>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="collapse d-md-block" id="private-party-list">
+                            <table class="table m-0 table-hover border-0">
+                                <thead>
+                                <tr class="bg-dark-white">
+                                    <th
+                                            scope="col"
+                                            class="border-0 font-size-1 font-size-md-2 text-dark-silver pr-0"
+                                    >
+                                        სახელი
+                                    </th>
+                                    <th
+                                            scope="col"
+                                            class="border-0 font-size-1 font-size-md-2 text-dark-silver text-nowrap"
+                                    >
+                                        GeD და %
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="align-middle pr-0">
+                                        <div class="d-flex w-100 align-items-center my-2">
+                            <span
+                                    class="mr-3 mr-md-2 font-size-4 font-size-xl-4 text-dark-silver font-weight-normal"
+                            >1</span
+                            >
+                                            <a
+                                                    href="#"
+                                                    class="w-35-px rounded-circle overflow-hidden d-none d-md-block"
+                                            >
+                                                <img
+                                                        src="/image/avatar.png"
+                                                        class="rounded w-100"
+                                                        alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                    class="w-auto w-md-100-px text-uppercase line-height-1-2 font-size-3 font-size-md-3 font-size-xl-3 mb-0 mx-0 ml-md-2"
+                                            >
+                                                <a
+                                                        href="#"
+                                                        class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                <span
+                                        class="d-inline-flex flex-column justify-content-center"
+                                >
+                                  <span>ზურაბ</span>
+                                  <span
+                                          class="font-weight-bold text-ellipsis max-w-md-100 max-w-auto d-inline-block"
+                                  >გოგოტიშვილი</span
+                                  >
+                                </span>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </td>
+                                    <td
+                                            class="text-right align-middle font-weight-bold line-height-1-2"
+                                    >
+                          <span
+                                  class="text-success font-size-4 font-weight-bold text-nowrap line-height-1-2 line-height-md-0-9 d-block"
+                          >5 300 <i class="icon-ged font-size-3"></i
+                              ></span>
+                                        40%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle pr-0">
+                                        <div class="d-flex w-100 align-items-center my-2">
+                            <span
+                                    class="mr-3 mr-md-2 font-size-4 font-size-xl-4 text-dark-silver font-weight-normal"
+                            >2</span
+                            >
+                                            <a
+                                                    href="#"
+                                                    class="w-35-px rounded-circle overflow-hidden d-none d-md-block"
+                                            >
+                                                <img
+                                                        src="images/i.metreveli.jpg"
+                                                        class="rounded w-100"
+                                                        alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                    class="w-auto w-md-100-px text-uppercase line-height-1-2 font-size-3 font-size-md-3 font-size-xl-3 mb-0 mx-0 ml-md-2"
+                                            >
+                                                <a
+                                                        href="#"
+                                                        class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                <span
+                                        class="d-inline-flex flex-column justify-content-center"
+                                >
+                                  <span>ზურაბ</span>
+                                  <span
+                                          class="font-weight-bold text-ellipsis max-w-md-100 max-w-auto d-inline-block"
+                                  >გოგოტიშვილი</span
+                                  >
+                                </span>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </td>
+                                    <td
+                                            class="text-right align-middle font-weight-bold line-height-1-2"
+                                    >
+                          <span
+                                  class="text-success font-size-4 font-weight-bold text-nowrap line-height-1-2 line-height-md-0-9 d-block"
+                          >5 300 <i class="icon-ged font-size-3"></i
+                              ></span>
+                                        40%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle pr-0">
+                                        <div class="d-flex w-100 align-items-center my-2">
+                            <span
+                                    class="mr-3 mr-md-2 font-size-4 font-size-xl-4 text-dark-silver font-weight-normal"
+                            >3</span
+                            >
+                                            <a
+                                                    href="#"
+                                                    class="w-35-px rounded-circle overflow-hidden d-none d-md-block"
+                                            >
+                                                <img
+                                                        src="images/i.metreveli.jpg"
+                                                        class="rounded w-100"
+                                                        alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                    class="w-auto w-md-100-px text-uppercase line-height-1-2 font-size-3 font-size-md-3 font-size-xl-3 mb-0 mx-0 ml-md-2"
+                                            >
+                                                <a
+                                                        href="#"
+                                                        class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                <span
+                                        class="d-inline-flex flex-column justify-content-center"
+                                >
+                                  <span>ზურაბ</span>
+                                  <span
+                                          class="font-weight-bold text-ellipsis max-w-md-100 max-w-auto d-inline-block"
+                                  >გოგოტიშვილი</span
+                                  >
+                                </span>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </td>
+                                    <td
+                                            class="text-right align-middle font-weight-bold line-height-1-2"
+                                    >
+                          <span
+                                  class="text-success font-size-4 font-weight-bold text-nowrap line-height-1-2 line-height-md-0-9 d-block"
+                          >5 300 <i class="icon-ged font-size-3"></i
+                              ></span>
+                                        40%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle pr-0">
+                                        <div class="d-flex w-100 align-items-center my-2">
+                            <span
+                                    class="mr-3 mr-md-2 font-size-4 font-size-xl-4 text-dark-silver font-weight-normal"
+                            >4</span
+                            >
+                                            <a
+                                                    href="#"
+                                                    class="w-35-px rounded-circle overflow-hidden d-none d-md-block"
+                                            >
+                                                <img
+                                                        src="images/i.metreveli.jpg"
+                                                        class="rounded w-100"
+                                                        alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                    class="w-auto w-md-100-px text-uppercase line-height-1-2 font-size-3 font-size-md-3 font-size-xl-3 mb-0 mx-0 ml-md-2"
+                                            >
+                                                <a
+                                                        href="#"
+                                                        class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                <span
+                                        class="d-inline-flex flex-column justify-content-center"
+                                >
+                                  <span>ზურაბ</span>
+                                  <span
+                                          class="font-weight-bold text-ellipsis max-w-md-100 max-w-auto d-inline-block"
+                                  >მეგრელიშვილი</span
+                                  >
+                                </span>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </td>
+                                    <td
+                                            class="text-right align-middle font-weight-bold line-height-1-2"
+                                    >
+                          <span
+                                  class="text-success font-size-4 font-weight-bold text-nowrap line-height-1-2 line-height-md-0-9 d-block"
+                          >5 300 <i class="icon-ged font-size-3"></i
+                              ></span>
+                                        40%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle pr-0">
+                                        <div class="d-flex w-100 align-items-center my-2">
+                            <span
+                                    class="mr-3 mr-md-2 font-size-4 font-size-xl-4 text-dark-silver font-weight-normal"
+                            >5</span
+                            >
+                                            <a
+                                                    href="#"
+                                                    class="w-35-px rounded-circle overflow-hidden d-none d-md-block"
+                                            >
+                                                <img
+                                                        src="images/i.metreveli.jpg"
+                                                        class="rounded w-100"
+                                                        alt="..."
+                                                />
+                                            </a>
+                                            <h6
+                                                    class="w-auto w-md-100-px text-uppercase line-height-1-2 font-size-3 font-size-md-3 font-size-xl-3 mb-0 mx-0 ml-md-2"
+                                            >
+                                                <a
+                                                        href="#"
+                                                        class="text-decoration-none d-inline-block text-hover-success"
+                                                >
+                                <span
+                                        class="d-inline-flex flex-column justify-content-center"
+                                >
+                                  <span>ზურაბ</span>
+                                  <span
+                                          class="font-weight-bold text-ellipsis max-w-md-100 max-w-auto d-inline-block"
+                                  >ჯაფარიძე</span
+                                  >
+                                </span>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </td>
+                                    <td
+                                            class="text-right align-middle font-weight-bold line-height-1-2"
+                                    >
+                          <span
+                                  class="text-success font-size-4 font-weight-bold text-nowrap line-height-1-2 line-height-md-0-9 d-block"
+                          >5 300 <i class="icon-ged font-size-3"></i
+                              ></span>
+                                        40%
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center py-3 border-top">
+                                <button
+                                        class="btn mt-2 border-secondary btn-outline-grey bg-transparent d-inline-block mr-1 btn-sm mb-2 text-hover-light-green border-hover-light-green"
+                                >
+                                    სრული სია
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card -->
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <!-- Start of card -->
+            <div class="card bg-success bg-green-newsfeed mb-3 mb-xl-4">
+                <div
+                        class="card-header bg-transparent border-0 text-white font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4"
+                >
+                    ზურაბ ჯაფარიძე - რჩეული სიახლეები
+                </div>
+                <div class="card-body p-0 pt-3 px-3 px-lg-4">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6
+                                            class="text-white mt-2 font-size-base line-height-1-3"
+                                    >
+                                        <a
+                                                href="news-details.html"
+                                                class="text-white text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-lighter-green font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                              "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-lighter-green font-weight-bold border-lighter-green pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6
+                                            class="text-white mt-2 font-size-base line-height-1-3"
+                                    >
+                                        <a
+                                                href="news-details.html"
+                                                class="text-white text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-lighter-green font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                                "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-lighter-green font-weight-bold border-lighter-green pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6
+                                            class="text-white mt-2 font-size-base line-height-1-3"
+                                    >
+                                        <a
+                                                href="news-details.html"
+                                                class="text-white text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-lighter-green font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                                  "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-lighter-green font-weight-bold border-lighter-green pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6
+                                            class="text-white mt-2 font-size-base line-height-1-3"
+                                    >
+                                        <a
+                                                href="news-details.html"
+                                                class="text-white text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-lighter-green font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                                    "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-lighter-green font-weight-bold border-lighter-green pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6
+                                            class="text-white mt-2 font-size-base line-height-1-3"
+                                    >
+                                        <a
+                                                href="news-details.html"
+                                                class="text-white text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-lighter-green font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                                      "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-lighter-green font-weight-bold border-lighter-green pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6
+                                            class="text-white mt-2 font-size-base line-height-1-3"
+                                    >
+                                        <a
+                                                href="news-details.html"
+                                                class="text-white text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-lighter-green font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                                        "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-lighter-green font-weight-bold border-lighter-green pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Start of pagination -->
+                <div
+                        class="card-footer border-lighter-green bg-transparent border-top p-0 d-flex align-items-center justify-content-between"
+                >
+                    <a
+                            href="#"
+                            class="pagination-arrow border-top-0 border-bottom-0 border-left-0 border-lighter-green disabled btn py-3 shadow-none rounded-0 text-lighter-green border-right"
+                    >
+                        <i class="icon-angle-pointing-to-left"></i>
+                    </a>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-green m-0">
+                            <li class="page-item active" aria-current="page">
+                    <span class="page-link">
+                      1
+                      <span class="sr-only">(current)</span>
+                    </span>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item px-2" aria-current="page">
+                                ...
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">23</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a
+                            href="#"
+                            class="border-lighter-green pagination-arrow border-top-0 border-top-0 border-bottom-0 border-right-0 btn py-3 shadow-none rounded-0 text-lighter-green border-left"
+                    >
+                        <i class="icon-angle-arrow-pointing-to-right"></i>
+                    </a>
+                </div>
+                <!-- End of pagination -->
+            </div>
+            <!-- End of card -->
+            <!-- Start of card -->
+            <div class="card mt-3 mt-lg-0 mb-4 font-size-3">
+                <div
+                        class="card-header font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4"
+                >
+                    ყველა სიახლე
+                </div>
+                <div class="card-body p-3 p-lg-4">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                        "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                          "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                            "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                    "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                      "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                        "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                          "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                            "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <!-- Start of media -->
+                            <div class="media media-column mb-4">
+                                <div class="media-thumb w-100 rounded overflow-hidden">
+                                    <a href="news-details.html" class="media-thumb-link">
+                                        <i class="icon-play-button media-play"></i>
+                                        <img
+                                                src="./images/video-blog.jpg"
+                                                class="w-100"
+                                                alt="..."
+                                        />
+                                    </a>
+                                    <span class="media-date font-size-1">2:41</span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-2 font-size-base line-height-1-3">
+                                        <a
+                                                href="news-details.html"
+                                                class="text-decoration-none d-block font-weight-bold"
+                                        >
+                                            Scoot Scoot-ის საჩუქარი ზურაბ ჯაფარიძეს
+                                        </a>
+                                    </h6>
+                                    <span
+                                            class="text-grey font-size-1 d-inline-flex align-items-center"
+                                    >
+                        <i
+                                class="icon-clock-circular-outline mr-1
+                              "
+                        ></i>
+                        12 მარტი 2019</span
+                                    >
+                                    <a
+                                            href="#"
+                                            class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
+                                    >სამართალი</a
+                                    >
+                                </div>
+                            </div>
+                            <!-- End of media -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start of pagination -->
+                <div
+                        class="card-footer border-top p-0 d-flex align-items-center justify-content-between"
+                >
+                    <a
+                            href="#"
+                            class="disabled pagination-arrow btn py-3 shadow-none rounded-0 text-dark-silver border-right"
+                    >
+                        <i class="icon-angle-pointing-to-left"></i>
+                    </a>
+                    <nav aria-label="...">
+                        <ul class="pagination m-0">
+                            <li class="page-item active" aria-current="page">
+                    <span class="page-link">
+                      1
+                      <span class="sr-only">(current)</span>
+                    </span>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item px-2" aria-current="page">
+                                ...
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">23</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a
+                            href="#"
+                            class="pagination-arrow btn py-3 shadow-none rounded-0 text-dark-silver border-left"
+                    >
+                        <i class="icon-angle-arrow-pointing-to-right"></i>
+                    </a>
+                </div>
+                <!-- End of pagination -->
+            </div>
+            <!-- End of card -->
+        </div>
+    </div>
+</div>
+{% block page_foot %}
+    {% include '@girchi/footer.html.twig' %}
+{% endblock %}
+
