@@ -4,8 +4,23 @@ girchi_donations.donations_controller_index:
   defaults:
     _controller: '\Drupal\girchi_donations\Controller\DonationsController::index'
     _title: 'Donate'
-    _form: '\Drupal\girchi_donations\Form\SingleDonationForm'
   requirements:
     _permission: 'access content'
 
+girchi_donations.donations_controller_finish:
+  path: '/donate/finish'
+  defaults:
+    _controller: '\Drupal\girchi_donations\Controller\DonationsController::finishDonation'
+    _title: 'Donation finish'
+  requirements:
+    _permission: 'access content'
+
+
+girchi_donations.donations_controller_fail:
+  path: '/donate/fail'
+  defaults:
+    _controller: '\Drupal\girchi_donations\Controller\DonationsController::failDonation'
+    _title: 'Donation finish'
+  requirements:
+    _permission: 'access content'
   

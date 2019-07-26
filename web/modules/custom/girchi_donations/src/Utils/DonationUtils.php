@@ -42,6 +42,13 @@ class DonationUtils {
   protected $languageManager;
 
   /**
+   * Ged calculator.
+   *
+   * @var GedCalculator
+   */
+  protected $gedCalculator;
+
+  /**
    * Constructor for service.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -52,21 +59,26 @@ class DonationUtils {
    *   Translation.
    * @param \Drupal\language\ConfigurableLanguageManager $languageManager
    *   LanguageManager.
+   * @param GedCalculator $gedCalculator
+   *   GedCalculator.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager,
                               LoggerChannelFactoryInterface $loggerFactory,
                               TranslationManager $translationManager,
-                              ConfigurableLanguageManager $languageManager) {
+                              ConfigurableLanguageManager $languageManager,
+                              GedCalculator $gedCalculator) {
     $this->entityTypeManager = $entity_type_manager;
     $this->loggerFactory = $loggerFactory;
     $this->translationManager = $translationManager;
     $this->languageManager = $languageManager;
+    $this->gedCalculator = $gedCalculator;
   }
 
   /**
    * Function for getting politicians.
    */
   public function getPoliticians() {
+
     $options = [];
     try {
       /** @var \Drupal\user\UserStorage $user_storage */

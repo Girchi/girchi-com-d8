@@ -45,6 +45,7 @@ class DonationsController extends ControllerBase {
    *   Return array with template and variables
    */
   public function index() {
+    // dump($this->GedCalculator->calculate(1000));die;.
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
     $form_single = $this->formBuilder()->getForm("Drupal\girchi_donations\Form\SingleDonationForm");
@@ -56,6 +57,26 @@ class DonationsController extends ControllerBase {
       '#form_single' => $form_single,
       '#form_multiple' => $form_multiple,
       '#right_block' => $right_block,
+    ];
+  }
+
+  /**
+   * Route for final destination of donation.
+   */
+  public function finishDonation() {
+    return [
+      '#type' => 'markup',
+      '#theme' => 'girchi_donations_success',
+    ];
+  }
+
+  /**
+   * Route for donation technical failure.
+   */
+  public function failDonation() {
+    return [
+      '#type' => 'markup',
+      '#theme' => 'girchi_donations_fail',
     ];
   }
 

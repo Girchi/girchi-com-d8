@@ -37,6 +37,12 @@ function girchi_donations_theme() {
         'form_multiple' => NULL,
       ],
     ],
+    'girchi_donations_success' => [
+      'render element' => 'children',
+    ],
+    'girchi_donations_fail' => [
+      'render element' => 'children',
+    ],
   ];
 }
 
