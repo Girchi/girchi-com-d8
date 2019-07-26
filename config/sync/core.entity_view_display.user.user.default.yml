@@ -11,6 +11,7 @@ dependencies:
     - field.field.user.user.field_my_party_list
     - field.field.user.user.field_personal_id
     - field.field.user.user.field_phone
+    - field.field.user.user.field_political_ged
     - field.field.user.user.field_politician
     - field.field.user.user.field_rank
     - field.field.user.user.field_rating_in_party_list
@@ -96,6 +97,14 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
+  field_political_ged:
+    weight: 56
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_politician:
     weight: 5
     label: above
@@ -159,4 +168,5 @@ content:
     third_party_settings: {  }
     label: above
 hidden:
+  field_social_auth_password: true
   langcode: true
