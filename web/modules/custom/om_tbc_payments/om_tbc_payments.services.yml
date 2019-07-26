@@ -1,0 +1,9 @@
+services:
+  om_tbc_payments.payment_service:
+    class: Drupal\girchi_donations\Utils\DonationUtils
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.factory'
+      - '@string_translation'
+      - '@language_manager'
+      - '@http_client'

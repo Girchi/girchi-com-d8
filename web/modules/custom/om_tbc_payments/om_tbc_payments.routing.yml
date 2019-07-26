@@ -1,0 +1,8 @@
+#
+#om_tbc_payments.payments_controller_startTransaction:
+#  path: '/donate/finish'
+#  defaults:
+#    _controller: '\Drupal\om_tbc_payments\Controller\PaymentsController::finishPayment'
+#    _title: 'OK URL for TBC '
+#  requirements:
+#    _permission: 'access content'
