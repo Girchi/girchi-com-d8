@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff16d0d19d9cd0492ece5e0b3fd7c6b7",
+    "content-hash": "42289e3b19dc8e63afa5d0cb8205df52",
     "packages": [
+        {
+            "name": "abgeo/nbg-currency",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ABGEO07/nbg-currency.git",
+                "reference": "25c122af20078534fde5e25fdda49784ca7a339c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ABGEO07/nbg-currency/zipball/25c122af20078534fde5e25fdda49784ca7a339c",
+                "reference": "25c122af20078534fde5e25fdda49784ca7a339c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-soap": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.3@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ABGEO\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ABGEO",
+                    "email": "takalandzet@gmail.com",
+                    "homepage": "https://www.abgeo.dev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Library for getting data from National Bank of Georgia (NBG)'s API.",
+            "homepage": "https://github.com/ABGEO07/nbg-currency",
+            "keywords": [
+                "Banking",
+                "api",
+                "currency",
+                "nbg"
+            ],
+            "time": "2019-07-19T08:04:05+00:00"
+        },
         {
             "name": "alchemy/zippy",
             "version": "0.4.3",
@@ -13990,6 +14038,45 @@
                 "stream-wrapper"
             ],
             "time": "2019-05-14T13:14:31+00:00"
+        },
+        {
+            "name": "wearede/tbcpay-php",
+            "version": "0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/plugandpay/tbc-credit-card-payment-gateway-php-lib.git",
+                "reference": "d36806b2e8d96a0f8b47cd2822e30e9de0b8921e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/plugandpay/tbc-credit-card-payment-gateway-php-lib/zipball/d36806b2e8d96a0f8b47cd2822e30e9de0b8921e",
+                "reference": "d36806b2e8d96a0f8b47cd2822e30e9de0b8921e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WeAreDe\\TbcPay\\": "src/"
+                },
+                "psr-4": {
+                    "WeAreDe\\TbcPay\\": "src/WeAreDe/TbcPay/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sandro Dzneladze",
+                    "email": "sandro@weare.de.com"
+                }
+            ],
+            "description": "online payments php SDK - collect credit card payments via TbcBank processor",
+            "time": "2019-05-30T22:41:27+00:00"
         },
         {
             "name": "webflo/drupal-finder",
