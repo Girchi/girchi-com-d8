@@ -6,3 +6,9 @@ services:
       - '@logger.factory'
       - '@string_translation'
       - '@language_manager'
+      - '@girchi_donations.ged_calculator'
+  girchi_donations.ged_calculator:
+    class: Drupal\girchi_donations\Utils\GedCalculator
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.factory'
