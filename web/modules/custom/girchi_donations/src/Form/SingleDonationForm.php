@@ -4,6 +4,7 @@ namespace Drupal\girchi_donations\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\girchi_donations\Utils\DonationUtils;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -20,13 +21,23 @@ class SingleDonationForm extends FormBase {
   private $donationUtils;
 
   /**
+   * The Messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
    * Constructs a new UserController object.
    *
    * @param \Drupal\girchi_donations\Utils\DonationUtils $donationUtils
    *   Donation Utils.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   Messenger.
    */
-  public function __construct(DonationUtils $donationUtils) {
+  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger) {
     $this->donationUtils = $donationUtils;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -34,7 +45,8 @@ class SingleDonationForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-        $container->get('girchi_donations.donation_utils')
+        $container->get('girchi_donations.donation_utils'),
+        $container->get('messenger')
     );
   }
 
@@ -93,19 +105,13 @@ class SingleDonationForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Display result.
-    foreach ($form_state->getValues() as $key => $value) {
-      drupal_set_message($key . ': ' . $value);
+    $donation_aim = $form_state->getValue('donation_aim');
+    $politician = $form_state->getValue('politicians');
+    if (empty($donation_aim) && empty($politician)) {
+      $this->messenger->addError('Please choose Donation aim OR Donation to politician');
+      $form_state->setRebuild();
     }
-
   }
 
 }
