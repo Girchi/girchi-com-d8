@@ -1,10 +1,9 @@
 uuid: bf0e384c-7297-45d4-9ada-0871907c9322
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - girchi_utils
-    - system
   theme:
     - girchi
 id: mypartylistblock
@@ -18,9 +17,4 @@ settings:
   label: 'My party list block'
   provider: girchi_utils
   label_display: visible
-visibility:
-  request_path:
-    id: request_path
-    pages: "/user/*/edit*\r\n/\r\n\r\n\r\n"
-    negate: false
-    context_mapping: {  }
+visibility: {  }
