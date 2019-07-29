@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\views\Views;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\user\Entity\User;
 
@@ -72,7 +73,7 @@ function girchi_page_attachments_alter(array &$page) {
 /**
  * Implements hook_preprocess_page() for page.html.twig.
  */
-function girchi_preprocess_page(array &$variables) {
+function girchi_preprocess_page(array &$variables, $hook) {
   // Get config from site settings.
   $config = \Drupal::config('om_site_settings.site_settings');
 
@@ -89,37 +90,15 @@ function girchi_preprocess_page(array &$variables) {
   $variables['header_config'] = [
     'enable_user_ui' => $config->get('enable_user_ui'),
   ];
-  // Redirect from user profile.
-  // Get current route name.
+
   $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === 'entity.user.canonical'
+        && !Drupal::routeMatch()->getParameter('user')->get('field_politician')->value) {
+    $response = new RedirectResponse('/');
+    $response->send();
+  }
 
-//  // If current route is user page and user exists.
-//  if ($route_name === 'entity.user.canonical'
-//        && $user = \Drupal::routeMatch()->getParameter('user')
-//    ) {
-//    // Get uid from route.
-//    $uid = (int) $user->id();
-//    // Get current uid.
-//    $current_uid = (int) $user = \Drupal::currentUser()->id();
-//
-//    // If the uid from the URL matches with the current uid,
-//    // redirect to the user edit form, otherwise - to the main page.
-//    if ($uid === $current_uid) {
-//      $redirect_path = Url::fromRoute(
-//            'entity.user.edit_form',
-//            ['user' => $current_uid]
-//        )->toString();
-//    }
-//    else {
-//      $redirect_path = '/';
-//    }
-//
-//    // Redirect to given utl.
-//    $response = new RedirectResponse($redirect_path);
-//    $response->send();
-//  }
-
-  // End Redirect from user profile.
+   // End Redirect from user profile.
   // Logged in use header.
   if ($currentUserId = \Drupal::currentUser()->id()) {
     /** @var User $account */
@@ -135,7 +114,6 @@ function girchi_preprocess_page(array &$variables) {
       $isAvatar = FALSE;
     }
 
-//    dump($currentCoverPhotoAvatar);die;
     $variables['user_header'] = [
       'first_name' => $account->{'field_first_name'}->value,
       'last_name' => $account->{'field_last_name'}->value,
@@ -177,7 +155,18 @@ function girchi_preprocess_page(array &$variables) {
       }
     }
 
+    $favoriteNews = $user->get('field_favorite_news')->getValue();
+    $favoriteNewsIds = [];
+
+    foreach ($favoriteNews as $news) {
+      if(isset($news['target_id'])){
+        $favoriteNewsIds[] = $news['target_id'];
+      }
+    }
+    $favoriteNewsIds = implode('+', $favoriteNewsIds);
+
     $variables['user'] = [
+      'id' => $user->id(),
       'field_cover_photo' => $coverPhotoAvatar,
       'user_picture' => $profilePicture,
       'first_name' => $user->get('field_first_name')->value,
@@ -186,12 +175,16 @@ function girchi_preprocess_page(array &$variables) {
       'referralCount' => $referralCount,
       'rating_in_party_list' => $user->get('field_rating_in_party_list')->value,
       'political_ged' => $user->get('field_political_ged')->value,
-      'user_rank' => $user->get('field_rank')->value
-
-
-
-
+      'user_rank' => $user->get('field_rank')->value,
+      'field_intro' => $user->get('field_intro'),
+      'field_profile_video' => $user->get('field_profile_video')->get(0) ? ($user->get('field_profile_video')->get(0)->view()) : null,
+      'field_facebook_url' => $user->get('field_facebook_url')->value,
+      'field_twitter_url' => $user->get('field_twitter_url')->value,
+      'field_public_email' => $user->get('field_public_email')->value ?: '',
+      'favoriteNewsIds' => $favoriteNewsIds,
+      'field_author' => $user->id(),
     ];
+
   }
 
   $node = \Drupal::request()->attributes->get('node');
@@ -244,6 +237,24 @@ function girchi_preprocess_node(array &$variables) {
       $terms[$term->getName()] = $term->id();
     }
     $variables['terms'] = $terms;
+
+    $nid = $variables['node']->id();
+    $user = User::load(\Drupal::currentUser()->id());
+    $authenticatedUser= $variables['logged_in'] = $user->isAuthenticated();
+    $favNewsEx = $user->get('field_favorite_news')->getValue();
+    $checkboxValue = false;
+    if($authenticatedUser && $favNewsEx){
+        $arr = array_filter($favNewsEx, function ($var) use ($nid) {
+           return $var['target_id'] == $nid;
+        });
+
+        if (!empty($arr)) {
+            $checkboxValue = true;
+        }
+    }
+
+    $variables['checkboxValue'] = $checkboxValue;
+
   }
   if ($variables['node']->getType() == 'page') {
     $current_url = Url::fromRoute('<current>');
@@ -260,6 +271,7 @@ function girchi_preprocess_node(array &$variables) {
     $views_count = \Drupal::service('statistics.storage.node')->fetchView($variables['node']->id());
     $total_view_count = $views_count ? $views_count->getTotalCount() : 0;
     $variables['total_view_count'] = $total_view_count;
+
   }
 }
 
@@ -269,12 +281,22 @@ function girchi_preprocess_node(array &$variables) {
 function girchi_preprocess_views_view(&$variables) {
   if ($variables['id'] == 'news') {
     if (empty($variables['exposed']['category']['#value']) == FALSE) {
-
       $termID = $variables['exposed']['category']['#value'];
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($termID);
       $variables['categoryName'] = $term->name->value;
 
     }
+  }
+
+  if($variables['id'] == 'favorite_news'){
+    $user = \Drupal::routeMatch()->getParameter('user');
+    $variables['favorite_news'] =[
+        'first_name' => $user->get('field_first_name')->value,
+        'last_name' => $user->get('field_last_name')->value,
+
+    ];
+
+
   }
 }
 
