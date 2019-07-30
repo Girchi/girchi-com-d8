@@ -67,11 +67,14 @@ class PartyListCalculatorService {
 
           $user_party_list = $user->get('field_my_party_list')->getValue();
           $user_ged = (int) $user->get('field_ged')->getValue()[0]['value'];
-
           foreach ($user_party_list as $party_list_item) {
             $percentage = (int) $party_list_item['value'];
             $uid = $party_list_item['target_id'];
-            $user_rating[$uid] = $user_ged * ($percentage / 100);
+            if(isset($user_rating[$uid])) {
+              $user_rating[$uid] += $user_ged * ($percentage / 100);
+            } else {
+              $user_rating[$uid] = $user_ged * ($percentage / 100);
+            }
           };
         }
         arsort($user_rating);
