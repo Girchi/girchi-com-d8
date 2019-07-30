@@ -2,11 +2,9 @@
 
 namespace Drupal\girchi_my_party_list\Controller;
 
-use Drupal;
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\file\Entity\File;
 use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -17,8 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class PartyListController.
  */
-class PartyListController extends ControllerBase
-{
+class PartyListController extends ControllerBase {
 
   /**
    * Drupal\Core\Entity\EntityTypeManagerInterface definition.
@@ -34,16 +31,14 @@ class PartyListController extends ControllerBase
    *
    *   Entity type manager.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager)
-  {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container)
-  {
+  public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager')
     );
@@ -58,8 +53,7 @@ class PartyListController extends ControllerBase
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function partyList()
-  {
+  public function partyList() {
     $currentUserId = $this->currentUser()->id();
     $currentUser = $this->entityTypeManager->getStorage('user')->load($currentUserId);
     $myPartyList = [];
@@ -105,8 +99,7 @@ class PartyListController extends ControllerBase
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getUsers(Request $request)
-  {
+  public function getUsers(Request $request) {
     $currentUserId = $this->currentUser()->id();
     $politicanUids = $this->getChosenPoliticians($currentUserId);
     $userArray = [];
@@ -125,14 +118,16 @@ class PartyListController extends ControllerBase
     try {
       /** @var \Drupal\user\Entity\UserStorage $userStorage */
       $userStorage = $this->entityTypeManager->getStorage('user');
-    } catch (InvalidPluginDefinitionException $e) {
+    }
+    catch (InvalidPluginDefinitionException $e) {
       throw $e;
-    } catch (PluginNotFoundException $e) {
+    }
+    catch (PluginNotFoundException $e) {
       throw $e;
     }
 
     if (!empty($user)) {
-      $query = Drupal::entityQuery('user');
+      $query = $this->entityTypeManager->getStorage('user');
 
       $nameConditions = $query->orConditionGroup()
         ->condition('field_first_name', $firstName, $queryOperator)
@@ -167,8 +162,7 @@ class PartyListController extends ControllerBase
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function updateUser(Request $request)
-  {
+  public function updateUser(Request $request) {
     $currentUser = $this->entityTypeManager->getStorage('user')->load($this->currentUser()->id());
     $userList = $request->get('list') ? $request->get('list') : [];
 
@@ -199,8 +193,7 @@ class PartyListController extends ControllerBase
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getUsersInfo($users)
-  {
+  public function getUsersInfo(array $users) {
     $userArray = [];
     if (!empty($users)) {
       foreach ($users as $user) {
@@ -211,8 +204,7 @@ class PartyListController extends ControllerBase
           $imgUrl = '';
           if (!empty($user->get('user_picture')[0])) {
             $imgId = $user->get('user_picture')[0]->getValue()['target_id'];
-            $imgFile = File::load($imgId);
-
+            $imgFile = $this->entityTypeManager->getStorage('file')->load($imgId);
             $style = $this->entityTypeManager()->getStorage('image_style')->load('party_member');
             $imgUrl = $style->buildUrl($imgFile->getFileUri());
           }
@@ -243,8 +235,7 @@ class PartyListController extends ControllerBase
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getUserInfo($userId)
-  {
+  public function getUserInfo($userId) {
     if (!empty($userId)) {
       return $this->getUsersInfo([$userId]);
     }
@@ -265,8 +256,7 @@ class PartyListController extends ControllerBase
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
-  public function getChosenPoliticians($userId)
-  {
+  public function getChosenPoliticians($userId) {
     $politicianUids = [];
     $currentUser = $this->entityTypeManager->getStorage('user')->load($userId);
     $chosenPoliticians = $currentUser->get('field_my_party_list')->referencedEntities();
@@ -283,14 +273,11 @@ class PartyListController extends ControllerBase
    *
    *   Request.
    *
-   * @return JsonResponse
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
    *
    *   Json Response
-   *
    */
-  public
-  function getPoliticianSupporters(Request $request)
-  {
+  public function getPoliticianSupporters(Request $request) {
     $userId = $request->request->get('userId');
     $supporters = getPoliticianSupporeters($userId);
     $supporters = $supporters[$userId]['users_info'];

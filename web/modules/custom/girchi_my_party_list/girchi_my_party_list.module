@@ -9,14 +9,12 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
-use Drupal\views\ViewExecutable;
 use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
  */
-function girchi_my_party_list_help($route_name, RouteMatchInterface $route_match)
-{
+function girchi_my_party_list_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the girchi_my_party_list module.
     case 'help.page.girchi_my_party_list':
@@ -32,8 +30,7 @@ function girchi_my_party_list_help($route_name, RouteMatchInterface $route_match
 /**
  * Implements hook_theme().
  */
-function girchi_my_party_list_theme()
-{
+function girchi_my_party_list_theme() {
   return [
     'girchi_my_party_list' => [
       'render element' => 'children',
@@ -49,8 +46,7 @@ function girchi_my_party_list_theme()
 /**
  * Implements hook_form_alter().
  */
-function girchi_my_party_list_form_alter(&$form, FormStateInterface $form_state, $form_id)
-{
+function girchi_my_party_list_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'views_exposed_form') {
     $form['combine']['#attributes']['class'][] = 'border-0 py-1 m-1 px-3 outline-none font-size-3 text-success w-100';
     $form['combine']['#attributes']['placeholder'] = 'ძებნა...';
@@ -59,12 +55,10 @@ function girchi_my_party_list_form_alter(&$form, FormStateInterface $form_state,
 
 }
 
-
 /**
  * Implements hook_cron().
  */
-function girchi_my_party_list_cron()
-{
+function girchi_my_party_list_cron() {
   /**
    * @var \Drupal\girchi_my_party_list\PartyListCalculatorService $party_list_calculator
    */
@@ -72,8 +66,16 @@ function girchi_my_party_list_cron()
   $party_list_calculator->calculate();
 }
 
-function getPoliticiansSupporeters($politician_ids)
-{
+/**
+ * Get users who support politicians.
+ *
+ * @param array $politician_ids
+ *   Politicians Ids.
+ *
+ * @return array
+ *   Returns all politicians supporters.
+ */
+function get_politicians_supporters(array $politician_ids) {
   $connection = \Drupal::database();
   $returnArray = [];
   $users_data = [];
@@ -93,7 +95,7 @@ function getPoliticiansSupporeters($politician_ids)
       foreach ($result as $item) {
         $users_data[$item->entity_id] = $item->field_my_party_list_value;
       }
-      $users_info = getSupportersInfo($users_data);
+      $users_info = get_supporters_info($users_data);
       $returnArray[$id]['users_info'] = $users_info;
     }
   }
@@ -101,14 +103,29 @@ function getPoliticiansSupporeters($politician_ids)
   return $returnArray;
 }
 
-function getPoliticianSupporeters($politician_id)
-{
-  return getPoliticiansSupporeters([$politician_id]);
+/**
+ * Get users who support politician.
+ *
+ * @param array $politician_id
+ *   Politician id.
+ *
+ * @return array
+ *   Returns single politician supporters.
+ */
+function get_politician_supporters(array $politician_id) {
+  return get_politicians_supporters([$politician_id]);
 }
 
-
-function getSupportersInfo($users_data)
-{
+/**
+ * Gets supporters info.
+ *
+ * @param array $users_data
+ *   User data.
+ *
+ * @return array
+ *   Returns supporters info.
+ */
+function get_supporters_info(array $users_data) {
   $result = [];
   $users = User::loadMultiple(array_keys($users_data));
   $base_url = \Drupal::request()->getSchemeAndHttpHost();
@@ -121,19 +138,21 @@ function getSupportersInfo($users_data)
         $img_file = File::load($img_id);
         $style = ImageStyle::load('party_member');
         $img_url = $style->buildUrl($img_file->getFileUri());
-      } else {
+      }
+      else {
         $img_url = $base_url . '/' . $theme->getPath() . '/images/avatar34x34.png';
       }
       $first_name = $user->get('field_first_name')->value;
       $last_name = $user->get('field_last_name')->value;
       $percentage = $users_data[$user->id()];
-      //Calculate final ged amount
+      // Calculate final ged amount.
       $ged_amount = ($user->get('field_ged')->value * $percentage) / 100;
-      $result[] = ['img_url' => $img_url,
+      $result[] = [
+        'img_url' => $img_url,
         'name' => implode(" ", [$first_name, $last_name]),
         'percentage' => $percentage,
         'ged_amount' => $ged_amount,
-        'id' => $user->id()
+        'id' => $user->id(),
       ];
     }
   }

@@ -70,9 +70,10 @@ class PartyListCalculatorService {
           foreach ($user_party_list as $party_list_item) {
             $percentage = (int) $party_list_item['value'];
             $uid = $party_list_item['target_id'];
-            if(isset($user_rating[$uid])) {
+            if (isset($user_rating[$uid])) {
               $user_rating[$uid] += $user_ged * ($percentage / 100);
-            } else {
+            }
+            else {
               $user_rating[$uid] = $user_ged * ($percentage / 100);
             }
           };
