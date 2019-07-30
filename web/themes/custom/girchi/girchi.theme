@@ -422,7 +422,7 @@ function girchi_preprocess_views_view_fields(&$variables) {
       $politician_ids [] = $user->_entity->id();
     }
     if (!empty($politician_ids)) {
-      $supporters = getPoliticiansSupporeters($politician_ids);
+      $supporters = get_politicians_supporters($politician_ids);
       $variables['supporters'] = $supporters;
     }
   }
