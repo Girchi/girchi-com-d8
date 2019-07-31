@@ -34,7 +34,7 @@
                     </div>
                     <span
                             class="w-50-px h-50-px bg-warning rounded-circle position-absolute position-right-n1 position-center-y text-white font-size-6 font-weight-bold d-flex justify-content-center align-items-center"
-                    >{{ user.user_rank < 10 ? '0' ~ user.user_rank : user.user_rank  }}</span
+                    >{{ user.rating_in_party_list < 10 ? '0' ~ user.rating_in_party_list : user.rating_in_party_list  }}</span
                     >
                 </div>
                 <div class="w-220-px d-none d-lg-block"></div>
@@ -65,7 +65,7 @@
                     >
                     <span
                             class="text-warning font-weight-bold font-size-4 font-size-md-5 line-height-1-5 line-height-md-0-9"
-                    >{{ user.rating_in_party_list }}
+                    >{{ user.political_ged }}
                 <i
                         class="icon-ged line-height-1-1 font-size-md-4 font-size-3"
                 ></i
@@ -80,7 +80,7 @@
                     >
                     <span
                             class="text-success font-weight-bold font-size-4 font-size-md-5 line-height-1-5 line-height-md-0-9"
-                    >{{ user.political_ged }}
+                    >{{ user.ged }}
                 <i
                         class="icon-ged line-height-1-1 font-size-md-4 font-size-3"
                 ></i
