@@ -6,6 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\girchi_donations\Utils\DonationUtils;
+use Drupal\om_tbc_payments\Services\PaymentService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -28,16 +29,26 @@ class SingleDonationForm extends FormBase {
   protected $messenger;
 
   /**
+   * Payment service.
+   *
+   * @var \Drupal\om_tbc_payments\Services\PaymentService
+   */
+  protected $omediaPayment;
+
+  /**
    * Constructs a new UserController object.
    *
    * @param \Drupal\girchi_donations\Utils\DonationUtils $donationUtils
    *   Donation Utils.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   Messenger.
+   * @param \Drupal\om_tbc_payments\Services\PaymentService $omediaPayment
+   *   Payments.
    */
-  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger) {
+  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger, PaymentService $omediaPayment) {
     $this->donationUtils = $donationUtils;
     $this->messenger = $messenger;
+    $this->omediaPayment = $omediaPayment;
   }
 
   /**
@@ -46,7 +57,8 @@ class SingleDonationForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
         $container->get('girchi_donations.donation_utils'),
-        $container->get('messenger')
+        $container->get('messenger'),
+        $container->get('om_tbc_payments.payment_service')
     );
   }
 
@@ -112,6 +124,7 @@ class SingleDonationForm extends FormBase {
       $this->messenger->addError('Please choose Donation aim OR Donation to politician');
       $form_state->setRebuild();
     }
+    $this->omediaPayment->generateTransactionId(5, 'test');
   }
 
 }

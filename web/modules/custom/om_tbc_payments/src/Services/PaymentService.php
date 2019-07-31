@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\language\ConfigurableLanguageManager;
 use GuzzleHttp\Client;
+use Symfony\Component\HttpFoundation\RequestStack;
 use WeAreDe\TbcPay\TbcPayProcessor;
 
 /**
@@ -51,6 +52,13 @@ class PaymentService {
   protected $client;
 
   /**
+   * Request.
+   *
+   * @var \Symfony\Component\HttpFoundation\Request
+   */
+  protected $request;
+
+  /**
    * Constructor for service.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -61,20 +69,22 @@ class PaymentService {
    *   LanguageManager.
    * @param \GuzzleHttp\Client $client
    *   Guzzle.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
+   *   Request.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager,
                               LoggerChannelFactoryInterface $loggerFactory,
                               ConfigurableLanguageManager $languageManager,
-                              Client $client
+                              Client $client,
+                              RequestStack $request_stack
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->loggerFactory = $loggerFactory;
     $this->languageManager = $languageManager;
     $this->client = $client;
+    $this->request = $request_stack->getCurrentRequest();
     $this->tbcPayProcessor = new TbcPayProcessor(
-        "test",
-        "test",
-        "test"
+
     );
   }
 
@@ -103,6 +113,7 @@ class PaymentService {
     $this->tbcPayProcessor->description = $description;
     $this->tbcPayProcessor->language = $lang;
 
+    // dump($this->tbcPayProcessor->sms_start_transaction());die;
     return $this->tbcPayProcessor->sms_start_transaction();
   }
 
@@ -123,7 +134,7 @@ class PaymentService {
         'trans_id' => $id,
       ],
     ]);
-
+    // dump($response);die;
     return $response;
   }
 
