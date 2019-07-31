@@ -128,7 +128,6 @@ class PartyListController extends ControllerBase {
 
     if (!empty($user)) {
       $query = $this->entityTypeManager->getStorage('user');
-
       $nameConditions = $query->orConditionGroup()
         ->condition('field_first_name', $firstName, $queryOperator)
         ->condition('field_last_name', $lastName, 'CONTAINS');
@@ -279,7 +278,7 @@ class PartyListController extends ControllerBase {
    */
   public function getPoliticianSupporters(Request $request) {
     $userId = $request->request->get('userId');
-    $supporters = getPoliticianSupporeters($userId);
+    $supporters = get_politician_supporters($userId);
     $supporters = $supporters[$userId]['users_info'];
     usort($supporters, function ($a, $b) {
       return $a['ged_amount'] > $b['ged_amount'] ? -1 : 1;

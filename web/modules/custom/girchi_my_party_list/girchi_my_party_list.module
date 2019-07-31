@@ -106,13 +106,13 @@ function get_politicians_supporters(array $politician_ids) {
 /**
  * Get users who support politician.
  *
- * @param array $politician_id
+ * @param string $politician_id
  *   Politician id.
  *
  * @return array
  *   Returns single politician supporters.
  */
-function get_politician_supporters(array $politician_id) {
+function get_politician_supporters($politician_id) {
   return get_politicians_supporters([$politician_id]);
 }
 
