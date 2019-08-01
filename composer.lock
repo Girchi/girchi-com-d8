@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf9cd20c9f43196915a7adbe4a1505fc",
+    "content-hash": "5bba3f1e9468d8fdfd759763b0d94d6b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4366,7 +4366,8 @@
                 "patches_applied": {
                     "Access user emails ": "https://www.drupal.org/files/issues/2019-04-26/drupal-2799049-30-new-permission-view-user-mail.patch",
                     "Fix Entity reference autocomplete with fields": "https://www.drupal.org/files/issues/2019-04-16/2174633-views-273.patch",
-                    "Fix ajax error in views relationships": "https://www.drupal.org/files/issues/2019-05-04/2457999-194.patch"
+                    "Fix ajax error in views relationships": "https://www.drupal.org/files/issues/2019-05-04/2457999-194.patch",
+                    "Fix autocomplete suggestions issue": "https://www.drupal.org/files/issues/2019-07-30/2909128-6.patch"
                 }
             },
             "autoload": {
