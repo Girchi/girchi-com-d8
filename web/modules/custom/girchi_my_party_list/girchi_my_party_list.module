@@ -78,10 +78,10 @@ function girchi_my_party_list_cron() {
 function get_politicians_supporters(array $politician_ids) {
   $connection = \Drupal::database();
   $returnArray = [];
-  $users_data = [];
+
   if (!empty($politician_ids)) {
     foreach ($politician_ids as $id) {
-
+      $users_data = [];
       $query = $connection->select('user__field_my_party_list', 'user_party_list');
       $query->condition('user_party_list.field_my_party_list_target_id', $id, '=')
         ->fields('user_party_list', ['entity_id', 'field_my_party_list_value']);
@@ -99,7 +99,6 @@ function get_politicians_supporters(array $politician_ids) {
       $returnArray[$id]['users_info'] = $users_info;
     }
   }
-
   return $returnArray;
 }
 

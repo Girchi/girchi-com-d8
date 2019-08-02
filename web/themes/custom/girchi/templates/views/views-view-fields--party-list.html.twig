@@ -33,6 +33,9 @@
 #}
 {% set uid = fields.uid.content | striptags | replace({"\n":'', "\r":''}) %}
 {% set supporter_count = supporters[uid]['count'] %}
+{% set img_url = fields.user_picture.content | striptags  | replace({"\n":'', "\r":''})%}
+{% set default_img_url = theme_path('images/avatar50x50.png', 1) %}
+
 <tr>
     <th
         scope="row"
@@ -50,7 +53,7 @@
                 class="rounded-circle overflow-hidden d-none d-md-block"
             >
                 <img
-                    src="{{ fields.user_picture.content | striptags }}"
+                    src="{{ img_url ? img_url : default_img_url }}"
                     class="rounded w-100"
                     alt="..."
                 />
