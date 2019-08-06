@@ -46,6 +46,9 @@ $(document).ready(function () {
     });
     $('.politician-modal').click(function (e) {
         let userID = e.target.getAttribute('data-uid');
+        if(userID == null) {
+            userID = $(e.target).parent().attr('data-uid');
+        }
 
         $.ajax({
             type: "POST",

@@ -86,17 +86,13 @@ function get_politicians_supporters(array $politician_ids) {
       $query->condition('user_party_list.field_my_party_list_target_id', $id, '=')
         ->fields('user_party_list', ['entity_id', 'field_my_party_list_value']);
 
-      $countQuery = $query->countQuery();
-      $supportersCount = $countQuery->execute()
-        ->fetch();
-      $returnArray[$id]['count'] = $supportersCount->expression;
       $result = $query->execute()
         ->fetchAll();
       foreach ($result as $item) {
         $users_data[$item->entity_id] = $item->field_my_party_list_value;
       }
       $users_info = get_supporters_info($users_data);
-      $returnArray[$id]['users_info'] = $users_info;
+      $returnArray[$id] = $users_info;
     }
   }
   return $returnArray;
@@ -129,9 +125,11 @@ function get_supporters_info(array $users_data) {
   $users = User::loadMultiple(array_keys($users_data));
   $base_url = \Drupal::request()->getSchemeAndHttpHost();
   $theme = \Drupal::theme()->getActiveTheme();
+  $supporter_count = 0;
 
   foreach ($users as $user) {
     if ($user->get('field_ged')->value > 0) {
+      $supporter_count++;
       if (!empty($user->get('user_picture')[0])) {
         $img_id = $user->get('user_picture')[0]->getValue()['target_id'];
         $img_file = File::load($img_id);
@@ -146,7 +144,7 @@ function get_supporters_info(array $users_data) {
       $percentage = $users_data[$user->id()];
       // Calculate final ged amount.
       $ged_amount = ($user->get('field_ged')->value * $percentage) / 100;
-      $result[] = [
+      $result['users_info'][] = [
         'img_url' => $img_url,
         'name' => implode(" ", [$first_name, $last_name]),
         'percentage' => $percentage,
@@ -155,5 +153,7 @@ function get_supporters_info(array $users_data) {
       ];
     }
   }
+
+  $result['supporter_count'] = $supporter_count;
   return $result;
 }
