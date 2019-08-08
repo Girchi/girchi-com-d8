@@ -2,6 +2,7 @@
 
 namespace Drupal\girchi_my_party_list\Controller;
 
+use Drupal;
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Controller\ControllerBase;
@@ -90,11 +91,7 @@ class PartyListController extends ControllerBase {
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
-   *   Request.
-   *
-   * @return \Drupal\Component\Serialization\JsonResponse
-   *
-   *   Json Response
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
@@ -103,18 +100,15 @@ class PartyListController extends ControllerBase {
     $currentUserId = $this->currentUser()->id();
     $politicanUids = $this->getChosenPoliticians($currentUserId);
     $userArray = [];
-
     $user = $request->get('user');
     $firstName = $lastName = $user;
     $queryOperator = 'CONTAINS';
-
     if (strpos($user, ' ')) {
       $queryOperator = '=';
       $fulName = explode(' ', $user);
       $firstName = $fulName[0];
       $lastName = $fulName[1];
     }
-
     try {
       /** @var \Drupal\user\Entity\UserStorage $userStorage */
       $userStorage = $this->entityTypeManager->getStorage('user');
@@ -125,13 +119,11 @@ class PartyListController extends ControllerBase {
     catch (PluginNotFoundException $e) {
       throw $e;
     }
-
     if (!empty($user)) {
-      $query = $this->entityTypeManager->getStorage('user');
+      $query = Drupal::entityQuery('user');
       $nameConditions = $query->orConditionGroup()
         ->condition('field_first_name', $firstName, $queryOperator)
         ->condition('field_last_name', $lastName, 'CONTAINS');
-
       $users = $userStorage->getQuery()
         ->condition($nameConditions)
         ->condition('field_politician', 1, '=')
@@ -140,7 +132,6 @@ class PartyListController extends ControllerBase {
         $users->condition('uid', $politicanUids, 'NOT IN');
       }
       $users = $users->execute();
-
       $userArray = $this->getUsersInfo($users);
     }
     return new JsonResponse($userArray);
