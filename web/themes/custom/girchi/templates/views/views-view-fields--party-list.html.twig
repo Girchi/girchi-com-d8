@@ -120,7 +120,6 @@
                 </li>
             {% else %}
                 {% for supporter in supporters[uid]['users_info'] %}
-                    {{ drupal_dump(supporter.name) }}
                     <li class="d-inline-flex align-items-center">
                         <a
                             title="{{ supporter.name }}"
