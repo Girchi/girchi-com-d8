@@ -7,6 +7,7 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\TypedData\Exception\MissingDataException;
@@ -45,6 +46,13 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
   protected $loggerFactory;
 
   /**
+   * LoggerFactory.
+   *
+   * @var \Drupal\Core\Path\CurrentPathStack
+   */
+  protected $pathCurrent;
+
+  /**
    * MyPartyListBlock constructor.
    *
    * @param array $configuration
@@ -59,17 +67,21 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
    *   EntityTypeManager.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   Logger.
+   * @param \Drupal\Core\Path\CurrentPathStack $pathCurrent
+   *   PathCurrent.
    */
   public function __construct(array $configuration,
   $plugin_id,
   $plugin_definition,
                               AccountProxyInterface $accountProxy,
                               EntityTypeManager $entityTypeManager,
-                              LoggerChannelFactoryInterface $loggerFactory) {
+                              LoggerChannelFactoryInterface $loggerFactory,
+                              CurrentPathStack $pathCurrent) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->accountProxy = $accountProxy;
     $this->entityTypeManager = $entityTypeManager;
     $this->loggerFactory = $loggerFactory;
+    $this->pathCurrent = $pathCurrent;
 
   }
 
@@ -83,7 +95,8 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_definition,
       $container->get('current_user'),
       $container->get('entity_type.manager'),
-      $container->get('logger.factory')
+      $container->get('logger.factory'),
+      $container->get('path.current')
     );
   }
 
@@ -92,8 +105,8 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
    */
   public function build() {
     try {
+      $uid = substr($this->pathCurrent->getPath(), -1, 1);
       $members = [];
-      $uid = $this->accountProxy->id();
       /** @var \Drupal\user\UserStorage $user_storage */
       $user_storage = $this->entityTypeManager->getStorage('user');
       /** @var \Drupal\user\Entity\User $currentUser */
@@ -135,7 +148,16 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
           ];
         }
       }
+      usort($members, function ($a, $b) {
+        if ($a['member_ged_percentage'] == $b['member_ged_percentage']) {
+          return 0;
+        }
 
+        return $a['member_ged_percentage'] < $b['member_ged_percentage'] ? 1 : -1;
+      });
+
+      // Load top 5 users.
+      $members_short = array_slice($members, 0, 5, TRUE);
     }
     catch (MissingDataException $e) {
       $this->loggerFactory->get('girchi_utils')->error($e->getMessage());
@@ -149,6 +171,7 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
 
     return [
       '#theme' => 'my_party_list_block',
+      '#members_short' => $members_short,
       '#members' => $members,
     ];
 
