@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_address
+    - field.field.user.user.field_bio
     - field.field.user.user.field_cover_photo
     - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_facebook_url
@@ -56,6 +57,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_bio:
+    weight: 30
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_cover_photo:
     weight: 17
