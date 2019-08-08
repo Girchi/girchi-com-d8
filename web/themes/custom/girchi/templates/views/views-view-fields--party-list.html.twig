@@ -120,9 +120,10 @@
                 </li>
             {% else %}
                 {% for supporter in supporters[uid]['users_info'] %}
+                    {{ drupal_dump(supporter.name) }}
                     <li class="d-inline-flex align-items-center">
                         <a
-                            title="{{ supporters[uid]['users_info'][i]['name'] }}"
+                            title="{{ supporter.name }}"
                             href="#"
                             class="rounded-circle overflow-hidden d-inline-block m-1 politician-modal"
                             data-toggle="modal"
@@ -130,7 +131,7 @@
                             data-uid="{{ uid }}"
                         >
                             <img
-                                src="{{ supporters[uid]['users_info'][i]['img_url'] }}"
+                                src="{{ supporter.img_url }}"
                                 class="rounded"
                                 width="34"
                                 alt="..."
