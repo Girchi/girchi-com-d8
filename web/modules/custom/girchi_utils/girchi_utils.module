@@ -185,6 +185,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
       'variables' =>
         [
           'members' => NULL,
+          'members_short' => NULL,
         ],
       'template' => 'my-party-list-block',
     ],
@@ -365,6 +366,20 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
             '#markup' => $config->get('politician_checkbox_text')['value'],
             '#theme' => '',
           ];
+
+          // Public profile.
+          unset($form['field_intro']['widget'][0]['#title']);
+          unset($form['field_bio']['widget'][0]['#title']);
+          unset($form['field_profile_video']['widget']['#title']);
+          unset($form['field_profile_video']['widget'][0]['value']['#title']);
+          unset($form['field_twitter_url']['widget']['0']['value']['#title']);
+          unset($form['field_facebook_url']['widget']['0']['value']['#title']);
+          unset($form['field_public_email']['widget']['0']['value']['#title']);
+
+          $form['field_profile_video']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+          $form['field_twitter_url']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+          $form['field_facebook_url']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
+          $form['field_public_email']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
 
           $form['actions']['submit']['#submit'][] = 'girchi_utils_user_form_submit';
           $form['#after_build'][] = 'girchi_utils_after_build';

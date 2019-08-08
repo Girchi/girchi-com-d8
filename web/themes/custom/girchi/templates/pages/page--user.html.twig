@@ -101,7 +101,7 @@
                         %}
                             <li class="d-none d-md-inline-flex align-items-center mr-n2">
                                 <a
-                                        href="#"
+                                        href="{{ path('user.page') }}"
                                         class="rounded-circle overflow-hidden d-inline-block border-solid border-2 border-white"
                                 >
                                     <img
@@ -171,10 +171,11 @@
                         </h6>
                         <div class="p-3">
 {#                            <p class="text-center font-size-3 m-0">#}
-                            {{ user.field_intro  |view}}
+                            {{ user.field_intro|raw }}
 {#                            </p>#}
                             <div class="text-center pb-3 mt-2 border-bottom">
-                                <a
+                                <a      data-toggle="modal"
+                                        data-target="#fullBio"
                                         href="#"
                                         class="btn mt-2 border-secondary btn-outline-grey bg-transparent d-inline-block mr-1 btn-sm mb-2 text-hover-light-green border-hover-light-green"
                                 >
@@ -220,6 +221,46 @@
         </div>
     </div>
 </div>
+
+{#MODAL#}
+<div
+    class="modal fade"
+    id="fullBio"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="fullBioTitle"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content overflow-hidden">
+            <div class="modal-header align-items-center px-3 px-md-4">
+                <h5
+                    class="modal-title font-size-3 text-uppercase font-weight-bold"
+                    id="supportersTitle"
+                >
+                    {{ 'Full biography'| t }}
+                </h5>
+                <button
+                    type="button"
+                    class="close ml-2"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <i
+                        aria-hidden="true"
+                        class="icon-close font-size-3 text-dark-silver"
+                    ></i>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="container">
+                    {{ user.field_bio|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#ENDMODAL#}
 {% block page_foot %}
     {% include '@girchi/footer.html.twig' %}
 {% endblock %}

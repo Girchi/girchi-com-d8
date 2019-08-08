@@ -72,6 +72,7 @@ function girchi_page_attachments_alter(array &$page) {
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
+ * @throws \Drupal\Core\TypedData\Exception\MissingDataException
  */
 function girchi_preprocess_page(array &$variables, $hook) {
   // Get config from site settings.
@@ -165,6 +166,8 @@ function girchi_preprocess_page(array &$variables, $hook) {
     }
     $favoriteNewsIds = implode('+', $favoriteNewsIds);
 
+//    dump($user->get('field_profile_video')->get(0));
+//    die;
     $variables['user'] = [
       'id' => $user->id(),
       'field_cover_photo' => $coverPhotoAvatar,
@@ -177,7 +180,8 @@ function girchi_preprocess_page(array &$variables, $hook) {
       'rating_in_party_list' => $user->get('field_rating_in_party_list')->value,
       'political_ged' => $user->get('field_political_ged')->value,
       'user_rank' => $user->get('field_rank')->value,
-      'field_intro' => $user->get('field_intro'),
+      'field_intro' => $user->get('field_intro')->value,
+      'field_bio' => $user->get('field_bio')->value,
       'field_profile_video' => $user->get('field_profile_video')->get(0) ? ($user->get('field_profile_video')->get(0)->view()) : null,
       'field_facebook_url' => $user->get('field_facebook_url')->value,
       'field_twitter_url' => $user->get('field_twitter_url')->value,
