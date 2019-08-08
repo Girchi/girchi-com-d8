@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-07-29 16:38+0000\n"
-"PO-Revision-Date: 2019-07-29 16:38+0000\n"
+"POT-Creation-Date: 2019-08-08 15:16+0000\n"
+"PO-Revision-Date: 2019-08-08 15:16+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3610,6 +3610,12 @@ msgstr ""
 msgid "Change password"
 msgstr "პაროლის შეცვლა"
 
+msgid "Girchi party list"
+msgstr "გირჩის პარტიული სია"
+
+msgid "Supporters"
+msgstr "მხარდამჭერები"
+
 msgid "Intro"
 msgstr "ინტრო"
 
@@ -3639,4 +3645,10 @@ msgstr "რეფერალები"
 
 msgid "Donate to politician"
 msgstr "დააფინანსე პოლიტიკოსი"
+
+msgid "Ged &#37;"
+msgstr "Ged-ების &#37;"
+
+msgid "Add to favorite"
+msgstr "ფავორიტებში დამატება"
 
