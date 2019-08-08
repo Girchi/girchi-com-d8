@@ -31,4 +31,3 @@ girchi_my_party_list.party_list_controller_getPoliticianSupporters:
     _title: 'Update user'
   requirements:
     _permission: 'access content'
-    _role: 'authenticated'

@@ -90,9 +90,10 @@
                         {% elseif empty -%}
                             {{ empty }}
                         {% endif %}
-                        {{ pager }}
                         </tbody>
                     </table>
+                    {{ pager }}
+
                 </div>
             </div>
             <!-- End of card -->
@@ -187,8 +188,6 @@
             </div>
         </div>
     </div>
-    {{ pager }}
-
     {{ attachment_after }}
     {{ more }}
 </div>

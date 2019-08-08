@@ -36,7 +36,7 @@
 {% set img_url = fields.user_picture.content | striptags  | replace({"\n":'', "\r":''}) %}
 {% set default_img_url = theme_path('images/avatar50x50.png', 1) %}
 <tr>
-    <th
+<th
         scope="row"
         class="pl-3 w-auto w-md-80-px text-center align-middle"
     >
@@ -122,13 +122,15 @@
                 {% for supporter in supporters[uid]['users_info'] %}
                     <li class="d-inline-flex align-items-center">
                         <a
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="{{ supporter['name'] }}"
-                            class="rounded-circle overflow-hidden d-inline-block m-1"
+                            title="{{ supporters[uid]['users_info'][i]['name'] }}"
+                            href="#"
+                            class="rounded-circle overflow-hidden d-inline-block m-1 politician-modal"
+                            data-toggle="modal"
+                            data-target="#supporters"
+                            data-uid="{{ uid }}"
                         >
                             <img
-                                src="{{ supporter['img_url'] }}"
+                                src="{{ supporters[uid]['users_info'][i]['img_url'] }}"
                                 class="rounded"
                                 width="34"
                                 alt="..."
