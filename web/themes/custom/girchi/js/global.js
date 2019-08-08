@@ -44,8 +44,8 @@ $(document).ready(function () {
         
 
     });
-    $('.politician-modal').click(function (e) {
-        let userID = e.target.getAttribute('data-uid');
+    $('body').on('click', '.politician-modal', (e) => {        let userID = e.target.getAttribute('data-uid');
+    console.log("Cliked");
         if(userID == null) {
             userID = $(e.target).parent().attr('data-uid');
         }
@@ -95,9 +95,9 @@ $(document).ready(function () {
                   >
                     <span
                       class="text-success font-size-4 font-weight-bold d-block d-md-none text-nowrap line-height-0-8"
-                      >${supporter.ged_amount}< <i class="icon-ged font-size-3"></i
+                      >${supporter.ged_amount}<i class="icon-ged font-size-3"></i
                     ></span>
-                    ${supporter.percentage}
+                    ${supporter.percentage}%
                   </td>
                   <td class="align-middle text-center d-none d-md-table-cell">
                     <span
@@ -110,5 +110,6 @@ $(document).ready(function () {
                 });
             });
     });
+
 
 });
