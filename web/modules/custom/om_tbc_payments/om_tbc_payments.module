@@ -22,3 +22,17 @@ function om_tbc_payments_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function om_tbc_payments_theme() {
+  return [
+    'prepare' => [
+      'render element' => 'children',
+      'variables' => [
+        'id' => NULL,
+      ],
+    ],
+  ];
+}

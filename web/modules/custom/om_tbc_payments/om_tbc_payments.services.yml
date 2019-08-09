@@ -5,5 +5,7 @@ services:
       - '@entity_type.manager'
       - '@logger.factory'
       - '@language_manager'
-      - '@http_client'
       - '@request_stack'
+      - '@file_system'
+      - '@keyvalue'
+      - '@current_user'
