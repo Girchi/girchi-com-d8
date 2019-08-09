@@ -140,6 +140,10 @@ function girchi_preprocess_page(array &$variables, $hook) {
     $referralsArray = $service->getUserReferrals($uid);
     $referralCount = (int)$referralsArray['referralCount'];
     $userRefferals = $referralsArray['referralUsers'];
+    //For modal usage , TODO create one array with all user info.
+    //kapo.
+    $userInfo = [];
+
     foreach ($userRefferals as $userRefferal){
       $referralId = $userRefferal->id();
       $referralUser = User::load($referralId);
@@ -154,8 +158,15 @@ function girchi_preprocess_page(array &$variables, $hook) {
         $referralsImage[] = $referralProfilePicture;
 
       }
-    }
 
+      $userInfo[]=[
+        'first_name' => $referralUser->get('field_first_name')->value,
+        'last_name' => $referralUser->get('field_last_name')->value,
+        'image'=> $referralProfilePicture
+      ];
+
+    }
+//    dump($userRefferals);die;
     // Pass user's favorite news IDs as contextual parameter to Favorite News views block.
     $favoriteNews = $user->get('field_favorite_news')->getValue();
     $favoriteNewsIds = [];
@@ -166,8 +177,6 @@ function girchi_preprocess_page(array &$variables, $hook) {
     }
     $favoriteNewsIds = implode('+', $favoriteNewsIds);
 
-//    dump($user->get('field_profile_video')->get(0));
-//    die;
     $variables['user'] = [
       'id' => $user->id(),
       'field_cover_photo' => $coverPhotoAvatar,
@@ -188,6 +197,7 @@ function girchi_preprocess_page(array &$variables, $hook) {
       'field_public_email' => $user->get('field_public_email')->value ?: '',
       'favoriteNewsIds' => $favoriteNewsIds,
       'field_author' => $user->id(),
+      'user_info' => $userInfo
     ];
 
   }
