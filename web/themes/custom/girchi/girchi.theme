@@ -166,8 +166,6 @@ function girchi_preprocess_page(array &$variables, $hook) {
       ];
 
     }
-//    dump(preg_match("(\?v=|/v/)([-a-zA-Z0-9]+)",$user->get('field_profile_video')->get(0)->value));
-//    die;
     $video_id_array = explode("?v=",$user->get('field_profile_video')->get(0)->value);
     $video_id = $video_id_array[1];
     $thumbnail_url =sprintf("https://img.youtube.com/vi/%s/maxresdefault.jpg",$video_id);
