@@ -5,6 +5,7 @@ namespace Drupal\girchi_donations\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Session\AccountProxy;
 use Drupal\girchi_donations\Utils\DonationUtils;
 use Drupal\om_tbc_payments\Services\PaymentService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -36,6 +37,13 @@ class SingleDonationForm extends FormBase {
   protected $omediaPayment;
 
   /**
+   * Current User
+   *
+   * @var \Drupal\Core\Session\AccountProxy
+   */
+  protected $currentUser;
+
+  /**
    * Constructs a new UserController object.
    *
    * @param \Drupal\girchi_donations\Utils\DonationUtils $donationUtils
@@ -44,11 +52,14 @@ class SingleDonationForm extends FormBase {
    *   Messenger.
    * @param \Drupal\om_tbc_payments\Services\PaymentService $omediaPayment
    *   Payments.
+   * @param \Drupal\Core\Session\AccountProxy $currentUser
+   *  CurrentUser
    */
-  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger, PaymentService $omediaPayment) {
+  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger, PaymentService $omediaPayment,AccountProxy $currentUser) {
     $this->donationUtils = $donationUtils;
     $this->messenger = $messenger;
     $this->omediaPayment = $omediaPayment;
+    $this->currentUser = $currentUser;
   }
 
   /**
@@ -56,9 +67,10 @@ class SingleDonationForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-        $container->get('girchi_donations.donation_utils'),
-        $container->get('messenger'),
-        $container->get('om_tbc_payments.payment_service')
+      $container->get('girchi_donations.donation_utils'),
+      $container->get('messenger'),
+      $container->get('om_tbc_payments.payment_service'),
+      $container->get('current_user')
     );
   }
 
@@ -73,7 +85,7 @@ class SingleDonationForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
+//    dump($this->donationUtils->gedCalculator->getCurrency());die;
     $politicians = $this->donationUtils->getPoliticians();
     $options = $this->donationUtils->getTerms();
 
@@ -101,6 +113,16 @@ class SingleDonationForm extends FormBase {
       '#required' => FALSE,
       '#empty_value' => '',
     ];
+    $form['currency'] = [
+      '#title' => 'currency',
+      '#type' => 'hidden',
+      '#attributes' => [
+        'id' => [
+          'currency_girchi',
+        ],
+      ],
+      '#value' => $this->donationUtils->gedCalculator->getCurrency(),
+    ];
     $form['submit'] = [
       '#type' => 'submit',
       '#attributes' => [
@@ -120,11 +142,31 @@ class SingleDonationForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $donation_aim = $form_state->getValue('donation_aim');
     $politician = $form_state->getValue('politicians');
+    $amount = $form_state->getValue('amount');
+    $description = $donation_aim ? $donation_aim : $politician;
+
     if (empty($donation_aim) && empty($politician)) {
       $this->messenger->addError('Please choose Donation aim OR Donation to politician');
       $form_state->setRebuild();
     }
-    $this->omediaPayment->generateTransactionId(5, 'test');
+    else {
+      /**
+       * TYPE 1 - AIM
+       * TYPE 2 - Politician
+       */
+      $type = $donation_aim ? 1 : 2;
+      $transaction_id = $this->omediaPayment->generateTransactionId($amount,"test");
+      $this->donationUtils->addDonationRecord(
+        $type,
+        [
+          'trans_id' => $transaction_id,
+          'amount' => (int) $amount,
+          'user_id' => $this->currentUser->id(),
+        ],
+        $description);
+
+      return $this->omediaPayment->makePayment($transaction_id);
+    }
   }
 
 }

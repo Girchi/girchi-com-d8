@@ -4,6 +4,7 @@ namespace Drupal\girchi_donations\Utils;
 
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\StringTranslation\TranslationManager;
@@ -46,7 +47,7 @@ class DonationUtils {
    *
    * @var GedCalculator
    */
-  protected $gedCalculator;
+  public $gedCalculator;
 
   /**
    * Constructor for service.
@@ -138,6 +139,34 @@ class DonationUtils {
 
     return $options;
 
+  }
+
+  public function addDonationRecord($type, $donation, $entity_id) {
+    /**
+     * TYPE 1 - AIM
+     * TYPE 2 - Politician
+     */
+    try {
+      $donationStorage = $this->entityTypeManager->getStorage('donation');
+      if ($type === 1) {
+        $additional_fields = ['aim_donation' => TRUE, 'aim_id' => $entity_id];
+      }else {
+        $additional_fields = ['politician_donation' => TRUE, 'politician_id'=>$entity_id];
+      }
+      $final_fields = array_merge($donation, $additional_fields);
+      $entity = $donationStorage->create($final_fields);
+      $entity->save();
+      $this->loggerFactory->get('girchi_donations')->info('Saved to donations with Status: INITIAL');
+      return true;
+    } catch (InvalidPluginDefinitionException $e) {
+      $this->loggerFactory->get('girchi_donations')->error($e->getMessage());
+    } catch (PluginNotFoundException $e) {
+      $this->loggerFactory->get('girchi_donations')->error($e->getMessage());
+    } catch (EntityStorageException $e) {
+      $this->loggerFactory->get('girchi_donations')->error($e->getMessage());
+    }
+
+    return false;
   }
 
 }

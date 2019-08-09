@@ -63,7 +63,7 @@ class GedCalculator {
   public function calculate($amount) {
     try {
       $currency = $this->USD->getCurrency();
-      $ged_amount = $currency * $amount * 100;
+      $ged_amount = $amount / $currency * 100;
 
       return (int) ceil($ged_amount);
     }
@@ -73,6 +73,10 @@ class GedCalculator {
 
     return NULL;
 
+  }
+
+  public function getCurrency(){
+    return $this->USD->getCurrency();
   }
 
 }

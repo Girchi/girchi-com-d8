@@ -39,6 +39,9 @@ function girchi_donations_theme() {
     ],
     'girchi_donations_success' => [
       'render element' => 'children',
+      'variables' => [
+        'amount' => NULL,
+      ],
     ],
     'girchi_donations_fail' => [
       'render element' => 'children',
