@@ -16,55 +16,55 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @package Drupal\om_site_settings\Form
  */
 class SiteSettingsForm extends ConfigFormBase {
-
   /**
    * Drupal\Core\Config\ConfigManager definition.
    *
-   * @var ConfigManager
+   * @var \Drupal\Core\Config\ConfigManager
    */
   protected $configManager;
-
   /**
    * Drupal\Core\Config\ExtensionInstallStorage definition.
    *
-   * @var ExtensionInstallStorage
+   * @var \Drupal\Core\Config\ExtensionInstallStorage
    */
   protected $configStorageSchema;
-
   /**
    * Drupal\Core\Language\LanguageManager definition.
    *
-   * @var LanguageManager
+   * @var \Drupal\Core\Language\LanguageManager
    */
   protected $languageManager;
 
   /**
    * Constructs a new GeneralSettingsForm object.
    *
-   * @param ConfigFactoryInterface $config_factory
-   * @param ConfigManager $config_manager
-   * @param ExtensionInstallStorage $config_storage_schema
-   * @param LanguageManager $language_manager
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   * @param \Drupal\Core\Config\ConfigManager $config_manager
+   * @param \Drupal\Core\Config\ExtensionInstallStorage $config_storage_schema
+   * @param \Drupal\Core\Language\LanguageManager $language_manager
    */
   public function __construct(
-    ConfigFactoryInterface $config_factory,
-    ConfigManager $config_manager,
-    ExtensionInstallStorage $config_storage_schema,
-    LanguageManager $language_manager
-  ) {
+        ConfigFactoryInterface $config_factory,
+        ConfigManager $config_manager,
+        ExtensionInstallStorage $config_storage_schema,
+        LanguageManager $language_manager
+    ) {
     parent::__construct($config_factory);
     $this->configManager = $config_manager;
     $this->configStorageSchema = $config_storage_schema;
     $this->languageManager = $language_manager;
   }
 
+  /**
+   *
+   */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('config.factory'),
-      $container->get('config.manager'),
-      $container->get('config.storage.schema'),
-      $container->get('language_manager')
-    );
+          $container->get('config.factory'),
+          $container->get('config.manager'),
+          $container->get('config.storage.schema'),
+          $container->get('language_manager')
+      );
   }
 
   /**
@@ -180,7 +180,6 @@ class SiteSettingsForm extends ConfigFormBase {
       '#title' => t('Google analytics view id'),
       '#default_value' => $config->get('google_analytics_view_id'),
     ];
-
     $form['donation'] = [
       '#type' => 'details',
       '#open' => TRUE,
@@ -192,6 +191,17 @@ class SiteSettingsForm extends ConfigFormBase {
       '#title' => t('Page text'),
       '#format' => 'full_html',
       '#default_value' => $config->get('donation_right_block')['value'],
+      ];
+    $form['extra_settings'] = [
+      '#type' => 'details',
+      '#open' => TRUE,
+      '#title' => t('Extra Settings'),
+    ];
+    $form['extra_settings']['createpass'] = [
+      '#description' => t('Enter text for password set page'),
+      '#type' => 'textarea',
+      '#title' => t('Password set form'),
+      '#default_value' => $config->get('createpass')
     ];
 
     return parent::buildForm($form, $form_state);
@@ -223,6 +233,7 @@ class SiteSettingsForm extends ConfigFormBase {
       'copyright_text',
       'google_analytics_view_id',
       'donation_right_block',
+      'createpass',
     ];
 
     foreach ($fields as $field_key) {

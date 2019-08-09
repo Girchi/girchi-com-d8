@@ -3041,8 +3041,55 @@ msgstr "მონაცემთა ბაზის სისტემა"
 msgid "Database system version"
 msgstr "მონაცემთა ბაზის ვერსია"
 
+msgid ""
+"A message has been sent to the new email address %email to confirm the "
+"change. Until confirmed, your current address will be used."
+msgstr ""
+"ელ-ფოსტის ცვლილების "
+"დამადასტურებელი "
+"შეტყობინება "
+"გამოგზავნილია "
+"მისამართზე: %email. "
+"შეტყობინების "
+"დადასტურებამდე თქვენი "
+"ელ-ფოსტა რჩება უცვლელი."
+
+msgid "Main navigation"
+msgstr "Main navigation"
+
+msgid "Site section links"
+msgstr "Site section links"
+
 msgid "Active"
 msgstr "აქტიური"
+
+msgid "There is no content"
+msgstr "კონტენტი არ არსებობს "
+
+msgid "Become a partner"
+msgstr "გახდი პარტნიორი"
+
+msgid "Fund the GIRCHI, get the relevant GeDs and hit the leaderboard"
+msgstr ""
+"დააფინანსე გირჩი, მიიღე "
+"შესაბამისი რაოდენობის "
+"GeD-ები და მოხვდი "
+"ლიდერბორდში"
+
+msgid "Donate"
+msgstr "დააფინანსე"
+
+msgid "Last month Top partners"
+msgstr "წინა თვის ტოპ პარტნიორები"
+
+msgid "Girchi"
+msgstr "გირჩი"
+
+msgid "Search..."
+msgstr "ძებნა..."
+
+msgid "More Freedom"
+msgstr "მეტი თავისუფლება"
 
 msgid "Enter Email"
 msgstr "მიუთითეთ ელ.ფოსტა"
@@ -3582,6 +3629,7 @@ msgstr "სთ"
 msgid "Estimated price in month:"
 msgstr "სავარაუდო ფასი თვეში:"
 
+
 msgid "Transaction was successfull"
 msgstr ""
 "ტრანზაქცია დასრულდა "
@@ -3598,4 +3646,79 @@ msgstr "პროფილი"
 
 msgid "Donate Again"
 msgstr "გადახდის გამეორება "
+
+msgid ""
+"Your current password is missing or incorrect; it's required to change "
+"the %name."
+msgstr ""
+"პაროლის ველი ცარიელია ან "
+"არასწორად არის შეყვანილი. "
+"პაროლი სავალდებულოა "
+"%ელ-ფოსტის შესაცვლელად."
+
+msgid "New Email"
+msgstr "ახალი ელ.ფოსტა"
+
+msgid "Enter new email"
+msgstr "შეიყვანეთ ახალი ელ.ფოსტა"
+
+msgid "Your email address has been updated to %mail"
+msgstr ""
+"თქვენი განახლებული "
+"ელ-ფოსტაა: %mail"
+
+msgid "Email confirmation confirmed."
+msgstr "ელ-ფოსტა დადასტურებულია"
+
+msgid "The current password you provided is incorrect."
+msgstr ""
+"მიმდინარე პაროლი "
+"არასწორია."
+
+msgid "Your password has been changed."
+msgstr ""
+"თქვენი პაროლი წარმატებით "
+"შეიცვალა."
+
+msgid "Change password"
+msgstr "პაროლის შეცვლა"
+
+msgid "Girchi party list"
+msgstr "გირჩის პარტიული სია"
+
+msgid "Supporters"
+msgstr "მხარდამჭერები"
+
+msgid "Intro"
+msgstr "ინტრო"
+
+msgid "Full biography"
+msgstr "სრული ბიოგრაფია"
+
+msgid "Learn about politician"
+msgstr "გაიცანი პოლიტიკოსი"
+
+msgid "Favorite news"
+msgstr "რჩეული სიახლეები"
+
+msgid "personal party list"
+msgstr "პირადი პარტიული სია"
+
+msgid "GeD and"
+msgstr "GeD და "
+
+msgid "Politician rating"
+msgstr "პოლიტიკური წონა"
+
+msgid "Politician Ged"
+msgstr "გამომუშავებული GED-ები"
+
+msgid "Referrals"
+msgstr "რეფერალები"
+
+msgid "Donate to politician"
+msgstr "დააფინანსე პოლიტიკოსი"
+
+msgid "Ged &#37;"
+msgstr "Ged-ების &#37;"
 
