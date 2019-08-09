@@ -109,18 +109,18 @@ function girchi_preprocess_page(array &$variables)
 
     // If the uid from the URL matches with the current uid,
     // redirect to the user edit form, otherwise - to the main page.
-    if ($uid === $current_uid) {
-      $redirect_path = Url::fromRoute(
-        'entity.user.edit_form',
-        ['user' => $current_uid]
-      )->toString();
-    } else {
-      $redirect_path = '/';
-    }
-
-    // Redirect to given utl.
-    $response = new RedirectResponse($redirect_path);
-    $response->send();
+//    if ($uid === $current_uid) {
+//      $redirect_path = Url::fromRoute(
+//        'entity.user.edit_form',
+//        ['user' => $current_uid]
+//      )->toString();
+//    } else {
+//      $redirect_path = '/';
+//    }
+//
+//    // Redirect to given utl.
+//    $response = new RedirectResponse($redirect_path);
+//    $response->send();
   }
 
   // End Redirect from user profile.
