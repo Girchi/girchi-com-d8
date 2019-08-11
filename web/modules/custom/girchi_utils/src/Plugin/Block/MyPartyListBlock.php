@@ -21,7 +21,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *  admin_label = @Translation("My party list block"),
  * )
  */
-class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterface
+{
 
   /**
    * Drupal\Core\Session\AccountProxyInterface.
@@ -70,25 +71,27 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
    * @param \Drupal\Core\Path\CurrentPathStack $pathCurrent
    *   PathCurrent.
    */
-  public function __construct(array $configuration,
-  $plugin_id,
-  $plugin_definition,
-                              AccountProxyInterface $accountProxy,
-                              EntityTypeManager $entityTypeManager,
-                              LoggerChannelFactoryInterface $loggerFactory,
-                              CurrentPathStack $pathCurrent) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    AccountProxyInterface $accountProxy,
+    EntityTypeManager $entityTypeManager,
+    LoggerChannelFactoryInterface $loggerFactory,
+    CurrentPathStack $pathCurrent
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->accountProxy = $accountProxy;
     $this->entityTypeManager = $entityTypeManager;
     $this->loggerFactory = $loggerFactory;
     $this->pathCurrent = $pathCurrent;
-
   }
 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
+  {
     return new static(
       $configuration,
       $plugin_id,
@@ -103,14 +106,18 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build()
+  {
+    $GEDHelper = \Drupal::service('girchi_users.ged_helper');
+
     try {
       $uid = substr($this->pathCurrent->getPath(), -1, 1);
       $members = [];
       /** @var \Drupal\user\UserStorage $user_storage */
       $user_storage = $this->entityTypeManager->getStorage('user');
       /** @var \Drupal\user\Entity\User $currentUser */
-      $currentUser = $user_storage->load($uid);
+      $currentUser = \Drupal::routeMatch()->getParameter('user');
+
       $currentUserGed = $currentUser->get('field_ged')->value ? $currentUser->get('field_ged')->value : 0;
       $membersData = $currentUser->get('field_my_party_list');
 
@@ -132,8 +139,7 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
           if ($avatarEntity) {
             $memberAvatar = $avatarEntity->getFileUri();
             $isAvatar = TRUE;
-          }
-          else {
+          } else {
             $memberAvatar = file_create_url(drupal_get_path('theme', 'girchi') . '/images/avatar.png');
             $isAvatar = FALSE;
           }
@@ -142,7 +148,7 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
             'member_last_name' => $lastName,
             'member_ged_percentage' => $gedPercentage,
             'member_profile_picture' => $memberAvatar,
-            'member_ged_amount' => $memberGedAmount,
+            'member_ged_amount' => $GEDHelper::getFormattedGED($memberGedAmount),
             'link_to_member' => $linkToMember,
             'is_avatar' => $isAvatar,
           ];
@@ -158,14 +164,11 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
 
       // Load top 5 users.
       $members_short = array_slice($members, 0, 5, TRUE);
-    }
-    catch (MissingDataException $e) {
+    } catch (MissingDataException $e) {
       $this->loggerFactory->get('girchi_utils')->error($e->getMessage());
-    }
-    catch (InvalidPluginDefinitionException $e) {
+    } catch (InvalidPluginDefinitionException $e) {
       $this->loggerFactory->get('girchi_utils')->error($e->getMessage());
-    }
-    catch (PluginNotFoundException $e) {
+    } catch (PluginNotFoundException $e) {
       $this->loggerFactory->get('girchi_utils')->error($e->getMessage());
     }
 
@@ -174,14 +177,13 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
       '#members_short' => $members_short,
       '#members' => $members,
     ];
-
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getCacheMaxAge() {
+  public function getCacheMaxAge()
+  {
     return 0;
   }
-
 }
