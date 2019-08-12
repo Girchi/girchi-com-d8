@@ -9,6 +9,11 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
  */
 class GetUserReferralsService {
 
+  /**
+   * Drupal\Core\Entity\EntityTypeManagerInterface definition.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
   protected $entityTypeManager;
 
   /**
