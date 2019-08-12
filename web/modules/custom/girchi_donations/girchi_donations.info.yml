@@ -3,3 +3,5 @@ type: module
 description: 'Donations module for girchi.com'
 core: 8.x
 package: 'girchi'
+dependencies:
+  - drupal:taxonomy

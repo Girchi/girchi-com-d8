@@ -37,7 +37,7 @@ class SingleDonationForm extends FormBase {
   protected $omediaPayment;
 
   /**
-   * Current User
+   * Current User.
    *
    * @var \Drupal\Core\Session\AccountProxy
    */
@@ -53,9 +53,9 @@ class SingleDonationForm extends FormBase {
    * @param \Drupal\om_tbc_payments\Services\PaymentService $omediaPayment
    *   Payments.
    * @param \Drupal\Core\Session\AccountProxy $currentUser
-   *  CurrentUser
+   *   CurrentUser.
    */
-  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger, PaymentService $omediaPayment,AccountProxy $currentUser) {
+  public function __construct(DonationUtils $donationUtils, MessengerInterface $messenger, PaymentService $omediaPayment, AccountProxy $currentUser) {
     $this->donationUtils = $donationUtils;
     $this->messenger = $messenger;
     $this->omediaPayment = $omediaPayment;
@@ -85,7 +85,7 @@ class SingleDonationForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-//    dump($this->donationUtils->gedCalculator->getCurrency());die;
+    // dump($this->donationUtils->gedCalculator->getCurrency());die;
     $politicians = $this->donationUtils->getPoliticians();
     $options = $this->donationUtils->getTerms();
 
@@ -146,16 +146,14 @@ class SingleDonationForm extends FormBase {
     $description = $donation_aim ? $donation_aim : $politician;
 
     if (empty($donation_aim) && empty($politician)) {
-      $this->messenger->addError('Please choose Donation aim OR Donation to politician');
+      $this->messenger->addError($this->t('Please choose Donation aim OR Donation to politician'));
       $form_state->setRebuild();
     }
     else {
-      /**
-       * TYPE 1 - AIM
-       * TYPE 2 - Politician
-       */
+      // TYPE 1 - AIM
+      // TYPE 2 - Politician.
       $type = $donation_aim ? 1 : 2;
-      $transaction_id = $this->omediaPayment->generateTransactionId($amount,"test");
+      $transaction_id = $this->omediaPayment->generateTransactionId($amount, "test");
       $this->donationUtils->addDonationRecord(
         $type,
         [
