@@ -796,6 +796,7 @@ display:
         group_by: false
         style: false
         row: false
+        pager: false
       filter_groups:
         operator: AND
         groups:
@@ -846,7 +847,7 @@ display:
           break_phrase: false
           not: false
           plugin_id: numeric
-      group_by: false
+      group_by: true
       style:
         type: default
         options:
@@ -859,13 +860,17 @@ display:
           relationship: none
           view_mode: teaser
       block_hide_empty: false
+      pager:
+        type: some
+        options:
+          items_per_page: 9
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
