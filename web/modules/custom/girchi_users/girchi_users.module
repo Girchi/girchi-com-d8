@@ -48,6 +48,10 @@ function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_i
 
     $form['#after_build'][] = 'girchi_users_after_build';
   }
+  if ($form_id == 'user_form') {
+    unset($form['field_cover_photo']['widget'][0]['#description']);
+    unset($form['field_cover_photo']['widget'][0]['#title']);
+  }
 }
 
 /**

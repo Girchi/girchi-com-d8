@@ -2,30 +2,44 @@
 
 namespace Drupal\girchi_referral;
 
-use Drupal\user\Entity\User;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Class GetUserReferralsService.
  */
 class GetUserReferralsService {
 
+  protected $entityTypeManager;
+
+  /**
+   * GetUserReferralsService constructor.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *
+   *   Entity type manager.
+   */
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
+    $this->entityTypeManager = $entityTypeManager;
+  }
+
   /**
    * GetUserReferrals.
    */
   public function getUserReferrals($uid) {
     // Count number of referrals.
-    $countReferrals = \Drupal::entityQuery('user')
+    $user_storage = $this->entityTypeManager->getStorage('user');
+    $countReferrals = $user_storage->getQuery()
       ->condition('field_referral', $uid)
       ->count()
       ->execute();
 
     // Get referrals.
-    $referralsId = \Drupal::entityQuery('user')
+    $referralsId = $user_storage->getQuery()
       ->condition('field_referral', $uid)
       ->sort('field_ged', 'DESC')
-      ->range(0, 5)
       ->execute();
-    $referralsArray = User::loadMultiple($referralsId);
+
+    $referralsArray = $user_storage->loadMultiple($referralsId);
 
     $resultArr = [
       'referralCount' => $countReferrals,
