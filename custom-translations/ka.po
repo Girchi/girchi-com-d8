@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-08-09 13:18+0400\n"
-"PO-Revision-Date: 2019-08-09 13:18+0400\n"
+"POT-Creation-Date: 2019-08-12 13:07+0000\n"
+"PO-Revision-Date: 2019-08-12 13:07+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3108,15 +3108,6 @@ msgstr ""
 "არ გაქვთ ანგარიში? გაიარეთ "
 "რეგისტრაცია მარტივად"
 
-msgid "Girchi"
-msgstr "გირჩი"
-
-msgid "Search..."
-msgstr "ძებნა..."
-
-msgid "More Freedom"
-msgstr "მეტი თავისუფლება"
-
 msgid "General settings for this site."
 msgstr ""
 "საიტის ზოგადი "
@@ -3180,25 +3171,6 @@ msgstr "სუსტი"
 
 msgid "Strong"
 msgstr "ძლიერი"
-
-msgid "There is no content"
-msgstr "კონტენტი არ არსებობს "
-
-msgid "Become a partner"
-msgstr "გახდი პარტნიორი"
-
-msgid "Fund the GIRCHI, get the relevant GeDs and hit the leaderboard"
-msgstr ""
-"დააფინანსე გირჩი, მიიღე "
-"შესაბამისი რაოდენობის "
-"GeD-ები და მოხვდი "
-"ლიდერბორდში"
-
-msgid "Donate"
-msgstr "დააფინანსე"
-
-msgid "Last month Top partners"
-msgstr "წინა თვის ტოპ პარტნიორები"
 
 msgid "Provide a password for the new account in both fields."
 msgstr "შეიყვანეთ პაროლი"
@@ -3629,7 +3601,6 @@ msgstr "სთ"
 msgid "Estimated price in month:"
 msgstr "სავარაუდო ფასი თვეში:"
 
-
 msgid "Transaction was successfull"
 msgstr ""
 "ტრანზაქცია დასრულდა "
@@ -3721,4 +3692,9 @@ msgstr "დააფინანსე პოლიტიკოსი"
 
 msgid "Ged &#37;"
 msgstr "Ged-ების &#37;"
+
+msgid "Please choose Donation aim OR Donation to politician"
+msgstr ""
+"აირჩიეთ დაფინანსების "
+"მიზანი ან პოლიტიკოსი"
 
