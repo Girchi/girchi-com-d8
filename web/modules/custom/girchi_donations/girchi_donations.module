@@ -41,6 +41,7 @@ function girchi_donations_theme() {
       'render element' => 'children',
       'variables' => [
         'amount' => NULL,
+        'auth' => NULL
       ],
     ],
     'girchi_donations_fail' => [

@@ -128,24 +128,31 @@ class DonationsController extends ControllerBase {
           $donation->setStatus('OK');
           $donation->save();
           $this->getLogger('girchi_donations')->info("Status was Updated to OK, ID:$trans_id.");
-          $gel_amount = $donation->getAmount();
-          $ged_amount = $this->gedCalculator->calculate($gel_amount);
-          $ged_manager->create([
-            'user' => $this->currentUser()->id(),
-            'ged_amount' => $ged_amount,
-            'title' => 'Donation',
-            'name' => 'Donation',
-            'status' => TRUE,
-            'Description' => 'Transaction was created by donation',
-            'user_id' => $this->currentUser()->id(),
-          ])
-            ->save();
+          if($this->currentUser()->id() !== 0){
+            $gel_amount = $donation->getAmount();
+            $ged_amount = $this->gedCalculator->calculate($gel_amount);
+            $ged_manager->create([
+              'user' => $this->currentUser()->id(),
+              'ged_amount' => $ged_amount,
+              'title' => 'Donation',
+              'name' => 'Donation',
+              'status' => TRUE,
+              'Description' => 'Transaction was created by donation',
+              'user_id' => $this->currentUser()->id(),
+            ])
+              ->save();
+              $auth = true;
+          }else {
+            $auth = false;
+          }
+
           $this->getLogger('girchi_donations')->info("Ged transaction was made.");
           $this->getLogger('girchi_donations')->info("Payment was successful, ID:$trans_id.");
           return [
             '#type' => 'markup',
             '#theme' => 'girchi_donations_success',
-            '#amount' => $ged_amount
+            '#amount' => $ged_amount,
+            '#auth' => $auth
           ];
         }else{
           return $this->redirect('user.page');
