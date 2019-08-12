@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-08-08 15:34+0000\n"
-"PO-Revision-Date: 2019-08-08 15:34+0000\n"
+"POT-Creation-Date: 2019-08-12 08:49+0000\n"
+"PO-Revision-Date: 2019-08-12 08:49+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -333,9 +333,6 @@ msgstr "სურათი"
 
 msgid "Types"
 msgstr "ტიპები"
-
-msgid "Hierarchy"
-msgstr "იერარქია"
 
 msgid "Required"
 msgstr "სავალდებულო"
@@ -2538,9 +2535,6 @@ msgstr "მეტი დახმარება"
 msgid "Sizes"
 msgstr "ზომები"
 
-msgid "Add terms"
-msgstr "ტერმინების დამატება"
-
 msgid "« first"
 msgstr "« პირველი"
 
@@ -2813,15 +2807,6 @@ msgstr "საიტის ინსტალაცია"
 
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
-
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
 
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
@@ -3590,19 +3575,6 @@ msgid "Estimated price in month:"
 msgstr "სავარაუდო ფასი თვეში:"
 
 msgid ""
-"A message has been sent to the new email address %email to confirm the "
-"change. Until confirmed, your current address will be used."
-msgstr ""
-"ელ-ფოსტის ცვლილების "
-"დამადასტურებელი "
-"შეტყობინება "
-"გამოგზავნილია "
-"მისამართზე: %email. "
-"შეტყობინების "
-"დადასტურებამდე თქვენი "
-"ელ-ფოსტა რჩება უცვლელი."
-
-msgid ""
 "Your current password is missing or incorrect; it's required to change "
 "the %name."
 msgstr ""
@@ -3685,4 +3657,7 @@ msgstr "ბიოგრაფია"
 
 msgid "Edit public profile"
 msgstr "პროფილის შეცვლა"
+
+msgid "All articles"
+msgstr "ყველა სტატია"
 
