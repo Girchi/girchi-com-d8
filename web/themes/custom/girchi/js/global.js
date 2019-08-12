@@ -44,12 +44,11 @@ $(document).ready(function () {
         
 
     });
-    $('.politician-modal').click(function (e) {
+    $('body').on('click', '.politician-modal', (e) => {
         let userID = e.target.getAttribute('data-uid');
-        if(userID == null) {
-            userID = $(e.target).parent().attr('data-uid');
+        if(typeof userID === "undefined" || userID === null) {
+            userID = $(e.target).parents('a:first').attr('data-uid');
         }
-
         $.ajax({
             type: "POST",
             url: "/api/party-list/getPoliticianSupporters",
@@ -57,58 +56,9 @@ $(document).ready(function () {
         })
             .done((data) => {
                 let supporterTable = $('#supporters table tbody');
-                supporterTable.empty();
-                $.each(data, (key, supporter) => {
-                    let tableElement = `<tr data-uid="${supporter.id}">
-                  <th
-                    scope="row"
-                    class="pl-3 w-auto w-md-80-px text-center align-middle"
-                  >
-                    <span
-                      class="font-size-4 font-size-xl-5 text-dark-silver font-weight-normal"
-                      >${key+1}</span
-                    >
-                  </th>
-                  <td class="align-middle">
-                    <div class="d-flex w-100 align-items-center">
-                      <a
-                        href="#"
-                        class="rounded-circle overflow-hidden d-none d-md-block"
-                      >
-                        <img
-                          src="${supporter.img_url}"
-                          class="rounded w-40-px"
-                          alt="..."
-                        />
-                      </a>
-                      <h6
-                        class="w-100 w-sm-auto text-uppercase line-height-1-2 font-size-3 font-size-md-3 font-size-xl-base mb-0 mx-0 mx-md-3"
-                      >
-                          <span class="text-decoration-none d-inline-block">
-                            <span class="font-weight-bold">${supporter.name}</span>
-                          </span>
-                      </h6>
-                    </div>
-                  </td>
-                  <td
-                    class="text-right text-md-center align-middle font-weight-bold"
-                  >
-                    <span
-                      class="text-success font-size-4 font-weight-bold d-block d-md-none text-nowrap line-height-0-8"
-                      >${supporter.ged_amount}< <i class="icon-ged font-size-3"></i
-                    ></span>
-                    ${supporter.percentage}
-                  </td>
-                  <td class="align-middle text-center d-none d-md-table-cell">
-                    <span
-                      class="text-success font-size-4 font-size-xl-4 font-weight-bold text-nowrap"
-                      >${supporter.ged_amount} <i class="icon-ged font-size-3"></i
-                    ></span>
-                  </td>
-                </tr>`;
-                    supporterTable.append(tableElement);
-                });
+                supporterTable.html(data);
             });
     });
 
 });
+
