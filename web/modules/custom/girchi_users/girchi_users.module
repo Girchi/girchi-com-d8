@@ -5,6 +5,7 @@
  * Contains girchi_users.module.
  */
 
+use Drupal\Core\Form\FormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\user\Entity\User;
@@ -86,14 +87,14 @@ function girchi_users_after_build($form, &$form_state) {
 /**
  * Alter users form.
  *
- * @param \Drupal\Core\Form\FormStateInterface $form
+ * @param \Drupal\Core\Form\FormInterface $form
  *   Form.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   Form state.
  *
  * @throws \Drupal\Core\Entity\EntityStorageException
  */
-function girchi_users_user_form_submit(FormStateInterface &$form, FormStateInterface $form_state) {
+function girchi_users_user_form_submit(FormInterface &$form, FormStateInterface $form_state) {
   if ($_FILES['coverPhoto']['size'] != 0) {
     $image_original_path = $_FILES['coverPhoto']['tmp_name'];
     $mime_type = explode('/', mime_content_type($image_original_path));
