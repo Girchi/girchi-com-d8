@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
@@ -51,6 +52,8 @@ function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_i
   if ($form_id == 'user_form') {
     unset($form['field_cover_photo']['widget'][0]['#description']);
     unset($form['field_cover_photo']['widget'][0]['#title']);
+
+    $form['actions']['submit']['#submit'][] = 'girchi_users_user_form_submit';
   }
 }
 
@@ -77,5 +80,39 @@ function girchi_users_after_build($form, &$form_state) {
   $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
 
   return $form;
+
+}
+
+/**
+ * Alter users form.
+ *
+ * @param \Drupal\Core\Form\FormStateInterface $form
+ *   Form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form state.
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function girchi_users_user_form_submit(FormStateInterface &$form, FormStateInterface $form_state) {
+  if ($_FILES['coverPhoto']['size'] != 0) {
+    $image_original_path = $_FILES['coverPhoto']['tmp_name'];
+    $mime_type = explode('/', mime_content_type($image_original_path));
+    // Check mime type if it's image.
+    if ($mime_type[0] == 'image') {
+      $image_object = file_get_contents($image_original_path);
+      $image_name = $_FILES['coverPhoto']['name'];
+      // Saving image in public://.
+      $file = file_save_data($image_object, file_default_scheme() . '://' . $image_name);
+
+      // Loading current user and setting avatar.
+      $uid = \Drupal::currentUser()->id();
+      $user = User::load($uid);
+      $user->set('field_cover_photo', $file->id());
+      $user->save();
+    }
+    else {
+      \Drupal::messenger()->addMessage(t('Please upload image file.'));
+    }
+  }
 
 }

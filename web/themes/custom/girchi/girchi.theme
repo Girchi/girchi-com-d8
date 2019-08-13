@@ -379,6 +379,11 @@ function girchi_preprocess_form(array &$variables)
       $response = new RedirectResponse("/createpassword");
       $response->send();
     }
+
+    if($user->get('field_cover_photo')->entity){
+      $coverName = $user->get('field_cover_photo')->entity->getFileName();
+      $variables['cover_name'] = $coverName;
+    }
   }
 }
 
