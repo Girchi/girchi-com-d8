@@ -79,7 +79,7 @@
                             <div class="media-thumb w-100 rounded rounded-bottom-0 overflow-hidden ">
                                 <a data-target="#profileVideo" data-toggle="modal" href="#">
                                     {% if user.field_profile_video %}
-                                        <img src="{{ user.thumbnail_url }}" class="w-100" alt="..."/>
+                                        <img src="{{ user.thumbnail_url }}" class="w-100" alt="..." height="147" width="263"/>
                                         <i class="icon-play-button media-play"></i>
                                     {% else %}
                                         <img src="{{theme_path() ~ "/images/cover-sm.png" }}" class="w-100" alt="..."/>
