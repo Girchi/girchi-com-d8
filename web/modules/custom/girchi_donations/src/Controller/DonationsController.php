@@ -5,7 +5,6 @@ namespace Drupal\girchi_donations\Controller;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\girchi_donations\Entity\Donation;
 use Drupal\girchi_donations\Utils\GedCalculator;
 use Drupal\om_tbc_payments\Services\PaymentService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -42,7 +41,7 @@ class DonationsController extends ControllerBase {
   /**
    * Ged calculator.
    *
-   * @var GedCalculator
+   * @var \Drupal\girchi_donations\Utils\GedCalculator
    */
   public $gedCalculator;
 
@@ -54,15 +53,15 @@ class DonationsController extends ControllerBase {
    * @param \Drupal\om_tbc_payments\Services\PaymentService $omediaPayment
    *   Payments.
    * @param \Drupal\Core\Entity\EntityTypeManager $entityTypeManager
-   *   ET manager
+   *   ET manager.
    * @param \Drupal\girchi_donations\Utils\GedCalculator $gedCalculator
-   *   GedCalculator
+   *   GedCalculator.
    */
-  public function __construct(ConfigFactory $configFactory, PaymentService $omediaPayment, EntityTypeManager $entityTypeManager,GedCalculator $gedCalculator) {
+  public function __construct(ConfigFactory $configFactory, PaymentService $omediaPayment, EntityTypeManager $entityTypeManager, GedCalculator $gedCalculator) {
     $this->configFactory = $configFactory;
     $this->omediaPayment = $omediaPayment;
     $this->entityTypeManager = $entityTypeManager;
-    $this->gedCalculator= $gedCalculator;
+    $this->gedCalculator = $gedCalculator;
 
   }
 
@@ -105,18 +104,19 @@ class DonationsController extends ControllerBase {
    * Route for final destination of donation.
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
+   *   Request.
    *
    * @return mixed
+   *   Response
    */
   public function finishDonation(Request $request) {
     try {
       $params = $request->request;
       $trans_id = $params->get('trans_id');
       $storage = $this->entityTypeManager()->getStorage('donation');
-      /** @var Donation $donation */
-      $donation = reset($storage->loadByProperties(['trans_id'=>$trans_id]));
+      /** @var \Drupal\girchi_donations\Entity\Donation $donation */
+      $donation = reset($storage->loadByProperties(['trans_id' => $trans_id]));
       $ged_manager = $this->entityTypeManager()->getStorage('ged_transaction');
-
       if (!$trans_id) {
         $this->getLogger('girchi_donations')->error('Trans ID is missing.');
         return new JsonResponse('Transaction ID is missing', Response::HTTP_BAD_REQUEST);
@@ -124,11 +124,11 @@ class DonationsController extends ControllerBase {
 
       $result = $this->omediaPayment->getPaymentResult($trans_id);
       if ($result['RESULT_CODE'] === "000") {
-        if($donation->getStatus() !== 'OK'){
+        if ($donation->getStatus() !== 'OK') {
           $donation->setStatus('OK');
           $donation->save();
           $this->getLogger('girchi_donations')->info("Status was Updated to OK, ID:$trans_id.");
-          if($this->currentUser()->id() !== 0){
+          if ($this->currentUser()->id() !== 0) {
             $gel_amount = $donation->getAmount();
             $ged_amount = $this->gedCalculator->calculate($gel_amount);
             $ged_manager->create([
@@ -141,9 +141,10 @@ class DonationsController extends ControllerBase {
               'user_id' => $this->currentUser()->id(),
             ])
               ->save();
-              $auth = true;
-          }else {
-            $auth = false;
+            $auth = TRUE;
+          }
+          else {
+            $auth = FALSE;
           }
 
           $this->getLogger('girchi_donations')->info("Ged transaction was made.");
@@ -152,9 +153,10 @@ class DonationsController extends ControllerBase {
             '#type' => 'markup',
             '#theme' => 'girchi_donations_success',
             '#amount' => $ged_amount,
-            '#auth' => $auth
+            '#auth' => $auth,
           ];
-        }else{
+        }
+        else {
           return $this->redirect('user.page');
         }
       }
@@ -169,21 +171,24 @@ class DonationsController extends ControllerBase {
           '#theme' => 'girchi_donations_fail',
         ];
       }
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $this->getLogger($e->getMessage());
     }
-    return [
-      '#type' => 'markup',
-      '#theme' => 'girchi_donations_fail',
-    ];
+
+    $this->getLogger('girchi_donations')->error('Trans ID or Donation is missing.');
+    return new JsonResponse('Transaction ID is missing', Response::HTTP_BAD_REQUEST);
   }
 
   /**
    * Route for donation technical failure.
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
+   *   Request.
    *
    * @return mixed
+   *   mixed
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -198,8 +203,8 @@ class DonationsController extends ControllerBase {
     $result = $this->omediaPayment->getPaymentResult($trans_id);
     $code = $result['RESULT_CODE'];
     $storage = $this->entityTypeManager()->getStorage('donation');
-    /** @var Donation $donation */
-    $donation = $storage->loadByProperties(['trans_id'=>$trans_id]);
+    /** @var \Drupal\girchi_donations\Entity\Donation $donation */
+    $donation = $storage->loadByProperties(['trans_id' => $trans_id]);
     $donation->setStatus('FAILED');
     $this->getLogger('girchi_donations')->info("Payment failed code:$code,  ID:$trans_id.");
     return [
