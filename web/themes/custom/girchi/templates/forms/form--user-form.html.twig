@@ -1,7 +1,6 @@
 {% set politican_checked = element.field_politician.widget.value['#checked'] %}
 {% set avatar = element.user_picture.widget.0.preview['#uri'] %}
 {#Modal#}
-
 {#End Of Modal#}
 <div class="card mb-2 mb-lg-3">
     <h5 class="card-header font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4">
@@ -223,6 +222,9 @@
                                         <input type="file" class="custom-file-input" id="coverPhoto" name="coverPhoto">
                                         <label class="custom-file-label" for="coverPhoto">{{ cover_name ? cover_name : 'Choose file' | t }}</label>
                                     </div>
+                                    </div>
+                                    <div class="d-none">
+                                        {{ element.field_cover_photo }}
                                     </div>
                                     {{ element.actions.submit }}
                                 </div>

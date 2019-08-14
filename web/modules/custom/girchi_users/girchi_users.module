@@ -89,7 +89,7 @@ function girchi_users_after_build($form, &$form_state) {
  * @throws \Drupal\Core\Entity\EntityStorageException
  */
 function girchi_users_user_form_submit(&$form, FormStateInterface $form_state) {
-  if ($_FILES['coverPhoto']['size'] != 0) {
+  if (!empty($_FILES['coverPhoto']['size']) && $_FILES['coverPhoto']['size'] != 0) {
     $image_original_path = $_FILES['coverPhoto']['tmp_name'];
     $mime_type = explode('/', mime_content_type($image_original_path));
     // Check mime type if it's image.
@@ -99,7 +99,7 @@ function girchi_users_user_form_submit(&$form, FormStateInterface $form_state) {
       // Saving image in public://.
       $file = file_save_data($image_object, file_default_scheme() . '://' . $image_name);
 
-      // Loading current user and setting avatar.
+      // Loading current user and setting cover photo.
       $uid = \Drupal::currentUser()->id();
       $user = User::load($uid);
       $user->set('field_cover_photo', $file->id());
