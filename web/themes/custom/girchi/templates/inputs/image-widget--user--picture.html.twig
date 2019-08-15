@@ -15,7 +15,6 @@
 <div{{attributes}}>
   <div class="form-group mb-2">
   <div class="mb-3 card card-body bg-light">
-      <h5 class="card-title">Cover Photo</h5>
       <div class="row no-gutters">
         <div class="col-md-12">
             {{ data.preview }}
@@ -25,7 +24,7 @@
             <button class="btn">
               {{ data.remove_button }}
             </button>
-            {{ data|without('preview', 'remove_button', 'title', 'filename') }}
+            {{ data|without('preview', 'remove_button', 'filename') }}
           </div>
         </div>
       </div>
