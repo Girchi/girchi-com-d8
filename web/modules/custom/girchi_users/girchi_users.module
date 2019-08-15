@@ -53,7 +53,6 @@ function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_i
     unset($form['field_cover_photo']['widget'][0]['#description']);
     unset($form['field_cover_photo']['widget'][0]['#title']);
 
-    $form['actions']['submit']['#submit'][] = 'girchi_users_user_form_submit';
   }
 }
 
@@ -83,31 +82,21 @@ function girchi_users_after_build($form, &$form_state) {
 
 }
 
-/**
- * Alter users form.
- *
- * @throws \Drupal\Core\Entity\EntityStorageException
- */
-function girchi_users_user_form_submit(&$form, FormStateInterface $form_state) {
-  if ($_FILES['coverPhoto']['size'] != 0) {
-    $image_original_path = $_FILES['coverPhoto']['tmp_name'];
-    $mime_type = explode('/', mime_content_type($image_original_path));
-    // Check mime type if it's image.
-    if ($mime_type[0] == 'image') {
-      $image_object = file_get_contents($image_original_path);
-      $image_name = $_FILES['coverPhoto']['name'];
-      // Saving image in public://.
-      $file = file_save_data($image_object, file_default_scheme() . '://' . $image_name);
+function girchi_users_theme_suggestions_image_widget_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#field_name']) && $variables['element']['#field_name'] == 'user_picture') {
+    $suggestions[] = 'image_widget__user__picture';
+  }
+}
 
-      // Loading current user and setting avatar.
-      $uid = \Drupal::currentUser()->id();
-      $user = User::load($uid);
-      $user->set('field_cover_photo', $file->id());
-      $user->save();
+function girchi_users_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#is_button'])) {
+    if (in_array('remove_button', $variables['element']['#parents'])) {
+      $suggestions[] = 'input__remove_button';
     }
-    else {
-      \Drupal::messenger()->addMessage(t('Please upload image file.'));
-    }
+  }
+
+  if ($variables['element']['#name'] == 'files[field_cover_photo_0]') {
+    $suggestions[] = 'input__button__cover__photo';
   }
 
 }

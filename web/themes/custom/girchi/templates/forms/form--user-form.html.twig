@@ -217,13 +217,9 @@
                                         <label class="form-label" for="address">{{ "Email" | t }}</label>
                                         {{ element.field_public_email }}
                                     </div>
-                                    <div class="form-group mb-2">
-                                        <label class="form-label" for="custom-file">{{ "Cover photo" | t }}</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="coverPhoto" name="coverPhoto">
-                                        <label class="custom-file-label" for="coverPhoto">{{ cover_name ? cover_name : 'Choose file' | t }}</label>
-                                    </div>
-                                    </div>
+
+                                    {{ element.field_cover_photo }}
+
                                     {{ element.actions.submit }}
                                 </div>
                             </div>
