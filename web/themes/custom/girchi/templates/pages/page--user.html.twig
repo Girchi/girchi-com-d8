@@ -49,7 +49,7 @@
                             for image in user.referrals_profile_picture
                         %}
                             <li class="d-none d-md-inline-flex align-items-center mr-n2">
-                                <a href="{{ path('user.page') }}" class="rounded-circle overflow-hidden d-inline-block border-solid border-2 border-white">
+                                <a href="{{ path('user.page') }}" class="rounded-circle overflow-hidden d-inline-block border-solid border-2 border-white"  data-target="#referralModal" data-toggle="modal" >
                                     <img src="{{ image ? image_style_url(image, 'avatar_xs') : theme_path() ~ '/images/avatar.png' }}" class="rounded" width="34" alt="..."/>
                                 </a>
                             </li>
