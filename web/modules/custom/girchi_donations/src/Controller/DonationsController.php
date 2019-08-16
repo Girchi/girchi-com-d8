@@ -149,7 +149,7 @@ class DonationsController extends ControllerBase {
           $donation->setStatus('OK');
           $donation->save();
           $this->getLogger('girchi_donations')->info("Status was Updated to OK, ID:$trans_id.");
-          if ($this->currentUser()->id() !== 0) {
+          if ($user->id() !== 0) {
             $gel_amount = $donation->getAmount();
             $ged_amount = $this->gedCalculator->calculate($gel_amount);
             $ged_manager->create([
