@@ -48,6 +48,11 @@ function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_i
 
     $form['#after_build'][] = 'girchi_users_after_build';
   }
+  if ($form_id == 'user_form') {
+    unset($form['field_cover_photo']['widget'][0]['#description']);
+    unset($form['field_cover_photo']['widget'][0]['#title']);
+
+  }
 }
 
 /**
@@ -73,5 +78,30 @@ function girchi_users_after_build($form, &$form_state) {
   $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
 
   return $form;
+
+}
+
+/**
+ * Implements hook_theme_suggestions_image_widget_alter().
+ */
+function girchi_users_theme_suggestions_image_widget_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#field_name']) && $variables['element']['#field_name'] == 'field_cover_photo') {
+    $suggestions[] = 'image_widget__user__picture';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_input_alter().
+ */
+function girchi_users_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#is_button'])) {
+    if (in_array('remove_button', $variables['element']['#parents'])) {
+      $suggestions[] = 'input__remove_button';
+    }
+  }
+
+  if (!empty($variables['element']['#name']) && $variables['element']['#name'] == 'files[field_cover_photo_0]') {
+    $suggestions[] = 'input__button__cover__photo';
+  }
 
 }
