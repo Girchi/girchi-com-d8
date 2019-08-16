@@ -5,7 +5,6 @@
  * Contains girchi_donations.module.
  */
 
-use ABGEO\NBG\Currency;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 
@@ -56,15 +55,4 @@ function girchi_donations_theme() {
  */
 function girchi_donations_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-}
-
-/**
- * Implements hook_cron().
- */
-function girchi_donations_cron() {
-
-  $usd = new Currency(Currency::CURRENCY_USD);
-  /** @var \Drupal\Console\Core\Utils\KeyValueStorage $key_value */
-  $key_value = Drupal::service('keyvalue');
-  $key_value->get('girchi_donations')->set('usd', $usd->getCurrency());
 }
