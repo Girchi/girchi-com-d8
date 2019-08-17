@@ -153,7 +153,7 @@ class DonationsController extends ControllerBase {
             $gel_amount = $donation->getAmount();
             $ged_amount = $this->gedCalculator->calculate($gel_amount);
             $ged_manager->create([
-              'user_id' => 1,
+              'user_id' => "1",
               'user' => $user->id(),
               'ged_amount' => $ged_amount,
               'title' => 'Donation',
