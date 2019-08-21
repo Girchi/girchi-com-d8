@@ -187,6 +187,9 @@ msgstr "დადასტურება"
 msgid "Operations"
 msgstr "ოპერაციები"
 
+msgid "Content"
+msgstr "კონტენტი"
+
 msgid "Attribute"
 msgstr "ატრიბუტი"
 
@@ -2553,6 +2556,9 @@ msgstr "მეტი დახმარება"
 msgid "Add terms"
 msgstr "ტერმინების დამატება"
 
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
 msgid "« first"
 msgstr "« პირველი"
 
@@ -3083,8 +3089,101 @@ msgstr ""
 "შეტყობინებების "
 "მისაღებად."
 
+
 msgid "Provide a password for the new account in both fields."
 msgstr "შეიყვანეთ პაროლი"
+
+msgid "Recommendations to make your password stronger:"
+msgstr ""
+"ძლიერი პაროლისთვის "
+"გაითვალისწინეთ:"
+
+msgid "Main navigation"
+msgstr "Main navigation"
+
+msgid "Site section links"
+msgstr "Site section links"
+
+msgid "Active"
+msgstr "აქტიური"
+
+msgid "There is no content"
+msgstr "კონტენტი არ არსებობს "
+
+msgid "Become a partner"
+msgstr "გახდი პარტნიორი"
+
+msgid "Fund the GIRCHI, get the relevant GeDs and hit the leaderboard"
+msgstr ""
+"დააფინანსე გირჩი, მიიღე "
+"შესაბამისი რაოდენობის "
+"GeD-ები და მოხვდი "
+"ლიდერბორდში"
+
+msgid "Donate"
+msgstr "დააფინანსე"
+
+msgid "Last month Top partners"
+msgstr "წინა თვის ტოპ პარტნიორები"
+
+msgid "Girchi"
+msgstr "გირჩი"
+
+msgid "Search..."
+msgstr "ძებნა..."
+
+msgid "More Freedom"
+msgstr "მეტი თავისუფლება"
+
+msgid "Enter Email"
+msgstr "მიუთითეთ ელ.ფოსტა"
+
+msgid "Enter password"
+msgstr "მიუთითეთ პაროლი "
+
+msgid "Authorisation"
+msgstr "ავტორიზაცია"
+
+msgid "Password recovery"
+msgstr "აღდგენა"
+
+msgid "Ged amount"
+msgstr "Ged-ების რაოდენობა"
+
+msgid "Enter your email address or username."
+msgstr ""
+"შეიყვანეთ თქვენი "
+"ელ.ფოსტის მისამართი"
+
+msgid "Email or username"
+msgstr "შეიყვანეთ ელ.ფოსტა "
+
+msgid "Enter the password that accompanies your email address."
+msgstr "შეიყვანეთ პაროლი "
+
+msgid "Create new account"
+msgstr "რეგისტრაცია"
+
+msgid "Reset your password"
+msgstr "პაროლის აღდგენა"
+
+msgid ""
+"A valid email address. All emails from the system will be sent to this "
+"address. The email address is not made public and will only be used if "
+"you wish to receive a new password or wish to receive certain news or "
+"notifications by email."
+msgstr ""
+"შეიყვანეთ თქვენი ელ.ფოსტა. "
+"ყველა შეტყობინება "
+"მოგივათ მითითებულ "
+"მისამართზე. ინფორმაცია "
+"კონფიდენციალურია და "
+"იქნება გამოყენებული "
+"მხოლოდ თქვენი "
+"სურვილისამებრ ახალი "
+"პაროლის და "
+"შეტყობინებების "
+"მისაღებად."
 
 msgid "Recommendations to make your password stronger:"
 msgstr ""
@@ -3124,6 +3223,49 @@ msgstr "ძლიერი"
 msgid "Main navigation"
 msgstr "Main navigation"
 
+msgid "Provide a password for the new account in both fields."
+msgstr "შეიყვანეთ პაროლი"
+
+msgid ""
+"Password reset instructions will be sent to your registered email "
+"address."
+msgstr ""
+"პაროლის აღდგენის "
+"ინსტრუქციის სანახავად "
+"შეამოწმეთ თქვენი ელ.ფოსტა"
+
+msgid "Personal ID"
+msgstr "მიუთითეთ პირადი ნომერი"
+
+msgid "First name"
+msgstr "მიუთითეთ სახელი"
+
+msgid "Last name"
+msgstr "მიუთითეთ გვარი"
+
+msgid "Date of birth"
+msgstr ""
+"მიუთითეთ დაბადების "
+"თარიღი"
+
+msgid "Phone number"
+msgstr "ტელეფონის ნომერი"
+
+msgid "Amount of GeD"
+msgstr "მიუთითეთ GeD-ების რაოდენობა"
+
+msgid "First Name"
+msgstr "სახელი"
+
+msgid "Last Name"
+msgstr "გვარი"
+
+msgid "Don't have an Girchi account? Register now"
+msgstr ""
+"არ გაქვთ ანგარიში? გაიარეთ "
+"რეგისტრაცია მარტივად"
+
+
 msgid "Site section links"
 msgstr "Site section links"
 
@@ -3146,11 +3288,59 @@ msgstr "ჩვენება"
 
 msgid "Current password"
 msgstr "მიმდინარე პაროლი"
+=======
+msgid "* Referral is not required"
+msgstr ""
+"* Referral-ის მითითება "
+"სავალდებულო არაა"
+
+msgid "I read and agree to the terms and conditions"
+msgstr ""
+"წავიკითხე და ვეთანხმები "
+"რეგისტრაციის წესებს და "
+"პირობებს"
+
+msgid "You must agree to the terms and conditions before register"
+msgstr ""
+"რეგისტრაციის "
+"გასაგრძელებლად საჭიროა "
+"დაეთანხმოთ საიტის წესებს!"
+
+msgid "Share"
+msgstr "გაზიარება"
+
+msgid "Print"
+msgstr "ამობეჭვდა"
+
+msgid "Video blog"
+msgstr "ვიდეო ბლოგი"
+
+msgid "All videos"
+msgstr "ყველა ვიდეო"
+
+msgid "Save"
+msgstr "შენახვა"
+
+msgid "News"
+msgstr "სიახლეები"
+
+msgid "Reset password"
+msgstr "პაროლის აღდგენა"
+
+msgid "Further instructions have been sent to your email address."
+msgstr ""
+"შემდგომი ინსტრუქციები "
+"გაიგზავნა თქვენი "
+"ელექტრონული ფოსტის "
+"მისამართით."
 
 msgid "The changes have been saved."
 msgstr ""
 "ცვლილებები წარმატებით "
 "შეინახა"
+
+msgid "Current password"
+msgstr "მიმდინარე პაროლი"
 
 msgid ""
 "A welcome message with further instructions has been sent to your "
@@ -3378,6 +3568,7 @@ msgstr ""
 msgid "Social Media"
 msgstr "სოციალური მედია"
 
+
 msgid "- Select -"
 msgstr "- აირჩიეთ - "
 
@@ -3386,6 +3577,25 @@ msgstr "კატეგორიები"
 
 msgid "General settings"
 msgstr "ძირითადი პარამეტრები."
+
+msgid "Become a politician"
+msgstr "გახდი პოლიტიკოსი"
+
+msgid "Become a politician, get enough votes and get into the party list"
+msgstr ""
+"გახდი პოლიტიკოსი, "
+"დააგროვე ხმების "
+"საკმარისი რაოდენობა და "
+"მოხვდი პარტიულ სიაში"
+
+msgid "Want to be politician"
+msgstr "მინდა პოლიტიკოსობა"
+
+msgid "Edit user"
+msgstr "პარამეტრების შეცვლა"
+
+msgid "Change Password"
+msgstr "პაროლის შეცვლა"
 
 msgid "Login"
 msgstr "შესვლა"
@@ -3483,6 +3693,10 @@ msgstr "პარტნიორები"
 msgid "Ged amount"
 msgstr "Ged-ების რაოდენობა"
 
+msgid "All news"
+msgstr "ყველა სიახლე"
+
+
 msgid ""
 "Select a politician, Specify the percentage of your weight\n"
 "          "
@@ -3572,6 +3786,19 @@ msgstr "სთ"
 
 msgid "Estimated price in month:"
 msgstr "სავარაუდო ფასი თვეში:"
+
+msgid "Transaction was successfull"
+msgstr ""
+"ტრანზაქცია დასრულდა "
+"წარმატებით\r\n"
+""
+
+msgid "You have recieved"
+msgstr ""
+"პაროლის ველი ცარიელია ან "
+"არასწორად არის შეყვანილი. "
+"პაროლი სავალდებულოა "
+"%ელ-ფოსტის შესაცვლელად."
 
 msgid "New Email"
 msgstr "ახალი ელ.ფოსტა"
@@ -3735,4 +3962,15 @@ msgstr "პოლიტიკოსთა რეიტინგი"
 
 msgid "Party list weight"
 msgstr "პარტიული წონა"
+
+msgid "Please choose Donation aim OR Donation to politician"
+msgstr ""
+"აირჩიეთ დაფინანსების "
+"მიზანი ან პოლიტიკოსი"
+
+msgid "Transaction failed ,try again"
+msgstr ""
+"ტრანზაქცია უარყოფილია "
+"სადეთ თავიდან"
+
 
