@@ -44,15 +44,35 @@ function girchi_users_theme() {
  */
 function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'change_pwd_form') {
+    $current_user_id = \Drupal::currentUser()->id();
+
+    if (isset($_SESSION['pass_reset_' . $current_user_id])) {
+      $form['#after_build'][] = 'girchi_users_reset_password_after_build';
+    }
+
     $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
 
     $form['#after_build'][] = 'girchi_users_after_build';
   }
+
   if ($form_id == 'user_form') {
     unset($form['field_cover_photo']['widget'][0]['#description']);
     unset($form['field_cover_photo']['widget'][0]['#title']);
-
   }
+
+  if ($form_id == "user_pass") {
+    unset($form['name']['#title']);
+    $form['name']['#attributes']['class'][] = 'form-control form-control-lg fix';
+    $form['name']['#attributes']['id'][] = 'email';
+    $form['name']['#attributes']['placeholder'][] = t('Enter Email');
+
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
+  }
+
+  if ($form_id = "user_pass_reset") {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-success text-uppercase mt-4 fix';
+  }
+
 }
 
 /**
@@ -79,6 +99,15 @@ function girchi_users_after_build($form, &$form_state) {
 
   return $form;
 
+}
+
+/**
+ * Password reset form handler.
+ */
+function girchi_users_reset_password_after_build($form, &$form_state) {
+  $form['account']['current_pass']['#required'] = FALSE;
+  $form['account']['current_pass']['#is_invisible'] = TRUE;
+  return $form;
 }
 
 /**
