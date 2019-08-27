@@ -3,13 +3,13 @@ let currency = $("#currency_girchi").val();
 
 $("#edit-amount").on("keyup", e => {
     let amount = e.target.value;
-    let value = Math.ceil((amount / currency) * 100);
+    let value = Math.floor((amount / currency) * 100);
     $("#ged-place1").html(value);
 });
 
 $("#edit-amount--2").on("keyup", e => {
     let amount = e.target.value;
-    let value = Math.ceil((amount / currency) * 100);
+    let value = Math.floor((amount / currency) * 100);
     $("#ged-place-2").html(value);
 });
 
