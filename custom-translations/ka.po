@@ -3374,7 +3374,7 @@ msgstr "ჩვენება"
 
 msgid "Current password"
 msgstr "მიმდინარე პაროლი"
-=======
+
 msgid "* Referral is not required"
 msgstr ""
 "* Referral-ის მითითება "
