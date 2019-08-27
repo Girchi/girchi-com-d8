@@ -23,7 +23,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *  admin_label = @Translation("My party list block"),
  * )
  */
-class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterface
+{
 
   /**
    * Drupal\Core\Session\AccountProxyInterface.
@@ -150,7 +151,6 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
 
         $memberId = $member->get('target_id')->getValue();
         if ($memberId !== NULL) {
-
           $gedPercentage = $member->get('value')->getValue();
           /** @var \Drupal\user\Entity\User $memberEntity */
           $memberEntity = $user_storage->load($memberId);
@@ -169,6 +169,7 @@ class MyPartyListBlock extends BlockBase implements ContainerFactoryPluginInterf
             $isAvatar = FALSE;
           }
           $members[$memberId] = [
+            'uid' => $memberId,
             'member_first_name' => $firstName,
             'member_last_name' => $lastName,
             'member_ged_percentage' => $gedPercentage,

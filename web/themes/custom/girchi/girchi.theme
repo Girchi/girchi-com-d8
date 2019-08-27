@@ -181,7 +181,8 @@ function girchi_preprocess_page(array &$variables)
       $userInfo[] = [
         'first_name' => $referralUser->get('field_first_name')->value,
         'last_name' => $referralUser->get('field_last_name')->value,
-        'image' => $referralProfilePicture
+        'image' => $referralProfilePicture,
+        'uid' => $referralUser->get('uid')->value,
       ];
     }
 
@@ -235,7 +236,8 @@ function girchi_preprocess_page(array &$variables)
       'favoriteNewsIds' => $favoriteNewsIds,
       'field_author' => $user->id(),
       'user_info' => $userInfo,
-      'thumbnail_url' => $thumbnail_url
+      'thumbnail_url' => $thumbnail_url,
+      'is_politician' => $user->get('field_politician')->value,
     ];
   }
 
@@ -572,4 +574,3 @@ function get_default_cover_photo($user)
 
   return $coverPhotoAvatar;
 }
-
