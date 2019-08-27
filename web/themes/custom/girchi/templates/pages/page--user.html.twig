@@ -31,7 +31,7 @@
                 </div>
 
             </div>
-            <div class="p-3 d-flex mt-4 mt-lg-0 flex-wrap flex-lg-nowrap justify-content-between align-items-center">
+            <div class="{{  user.is_politician ? "p-3" : "p-4" }} d-flex mt-4 mt-lg-0 flex-wrap flex-lg-nowrap justify-content-between align-items-center">
                 <div class="w-220-px mr-4 d-none d-lg-block"></div>
                 {% if user.is_politician %}
                 <div class="text-center text-lg-left d-flex flex-column mx-lg-3 w-50 w-lg-auto border-right border-right-lg-0 px-3 px-md-4 py-1 p-lg-0">
