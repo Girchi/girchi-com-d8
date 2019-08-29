@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b8ff23231e914636c5b66ccafa3af5e",
+    "content-hash": "60e6de8285dec90e37310116e4a2efce",
     "packages": [
         {
             "name": "abgeo/nbg-currency",
@@ -2972,7 +2972,8 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                }
+                },
+                "patches_applied": []
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [

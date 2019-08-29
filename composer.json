@@ -377,6 +377,9 @@
       },
       "drupal/better_exposed_filter": {
         "auto submit": "patches/auto_submit_time.patch"
+      },
+      "drupal/change_pwd_page": {
+        "remove reset route": "patches/change_pwd_page.patch"
       }
     },
     "installer-paths": {
