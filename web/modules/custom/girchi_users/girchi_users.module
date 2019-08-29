@@ -44,12 +44,6 @@ function girchi_users_theme() {
  */
 function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'change_pwd_form') {
-    $current_user_id = \Drupal::currentUser()->id();
-
-    if (isset($_SESSION['pass_reset_' . $current_user_id])) {
-      $form['#after_build'][] = 'girchi_users_reset_password_after_build';
-    }
-
     $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
 
     $form['#after_build'][] = 'girchi_users_after_build';
@@ -69,8 +63,10 @@ function girchi_users_form_alter(&$form, FormStateInterface $form_state, $form_i
     $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
   }
 
-  if ($form_id = "user_pass_reset") {
-    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-success text-uppercase mt-4 fix';
+  if ($form_id == 'user_pass_reset') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-success text-uppercase mt-4 fix';
+    $form['#after_build'][] = 'girchi_users_after_build';
+
   }
 
 }
@@ -97,17 +93,23 @@ function girchi_users_after_build($form, &$form_state) {
   $form['account']['pass']['pass2']['#attributes']['id'][] = 'password';
   $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
 
+  if ($form['#form_id'] == 'user_pass_reset') {
+    unset($form['pass']['pass1']['#title']);
+    unset($form['pass']['pass2']['#title']);
+    unset($form['#attached']['drupalSettings']['password']['confirmTitle']);
+
+    $form['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg fix';
+    $form['pass']['pass1']['#attributes']['id'][] = 'password';
+    $form['pass']['pass1']['#attributes']['placeholder'][] = t('Enter password');
+
+    $form['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg fix';
+    $form['pass']['pass2']['#attributes']['id'][] = 'password';
+    $form['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
+
+  }
+
   return $form;
 
-}
-
-/**
- * Password reset form handler.
- */
-function girchi_users_reset_password_after_build($form, &$form_state) {
-  $form['account']['current_pass']['#required'] = FALSE;
-  $form['account']['current_pass']['#is_invisible'] = TRUE;
-  return $form;
 }
 
 /**
