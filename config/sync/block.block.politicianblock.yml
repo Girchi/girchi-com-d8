@@ -10,7 +10,7 @@ dependencies:
 id: politicianblock
 theme: girchi
 region: content
-weight: -8
+weight: -9
 provider: null
 plugin: politician_block
 settings:
@@ -21,6 +21,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/en/user/*/edit*\r\n/user/*/edit*"
+    pages: "/en/user/*/edit*\r\n/user/*/edit*\r\n/user/*/change-password"
     negate: false
     context_mapping: {  }
