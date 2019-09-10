@@ -156,7 +156,7 @@ class PaymentService {
         $values = [
           'trans_id' => $trans_id,
           'user_id' => $this->currentUser->id(),
-          'amount' => $payment_data['amount'],
+          'amount' => $payment_data['amount'] * 100,
           'ip_address' => $this->request->getClientIp(),
           'currency_code' => 981,
           'description' => $payment_data['description'],
