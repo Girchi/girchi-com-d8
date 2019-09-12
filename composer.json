@@ -291,6 +291,7 @@
     "google/apiclient": "^2.0",
     "harvesthq/chosen": "1.8.7",
     "nicolab/php-ftp-client": "^1.4",
+    "symfony/dotenv": "^4.3",
     "wearede/tbcpay-php": "^0.9.3",
     "webflo/drupal-finder": "1.1.0",
     "webmozart/path-util": "^2.3"
@@ -380,6 +381,9 @@
       },
       "drupal/change_pwd_page": {
         "remove reset route": "patches/change_pwd_page.patch"
+      },
+      "wearede/tbcpay-php": {
+        "fix old url": "patches/plug_and_pay_url.patch"
       }
     },
     "installer-paths": {
