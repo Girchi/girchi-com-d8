@@ -91,6 +91,6 @@ function girchi_ged_transactions_entity_presave(EntityInterface $entity) {
 
     $newTitle = $firsName . ' ' . $lastName . ' ' . $uGed . ' GeD';
 
-    $title = $entity->set('title', $newTitle)->value;
+    $entity->set('title', $newTitle)->value;
   }
 }

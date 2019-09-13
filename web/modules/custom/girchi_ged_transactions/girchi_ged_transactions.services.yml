@@ -1,3 +1,4 @@
 services:
   girchi_ged_transactions.ged_agregator_service:
     class: Drupal\girchi_ged_transactions\GedAgregatorService
+    arguments: ['@database']
