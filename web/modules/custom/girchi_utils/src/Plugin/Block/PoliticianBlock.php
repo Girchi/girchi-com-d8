@@ -102,4 +102,5 @@ class PoliticianBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function getCacheMaxAge() {
     return 0;
   }
+
 }
