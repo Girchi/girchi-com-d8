@@ -167,6 +167,22 @@ class DonationsController extends ControllerBase {
             $auth = FALSE;
           }
 
+          // Donate GeD to aimed politician.
+          if ($donation->get('politician_donation')->value == 1) {
+            $ged_manager->create([
+              'user_id' => "1",
+              'user' => $donation->get('politician_id')->target_id,
+              'ged_amount' => $ged_amount,
+              'title' => 'Donation',
+              'name' => 'Donation',
+              'status' => TRUE,
+              'Description' => 'Transaction was created by politician donation.',
+            ])
+              ->save();
+            $this->getLogger('girchi_donations')->info("Ged transaction for politician was made.");
+
+          }
+
           $this->getLogger('girchi_donations')->info("Ged transaction was made.");
           $this->getLogger('girchi_donations')->info("Payment was successful, ID:$trans_id.");
           return [
