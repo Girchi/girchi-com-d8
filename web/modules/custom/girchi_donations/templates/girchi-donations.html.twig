@@ -127,10 +127,23 @@
                                             <label class="form-label" for="politicians"
                                             >{{ 'Donation to politician'|t }}</label
                                             >
-                                            <div class="form-control form-control-lg">
-                                                {{ form_single.politicians}}
+                                            <div id="politician-autocomplete">
+                                                <input type="text"
+                                                       class="form-control form-control-lg"
+                                                       id="politicians-donation">
+                                                <div class="politicians-list" style="border-radius: 50px">
+                                                    <ul class="list-group pl-group politiciansList"></ul>
+                                                </div>
+                                            </div>
+                                            <div id="autocomplete-result">
+                                                <div class="hidden-politician">
+                                                    <input class="hidden-first-name" type="hidden" value="{{ current_politician.first_name ?? '' }}">
+                                                    <input class="hidden-last-name" type="hidden" value="{{ current_politician.last_name ?? '' }}">
+                                                    <img src="{{ current_politician.image is defined and current_politician.image is not null ? image_style_url(current_politician.image, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}" class="hidden-image" hidden>
+                                                </div>
                                             </div>
                                         </div>
+                                        {{ form_single.politician_id }}
                                         {{ form_single.currency }}
                                         {{ form_single.submit }}
                                     </form>
@@ -228,10 +241,23 @@
                                             <label class="form-label" for="politicians"
                                             >{{ 'Donation to politician'|t }}</label
                                             >
-                                            <div class="form-control form-control-lg">
-                                                {{ form_multiple.politicians}}
+                                            <div id="reg-politician-autocomplete">
+                                                <input type="text"
+                                                       class="form-control form-control-lg"
+                                                       id="reg-politicians-donation">
+                                                <div class="politicians-list" style="border-radius: 50px">
+                                                    <ul class="list-group pl-group regPoliticiansList"></ul>
+                                                </div>
+                                            </div>
+                                            <div id="reg-autocomplete-result">
+                                                <div class="hidden-politician">
+                                                    <input class="hidden-first-name" type="hidden" value="{{ current_politician.first_name ?? '' }}">
+                                                    <input class="hidden-last-name" type="hidden" value="{{ current_politician.last_name ?? '' }}">
+                                                    <img src="{{ current_politician.image is defined and current_politician.image is not null ? image_style_url(current_politician.image, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}" class="hidden-image" hidden>
+                                                </div>
                                             </div>
                                         </div>
+                                        {{ form_multiple.politician_id }}
                                         {{ form_multiple.submit }}
                                     </form>
                                 </div>

@@ -80,6 +80,13 @@ class DonationsController extends ControllerBase {
   protected $donationUtils;
 
   /**
+   * User storage.
+   *
+   * @var \Drupal\user\UserStorage
+   */
+  private $userStorage;
+
+  /**
    * Construct.
    *
    * @param \Drupal\Core\Config\ConfigFactory $configFactory
@@ -116,6 +123,7 @@ class DonationsController extends ControllerBase {
     $this->currentUser = $currentUser;
     $this->formBuilder = $formBuilder;
     $this->donationUtils = $donationUtils;
+    $this->userStorage = $entityTypeManager->getStorage('user');
   }
 
   /**
@@ -140,7 +148,8 @@ class DonationsController extends ControllerBase {
    * @return array
    *   Return array with template and variables
    */
-  public function index() {
+  public function index(Request $request) {
+    $politicians = $this->donationUtils->getPoliticians();
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
     $form_single = $this->formBuilder()
@@ -148,12 +157,35 @@ class DonationsController extends ControllerBase {
     $form_multiple = $this->formBuilder()
       ->getForm("Drupal\girchi_donations\Form\MultipleDonationForm");
 
+    // Get politician ID from query parameter and load its first/last names.
+    if ($request->query->get('politician')) {
+      $politicianId = $request->query->get('politician');
+      $politician = $this->userStorage->load($politicianId);
+      if ($politician->get('user_picture')->entity) {
+        $profilePictureEntity = $politician->get('user_picture')->entity;
+        $profilePicture = $profilePictureEntity->getFileUri();
+      }
+      else {
+        $profilePicture = NULL;
+      }
+      $current_politician = [
+        'first_name' => $politician->get('field_first_name')->value,
+        'last_name' => $politician->get('field_last_name')->value,
+        'image' => $profilePicture,
+      ];
+    }
+    else {
+      $current_politician = '';
+    }
+
     return [
       '#type' => 'markup',
       '#theme' => 'girchi_donations',
       '#form_single' => $form_single,
       '#form_multiple' => $form_multiple,
       '#right_block' => $right_block,
+      '#politicians' => $politicians,
+      '#current_politician' => $current_politician,
     ];
   }
 
@@ -372,7 +404,7 @@ class DonationsController extends ControllerBase {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function regularDonations() {
+  public function regularDonations(Request $request) {
     $regular_donation_storage = $this->entityTypeManager->getStorage('regular_donation');
     $regular_donations = $regular_donation_storage->getQuery()
       ->condition('user_id', $this->currentUser->id(), '=')
@@ -385,6 +417,27 @@ class DonationsController extends ControllerBase {
     $terms = $this->donationUtils->getTerms();
     $language_code = $this->languageManager()->getCurrentLanguage()->getId();
 
+    // Get politician ID from query parameter and load its first/last names.
+    if ($request->query->get('politician')) {
+      $politicianId = $request->query->get('politician');
+      $politician = $this->userStorage->load($politicianId);
+      if ($politician->get('user_picture')->entity) {
+        $profilePictureEntity = $politician->get('user_picture')->entity;
+        $profilePicture = $profilePictureEntity->getFileUri();
+      }
+      else {
+        $profilePicture = NULL;
+      }
+      $current_politician[] = [
+        'first_name' => $politician->get('field_first_name')->value,
+        'last_name' => $politician->get('field_last_name')->value,
+        'image' => $profilePicture,
+      ];
+    }
+    else {
+      $current_politician[] = '';
+    }
+
     return [
       '#type' => 'markup',
       '#theme' => 'regular_donations',
@@ -394,6 +447,7 @@ class DonationsController extends ControllerBase {
       '#terms' => $terms,
       '#language' => $language_code,
       '#current_user_id' => $this->currentUser->id(),
+      '#$current_politician' => $current_politician,
     ];
   }
 

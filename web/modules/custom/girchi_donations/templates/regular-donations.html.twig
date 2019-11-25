@@ -152,7 +152,7 @@
     aria-labelledby="addPaymentTitle"
     aria-hidden="true"
 >
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content overflow-hidden">
             <div class="modal-header align-items-center px-3 px-md-4">
                 <h5
@@ -260,10 +260,23 @@
                         <label class="form-label" for="politicians"
                         >{{ 'Donation to politician'|t }}</label
                         >
-                        <div class="form-control form-control-lg">
-                            {{ regular_donation_form.politicians }}
+                        <div id="reg-politician-autocomplete">
+                            <input type="text"
+                                   class="form-control form-control-lg"
+                                   id="reg-politicians-donation">
+                            <div class="politicians-list">
+                                <ul class="list-group pl-group regPoliticiansList"></ul>
+                            </div>
+                        </div>
+                        <div id="reg-autocomplete-result">
+                            <div class="hidden-politician">
+                                <input class="hidden-first-name" type="hidden" value="{{ current_politician.first_name ?? '' }}">
+                                <input class="hidden-last-name" type="hidden" value="{{ current_politician.last_name ?? '' }}">
+                                <img src="{{ current_politician.image is defined and current_politician.image is not null ? image_style_url(current_politician.image, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}" class="hidden-image" hidden>
+                            </div>
                         </div>
                     </div>
+                    {{ regular_donation_form.politician_id }}
                     {{ regular_donation_form.currency }}
                     {{ regular_donation_form.submit }}
                 </form>

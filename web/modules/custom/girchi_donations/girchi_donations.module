@@ -41,6 +41,8 @@ function girchi_donations_theme() {
         'right_block' => NULL,
         'form_single' => NULL,
         'form_multiple' => NULL,
+        'politicians' => NULL,
+        'current_politician' => NULL,
       ],
     ],
     'girchi_donations_success' => [
@@ -64,6 +66,7 @@ function girchi_donations_theme() {
         'terms' => NULL,
         'language' => NULL,
         'current_user_id' => NULL,
+        'current_politician' => NULL,
       ],
     ],
   ];
