@@ -32,3 +32,11 @@ girchi_users.user_controller_removeFavoriteNews:
   requirements:
     _permission: 'access content'
     _role: 'authenticated'
+
+girchi_users.user_controller_topPoliticians:
+  path: '/api/donations/top-politicians'
+  defaults:
+    _controller: '\Drupal\girchi_users\Controller\UserController::topPliticians'
+    _title: 'Top politicians'
+  requirements:
+    _permission: 'access content'
