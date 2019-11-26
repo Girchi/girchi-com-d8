@@ -29,27 +29,11 @@ $("#edit-amount--2").on("keyup", e => {
 });
 
 // Front validation
-$("#politicians-donation").on("change", e => {
-    if (e.target.value) {
-        $("#edit-donation-aim").attr("disabled", "disabled");
-    } else {
-        $("#edit-donation-aim").removeAttr("disabled");
-    }
-});
-
 $("#edit-donation-aim").on("change", e => {
     if (e.target.value) {
         $("#politicians-donation").attr("disabled", "disabled");
     } else {
         $("#politicians-donation").removeAttr("disabled");
-    }
-});
-
-$("#reg-politicians-donation").on("change", e => {
-    if (e.target.value) {
-        $("#edit-donation-aim--2").attr("disabled", "disabled");
-    } else {
-        $("#edit-donation-aim--2").removeAttr("disabled");
     }
 });
 
@@ -133,13 +117,13 @@ $("#reg-politicians-donation").on("keyup", e => {
 // Choose the politician FOR SINGLE DONATION.
 $(".politiciansList").on("click", "a", e => {
     let item = $(e.target).closest("a");
-    chooseThePolitician($("#politician-autocomplete"),$("#autocomplete-result"),$("#politician_id"),item, "delete-politician");
+    chooseThePolitician($("#politician-autocomplete"),$("#autocomplete-result"),$("#politician_id"),item, "delete-politician", $("#edit-donation-aim"));
 });
 
 // Choose the politician FOR REGULAR DONATION.
 $(".regPoliticiansList").on("click", "a", e => {
     let item = $(e.target).closest("a");
-    chooseThePolitician($("#reg-politician-autocomplete"),$("#reg-autocomplete-result"),$("#reg-politician_id"),item, "reg-delete-politician");
+    chooseThePolitician($("#reg-politician-autocomplete"),$("#reg-autocomplete-result"),$("#reg-politician_id"),item, "reg-delete-politician", $("#edit-donation-aim--2"));
 });
 
 //Delete choosen politician FOR SINGLE DONATION.
@@ -153,10 +137,10 @@ $(document).on("click", ".reg-delete-politician", e => {
 });
 
 
-
+//Get curerent politician from URL
 $(document).ready(function() {
-    getCurrentPolitician($("#politician-autocomplete"), $("#autocomplete-result"), $("#politician_id"), "delete-politician");
-    getCurrentPolitician($("#reg-politician-autocomplete"), $("#reg-autocomplete-result"), $("#reg-politician_id"), "reg-delete-politician");
+    getCurrentPolitician($("#politician-autocomplete"), $("#autocomplete-result"), $("#politician_id"), "delete-politician", $("#edit-donation-aim"));
+    getCurrentPolitician($("#reg-politician-autocomplete"), $("#reg-autocomplete-result"), $("#reg-politician_id"), "reg-delete-politician", $("#edit-donation-aim--2"));
 });
 
 // Function to get 10 top politicians
@@ -289,7 +273,7 @@ function getPoliticiansOnKeyUp(showPoliticiansList, politiciansListClass, keywor
 };
 
 // Funtion to Choose the politician.
-function chooseThePolitician(politician_autocomplete, autocomplete_result, politician_id, item, delete_politician){
+function chooseThePolitician(politician_autocomplete, autocomplete_result, politician_id, item, delete_politician, edit_donation_aim){
     politician_autocomplete.hide();
     autocomplete_result.show();
     let politicianId = item.attr("id");
@@ -319,12 +303,12 @@ function chooseThePolitician(politician_autocomplete, autocomplete_result, polit
         </div>
     </button>
     `);
-
+   edit_donation_aim.attr("disabled", "disabled");
    politician_id.val(politicianId);
 };
 
 // Function to get current politician from URL
-function getCurrentPolitician(politician_autocomplete, autocomplete_result, politician_id,delete_politician) {
+function getCurrentPolitician(politician_autocomplete, autocomplete_result, politician_id,delete_politician, edit_donation_aim) {
     let id = location.search.substring(location.search.lastIndexOf("=") + 1);
     if (id) {       
         politician_autocomplete.hide();   
@@ -356,7 +340,9 @@ function getCurrentPolitician(politician_autocomplete, autocomplete_result, poli
             </div>
         </button>
         `);
+        edit_donation_aim.attr("disabled", "disabled");
     }
+   
     politician_id.val(id);
 };
 
@@ -386,3 +372,5 @@ $("body").on("click", e => {
     }
 });
 
+
+//TODO profilis gverdze gasastilia field-i
