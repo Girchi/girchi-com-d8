@@ -260,15 +260,15 @@
                         <label class="form-label" for="politicians"
                         >{{ 'Donation to politician'|t }}</label
                         >
-                        <div id="reg-politician-autocomplete">
+                        <div id="politician-autocomplete" class="reg-politician-list-profile">
                             <input type="text"
                                    class="form-control form-control-lg"
-                                   id="reg-politicians-donation">
-                            <div class="politicians-list">
-                                <ul class="list-group pl-group regPoliticiansList"></ul>
+                                   id="politicians-donation">
+                            <div class="politicians-list politicians-list-profile">
+                                <ul class="list-group pl-group politiciansList"></ul>
                             </div>
                         </div>
-                        <div id="reg-autocomplete-result">
+                        <div id="autocomplete-result">
                             <div class="hidden-politician">
                                 <input class="hidden-first-name" type="hidden" value="{{ current_politician.first_name ?? '' }}">
                                 <input class="hidden-last-name" type="hidden" value="{{ current_politician.last_name ?? '' }}">
