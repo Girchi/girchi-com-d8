@@ -106,3 +106,7 @@ input[type=number]::-webkit-outer-spin-button {
   overflow-y: auto;
   height: 12.5rem;
 }
+
+.profile-donation{
+  height: 6.5rem;
+}
