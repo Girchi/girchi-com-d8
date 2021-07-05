@@ -214,8 +214,10 @@ class DonationsController extends ControllerBase {
    *   Return array with template and variables
    */
   public function index() {
+
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
+
     $form_single = $this->formBuilder()
       ->getForm("Drupal\girchi_donations\Form\SingleDonationForm");
     $form_multiple = $this->formBuilder()
@@ -233,6 +235,7 @@ class DonationsController extends ControllerBase {
 
     $aim_or_politicians = array_merge($politicians, $donation_aim);
 
+
     return [
       '#type' => 'markup',
       '#theme' => 'girchi_donations',
@@ -244,6 +247,7 @@ class DonationsController extends ControllerBase {
       '#card_save_form' => $card_save_form,
       '#cards' => $cards,
       '#aim_or_politicians' => $aim_or_politicians,
+      '#project' => \Drupal::request()->query->get('project'),
     ];
   }
 

@@ -15,190 +15,188 @@
             <div class="card-body donation-card">
                 <div id="message-container"></div>
                 <div class="row">
-                    <div class="col-md-12 col-lg-6">
-                        <div
-                            class="px-md-8  px-lg-4 px-xl-8 py-3  py-2 py-md-3  py-xl-4"
-                        >
-                            <ul
-                                class="nav nav-tabs nav-justified"
-                                id="myTab"
-                                role="tablist"
+                    {% if logged_in %}
+                        <div class="col-md-12 col-lg-6">
+                            <div
+                                class="px-md-8  px-lg-4 px-xl-8 py-3  py-2 py-md-3  py-xl-4"
                             >
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link active text-uppercase py-3"
-                                        id="single-donation-tab"
-                                        data-toggle="tab"
-                                        href="#single-donation"
-                                        role="tab"
-                                        aria-controls="single-donation"
-                                        aria-selected="true"
-                                    >
-                                        {{ 'Disposable'|t }}
-                                    </a
-                                    >
-                                    {% if logged_in %}
-                                </li>
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link text-uppercase py-3"
-                                        id="multiple-donation-tab"
-                                        data-toggle="tab"
-                                        href="#multiple-donation"
-                                        role="tab"
-                                        aria-controls="multiple-donation"
-                                        aria-selected="false"
-                                    >
-                                        {{ 'Multiple'|t }}
-                                    </a
-                                    >
-                                </li>
-                                {% endif %}
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div
-                                    class="tab-pane fade show active"
-                                    id="single-donation"
-                                    role="tabpanel"
-                                    aria-labelledby="single-donation-tab"
+                                <ul
+                                    class="nav nav-tabs nav-justified"
+                                    id="myTab"
+                                    role="tablist"
                                 >
-                                    <ul
-                                        class="nav nav-tabs nav-justified mx-4"
-                                        id="sourceTab"
-                                        role="tablist"
-                                    >
                                         <li class="nav-item">
                                             <a
-                                                class="nav-link active nav-inner text-uppercase pt-3 pb-2"
-                                                id="tbc-tab"
+                                                class="nav-link active text-uppercase py-3"
+                                                id="single-donation-tab"
                                                 data-toggle="tab"
-                                                href="#tbc-donation"
+                                                href="#single-donation"
                                                 role="tab"
-                                                aria-controls="tbc-donation"
+                                                aria-controls="single-donation"
                                                 aria-selected="true"
                                             >
-                                                <p
-                                                    class="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center"
-                                                >
-                                                    <img
-                                                        src="/themes/custom/girchi/dist/css/images/visa.png"
-                                                        alt=""
-                                                        class="mt-2 mt-sm-0 mr-5 mr-sm-3"
-                                                        height="12"
-                                                    />
-                                                    <img
-                                                        src="/themes/custom/girchi/dist/css/images/mc.svg"
-                                                        alt=""
-                                                        class="mt-2 mt-sm-0 mr-3 mr-sm-0"
-                                                        height="12"
-                                                    />
-                                                </p></a
+                                                {{ 'Disposable'|t }}
+                                            </a
                                             >
                                         </li>
-                                    </ul>
-                                    <div class="tab-content" id="sourceTabContent">
-                                        <div
-                                            class="tab-pane fade show active"
-                                            id="tbc-donation"
-                                            role="tabpanel"
-                                            aria-labelledby="tbc-donation"
-                                            aria-selected="true"
+
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link text-uppercase py-3"
+                                                id="multiple-donation-tab"
+                                                data-toggle="tab"
+                                                href="#multiple-donation"
+                                                role="tab"
+                                                aria-controls="multiple-donation"
+                                                aria-selected="false"
+                                            >
+                                                {{ 'Multiple'|t }}
+                                            </a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div
+                                        class="tab-pane fade show active"
+                                        id="single-donation"
+                                        role="tabpanel"
+                                        aria-labelledby="single-donation-tab"
+                                    >
+                                        <ul
+                                            class="nav nav-tabs nav-justified mx-4"
+                                            id="sourceTab"
+                                            role="tablist"
                                         >
-                                            <form method="POST">
-                                                {{ form_single.form_build_id }}
-                                                {{ form_single.form_token }}
-                                                {{ form_single.form_id }}
-                                                <hr class="border-dashed border-secondary"/>
-                                                <div class="d-flex flex-wrap flex-sm-nowrap">
-                                                    <div class="form-group w-100 w-md-50 pr-sm-2">
-                                                        <label class="form-label" for="amount">{{ 'Amount'|t }}</label>
-                                                        {{ form_single.amount }}
-                                                    </div>
-                                                    <div class="form-group w-100 w-md-50">
-                                                        <label class="form-label">
-                                                            {{ 'GeD' }}
-                                                        </label>
-                                                        <div
-                                                            class="text-success font-size-5 d-flex pl-3 pt-2"
-                                                        >
-                                                            <i class="icon-ged"></i>
-                                                            <span class="ml-1" id="ged-place1">0</span>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="nav-link active nav-inner text-uppercase pt-3 pb-2"
+                                                    id="tbc-tab"
+                                                    data-toggle="tab"
+                                                    href="#tbc-donation"
+                                                    role="tab"
+                                                    aria-controls="tbc-donation"
+                                                    aria-selected="true"
+                                                >
+                                                    <p
+                                                        class="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center"
+                                                    >
+                                                        <img
+                                                            src="/themes/custom/girchi/dist/css/images/visa.png"
+                                                            alt=""
+                                                            class="mt-2 mt-sm-0 mr-5 mr-sm-3"
+                                                            height="12"
+                                                        />
+                                                        <img
+                                                            src="/themes/custom/girchi/dist/css/images/mc.svg"
+                                                            alt=""
+                                                            class="mt-2 mt-sm-0 mr-3 mr-sm-0"
+                                                            height="12"
+                                                        />
+                                                    </p></a
+                                                >
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="sourceTabContent">
+                                            <div
+                                                class="tab-pane fade show active"
+                                                id="tbc-donation"
+                                                role="tabpanel"
+                                                aria-labelledby="tbc-donation"
+                                                aria-selected="true"
+                                            >
+                                                <form method="POST">
+                                                    {{ form_single.form_build_id }}
+                                                    {{ form_single.form_token }}
+                                                    {{ form_single.form_id }}
+                                                    <hr class="border-dashed border-secondary"/>
+                                                    <div class="d-flex flex-wrap flex-sm-nowrap">
+                                                        <div class="form-group w-100 w-md-50 pr-sm-2">
+                                                            <label class="form-label" for="amount">{{ 'Amount'|t }}</label>
+                                                            {{ form_single.amount }}
+                                                        </div>
+                                                        <div class="form-group w-100 w-md-50">
+                                                            <label class="form-label">
+                                                                {{ 'GeD' }}
+                                                            </label>
+                                                            <div
+                                                                class="text-success font-size-5 d-flex pl-3 pt-2"
+                                                            >
+                                                                <i class="icon-ged"></i>
+                                                                <span class="ml-1" id="ged-place1">0</span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
 
-                                                <div class="form-group width-control">
-                                                    <label class="form-label" for="description">
-                                                        {{ 'Aim or politician'|t }}
-                                                    </label>
-                                                    <select
-                                                        id="selected-option-tbc-single"
-                                                        source-type="tbc-single"
-                                                        class="select w-100"
-                                                        data-live-search="true"
-                                                        data-style="btn-white border btn-lg bg-hover-white rounded-oval"
-                                                        title="რას/ვის აფინანსებ"
-                                                        data-none-results-text="არაფერი მოიძებნა"
-                                                    >
-                                                        {% for aim_or_politician in aim_or_politicians %}
-                                                        <option
-                                                            value="{{ aim_or_politician.data_type }}:{{ aim_or_politician.id }}"
-                                                            data-content='
-                                                                <div class="d-flex align-items-center p-1 ">
-                                                                  <span
-                                                                    class="rounded-circle overflow-hidden d-inline-block"
-                                                                  >
-                                                                    <img
-                                                                      {% if aim_or_politician.data_type == 1 %}
-                                                                      src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/girchiLogo34x34.png" }}"
-                                                                      {% else %}
-                                                                      src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}"
-                                                                      {% endif %}
-                                                                      width="35"
-                                                                      class="rounded pl-politician-avatar"
-                                                                      alt="..."
-                                                                    />
+                                                    <div class="form-group width-control">
+                                                        <label class="form-label" for="description">
+                                                            {{ 'Aim or politician'|t }}
+                                                        </label>
+                                                        <select
+                                                            id="selected-option-tbc-single"
+                                                            source-type="tbc-single"
+                                                            class="select w-100"
+                                                            data-live-search="true"
+                                                            data-style="btn-white border btn-lg bg-hover-white rounded-oval"
+                                                            title="რას/ვის აფინანსებ"
+                                                            data-none-results-text="არაფერი მოიძებნა"
+                                                        >
+                                                            {% for aim_or_politician in aim_or_politicians %}
+                                                                <option
+                                                                    value="{{ aim_or_politician.data_type }}:{{ aim_or_politician.id }}"
+                                                                    data-content='
+                                                            <div class="d-flex align-items-center p-1 ">
+                                                              <span
+                                                                class="rounded-circle overflow-hidden d-inline-block"
+                                                              >
+                                                                <img
+                                                                  {% if aim_or_politician.data_type == 1 %}
+                                                                  src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/girchiLogo34x34.png" }}"
+                                                                  {% else %}
+                                                                  src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}"
+                                                                  {% endif %}
+                                                                  width="35"
+                                                                  class="rounded pl-politician-avatar"
+                                                                  alt="..."
+                                                                />
 
-                                                                  </span>
-                                                                  <h6
-                                                                    class="text-uppercase line-height-1-2 font-size-3 font-size-xl-3 mb-0 mx-2"
-                                                                  >
-                                                                    {% if aim_or_politician.data_type == '2' %}
-                                                                    <span class="text-decoration-none d-inline-block text-success">
-                                                                          <span class="pl-politician-first-name">{{aim_or_politician.first_name}}</span>
-                                                                          <span class="font-weight-bold pl-politician-last-name">{{aim_or_politician.last_name}}</span>
-                                                                          <span class="font-weight-bold d-none">{{ aim_or_politician.first_name }} {{ aim_or_politician.last_name }}</span>
-                                                                    </span>
-                                                                    <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                      {{ 'Politician' |t}}
-                                                                    </span>
-                                                                    {% else  %}
-                                                                    <span class="text-decoration-none d-inline-block text-warning  text-hover-success">
-                                                                          <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t}}</span>
-                                                                    </span>
-                                                                    <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                        {{aim_or_politician.aim}}
-                                                                    </span>
-                                                                    {% endif %}
-                                                                  </h6>
-                                                                </div>
-                                                                '
-                                                        ></option>
+                                                              </span>
+                                                              <h6
+                                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-3 mb-0 mx-2"
+                                                              >
+                                                                {% if aim_or_politician.data_type == '2' %}
+                                                                <span class="text-decoration-none d-inline-block text-success">
+                                                                      <span class="pl-politician-first-name">{{aim_or_politician.first_name}}</span>
+                                                                      <span class="font-weight-bold pl-politician-last-name">{{aim_or_politician.last_name}}</span>
+                                                                      <span class="font-weight-bold d-none">{{ aim_or_politician.first_name }} {{ aim_or_politician.last_name }}</span>
+                                                                </span>
+                                                                <span class="d-flex font-size-1 text-grey pl-politician-position">
+                                                                  {{ 'Politician' |t}}
+                                                                </span>
+                                                                {% else  %}
+                                                                <span class="text-decoration-none d-inline-block text-warning  text-hover-success">
+                                                                      <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t}}</span>
+                                                                </span>
+                                                                <span class="d-flex font-size-1 text-grey pl-politician-position">
+                                                                    {{aim_or_politician.aim}}
+                                                                </span>
+                                                                {% endif %}
+                                                              </h6>
+                                                            </div>
+                                                            '
+                                                                ></option>
 
-                                                        {% endfor %}
-                                                    </select>
-                                                </div>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div>
 
-                                                {{ form_single.politicians }}
-                                                {{ form_single.donation_aim }}
-                                                {{ form_single.currency }}
-                                                {{ form_single.submit }}
-                                            </form>
+                                                    {{ form_single.politicians }}
+                                                    {{ form_single.donation_aim }}
+                                                    {{ form_single.currency }}
+                                                    {{ form_single.submit }}
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                {% if logged_in %}
                                     <div
                                         class="tab-pane fade"
                                         id="multiple-donation"
@@ -283,45 +281,45 @@
                                                             <option
                                                                 value="{{ aim_or_politician.data_type }}:{{ aim_or_politician.id }}"
                                                                 data-content='
-                                                                <div class="d-flex align-items-center p-1 ">
-                                                                  <span
-                                                                    class="rounded-circle overflow-hidden d-inline-block"
-                                                                  >
-                                                                    <img
-                                                                      {% if aim_or_politician.data_type == 1 %}
-                                                                      src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/girchiLogo34x34.png" }}"
-                                                                      {% else %}
-                                                                      src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}"
-                                                                      {% endif %}
-                                                                      width="35"
-                                                                      class="rounded pl-politician-avatar"
-                                                                      alt="..."
-                                                                    />
+                                                            <div class="d-flex align-items-center p-1 ">
+                                                              <span
+                                                                class="rounded-circle overflow-hidden d-inline-block"
+                                                              >
+                                                                <img
+                                                                  {% if aim_or_politician.data_type == 1 %}
+                                                                  src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/girchiLogo34x34.png" }}"
+                                                                  {% else %}
+                                                                  src="{{ aim_or_politician.img is defined and aim_or_politician.img is not null ? image_style_url(aim_or_politician.img, 'avatar_xs') : theme_path() ~ "/images/avatar34x34.png" }}"
+                                                                  {% endif %}
+                                                                  width="35"
+                                                                  class="rounded pl-politician-avatar"
+                                                                  alt="..."
+                                                                />
 
-                                                                  </span>
-                                                                  <h6
-                                                                    class="text-uppercase line-height-1-2 font-size-3 font-size-xl-3 mb-0 mx-2"
-                                                                  >
-                                                                    {% if aim_or_politician.data_type == '2' %}
-                                                                    <span class="text-decoration-none d-inline-block text-success">
-                                                                          <span class="pl-politician-first-name">{{aim_or_politician.first_name}}</span>
-                                                                          <span class="font-weight-bold pl-politician-last-name">{{aim_or_politician.last_name}}</span>
-                                                                          <span class="font-weight-bold d-none">{{ aim_or_politician.first_name }} {{ aim_or_politician.last_name }}</span>
-                                                                    </span>
-                                                                    <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                      {{ 'Politician' |t}}
-                                                                    </span>
-                                                                    {% else  %}
-                                                                    <span class="text-decoration-none d-inline-block text-warning  text-hover-success">
-                                                                          <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t}}</span>
-                                                                    </span>
-                                                                    <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                        {{aim_or_politician.aim}}
-                                                                    </span>
-                                                                    {% endif %}
-                                                                  </h6>
-                                                                </div>
-                                                                '
+                                                              </span>
+                                                              <h6
+                                                                class="text-uppercase line-height-1-2 font-size-3 font-size-xl-3 mb-0 mx-2"
+                                                              >
+                                                                {% if aim_or_politician.data_type == '2' %}
+                                                                <span class="text-decoration-none d-inline-block text-success">
+                                                                      <span class="pl-politician-first-name">{{aim_or_politician.first_name}}</span>
+                                                                      <span class="font-weight-bold pl-politician-last-name">{{aim_or_politician.last_name}}</span>
+                                                                      <span class="font-weight-bold d-none">{{ aim_or_politician.first_name }} {{ aim_or_politician.last_name }}</span>
+                                                                </span>
+                                                                <span class="d-flex font-size-1 text-grey pl-politician-position">
+                                                                  {{ 'Politician' |t}}
+                                                                </span>
+                                                                {% else  %}
+                                                                <span class="text-decoration-none d-inline-block text-warning  text-hover-success">
+                                                                      <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t}}</span>
+                                                                </span>
+                                                                <span class="d-flex font-size-1 text-grey pl-politician-position">
+                                                                    {{aim_or_politician.aim}}
+                                                                </span>
+                                                                {% endif %}
+                                                              </h6>
+                                                            </div>
+                                                            '
                                                             ></option>
                                                         {% endfor %}
                                                     </select>
@@ -372,7 +370,7 @@
                                                                         <h6
                                                                             class="text-uppercase my-2"
                                                                         >
-                                                                             <span id="main-holder"></span>
+                                                                            <span id="main-holder"></span>
 
                                                                         </h6>
                                                                         <h6
@@ -421,8 +419,8 @@
                                                                                         <div
                                                                                             class="cc-dark-mobile col-md-3 m-2"
                                                                                         >
-                                                                                            <span
-                                                                                                class="chip-mobile"></span>
+                                                                                        <span
+                                                                                            class="chip-mobile"></span>
                                                                                             <img
                                                                                                 src="/{{ directory }}/images/visa2.svg"
                                                                                                 class="logo-visa-mobile"
@@ -451,8 +449,8 @@
                                                                                         <div
                                                                                             class="cc-green-mobile col-md-3 m-2"
                                                                                         >
-                                                                                            <span
-                                                                                                class="chip-mobile"></span>
+                                                                                        <span
+                                                                                            class="chip-mobile"></span>
                                                                                             <img
                                                                                                 src="/{{ directory }}/images/mc_symbol.svg"
                                                                                                 height="35px"
@@ -544,15 +542,25 @@
                                             </form>
                                         {% endif %}
                                     </div>
-                                {% endif %}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {% else %}
+                        <div class="col-md-12 col-lg-6">
+                            <div class="">
+                                <a href="/ge/user/login/facebook?destination=/donate?project={{ project }}" class="btn btn-block d-flex align-items-center justify-content-center btn-with-icon btn-lg btn-purple text-uppercase my-3 my-sm-4 text-nowrap">
+                                    <i class="icon-social-facebook-circular-button font-size-5 font-size-sm-7 mr-2"></i>
+                                    FACEBOOK ავტორიზაცია
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
                     <div class="col-md-12 col-lg-6">
                         <div class="px-md-8 px-lg-3 px-xl-5 py-2 py-md-3  py-xl-4">
                             {{ right_block | raw | t }}
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
