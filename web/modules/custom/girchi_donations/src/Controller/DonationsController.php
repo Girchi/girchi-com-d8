@@ -236,11 +236,7 @@ class DonationsController extends ControllerBase {
     $donation_aim = $this->donationUtils->getTerms();
 
     $aim_or_politicians = array_merge($politicians, $donation_aim);
-
-
-    $query =['destination' => 'bar'];
-
-    $fb_login_url =  Url::fromRoute('social_auth_facebook.redirect_to_fb', $query)->toString();
+    
 
     $build = [
       '#type' => 'markup',
