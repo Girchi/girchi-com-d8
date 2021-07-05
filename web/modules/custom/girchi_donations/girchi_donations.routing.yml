@@ -1,9 +1,10 @@
 
 girchi_donations.donations_controller_index:
-  path: '/donate'
+  path: '/donate/{project}'
   defaults:
     _controller: '\Drupal\girchi_donations\Controller\DonationsController::index'
     _title: 'Donate'
+    project: null
   requirements:
     _permission: 'access content'
   options:
