@@ -48,6 +48,8 @@ function girchi_donations_theme() {
         'card_save_form' => NULL,
         'cards' => NULL,
         'aim_or_politicians' => NULL,
+        'project' => NULL,
+        'login_form' => NULL,
       ],
     ],
     'girchi_donations_success' => [

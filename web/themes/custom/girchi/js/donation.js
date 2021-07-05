@@ -35,6 +35,16 @@ $("document").ready(function () {
             $(`#del-sel-option-${sourceAttr}`).removeClass('d-none');
 	        $(`.${sourceAttr}-hidden-politician`).val(politician_id);
         }
+
+        //Load aim (project) from query string
+        let project = getParameterByName('project');
+        if (project) {
+            const selectedOption = $(selectEl).find(`option[value="1:${project}"]`).get(0);
+            $(selectedOption).attr('selected','selected');
+            $(selectEl).selectpicker('refresh');
+            $(`#del-sel-option-${sourceAttr}`).removeClass('d-none');
+            $(`.${sourceAttr}-hidden-politician`).val(project);
+        }
         let amount = getParameterByName('amount');
         if(amount) {
             $('#edit-amount').val(amount);
