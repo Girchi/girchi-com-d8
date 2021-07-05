@@ -25,19 +25,19 @@ class SocialAuthSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public function onUserLogin(SocialAuthUserEvent $event) {
-    $user = $event->getUser();
-    if ($user->get('field_social_auth_password')->getValue()) {
-      $password_set = $user->get('field_social_auth_password')->getValue()[0]['value'];
-    }
-    else {
-      $password_set = FALSE;
-    }
-
-    if (!$password_set) {
-      $response = new RedirectResponse("/createpassword");
-      $response->send();
-      return;
-    }
+//    $user = $event->getUser();
+//    if ($user->get('field_social_auth_password')->getValue()) {
+//      $password_set = $user->get('field_social_auth_password')->getValue()[0]['value'];
+//    }
+//    else {
+//      $password_set = FALSE;
+//    }
+//
+//    if (!$password_set) {
+//      $response = new RedirectResponse("/createpassword");
+//      $response->send();
+//      return;
+//    }
 
   }
 
