@@ -37,7 +37,8 @@ $("document").ready(function () {
         }
 
         //Load aim (project) from query string
-        let project = getParameterByName('project');
+        let project = drupalSettings.donate.project;
+        console.log(project);
         if (project) {
             const selectedOption = $(selectEl).find(`option[value="1:${project}"]`).get(0);
             $(selectedOption).attr('selected','selected');

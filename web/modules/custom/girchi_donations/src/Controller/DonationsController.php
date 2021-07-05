@@ -13,6 +13,7 @@ use Drupal\Core\KeyValueStore\KeyValueFactory;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\TypedData\Exception\MissingDataException;
+use Drupal\Core\Url;
 use Drupal\girchi_banking\Services\BankingUtils;
 use Drupal\girchi_donations\Entity\RegularDonation;
 use Drupal\girchi_donations\Event\DonationEvents;
@@ -213,7 +214,8 @@ class DonationsController extends ControllerBase {
    * @return array
    *   Return array with template and variables
    */
-  public function index() {
+  public function index($project) {
+
 
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
@@ -234,9 +236,9 @@ class DonationsController extends ControllerBase {
     $donation_aim = $this->donationUtils->getTerms();
 
     $aim_or_politicians = array_merge($politicians, $donation_aim);
+    
 
-
-    return [
+    $build = [
       '#type' => 'markup',
       '#theme' => 'girchi_donations',
       '#form_single' => $form_single,
@@ -247,8 +249,12 @@ class DonationsController extends ControllerBase {
       '#card_save_form' => $card_save_form,
       '#cards' => $cards,
       '#aim_or_politicians' => $aim_or_politicians,
-      '#project' => \Drupal::request()->query->get('project'),
+      '#project' => $project,
     ];
+
+    $build['#attached']['drupalSettings']['donate']['project'] = $project;
+
+    return $build;
   }
 
   /**
