@@ -556,8 +556,15 @@
                             </div>
                         </div>
                     {% else %}
-                        <div class="col-md-12 col-lg-6">
+                        <div class="col-md-12 col-lg-6"
+                        style="
+                            align-items: center;
+                            justify-content: center;
+                            display: flex;">
                             <div class="">
+                                <h2>
+                                    გთხოვთ გაიაროთ
+                                </h2>
                                 <a href="{{ '/ge/user/login/facebook?destination=/ge/donate/project/' ~ project.machine_name.getValue().0.value }}"
                                    class="btn btn-block d-flex align-items-center justify-content-center btn-with-icon btn-lg btn-purple text-uppercase my-3 my-sm-4 text-nowrap">
                                     <i class="icon-social-facebook-circular-button font-size-5 font-size-sm-7 mr-2"></i>
@@ -575,7 +582,8 @@
                                     }
                                 </style>
                                 {% if project.field_image %}
-                                    <img style="max-width: 100%" src="{{ file_url(project.field_image.entity.getFileUri()) }}">
+                                    <img style="max-width: 100%"
+                                         src="{{ file_url(project.field_image.entity.getFileUri()) }}">
                                 {% endif %}
                             {% else %}
                                 {{ right_block | raw | t }}
