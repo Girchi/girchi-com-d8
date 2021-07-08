@@ -211,11 +211,17 @@ class DonationsController extends ControllerBase {
   /**
    * Index.
    *
+   * @param $project sting
+   *  Machine name of the project
+   *
    * @return array
    *   Return array with template and variables
    */
   public function index($project) {
 
+    //Load taxonomy term by machine name
+    $project = taxonomy_term_machine_name_load($project, 'donation_issues');
+    $project_tid = $project->tid->getValue()[0]['value'];
 
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
@@ -236,7 +242,7 @@ class DonationsController extends ControllerBase {
     $donation_aim = $this->donationUtils->getTerms();
 
     $aim_or_politicians = array_merge($politicians, $donation_aim);
-    
+
 
     $build = [
       '#type' => 'markup',
@@ -249,10 +255,10 @@ class DonationsController extends ControllerBase {
       '#card_save_form' => $card_save_form,
       '#cards' => $cards,
       '#aim_or_politicians' => $aim_or_politicians,
-      '#project' => $project,
+      '#project' => $project_tid,
     ];
 
-    $build['#attached']['drupalSettings']['donate']['project'] = $project;
+    $build['#attached']['drupalSettings']['donate']['project'] = $project_tid;
 
     return $build;
   }
