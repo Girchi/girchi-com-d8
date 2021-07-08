@@ -1,0 +1,21 @@
+uuid: 5ea779c9-f704-4231-9499-4a776750f57c
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_success_message
+    - taxonomy.vocabulary.donation_issues
+  module:
+    - text
+id: taxonomy_term.donation_issues.field_success_message
+field_name: field_success_message
+entity_type: taxonomy_term
+bundle: donation_issues
+label: 'Success Message'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -62,6 +62,19 @@ function girchi_donations_theme() {
         'card' => NULL,
       ],
     ],
+    'girchi_project_donations_success' => [
+      'render element' => 'children',
+      'variables' => [
+        'amount' => NULL,
+        'auth' => NULL,
+        'regular_donation' => NULL,
+        'reg_data' => NULL,
+        'card' => NULL,
+        'user_form' => NULL,
+        'project' => NULL,
+        'user_form' => NULL,
+      ],
+    ],
     'girchi_donations_fail' => [
       'render element' => 'children',
     ],
@@ -106,6 +119,11 @@ function girchi_donations_form_alter(&$form, FormStateInterface $form_state, $fo
         $form['created']['max']['#title'] = 'დასასრული';
       }
     }
+  }
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if($route_name == 'girchi_donations.donations_controller_finish') {
+    $form['#action'] = "/donate/finish/legalize";
   }
 }
 
@@ -279,4 +297,12 @@ function girchi_donations_user_presave(EntityInterface $user) {
     }
   }
 
+}
+
+
+function girchi_donations_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if($route_name == 'girchi_donations.donations_controller_finish') {
+    $suggestions[] = 'form__girchi_donations_finish_user_form';
+  }
 }

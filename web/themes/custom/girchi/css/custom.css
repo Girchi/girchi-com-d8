@@ -224,3 +224,21 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 0.8em;
 }
 
+
+.user-form__finish .col-lg-6:last-child {
+    display: none;
+}
+
+.user-form__finish .col-lg-6:first-child {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.user-form__finish [data-target="#drupalUserPublicProfile"] {
+    display: none;
+}
+
+.user-form__finish .refferal {
+    display: none;
+}

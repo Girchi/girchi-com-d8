@@ -4,11 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.donation_issues.field_image
+    - field.field.taxonomy_term.donation_issues.field_project_group_url
+    - field.field.taxonomy_term.donation_issues.field_project_website
+    - field.field.taxonomy_term.donation_issues.field_success_message
     - field.field.taxonomy_term.donation_issues.field_user
     - image.style.thumbnail
     - taxonomy.vocabulary.donation_issues
   module:
     - image
+    - link
     - path
     - text
 id: taxonomy_term.donation_issues.default
@@ -31,6 +35,30 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_project_group_url:
+    weight: 35
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_project_website:
+    weight: 34
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_success_message:
+    weight: 33
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_user:
     weight: 32

@@ -1,0 +1,23 @@
+uuid: 9a690ff1-e95f-4481-9bd9-6ac57cc869f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_project_website
+    - taxonomy.vocabulary.donation_issues
+  module:
+    - link
+id: taxonomy_term.donation_issues.field_project_website
+field_name: field_project_website
+entity_type: taxonomy_term
+bundle: donation_issues
+label: 'Project Website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

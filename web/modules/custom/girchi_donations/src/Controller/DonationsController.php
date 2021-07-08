@@ -288,6 +288,7 @@ class DonationsController extends ControllerBase {
 
       if (!$trans_id) {
         $this->getLogger('girchi_donations')->error('Trans ID is missing.');
+//        return $this->redirect('user.page');
         return new JsonResponse('Transaction ID is missing', Response::HTTP_BAD_REQUEST);
       }
       $donations = $storage->loadByProperties(['trans_id' => $trans_id]);
@@ -344,6 +345,30 @@ class DonationsController extends ControllerBase {
               ->info("Ged transaction was made.");
             $this->getLogger('girchi_donations')
               ->info("Payment was successful, ID:$trans_id.");
+
+            if($donation->aim_donation->getValue()[0]['value']) {
+              $project = $donation->getAim();
+              $user = \Drupal::currentUser();
+              $user_entity = \Drupal::entityTypeManager()
+                ->getStorage('user')
+                ->load($user->id());
+
+              $formObject = \Drupal::entityTypeManager()
+                ->getFormObject('user', 'default')
+                ->setEntity($user_entity);
+
+              $user_form = \Drupal::formBuilder()->getForm($formObject);
+
+              return [
+                '#type' => 'markup',
+                '#theme' => 'girchi_project_donations_success',
+                '#amount' => 100,
+                '#auth' => NULL,
+                '#project' => $project,
+                '#user_form' => $user_form,
+              ];
+            }
+
             return [
               '#type' => 'markup',
               '#theme' => 'girchi_donations_success',
@@ -409,6 +434,29 @@ class DonationsController extends ControllerBase {
       ->error('Trans ID or Donation is missing.');
     return new JsonResponse('Transaction ID is missing', Response::HTTP_BAD_REQUEST);
   }
+
+
+  public function finishLegalizeDonation(Request $request) {
+      $user = \Drupal::currentUser();
+      $user_entity = \Drupal::entityTypeManager()
+        ->getStorage('user')
+        ->load($user->id());
+
+      $formObject = \Drupal::entityTypeManager()
+        ->getFormObject('user', 'default')
+        ->setEntity($user_entity);
+
+      $user_form = \Drupal::formBuilder()->getForm($formObject);
+
+      return [
+        '#type' => 'markup',
+        '#theme' => 'girchi_project_donations_success',
+        '#amount' => 100,
+        '#auth' => NULL,
+        '#user_form' => $user_form,
+      ];
+  }
+
 
   /**
    * Route for donation technical failure.

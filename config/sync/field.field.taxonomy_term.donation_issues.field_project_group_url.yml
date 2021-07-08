@@ -1,0 +1,23 @@
+uuid: 7c108973-f03f-41ff-89ae-6d486edb6b2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_project_group_url
+    - taxonomy.vocabulary.donation_issues
+  module:
+    - link
+id: taxonomy_term.donation_issues.field_project_group_url
+field_name: field_project_group_url
+entity_type: taxonomy_term
+bundle: donation_issues
+label: 'Project Group URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

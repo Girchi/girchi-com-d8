@@ -29,6 +29,14 @@ girchi_donations.donations_controller_finish:
   requirements:
     _permission: 'access content'
 
+girchi_donations.project_donations_controller_finish:
+  path: '/donate/finish/legalize'
+  defaults:
+    _controller: '\Drupal\girchi_donations\Controller\DonationsController::finishLegalizeDonation'
+    _title: 'Donation finish'
+  requirements:
+    _permission: 'access content'
+
 girchi_donations.donations_controller_fail:
   path: '/donate/fail'
   defaults:
