@@ -574,7 +574,9 @@
                                         display: none !important;
                                     }
                                 </style>
-                                <img style="max-width: 100%" src="{{ file_url(project.field_image.entity.getFileUri()) }}">
+                                {% if project.field_image %}
+                                    <img style="max-width: 100%" src="{{ file_url(project.field_image.entity.getFileUri()) }}">
+                                {% endif %}
                             {% else %}
                                 {{ right_block | raw | t }}
                             {% endif %}
