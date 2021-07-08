@@ -79,25 +79,27 @@ function girchi_page_attachments_alter(array &$page) {
  */
 function girchi_preprocess_page(array &$variables)
 {
-  $current_uri = \Drupal::request()->getRequestUri();
-  if($current_uri != '/createpassword') {
-    $current_user_id = \Drupal::currentUser()->id();
-    /** @var \Drupal\user\Entity\User $user */
-    $user = User::load($current_user_id);
-    if ($user->get('field_social_auth_password')->getValue()) {
-      $social_auth_check = $user->get('field_social_auth_password')->getValue()[0]['value'];
-    }
-    else {
-      $social_auth_check = FALSE;
-    }
-    $social_auth = \Drupal::service('social_auth.data_handler');
-    $social_auth_token_check = $social_auth->get('social_auth_facebook_access_token');
-    if (!$social_auth_check && $social_auth_token_check) {
-      $response = new RedirectResponse("/createpassword");
-      $response->send();
-    }
-  }
-  $GEDHelper = \Drupal::service('girchi_users.ged_helper');
+  /**
+   * Disable cratepassword redirect.
+   */
+//  $current_uri = \Drupal::request()->getRequestUri();
+//  if($current_uri != '/createpassword') {
+//    $current_user_id = \Drupal::currentUser()->id();
+//    /** @var \Drupal\user\Entity\User $user */
+//    $user = User::load($current_user_id);
+//    if ($user->get('field_social_auth_password')->getValue()) {
+//      $social_auth_check = $user->get('field_social_auth_password')->getValue()[0]['value'];
+//    }
+//    else {
+//      $social_auth_check = FALSE;
+//    }
+//    $social_auth = \Drupal::service('social_auth.data_handler');
+//    $social_auth_token_check = $social_auth->get('social_auth_facebook_access_token');
+//    if (!$social_auth_check && $social_auth_token_check) {
+//      $response = new RedirectResponse("/createpassword");
+//      $response->send();
+//    }
+//  }
 
   // Get config from site settings.
   $config = \Drupal::config('om_site_settings.site_settings');
