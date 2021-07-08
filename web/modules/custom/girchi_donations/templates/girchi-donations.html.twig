@@ -3,13 +3,22 @@
         <!-- Start of head -->
         <div class="text-center py-4 py-sm-6">
             <h5 class="text-white text-uppercase font-weight-bold font-size-5">
-                {{ 'Become a partner'|t }}
+                {% if project %}
+                    {{ project.name.getValue().0.value }}
+                {% else %}
+                    {{ 'Become a partner'|t }}
+                {% endif %}
+
             </h5>
-            <p class="text-white font-size-3 mb-0">
-                {{ 'Fund the GIRCHI, get the relevant GeDs and hit the leaderboard'|t }}
-            </p>
+            <div class="text-white font-size-3 mb-0">
+                {% if project %}
+                    {{ project.description.getValue().0.value|raw }}
+                {% else %}
+                    {{ 'Fund the GIRCHI, get the relevant GeDs and hit the leaderboard'|t }}
+                {% endif %}
+            </div>
         </div>
-        <div class="card mb-4 mb-sm-8" >
+        <div class="card mb-4 mb-sm-8">
             <div class="spinner-wrapper">
             </div>
             <div class="card-body donation-card">
@@ -25,34 +34,34 @@
                                     id="myTab"
                                     role="tablist"
                                 >
-                                        <li class="nav-item">
-                                            <a
-                                                class="nav-link active text-uppercase py-3"
-                                                id="single-donation-tab"
-                                                data-toggle="tab"
-                                                href="#single-donation"
-                                                role="tab"
-                                                aria-controls="single-donation"
-                                                aria-selected="true"
-                                            >
-                                                {{ 'Disposable'|t }}
-                                            </a
-                                            >
-                                        </li>
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link active text-uppercase py-3"
+                                            id="single-donation-tab"
+                                            data-toggle="tab"
+                                            href="#single-donation"
+                                            role="tab"
+                                            aria-controls="single-donation"
+                                            aria-selected="true"
+                                        >
+                                            {{ 'Disposable'|t }}
+                                        </a
+                                        >
+                                    </li>
 
-                                        <li class="nav-item">
-                                            <a
-                                                class="nav-link text-uppercase py-3"
-                                                id="multiple-donation-tab"
-                                                data-toggle="tab"
-                                                href="#multiple-donation"
-                                                role="tab"
-                                                aria-controls="multiple-donation"
-                                                aria-selected="false"
-                                            >
-                                                {{ 'Multiple'|t }}
-                                            </a>
-                                        </li>
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link text-uppercase py-3"
+                                            id="multiple-donation-tab"
+                                            data-toggle="tab"
+                                            href="#multiple-donation"
+                                            role="tab"
+                                            aria-controls="multiple-donation"
+                                            aria-selected="false"
+                                        >
+                                            {{ 'Multiple'|t }}
+                                        </a>
+                                    </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
                                     <div
@@ -110,7 +119,8 @@
                                                     <hr class="border-dashed border-secondary"/>
                                                     <div class="d-flex flex-wrap flex-sm-nowrap">
                                                         <div class="form-group w-100 w-md-50 pr-sm-2">
-                                                            <label class="form-label" for="amount">{{ 'Amount'|t }}</label>
+                                                            <label class="form-label"
+                                                                   for="amount">{{ 'Amount'|t }}</label>
                                                             {{ form_single.amount }}
                                                         </div>
                                                         <div class="form-group w-100 w-md-50">
@@ -165,19 +175,19 @@
                                                               >
                                                                 {% if aim_or_politician.data_type == '2' %}
                                                                 <span class="text-decoration-none d-inline-block text-success">
-                                                                      <span class="pl-politician-first-name">{{aim_or_politician.first_name}}</span>
-                                                                      <span class="font-weight-bold pl-politician-last-name">{{aim_or_politician.last_name}}</span>
+                                                                      <span class="pl-politician-first-name">{{ aim_or_politician.first_name }}</span>
+                                                                      <span class="font-weight-bold pl-politician-last-name">{{ aim_or_politician.last_name }}</span>
                                                                       <span class="font-weight-bold d-none">{{ aim_or_politician.first_name }} {{ aim_or_politician.last_name }}</span>
                                                                 </span>
                                                                 <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                  {{ 'Politician' |t}}
+                                                                  {{ 'Politician' |t }}
                                                                 </span>
-                                                                {% else  %}
+                                                                {% else %}
                                                                 <span class="text-decoration-none d-inline-block text-warning  text-hover-success">
-                                                                      <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t}}</span>
+                                                                      <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t }}</span>
                                                                 </span>
                                                                 <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                    {{aim_or_politician.aim}}
+                                                                    {{ aim_or_politician.aim }}
                                                                 </span>
                                                                 {% endif %}
                                                               </h6>
@@ -302,19 +312,19 @@
                                                               >
                                                                 {% if aim_or_politician.data_type == '2' %}
                                                                 <span class="text-decoration-none d-inline-block text-success">
-                                                                      <span class="pl-politician-first-name">{{aim_or_politician.first_name}}</span>
-                                                                      <span class="font-weight-bold pl-politician-last-name">{{aim_or_politician.last_name}}</span>
+                                                                      <span class="pl-politician-first-name">{{ aim_or_politician.first_name }}</span>
+                                                                      <span class="font-weight-bold pl-politician-last-name">{{ aim_or_politician.last_name }}</span>
                                                                       <span class="font-weight-bold d-none">{{ aim_or_politician.first_name }} {{ aim_or_politician.last_name }}</span>
                                                                 </span>
                                                                 <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                  {{ 'Politician' |t}}
+                                                                  {{ 'Politician' |t }}
                                                                 </span>
-                                                                {% else  %}
+                                                                {% else %}
                                                                 <span class="text-decoration-none d-inline-block text-warning  text-hover-success">
-                                                                      <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t}}</span>
+                                                                      <span class="pl-politician-first-name">{{ 'გირჩი ზოგადად' |t }}</span>
                                                                 </span>
                                                                 <span class="d-flex font-size-1 text-grey pl-politician-position">
-                                                                    {{aim_or_politician.aim}}
+                                                                    {{ aim_or_politician.aim }}
                                                                 </span>
                                                                 {% endif %}
                                                               </h6>
@@ -327,7 +337,7 @@
                                                 {{ form_multiple.donation_aim }}
                                                 {{ form_multiple.politicians }}
 
-                                                {# Start of modal#}
+                                                {# Start of modal #}
                                                 <div
                                                     class="modal fade"
                                                     id="chooseCard"
@@ -348,7 +358,7 @@
                                                                     class="modal-title font-size-3 text-uppercase font-weight-bold"
                                                                     id="addPaymentTitle"
                                                                 >
-                                                                    {{'Regular Donation'|t}}
+                                                                    {{ 'Regular Donation'|t }}
                                                                 </h5>
                                                                 <button
                                                                     type="button"
@@ -477,7 +487,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {# End of modal#}
+                                                {# End of modal #}
                                                 <button
                                                     id="cardSelector"
                                                     data-toggle="modal"
@@ -558,7 +568,16 @@
                     {% endif %}
                     <div class="col-md-12 col-lg-6">
                         <div class="px-md-8 px-lg-3 px-xl-5 py-2 py-md-3  py-xl-4">
-                            {{ right_block | raw | t }}
+                            {% if project %}
+                                <style>
+                                    .navbar-expand-lg, .sticky-navbar-wrapper, .ged-progress {
+                                        display: none !important;
+                                    }
+                                </style>
+                                <img style="max-width: 100%" src="{{ file_url(project.field_image.entity.getFileUri()) }}">
+                            {% else %}
+                                {{ right_block | raw | t }}
+                            {% endif %}
                         </div>
                     </div>
 
