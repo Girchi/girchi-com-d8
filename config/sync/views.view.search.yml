@@ -9,13 +9,12 @@ dependencies:
     - search_api
     - text
 id: search
-label: Search
+label: ძიება
 module: views
 description: ''
 tag: ''
 base_table: search_api_index_girchi
 base_field: search_api_id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -303,6 +302,8 @@ display:
               missioner: '0'
               social_analytics_manager: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -320,7 +321,7 @@ display:
           fields: {  }
           plugin_id: search_api_fulltext
       sorts: {  }
-      title: Search
+      title: ძიება
       header: {  }
       footer: {  }
       empty: {  }
@@ -339,7 +340,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: გვერდი
     position: 1
     display_options:
       display_extenders: {  }

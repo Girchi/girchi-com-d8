@@ -1,0 +1,43 @@
+uuid: d0983ded-a8e6-4f90-8cef-e576e39b7e52
+langcode: ka
+status: true
+dependencies:
+  config:
+    - comment.type.user_communications
+    - field.field.comment.user_communications.comment_body
+  module:
+    - text
+id: comment.user_communications.default
+targetEntityType: comment
+bundle: user_communications
+mode: default
+content:
+  author:
+    weight: -2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment_body:
+    type: text_textarea
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

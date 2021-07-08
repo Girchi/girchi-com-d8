@@ -36,9 +36,11 @@ dependencies:
     - field.field.user.user.field_social_auth_password
     - field.field.user.user.field_tel
     - field.field.user.user.field_twitter_url
+    - field.field.user.user.field_user_feedback
     - field.field.user.user.user_picture
     - image.style.avatar_image
   module:
+    - comment
     - datetime
     - entity_reference_revisions
     - image
@@ -74,6 +76,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -124,6 +127,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_revisions_autocomplete
     region: content
@@ -234,6 +238,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -258,6 +263,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -274,6 +280,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_user_feedback:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
     region: content
   path:
     type: path

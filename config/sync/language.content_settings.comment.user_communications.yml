@@ -1,0 +1,11 @@
+uuid: 5f047686-227e-469f-98eb-435ab2699d83
+langcode: ka
+status: true
+dependencies:
+  config:
+    - comment.type.user_communications
+id: comment.user_communications
+target_entity_type_id: comment
+target_bundle: user_communications
+default_langcode: site_default
+language_alterable: false

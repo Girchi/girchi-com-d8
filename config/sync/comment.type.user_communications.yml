@@ -1,0 +1,8 @@
+uuid: 4eee5485-bb02-49a0-a1a1-2160e043a5c0
+langcode: ka
+status: true
+dependencies: {  }
+id: user_communications
+label: 'User Communications'
+target_entity_type_id: user
+description: ''

@@ -11,13 +11,12 @@ dependencies:
 _core:
   default_config_hash: rRzAWaXpJGYA2gPG6BmGxy8gfFd4srCc-LQY3JB6tR8
 id: media
-label: Media
+label: მედია
 module: views
 description: ''
 tag: ''
 base_table: media_field_data
 base_field: mid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -43,13 +42,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: ფილტრი
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: full
         options:
@@ -62,12 +61,12 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
             first: '« First'
             last: 'Last »'
           quantity: 9
@@ -185,7 +184,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: ოპერაცია
           include_exclude: exclude
           selected_actions: {  }
           entity_type: media
@@ -310,7 +309,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Type
+          label: ტიპი
           exclude: false
           alter:
             alter_text: false
@@ -375,7 +374,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Author
+          label: ავტორი
           exclude: false
           alter:
             alter_text: false
@@ -440,7 +439,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: სტატუსი
           exclude: false
           alter:
             alter_text: false
@@ -485,7 +484,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
+            format_custom_true: გამოქვეყნებული
             format_custom_false: Unpublished
           group_column: value
           group_columns: {  }
@@ -507,7 +506,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Updated
+          label: განახლებულია
           exclude: false
           alter:
             alter_text: false
@@ -574,7 +573,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: ოპერაციები
           exclude: false
           alter:
             alter_text: false
@@ -644,6 +643,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -672,7 +673,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Type
+            label: ტიპი
             description: ''
             use_operator: false
             operator: bundle_op
@@ -685,6 +686,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -723,6 +726,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Published status'
@@ -736,7 +741,7 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: გამოქვეყნებული
                 operator: '='
                 value: '1'
               2:
@@ -759,7 +764,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: ენა
             description: ''
             use_operator: false
             operator: langcode_op
@@ -772,6 +777,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -787,6 +794,45 @@ display:
           entity_type: media
           entity_field: langcode
           plugin_id: language
+        status_extra:
+          group_info:
+            widget: select
+            group_items: {  }
+            multiple: false
+            description: ''
+            default_group_multiple: {  }
+            default_group: All
+            label: ''
+            identifier: ''
+            optional: true
+            remember: false
+          group: 1
+          relationship: none
+          exposed: false
+          expose:
+            use_operator: false
+            remember: false
+            operator_id: ''
+            multiple: false
+            description: ''
+            required: false
+            label: ''
+            operator_limit_selection: false
+            operator: ''
+            identifier: ''
+            operator_list: {  }
+            remember_roles:
+              authenticated: authenticated
+          entity_type: media
+          value: ''
+          field: status_extra
+          is_grouped: false
+          admin_label: ''
+          operator: '='
+          table: media_field_data
+          plugin_id: media_status
+          id: status_extra
+          group_type: group
       sorts:
         created:
           id: created
@@ -803,7 +849,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: Media
+      title: მედია
       header: {  }
       footer: {  }
       empty:
@@ -828,19 +874,20 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }
   media_page_list:
     display_plugin: page
     id: media_page_list
-    display_title: Media
+    display_title: მედია
     position: 1
     display_options:
       display_extenders: {  }
       path: admin/content/media
       menu:
         type: tab
-        title: Media
+        title: მედია
         description: ''
         expanded: false
         parent: ''
@@ -855,5 +902,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }

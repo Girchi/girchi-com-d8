@@ -14,7 +14,6 @@ description: 'Recent log messages'
 tag: ''
 base_table: watchdog
 base_field: wid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -40,13 +39,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: ფილტრი
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: false
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: mini
         options:
@@ -59,7 +58,7 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
           tags:
@@ -300,7 +299,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Type
+          label: ტიპი
           exclude: false
           alter:
             alter_text: false
@@ -349,7 +348,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Date
+          label: თარიღი
           exclude: false
           alter:
             alter_text: false
@@ -401,7 +400,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Message
+          label: შეტყობინება
           exclude: false
           alter:
             alter_text: false
@@ -451,7 +450,7 @@ display:
           relationship: uid
           group_type: group
           admin_label: ''
-          label: User
+          label: მომხმარებელი
           exclude: false
           alter:
             alter_text: false
@@ -516,7 +515,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: ოპერაციები
           exclude: false
           alter:
             alter_text: false
@@ -572,7 +571,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: Type
+            label: ტიპი
             description: ''
             use_operator: false
             operator: type_op
@@ -585,6 +584,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -624,6 +625,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -694,7 +697,7 @@ display:
   page:
     display_plugin: page
     id: page
-    display_title: Page
+    display_title: გვერდი
     position: 1
     display_options:
       display_extenders: {  }

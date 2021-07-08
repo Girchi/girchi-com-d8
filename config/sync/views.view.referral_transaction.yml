@@ -21,13 +21,12 @@ dependencies:
     - views_data_export
     - xls_serialization
 id: referral_transaction
-label: 'Referral transaction'
+label: 'რეფერალური ტრანზაქცია'
 module: views
 description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -407,6 +406,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -456,6 +457,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -638,6 +641,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -687,6 +692,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -725,6 +732,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -826,6 +835,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -875,6 +886,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -913,6 +926,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -973,7 +988,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Authored on'
+          label: 'შექმნის თარიღი'
           exclude: false
           alter:
             alter_text: false
@@ -1103,7 +1118,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: User
+          label: მომხმარებელი
           exclude: false
           alter:
             alter_text: true
@@ -1166,7 +1181,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Full name'
+          label: 'სახელი და გვარი'
           exclude: false
           alter:
             alter_text: false
@@ -1229,7 +1244,7 @@ display:
           relationship: field_donation
           group_type: group
           admin_label: ''
-          label: 'Amount of money'
+          label: თანხა
           exclude: false
           alter:
             alter_text: true
@@ -1295,7 +1310,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Referral benefits'
+          label: 'რეფერალური სარგებელი'
           exclude: false
           alter:
             alter_text: true
@@ -1402,6 +1417,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1451,6 +1468,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1488,6 +1507,8 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1525,6 +1546,8 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

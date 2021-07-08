@@ -15,3 +15,4 @@ enabled_entity_types:
   - menu_link_content
 _core:
   default_config_hash: LWI5gcV7qtIl5h1xg7AWMtepAzBAvTaw_TOmsQbw9Tk
+entities_per_queue_item: 50

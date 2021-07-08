@@ -1,0 +1,64 @@
+label: კომენტარები
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          sort_desc_label: აღწერა
+      pager:
+        options:
+          tags:
+            previous: '‹ წინა'
+            next: 'შემდეგი ›'
+            first: '« პირველი'
+            last: 'ბოლო »'
+          expose:
+            items_per_page_options_all_label: '- ყველა -'
+      fields:
+        comment_bulk_form:
+          action_title: ოპერაცია
+        subject:
+          label: სათაური
+        name:
+          label: ავტორი
+        changed:
+          label: განახლებულია
+        operations:
+          label: ოპერაციები
+      filters:
+        subject:
+          expose:
+            label: სათაური
+        langcode:
+          expose:
+            label: ენა
+      title: კომენტარები
+      empty:
+        area_text_custom:
+          content: 'კომენტარები არ არსებობს.'
+      use_more_text: მეტი
+  page_published:
+    display_title: 'გამოქვეყნებული კომენტარები'
+    display_options:
+      menu:
+        title: კომენტარები
+  page_unapproved:
+    display_options:
+      filters:
+        subject:
+          expose:
+            label: სათაური
+        langcode:
+          expose:
+            label: ენა
+      fields:
+        comment_bulk_form:
+          action_title: ოპერაცია
+        subject:
+          label: სათაური
+        name:
+          label: ავტორი
+        changed:
+          label: განახლებულია
+        operations:
+          label: ოპერაციები

@@ -12,7 +12,7 @@ id: investor_registration
 title: 'Investor registration'
 description: ''
 category: ''
-elements: "first_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#placeholder': 'Enter your name'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#title_display': before\n  '#placeholder': 'Enter your last name'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nemail:\n  '#type': email\n  '#title': Email\n  '#placeholder': 'Enter your email'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\naddress:\n  '#type': textfield\n  '#title': Address\n  '#placeholder': 'Enter your address'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nphone:\n  '#type': tel\n  '#title': Phone\n  '#placeholder': 'Enter your phone number'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\ninvestment_amount:\n  '#type': number\n  '#title': 'Investment amount'\n  '#placeholder': 'Enter investment amount'\n  '#required': true\n  '#attributes':\n    class:\n      - 'form-control form-control-lg investment-amount'\n  '#label_attributes':\n    class:\n      - form-label\n  '#min': '1'\ni_am_a_parent:\n  '#type': checkbox\n  '#title': 'I am a parent'\n  '#title_display': invisible\n  '#field_prefix': '  <label class=\"form-checkbox-label font-size-1 text-grey font-weight-bold border-dark-silver \"                        for=\"inve'\n  '#wrapper_attributes':\n    class:\n      - 'form-checkbox-input investor-parent-checkbox'\n    style: 'width: 30px;'\n  '#attributes':\n    class:\n      - 'form-control form-checkbox'\n  '#label_attributes':\n    class:\n      - 'form-checkbox-label font-size-1 text-grey font-weight-bold border-dark-silver'\nnumber_of_children:\n  '#type': number\n  '#title': 'Number of children'\n  '#placeholder': 'Number of children'\n  '#states':\n    required:\n      ':input[name=\"i_am_a_parent\"]':\n        checked: true\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': რეგისტრაცია\n  '#submit__attributes':\n    class:\n      - 'btn btn-lg w-100 w-md-50 w-xl-250-px btn-warning text-uppercase my-3'"
+elements: "first_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#placeholder': 'Enter your name'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#title_display': before\n  '#placeholder': 'Enter your last name'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nemail:\n  '#type': email\n  '#title': Email\n  '#placeholder': 'Enter your email'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\naddress:\n  '#type': textfield\n  '#title': Address\n  '#placeholder': 'Enter your address'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nphone:\n  '#type': tel\n  '#title': Phone\n  '#placeholder': 'Enter your phone number'\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\ninvestment_amount:\n  '#type': number\n  '#title': 'Investment amount'\n  '#placeholder': 'Enter investment amount'\n  '#required': true\n  '#attributes':\n    class:\n      - 'form-control form-control-lg investment-amount'\n  '#label_attributes':\n    class:\n      - form-label\n  '#min': 1\ni_am_a_parent:\n  '#type': checkbox\n  '#title': 'I am a parent'\n  '#title_display': invisible\n  '#field_prefix': '  <label class=\"form-checkbox-label font-size-1 text-grey font-weight-bold border-dark-silver \"                        for=\"inve'\n  '#wrapper_attributes':\n    class:\n      - 'form-checkbox-input investor-parent-checkbox'\n    style: 'width: 30px;'\n  '#attributes':\n    class:\n      - 'form-control form-checkbox'\n  '#label_attributes':\n    class:\n      - 'form-checkbox-label font-size-1 text-grey font-weight-bold border-dark-silver'\nnumber_of_children:\n  '#type': number\n  '#title': 'Number of children'\n  '#placeholder': 'Number of children'\n  '#states':\n    required:\n      ':input[name=\"i_am_a_parent\"]':\n        checked: true\n  '#attributes':\n    class:\n      - 'form-control form-control-lg'\n  '#label_attributes':\n    class:\n      - form-label\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': რეგისტრაცია\n  '#submit__attributes':\n    class:\n      - 'btn btn-lg w-100 w-md-50 w-xl-250-px btn-warning text-uppercase my-3'\n  '#update__attributes':\n    class:\n      - 'btn btn-lg w-100 w-md-50 w-xl-250-px btn-warning text-uppercase my-3'\n"
 css: ''
 javascript: ''
 settings:
@@ -24,7 +24,7 @@ settings:
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  page_admin_theme: false
+  page_theme_name: ''
   form_title: both
   form_submit_once: false
   form_exception_message: ''
@@ -33,7 +33,7 @@ settings:
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
-  form_remote_addr: true
+  form_disable_remote_addr: false
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
@@ -54,6 +54,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
   submission_label: ''
   submission_log: false
   submission_views: {  }
@@ -80,11 +85,20 @@ settings:
   wizard_progress_pages: false
   wizard_progress_percentage: false
   wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
   wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -127,7 +141,11 @@ settings:
   purge_days: null
   results_disabled: false
   results_disabled_ignore: false
+  results_customize: false
+  token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
 access:
   create:
     roles:
@@ -176,3 +194,4 @@ access:
     users: {  }
     permissions: {  }
 handlers: {  }
+variants: {  }

@@ -16,7 +16,6 @@ description: 'All content, by letter.'
 tag: default
 base_table: node_field_data
 base_field: nid
-core: '8'
 display:
   default:
     id: default
@@ -49,7 +48,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: აღწერა
       pager:
         type: mini
         options:
@@ -62,7 +61,7 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- ყველა -'
             offset: false
             offset_label: Offset
           tags:
@@ -77,7 +76,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Title
+          label: სათაური
           exclude: false
           alter:
             alter_text: false
@@ -124,7 +123,7 @@ display:
           id: name
           table: users_field_data
           field: name
-          label: Author
+          label: ავტორი
           relationship: uid
           plugin_id: field
           type: user_name
@@ -176,7 +175,7 @@ display:
           id: changed
           table: node_field_data
           field: changed
-          label: 'Last update'
+          label: 'ბოლო განახლება'
           type: timestamp
           settings:
             date_format: long
@@ -336,6 +335,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -351,6 +352,19 @@ display:
           plugin_id: language
           entity_type: node
           entity_field: langcode
+        status:
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          field: status
+          group: 1
+          id: status
+          table: node_field_data
+          value: '1'
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
       display_extenders: {  }
     cache_metadata:
       contexts:
@@ -364,7 +378,7 @@ display:
       tags: {  }
   attachment_1:
     id: attachment_1
-    display_title: Attachment
+    display_title: 'მიმაგრებული ფაილი'
     display_plugin: attachment
     position: 2
     display_options:
@@ -432,7 +446,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: გვერდი
     display_plugin: page
     position: 1
     display_options:

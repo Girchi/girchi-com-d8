@@ -1,0 +1,10 @@
+uuid: 19925669-4e89-474a-9f4d-4ddfede85078
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.user_feedback
+label: 'User Feedback'
+targetEntityType: user
+cache: true

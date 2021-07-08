@@ -14,6 +14,7 @@ module:
   ckeditor_liststyle: 0
   ckeditor_uploadimage: 0
   coffee: 0
+  comment: 0
   config: 0
   config_default_image: 0
   config_filter: 0
@@ -65,6 +66,9 @@ module:
   hierarchical_term_formatter: 0
   image: 0
   international_phone: 0
+  jquery_ui: 0
+  jquery_ui_draggable: 0
+  jquery_ui_droppable: 0
   language: 0
   layout_discovery: 0
   link: 0
@@ -92,7 +96,9 @@ module:
   panels: 0
   panels_ipe: 0
   path: 0
+  path_alias: 0
   prlp: 0
+  queue_ui: 0
   reference_value_pair: 0
   rest: 0
   role_delegation: 0

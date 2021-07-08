@@ -1,0 +1,20 @@
+uuid: d288a14e-d375-4d7e-b44f-0df48e48038e
+langcode: ka
+status: true
+dependencies:
+  module:
+    - comment
+    - user
+id: user.field_user_feedback
+field_name: field_user_feedback
+entity_type: user
+type: comment
+settings:
+  comment_type: user_communications
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 85c326d1-dfcf-42b2-b4cb-60e659962715
+langcode: ka
+status: true
+dependencies:
+  config:
+    - comment.type.user_communications
+    - field.field.comment.user_communications.comment_body
+  module:
+    - text
+id: comment.user_communications.default
+targetEntityType: comment
+bundle: user_communications
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
