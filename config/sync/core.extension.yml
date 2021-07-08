@@ -113,6 +113,7 @@ module:
   swiftmailer: 0
   system: 0
   taxonomy: 0
+  taxonomy_machine_name: 0
   telephone: 0
   telephone_validation: 0
   text: 0
