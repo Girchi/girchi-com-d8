@@ -219,9 +219,7 @@ class DonationsController extends ControllerBase {
    */
   public function index($project) {
 
-    //Load taxonomy term by machine name
-    $project = taxonomy_term_machine_name_load($project, 'donation_issues');
-    $project_tid = $project->tid->getValue()[0]['value'];
+
 
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
@@ -244,7 +242,16 @@ class DonationsController extends ControllerBase {
     $aim_or_politicians = array_merge($politicians, $donation_aim);
 
 
-    $build = [
+    $build = [];
+    //Load taxonomy term by machine name
+    if($project) {
+      $project = taxonomy_term_machine_name_load($project, 'donation_issues');
+      $project_tid = $project->tid->getValue()[0]['value'];
+      $build['#attached']['drupalSettings']['donate']['project'] = $project_tid;
+    }
+
+    $build = array_merge($build, [
+    $build = array_merge($build, [
       '#type' => 'markup',
       '#theme' => 'girchi_donations',
       '#form_single' => $form_single,
@@ -255,10 +262,9 @@ class DonationsController extends ControllerBase {
       '#card_save_form' => $card_save_form,
       '#cards' => $cards,
       '#aim_or_politicians' => $aim_or_politicians,
-      '#project' => $project_tid,
-    ];
+      '#project' => $project,
+    ]);
 
-    $build['#attached']['drupalSettings']['donate']['project'] = $project_tid;
 
     return $build;
   }
