@@ -251,7 +251,6 @@ class DonationsController extends ControllerBase {
     }
 
     $build = array_merge($build, [
-    $build = array_merge($build, [
       '#type' => 'markup',
       '#theme' => 'girchi_donations',
       '#form_single' => $form_single,
