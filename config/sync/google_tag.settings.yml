@@ -1,8 +1,7 @@
-uri: 'public:/'
+uri: 'public://google_tag'
 compact_snippet: true
 include_file: true
 rebuild_snippets: true
-flush_snippets: false
 debug_output: false
 _default_container:
   container_id: ''

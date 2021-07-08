@@ -14,6 +14,7 @@ description: 'Recent content.'
 tag: default
 base_table: node_field_data
 base_field: nid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -45,7 +46,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: აღწერა
+          sort_desc_label: Desc
       pager:
         type: some
         options:
@@ -187,8 +188,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -228,8 +227,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -292,7 +289,7 @@ display:
       display_extenders: {  }
       use_more: false
       use_more_always: false
-      use_more_text: მეტი
+      use_more_text: More
       link_url: ''
       link_display: '0'
     cache_metadata:
@@ -307,7 +304,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: ბლოკი
+    display_title: Block
     position: 1
     display_options:
       display_extenders: {  }

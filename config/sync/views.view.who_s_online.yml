@@ -13,6 +13,7 @@ description: 'Shows the user names of the most recently active users, and the to
 tag: default
 base_table: users_field_data
 base_field: uid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -44,7 +45,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: აღწერა
+          sort_desc_label: Desc
       pager:
         type: some
         options:
@@ -104,8 +105,6 @@ display:
           id: status
           expose:
             operator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
           plugin_id: boolean
           entity_type: user
@@ -127,7 +126,7 @@ display:
           exposed: false
           expose:
             operator_id: access_op
-            label: 'ბოლო ვიზიტი'
+            label: 'Last access'
             description: 'A user is considered online for this long after they have last viewed a page.'
             use_operator: false
             operator: access_op
@@ -139,8 +138,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

@@ -8,12 +8,13 @@ dependencies:
 _core:
   default_config_hash: cCq1vjj1qmyd39oBIUyOe8YPDsobJ5fZRhp2Xy5O7lA
 id: comment
-label: კომენტარები
+label: Comments
 module: comment
 description: 'Find and manage comments.'
 tag: default
 base_table: comment_field_data
 base_field: cid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -45,7 +46,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: აღწერა
+          sort_desc_label: Desc
       pager:
         type: full
         options:
@@ -54,16 +55,16 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ წინა'
-            next: 'შემდეგი ›'
-            first: '« პირველი'
-            last: 'ბოლო »'
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- ყველა -'
+            items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -179,7 +180,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: ოპერაცია
+          action_title: Action
           include_exclude: include
           selected_actions:
             - comment_delete_action
@@ -193,7 +194,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: სათაური
+          label: Subject
           exclude: false
           alter:
             alter_text: false
@@ -323,7 +324,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ავტორი
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -452,7 +453,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: განახლებულია
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -519,7 +520,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ოპერაციები
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -652,8 +653,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -682,7 +681,7 @@ display:
           exposed: true
           expose:
             operator_id: subject_op
-            label: სათაური
+            label: Subject
             description: ''
             use_operator: false
             operator: subject_op
@@ -694,8 +693,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -736,8 +733,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -767,7 +762,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: ენა
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op
@@ -780,8 +775,6 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -813,7 +806,7 @@ display:
           entity_type: comment
           entity_field: changed
           plugin_id: date
-      title: კომენტარები
+      title: Comments
       header: {  }
       footer: {  }
       empty:
@@ -826,13 +819,13 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'კომენტარები არ არსებობს.'
+          content: 'No comments available.'
           plugin_id: text_custom
       arguments: {  }
       display_extenders: {  }
       use_more: false
       use_more_always: true
-      use_more_text: მეტი
+      use_more_text: more
       use_ajax: false
       hide_attachment_summary: false
       show_admin_links: true
@@ -867,13 +860,13 @@ display:
   page_published:
     display_plugin: page
     id: page_published
-    display_title: 'გამოქვეყნებული კომენტარები'
+    display_title: 'Published comments'
     position: 1
     display_options:
       path: admin/content/comment
       menu:
         type: tab
-        title: კომენტარები
+        title: Comments
         description: 'Comments published'
         parent: ''
         weight: 0
@@ -933,8 +926,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -963,7 +954,7 @@ display:
           exposed: true
           expose:
             operator_id: subject_op
-            label: სათაური
+            label: Subject
             description: ''
             use_operator: false
             operator: subject_op
@@ -975,8 +966,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1017,8 +1006,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1048,7 +1035,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: ენა
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op
@@ -1061,8 +1048,6 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1132,7 +1117,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: ოპერაცია
+          action_title: Action
           include_exclude: include
           selected_actions:
             - comment_delete_action
@@ -1146,7 +1131,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: სათაური
+          label: Subject
           exclude: false
           alter:
             alter_text: false
@@ -1276,7 +1261,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ავტორი
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -1405,7 +1390,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: განახლებულია
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -1472,7 +1457,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ოპერაციები
+          label: Operations
           exclude: false
           alter:
             alter_text: false

@@ -25,6 +25,7 @@ description: ''
 tag: ''
 base_table: ged_transaction_field_data
 base_field: id
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -50,7 +51,7 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: გაფილტვრა
+          submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -639,7 +640,7 @@ display:
           exposed: true
           expose:
             operator_id: field_last_name_value_op
-            label: 'გაფილტრე გვარით'
+            label: 'Filter with last name'
             description: ''
             use_operator: false
             operator: field_last_name_value_op
@@ -657,8 +658,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -689,7 +688,7 @@ display:
           exposed: true
           expose:
             operator_id: created_1_op
-            label: თარიღიდან
+            label: 'Date between'
             description: ''
             use_operator: false
             operator: created_1_op
@@ -709,8 +708,6 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -739,7 +736,7 @@ display:
           exposed: true
           expose:
             operator_id: tid_op
-            label: 'ტრანზაქციის ტიპი'
+            label: 'Transaction Type'
             description: ''
             use_operator: false
             operator: tid_op
@@ -757,8 +754,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -802,7 +797,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<p><a class=\"button button-action button--primary button--small\" data-drupal-link-system-path=\"admin/content/ged_transaction/add\" href=\"/admin/content/ged_transaction/add\">ახალი ტრანზაქცია </a></p>\r\n"
+            value: '<a href="/admin/content/ged_transaction/add" class="button button-action button--primary button--small" data-drupal-link-system-path="admin/content/ged_transaction/add">ახალი ტრანზაქცია </a>'
             format: full_html
           plugin_id: text
         area_text_custom:
@@ -1026,7 +1021,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: თარიღი
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -1093,7 +1088,7 @@ display:
           relationship: user
           group_type: group
           admin_label: ''
-          label: სახელი
+          label: 'First Name'
           exclude: false
           alter:
             alter_text: false
@@ -1156,7 +1151,7 @@ display:
           relationship: user
           group_type: group
           admin_label: ''
-          label: გვარი
+          label: 'Last Name'
           exclude: false
           alter:
             alter_text: false
@@ -1282,7 +1277,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: მომხმარებელი
+          label: User
           exclude: false
           alter:
             alter_text: true
@@ -1347,7 +1342,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Ged-ების რაოდენობა'
+          label: 'Ged amount'
           exclude: false
           alter:
             alter_text: true
@@ -1413,11 +1408,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: აღწერა
+          label: Description
           exclude: false
           alter:
             alter_text: true
-            text: '{{ Description__value == "Transaction was created by donation" ? "ტრანზქცია შექმნილია დონაციის შედეგად" : Description }}'
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -1501,9 +1496,7 @@ display:
               missioner: '0'
               social_analytics_manager: '0'
               financial_manager: '0'
-            placeholder: ძებნა...
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: Name
           is_grouped: false
           group_info:
             label: ''
@@ -1549,8 +1542,6 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1594,8 +1585,6 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1634,8 +1623,6 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1673,8 +1660,6 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1711,8 +1696,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1741,7 +1724,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"px-3 px-md-4 py-3\">No transaction found.</div>\r\n"
+            value: '<div class= "px-3 px-md-4 py-3">No transaction found. </div>'
             format: full_html
           plugin_id: text
       pager:

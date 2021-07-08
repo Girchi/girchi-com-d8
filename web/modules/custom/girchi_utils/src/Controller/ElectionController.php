@@ -121,6 +121,7 @@ class ElectionController extends ControllerBase {
       '#user_header' => $headerVariables,
       '#total_amount' => $totalAmount,
       '#milestones' => $milestones,
+      '#cache' => ['contexts' => ['user']]
     ];
   }
 
@@ -240,7 +241,7 @@ class ElectionController extends ControllerBase {
    *   Array of milestones.
    */
   protected function getMilestons($totalAmount) {
-    $milestones = [25000, 50000, 75000, 100000, 125000];
+    $milestones = [25000, 50000, 75000, 100000, 125000, 150000];
     $milestoneStart = 0;
     $milestoneEnd = 25000;
     for ($i = 0; $i < count($milestones); $i++) {
@@ -248,7 +249,7 @@ class ElectionController extends ControllerBase {
         $milestoneEnd = $milestoneStart = end($milestones);
         break;
       }
-      elseif ($totalAmount > $milestones[$i] && $totalAmount < $milestones[$i + 1]) {
+      elseif ($totalAmount >= $milestones[$i] && $totalAmount < $milestones[$i + 1]) {
         $milestoneStart = $milestones[$i];
         $milestoneEnd = $milestones[$i + 1];
         break;

@@ -1,5 +1,5 @@
 global-styling:
-  version: 1.x
+  version: 2.0
   css:
     theme:
       css/custom.css: {}
@@ -14,12 +14,12 @@ global-styling:
   dependencies:
 
 myparty-list:
-  version: 1.x
+  version: 1.5
   js:
     js/mypartylist.js: {}
 
 donation:
-  version: 1.1
+  version: 1.3
   js:
     js/donation.js: {}
 #    js/paypal.js: {}

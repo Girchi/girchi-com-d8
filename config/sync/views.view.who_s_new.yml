@@ -13,6 +13,7 @@ description: 'Shows a list of the newest user accounts on the site.'
 tag: default
 base_table: users_field_data
 base_field: uid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -44,7 +45,7 @@ display:
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: აღწერა
+          sort_desc_label: Desc
       pager:
         type: some
         options:
@@ -97,8 +98,6 @@ display:
           id: status
           expose:
             operator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
           plugin_id: boolean
           entity_type: user
@@ -130,8 +129,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -185,7 +182,7 @@ display:
     display_options:
       display_description: 'A list of new users'
       block_description: 'Who''s new'
-      block_category: მომხმარებელი
+      block_category: User
       display_extenders: {  }
     cache_metadata:
       contexts:

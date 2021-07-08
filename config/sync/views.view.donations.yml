@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.donation.field_donation_type
     - field.storage.donation.field_source
+    - taxonomy.vocabulary.donation_issues
     - user.role.authenticated
   module:
     - better_exposed_filters
@@ -12,6 +13,7 @@ dependencies:
     - girchi_ged_transactions
     - rest
     - serialization
+    - taxonomy
     - user
     - views_data_export
     - xls_serialization
@@ -22,6 +24,7 @@ description: ''
 tag: ''
 base_table: donation
 base_field: id
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -136,271 +139,6 @@ display:
       row:
         type: 'entity:donation'
       fields:
-        status:
-          id: status
-          table: donation
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'გადახდის ტიპი'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: donation
-          entity_field: status
-          plugin_id: field
-        amount:
-          id: amount
-          table: donation
-          field: amount
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: თანხა
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: donation
-          entity_field: amount
-          plugin_id: field
-        politician_donation:
-          id: politician_donation
-          table: donation
-          field: politician_donation
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'პოლიტიკოსის დონაცია'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: true
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: unicode-yes-no
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: donation
-          entity_field: politician_donation
-          plugin_id: field
-        aim_donation:
-          id: aim_donation
-          table: donation
-          field: aim_donation
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: მიზანი
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: true
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: unicode-yes-no
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: donation
-          entity_field: aim_donation
-          plugin_id: field
         politician_id:
           id: politician_id
           table: donation
@@ -531,33 +269,14 @@ display:
           entity_type: donation
           entity_field: aim_id
           plugin_id: field
-        user_id:
-          id: user_id
+        amount:
+          id: amount
           table: donation
-          field: user_id
-          entity_type: donation
-          entity_field: user_id
-          plugin_id: field
-        created:
-          id: created
-          table: donation
-          field: created
-          entity_type: donation
-          entity_field: created
-          plugin_id: field
-        field_donation_type:
-          id: field_donation_type
-          table: donation__field_donation_type
-          field: field_donation_type
-          plugin_id: field
-        ged_amount:
-          id: ged_amount
-          table: ged_transaction_field_data
-          field: ged_amount
-          relationship: field_ged_transaction
+          field: amount
+          relationship: none
           group_type: group
           admin_label: ''
-          label: 'GeD-ების რაოდენობა'
+          label: 'Amount of money'
           exclude: false
           alter:
             alter_text: false
@@ -613,8 +332,85 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: ged_transaction
-          entity_field: ged_amount
+          entity_type: donation
+          entity_field: amount
+          plugin_id: field
+        user_id:
+          id: user_id
+          table: donation
+          field: user_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: შემომწირველი
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: donation
+          entity_field: user_id
+          plugin_id: field
+        created:
+          id: created
+          table: donation
+          field: created
+          entity_type: donation
+          entity_field: created
+          plugin_id: field
+        field_donation_type:
+          id: field_donation_type
+          table: donation__field_donation_type
+          field: field_donation_type
           plugin_id: field
         field_source:
           id: field_source
@@ -679,13 +475,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        trans_id:
-          id: trans_id
-          table: donation
-          field: trans_id
-          entity_type: donation
-          entity_field: trans_id
-          plugin_id: field
       filters:
         politician_donation:
           id: politician_donation
@@ -717,8 +506,6 @@ display:
               missioner: '0'
               social_analytics_manager: '0'
               financial_manager: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -764,8 +551,6 @@ display:
               missioner: '0'
               social_analytics_manager: '0'
               financial_manager: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -812,8 +597,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: 'Donation status'
@@ -869,8 +652,6 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -917,8 +698,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -961,6 +740,39 @@ display:
           group_type: group
           admin_label: 'field_ged_transaction: GED transaction'
           required: false
+          plugin_id: standard
+        user_id:
+          id: user_id
+          table: donation
+          field: user_id
+          relationship: none
+          group_type: group
+          admin_label: მომხმარებელი
+          required: false
+          entity_type: donation
+          entity_field: user_id
+          plugin_id: standard
+        politician_id:
+          id: politician_id
+          table: donation
+          field: politician_id
+          relationship: none
+          group_type: group
+          admin_label: 'მომხმარებელი (პოლიტიკოსი)'
+          required: false
+          entity_type: donation
+          entity_field: politician_id
+          plugin_id: standard
+        aim_id:
+          id: aim_id
+          table: donation
+          field: aim_id
+          relationship: none
+          group_type: group
+          admin_label: 'Taxonomy term - პროექტი'
+          required: false
+          entity_type: donation
+          entity_field: aim_id
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
@@ -1064,6 +876,154 @@ display:
         filters: false
         filter_groups: false
       filters:
+        uid_1:
+          id: uid_1
+          table: users_field_data
+          field: uid
+          relationship: politician_id
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_1_op
+            label: პოლიტიკოსი
+            description: ''
+            use_operator: false
+            operator: uid_1_op
+            identifier: uid_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              manager: '0'
+              content_manager: '0'
+              missioner: '0'
+              social_analytics_manager: '0'
+              financial_manager: '0'
+              registered_supporter: '0'
+              registered_member: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: user_id
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_op
+            label: შემომწირველი
+            description: ''
+            use_operator: false
+            operator: uid_op
+            identifier: uid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              manager: '0'
+              content_manager: '0'
+              missioner: '0'
+              social_analytics_manager: '0'
+              financial_manager: '0'
+              registered_supporter: '0'
+              registered_member: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
+        created:
+          id: created
+          table: donation
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: created_op
+            label: დასაწყისი
+            description: ''
+            use_operator: false
+            operator: created_op
+            identifier: created
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              manager: '0'
+              content_manager: '0'
+              missioner: '0'
+              social_analytics_manager: '0'
+              financial_manager: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: donation
+          entity_field: created
+          plugin_id: date
         politician_donation:
           id: politician_donation
           table: donation
@@ -1094,8 +1054,6 @@ display:
               missioner: '0'
               social_analytics_manager: '0'
               financial_manager: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1141,8 +1099,6 @@ display:
               missioner: '0'
               social_analytics_manager: '0'
               financial_manager: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1166,9 +1122,9 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: ''
+          value: OK
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: status_op
             label: 'Donation status'
@@ -1189,8 +1145,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: 'Donation status'
@@ -1209,127 +1163,24 @@ display:
           entity_type: donation
           entity_field: status
           plugin_id: string
-        created:
-          id: created
-          table: donation
-          field: created
-          relationship: none
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: aim_id
           group_type: group
           admin_label: ''
-          operator: between
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: created_op
-            label: დასაწყისი
+            operator_id: tid_op
+            label: Term
             description: ''
             use_operator: false
-            operator: created_op
-            identifier: created
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              manager: '0'
-              content_manager: '0'
-              missioner: '0'
-              social_analytics_manager: '0'
-              financial_manager: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: donation
-          entity_field: created
-          plugin_id: date
-        field_source_value:
-          id: field_source_value
-          table: donation__field_source
-          field: field_source_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_source_value_op
-            label: 'Source (field_source)'
-            description: ''
-            use_operator: false
-            operator: field_source_value_op
-            identifier: field_source_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              manager: '0'
-              content_manager: '0'
-              missioner: '0'
-              social_analytics_manager: '0'
-              financial_manager: '0'
-            placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: string
-        politician_id:
-          id: politician_id
-          table: donation
-          field: politician_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: politician_id_op
-            label: 'ID of aim politician'
-            description: ''
-            use_operator: false
-            operator: politician_id_op
-            identifier: politician_id
+            operator: tid_op
+            identifier: tid
             required: false
             remember: false
             multiple: false
@@ -1344,11 +1195,7 @@ display:
               financial_manager: '0'
               registered_supporter: '0'
               registered_member: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -1361,64 +1208,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: donation
-          entity_field: politician_id
-          plugin_id: numeric
-        aim_id:
-          id: aim_id
-          table: donation
-          field: aim_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: aim_id_op
-            label: 'ID of aim taxonomy term'
-            description: ''
-            use_operator: false
-            operator: aim_id_op
-            identifier: aim_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              manager: '0'
-              content_manager: '0'
-              missioner: '0'
-              social_analytics_manager: '0'
-              financial_manager: '0'
-              registered_supporter: '0'
-              registered_member: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: donation
-          entity_field: aim_id
-          plugin_id: numeric
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: donation_issues
+          hierarchy: false
+          error_message: true
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: taxonomy_index_tid
       filter_groups:
         operator: AND
         groups:
@@ -1430,6 +1228,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.donation.field_donation_type'
@@ -1468,8 +1267,6 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1504,7 +1301,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: მიზანი
+          label: 'Aim donation'
           exclude: true
           alter:
             alter_text: false
@@ -1571,7 +1368,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: თარიღი
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -1638,7 +1435,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: თანხა
+          label: 'Amount of money'
           exclude: false
           alter:
             alter_text: true
@@ -1769,7 +1566,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: პოლიტიკოსი/მიზანი
+          label: Politician/Aim
           exclude: false
           alter:
             alter_text: false
@@ -1834,7 +1631,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'გადახდის ტიპი'
+          label: 'Donation type'
           exclude: false
           alter:
             alter_text: false
@@ -1879,8 +1676,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: რეგულარული
-            format_custom_false: ერთჯერადი
+            format_custom_true: Regular
+            format_custom_false: Disposable
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1964,11 +1761,11 @@ display:
           relationship: field_ged_transaction
           group_type: group
           admin_label: ''
-          label: 'GeD-ების რაოდენობა'
+          label: 'Amount of GeD'
           exclude: false
           alter:
             alter_text: true
-            text: '{{ged_amount}}<i class="icon-ged font-size-3"></i>'
+            text: '<i class="icon-ged font-size-3"></i>{{ged_amount}}'
             make_link: false
             path: ''
             absolute: false

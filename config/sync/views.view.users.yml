@@ -36,6 +36,7 @@ description: ''
 tag: ''
 base_table: users_field_data
 base_field: uid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -687,8 +688,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         field_first_name_value:
           id: field_first_name_value
@@ -714,8 +713,6 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: null
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -753,8 +750,6 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -799,8 +794,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -851,8 +844,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -903,8 +894,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -944,8 +933,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1752,8 +1739,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         field_approved_badges_target_id:
           id: field_approved_badges_target_id
@@ -1786,8 +1771,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1838,8 +1821,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1890,8 +1871,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1939,8 +1918,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1987,8 +1964,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2035,8 +2010,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2087,8 +2060,6 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: 'Last access'
@@ -2131,8 +2102,6 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: null
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'პირადი ნომერი (field_personal_id)'
@@ -2981,8 +2950,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         field_approved_badges_target_id:
           id: field_approved_badges_target_id
@@ -3015,8 +2982,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3067,8 +3032,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3119,8 +3082,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3168,8 +3129,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3216,8 +3175,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3264,8 +3221,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3316,8 +3271,6 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: 'Last access'
@@ -3367,8 +3320,6 @@ display:
               social_analytics_manager: '0'
               financial_manager: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'პირადი ნომერი (field_personal_id)'

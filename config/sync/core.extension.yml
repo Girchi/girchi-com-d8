@@ -66,9 +66,6 @@ module:
   hierarchical_term_formatter: 0
   image: 0
   international_phone: 0
-  jquery_ui: 0
-  jquery_ui_draggable: 0
-  jquery_ui_droppable: 0
   language: 0
   layout_discovery: 0
   link: 0
@@ -96,7 +93,6 @@ module:
   panels: 0
   panels_ipe: 0
   path: 0
-  path_alias: 0
   prlp: 0
   queue_ui: 0
   reference_value_pair: 0
@@ -112,7 +108,6 @@ module:
   social_api: 0
   social_auth: 0
   social_auth_facebook: 0
-  static_server: 0
   statistics: 0
   straw: 0
   swiftmailer: 0

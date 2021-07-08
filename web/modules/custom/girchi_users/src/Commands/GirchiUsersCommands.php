@@ -262,7 +262,6 @@ class GirchiUsersCommands extends DrushCommands {
         ->execute();
 
       $users = $user_storage->loadMultiple($user_ids);
-      dump(count($users));
       foreach ($users as $user) {
           $queue->createItem([
             'uid' => $user->id(),

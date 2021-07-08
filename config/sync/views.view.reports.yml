@@ -1,19 +1,18 @@
-uuid: 8fa37c95-2be3-462f-9792-768f0ae9f2c4
+uuid: 8cf0ce70-530a-42c4-8154-0c1683ea4584
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.regions
+    - system.menu.admin
   module:
-    - taxonomy
-    - user
-id: region_autocomplete
-label: 'Region autocomplete'
+    - girchi_ged_transactions
+id: reports
+label: Reports
 module: views
 description: ''
 tag: ''
-base_table: taxonomy_term_field_data
-base_field: tid
+base_table: ged_transaction_field_data
+base_field: nid
 core: 8.x
 display:
   default:
@@ -23,9 +22,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access user profiles'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -50,7 +48,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 50
           offset: 0
           id: 0
           total_pages: null
@@ -71,31 +69,44 @@ display:
         type: fields
       fields:
         name:
-          id: name
-          table: taxonomy_term_field_data
+          table: ged_transaction_field_data
           field: name
-          entity_type: taxonomy_term
+          id: name
+          entity_type: null
           entity_field: name
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          type: string
-          settings:
-            link_to_entity: true
-          plugin_id: term_name
+          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          label: ''
           exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -105,8 +116,12 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
+          type: string
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -117,62 +132,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          convert_spaces: false
-      filters:
-        status:
-          value: '1'
-          table: taxonomy_term_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: taxonomy_term
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        vid:
-          id: vid
-          table: taxonomy_term_field_data
-          field: vid
-          value:
-            regions: regions
-          entity_type: taxonomy_term
-          entity_field: vid
-          plugin_id: bundle
+      filters: {  }
       sorts: {  }
-      title: 'Region autocomplete'
+      title: Reports
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
-      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.permissions
-      tags: {  }
-  entity_reference_1:
-    display_plugin: entity_reference
-    id: entity_reference_1
-    display_title: 'Entity Reference'
-    position: 2
-    display_options:
-      display_extenders: {  }
-      style:
-        type: entity_reference
-        options:
-          search_fields:
-            name: name
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - user.permissions
       tags: {  }
   page_1:
     display_plugin: page
@@ -181,12 +154,15 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: region-autocomplete
+      path: reports
+      menu:
+        type: normal
+        title: Reports
+        menu_name: admin
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.permissions
       tags: {  }

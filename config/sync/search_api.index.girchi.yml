@@ -51,7 +51,6 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   rendered_item: {  }
-  language_with_fallback: {  }
 tracker_settings:
   default:
     indexing_order: fifo

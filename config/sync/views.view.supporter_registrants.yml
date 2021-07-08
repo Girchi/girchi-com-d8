@@ -18,6 +18,7 @@ description: ''
 tag: ''
 base_table: users_field_data
 base_field: uid
+core: 8.x
 display:
   default:
     display_plugin: default

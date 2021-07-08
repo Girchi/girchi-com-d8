@@ -17,11 +17,11 @@ export async function generateJwtIfExpired() {
                     const domain = `.${window.location.hostname}`;
                     Cookies.set("g-u-at", accessToken, {
                         expires: in30Minutes,
-                        domain: ".girchi.docker.localhost"
+                        domain: ".girchi.com"
                     });
                     Cookies.set("g-u-rt", refreshToken, {
                         expires: in30Minutes,
-                        domain: ".girchi.docker.localhost"
+                        domain: ".girchi.com"
                     });
                 } else {
                     console.log(res);

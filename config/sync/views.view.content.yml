@@ -5,15 +5,17 @@ dependencies:
   module:
     - node
     - user
+    - view_unpublished
 _core:
   default_config_hash: tS8PbpJX90aRFC3-UTgXzdqkq7_2frk2pz4TMijEebM
 id: content
-label: კონტენტი
+label: Content
 module: node
 description: 'Find and manage content.'
 tag: default
 base_table: node_field_data
 base_field: nid
+core: 8.x
 display:
   default:
     display_options:
@@ -28,20 +30,20 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: ფილტრი
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: აღწერა
+          sort_desc_label: Desc
       pager:
         type: full
         options:
           items_per_page: 50
           tags:
-            previous: '‹ წინა'
-            next: 'შემდეგი ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
             first: '« First'
             last: 'Last »'
       style:
@@ -160,7 +162,7 @@ display:
           id: title
           table: node_field_data
           field: title
-          label: სათაური
+          label: Title
           exclude: false
           alter:
             alter_text: false
@@ -183,7 +185,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'კონტენტის ტიპი'
+          label: 'Content type'
           exclude: false
           alter:
             alter_text: false
@@ -246,7 +248,7 @@ display:
           table: users_field_data
           field: name
           relationship: uid
-          label: ავტორი
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -264,7 +266,7 @@ display:
           id: status
           table: node_field_data
           field: status
-          label: სტატუსი
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -277,7 +279,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: გამოქვეყნებული
+            format_custom_true: Published
             format_custom_false: Unpublished
           plugin_id: field
           entity_type: node
@@ -286,7 +288,7 @@ display:
           id: changed
           table: node_field_data
           field: changed
-          label: განახლებულია
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -311,7 +313,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ოპერაციები
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -368,7 +370,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: სათაური
+            label: Title
             description: ''
             use_operator: false
             operator: title_op
@@ -380,8 +382,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -410,7 +410,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'კონტენტის ტიპი'
+            label: 'Content type'
             description: ''
             use_operator: false
             operator: type_op
@@ -423,8 +423,6 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -453,7 +451,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: სტატუსი
+            label: Status
             description: ''
             use_operator: false
             operator: status_op
@@ -463,8 +461,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Published status'
@@ -478,7 +474,7 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: გამოქვეყნებული
+                title: Published
                 operator: '='
                 value: '1'
               2:
@@ -501,7 +497,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: ენა
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op
@@ -514,8 +510,6 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -540,11 +534,8 @@ display:
           plugin_id: node_status
           group: 1
           entity_type: node
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
       sorts: {  }
-      title: კონტენტი
+      title: Content
       empty:
         area_text_custom:
           id: area_text_custom
@@ -588,7 +579,7 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: კონტენტი
+        title: Content
         description: ''
         expanded: false
         parent: ''
@@ -597,13 +588,13 @@ display:
         menu_name: admin
       tab_options:
         type: normal
-        title: კონტენტი
+        title: Content
         description: 'Find and manage content'
         menu_name: admin
         weight: -10
       display_extenders: {  }
     display_plugin: page
-    display_title: გვერდი
+    display_title: Page
     id: page_1
     position: 1
     cache_metadata:

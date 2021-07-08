@@ -2,16 +2,8 @@ display:
   default:
     display_options:
       fields:
-        status:
-          label: 'გადახდის ტიპი'
         amount:
           label: თანხა
-        politician_donation:
-          label: 'პოლიტიკოსის დონაცია'
-        aim_donation:
-          label: მიზანი
-        ged_amount:
-          label: 'GeD-ების რაოდენობა'
   page_2:
     display_options:
       fields:
