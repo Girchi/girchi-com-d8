@@ -44,7 +44,7 @@ $("document").ready(function () {
             $(selectedOption).attr('selected','selected');
             $(selectEl).selectpicker('refresh');
             $(`#del-sel-option-${sourceAttr}`).removeClass('d-none');
-            $(`.${sourceAttr}-hidden-politician`).val(project);
+            $(`.${sourceAttr}-hidden-aim`).val(project);
         }
 
         let amount = getParameterByName('amount');
