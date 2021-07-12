@@ -218,9 +218,6 @@ class DonationsController extends ControllerBase {
    *   Return array with template and variables
    */
   public function index($project) {
-
-
-
     $config = $this->configFactory->get('om_site_settings.site_settings');
     $right_block = $config->get('donation_right_block')['value'];
 
@@ -262,6 +259,60 @@ class DonationsController extends ControllerBase {
       '#cards' => $cards,
       '#aim_or_politicians' => $aim_or_politicians,
       '#project' => $project,
+    ]);
+
+
+    return $build;
+  }
+
+  /**
+   * Politician.
+   *
+   * @param $politician integer
+   *  User ID
+   *
+   * @return array
+   *   Return array with template and variables
+   */
+  public function politician($politician) {
+    $config = $this->configFactory->get('om_site_settings.site_settings');
+    $right_block = $config->get('donation_right_block')['value'];
+
+    $form_single = $this->formBuilder()
+      ->getForm("Drupal\girchi_donations\Form\SingleDonationForm");
+    $form_multiple = $this->formBuilder()
+      ->getForm("Drupal\girchi_donations\Form\MultipleDonationForm");
+    $paypal_form = $this->formBuilder()
+      ->getForm("Drupal\girchi_donations\Form\PaypalDonationForm");
+    $card_save_form = $this->formBuilder()->getForm('Drupal\girchi_banking\Form\SaveCreditCardForm');
+    $has_active_card = $this->bankingUtils->hasAvailableCards($this->accountProxy->id());
+    $cards = $this->bankingUtils->getActiveCards($this->accountProxy->id());
+
+    // Get politicians.
+    $politicians = $this->donationUtils->getPoliticians();
+    // Get donation aim.
+    $donation_aim = $this->donationUtils->getTerms();
+
+    $aim_or_politicians = array_merge($politicians, $donation_aim);
+
+
+    $build = [];
+    if($politician) {
+      $build['#attached']['drupalSettings']['donate']['politician'] = $politician;
+    }
+
+    $build = array_merge($build, [
+      '#type' => 'markup',
+      '#theme' => 'girchi_donations',
+      '#form_single' => $form_single,
+      '#form_multiple' => $form_multiple,
+      '#paypal_form' => $paypal_form,
+      '#right_block' => $right_block,
+      '#has_active_card' => $has_active_card,
+      '#card_save_form' => $card_save_form,
+      '#cards' => $cards,
+      '#aim_or_politicians' => $aim_or_politicians,
+      '#politician' => $politician,
     ]);
 
 

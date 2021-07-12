@@ -38,7 +38,6 @@ $("document").ready(function () {
 
         //Load aim (project) from query string
         let project = drupalSettings.donate.project;
-        console.log("Project: " + project);
         if (project) {
             const selectedOption = $(selectEl).find(`option[value="1:${project}"]`).get(0);
             $(selectedOption).attr('selected','selected');
@@ -46,6 +45,17 @@ $("document").ready(function () {
             $(`#del-sel-option-${sourceAttr}`).removeClass('d-none');
             $(`.${sourceAttr}-hidden-aim`).val(project);
         }
+
+        //Load aim (politician) from query string
+        let politician = drupalSettings.donate.politician;
+        if (politician) {
+            const selectedOption = $(selectEl).find(`option[value="2:${politician}"]`).get(0);
+            $(selectedOption).attr('selected','selected');
+            $(selectEl).selectpicker('refresh');
+            $(`#del-sel-option-${sourceAttr}`).removeClass('d-none');
+            $(`.${sourceAttr}-hidden-aim`).val(politician);
+        }
+
 
         let amount = getParameterByName('amount');
         if(amount) {

@@ -37,7 +37,7 @@ function girchi_donations_help($route_name, RouteMatchInterface $route_match) {
  */
 function girchi_donations_theme() {
   return [
-    'girchi_donations' => [
+     'girchi_donations' => [
       'render element' => 'children',
       'variables' => [
         'right_block' => NULL,
@@ -49,6 +49,7 @@ function girchi_donations_theme() {
         'cards' => NULL,
         'aim_or_politicians' => NULL,
         'project' => NULL,
+        'politician' => NULL,
         'login_form' => NULL,
       ],
     ],

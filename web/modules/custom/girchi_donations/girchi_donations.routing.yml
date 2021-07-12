@@ -21,6 +21,17 @@ girchi_donations.project_donations_controller_index:
   options:
     no_cache: 'TRUE'
 
+girchi_donations.politician_donations_controller_index:
+  path: '/donate/politician/{politician}'
+  defaults:
+    _controller: '\Drupal\girchi_donations\Controller\DonationsController::politician'
+    _title: 'Donate'
+    politician: null
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
 girchi_donations.donations_controller_finish:
   path: '/donate/finish'
   defaults:
