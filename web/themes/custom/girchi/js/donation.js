@@ -53,7 +53,7 @@ $("document").ready(function () {
             $(selectedOption).attr('selected','selected');
             $(selectEl).selectpicker('refresh');
             $(`#del-sel-option-${sourceAttr}`).removeClass('d-none');
-            $(`.${sourceAttr}-hidden-aim`).val(politician);
+            $(`.${sourceAttr}-hidden-politician`).val(politician);
         }
 
 
