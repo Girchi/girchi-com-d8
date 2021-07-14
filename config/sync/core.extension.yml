@@ -1,6 +1,7 @@
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  aggregator: 0
   better_exposed_filters: 0
   block: 0
   block_content: 0
@@ -133,6 +134,7 @@ module:
   views_ui: 0
   webform: 0
   webform_ui: 0
+  webform_views: 0
   xls_serialization: 0
   menu_link_content: 1
   pathauto: 1
