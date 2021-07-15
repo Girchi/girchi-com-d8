@@ -1,0 +1,5 @@
+name: 'Girchi Front'
+type: module
+description: 'Girchi Front Page build'
+core: 8.x
+package: 'Girchi'

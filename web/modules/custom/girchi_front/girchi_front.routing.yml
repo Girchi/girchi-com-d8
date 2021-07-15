@@ -1,0 +1,8 @@
+
+girchi_front.girchi_front_controller_index:
+  path: '/front'
+  defaults:
+    _controller: '\Drupal\girchi_front\Controller\GirchiFrontController::index'
+    _title: 'index'
+  requirements:
+    _permission: 'access content'

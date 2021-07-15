@@ -1,4 +1,7 @@
 settings:
+  default_form_close_message: 'Sorry…This form is closed to new submissions.'
   default_submit_button_label: დადასტურება
 element:
   default_more_title: მეტი
+mail:
+  default_subject: 'Webform submission from: [webform_submission:source-entity]'

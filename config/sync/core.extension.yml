@@ -48,6 +48,7 @@ module:
   girchi_banking: 0
   girchi_contact: 0
   girchi_donations: 0
+  girchi_front: 0
   girchi_ged_transactions: 0
   girchi_leaderboard: 0
   girchi_live: 0
@@ -133,11 +134,13 @@ module:
   views_infinite_scroll: 0
   views_ui: 0
   webform: 0
+  webform_attachment: 0
   webform_ui: 0
   webform_views: 0
   xls_serialization: 0
   menu_link_content: 1
   pathauto: 1
+  webform_bootstrap: 1
   content_translation: 10
   views: 10
   paragraphs: 11

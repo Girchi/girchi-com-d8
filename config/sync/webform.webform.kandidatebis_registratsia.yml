@@ -9,7 +9,7 @@ uid: 16269
 template: false
 archive: false
 id: kandidatebis_registratsia
-title: 'კანდიდატების რეგისტრაცია'
+title: 'პარტიული სიის კანდიდატის რეგისტრაცია'
 description: ''
 category: ''
 elements: "piradi_nomeri:\n  '#type': textfield\n  '#title': 'პირადი ნომერი'\n  '#required': true\n  '#required_error': 'პირადი ნომრის შევსება აუცილებელია'\n  '#pattern': \\d+\n  '#pattern_error': 'გთხოვთ შეიყვანოთ მხოლოდ ციფრები.'\n  '#counter_type': character\n  '#counter_minimum': '11'\n  '#counter_maximum': '11'\n  '#counter_maximum_message': 'პირადი ნომერი უნდა შედგებოდეს 11 ციფრისგან. დაგრჩა %d'\nsakheli:\n  '#type': textfield\n  '#title': სახელი\n  '#required': true\n  '#required_error': 'სახელის შევსება აუცილებელია'\ngvari:\n  '#type': textfield\n  '#title': გვარი\n  '#required': true\n  '#required_error': 'გვარის შევსება აუცილებელია'\nteleponi:\n  '#type': tel\n  '#title': ტელეფონი\n  '#required': true\n  '#required_error': 'ტელეფონის შევსება აუცილებელია.'\n  '#unique': true\n  '#international': true\n  '#international_initial_country': GE\n  '#international_preferred_countries':\n    - GE\n  '#telephone_validation_format': '2'\n  '#telephone_validation_country': GE\nsaolko_saarcheveno_komisiis_cevri:\n  '#type': webform_entity_select\n  '#title': 'საოლქო საარჩევენო კომისიის წევრი'\n  '#select2': true\n  '#format': custom\n  '#format_html': '{{ webform_submission.sakheli }} {{ webform_submission.gvari }}'\n  '#target_type': webform_submission\n  '#selection_handler': views\n  '#selection_settings':\n    view:\n      view_name: saolko_saarcheveno_komisiis_cevri\n      display_name: entity_reference_1\n      arguments: {  }"
@@ -17,12 +17,12 @@ css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: form
+  ajax_scroll_top: ''
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: ''
+  page_submit_path: /elections2021/registration/partiuli-sia
   page_confirm_path: ''
   page_admin_theme: false
   form_title: both

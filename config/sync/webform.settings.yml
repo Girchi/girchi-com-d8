@@ -106,33 +106,36 @@ batch:
 purge:
   cron_size: 100
 element:
+  machine_name_pattern: a-z0-9_
   empty_message: '{Empty}'
   allowed_tags: admin
-  wrapper_classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
-  classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
-  horizontal_rule_classes: "webform-horizontal-rule--solid\nwebform-horizontal-rule--dashed\nwebform-horizontal-rule--dotted\nwebform-horizontal-rule--gradient\nwebform-horizontal-rule--thin\nwebform-horizontal-rule--medium\nwebform-horizontal-rule--thick\nwebform-horizontal-rule--flaired\nwebform-horizontal-rule--glyph\n"
+  wrapper_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  horizontal_rule_classes: "webform-horizontal-rule--solid\r\nwebform-horizontal-rule--dashed\r\nwebform-horizontal-rule--dotted\r\nwebform-horizontal-rule--gradient\r\nwebform-horizontal-rule--thin\r\nwebform-horizontal-rule--medium\r\nwebform-horizontal-rule--thick\r\nwebform-horizontal-rule--flaired\r\nwebform-horizontal-rule--glyph\r\n"
   default_description_display: ''
   default_more_title: More
   default_section_title_tag: h2
-  default_empty_option: true
-  default_empty_option_required: ''
-  default_empty_option_optional: ''
   default_icheck: ''
   default_google_maps_api_key: ''
   default_algolia_places_app_id: ''
   default_algolia_places_api_key: ''
+  default_empty_option: true
+  default_empty_option_required: ''
+  default_empty_option_optional: ''
   excluded_elements:
     password: password
     password_confirm: password_confirm
     webform_location_geocomplete: webform_location_geocomplete
 html_editor:
+  tidy: true
   disabled: false
   element_format: ''
   mail_format: ''
-  tidy: true
   make_unused_managed_files_temporary: true
 file:
-  file_public: false
+  make_unused_managed_files_temporary: true
+  delete_temporary_managed_files: true
+  file_public: true
   file_private_redirect: true
   file_private_redirect_message: 'Please login to access the uploaded file.'
   default_max_filesize: ''
@@ -141,8 +144,6 @@ file:
   default_document_file_extensions: 'txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods'
   default_image_file_extensions: 'gif jpg png'
   default_video_file_extensions: 'avi mov mp4 ogg wav webm'
-  make_unused_managed_files_temporary: true
-  delete_temporary_managed_files: true
 format: {  }
 mail:
   default_to_mail: '[site:mail]'

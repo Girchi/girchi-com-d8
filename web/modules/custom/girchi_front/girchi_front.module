@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains girchi_front.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function girchi_front_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the girchi_front module.
+    case 'help.page.girchi_front':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Girchi Front Page build') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function girchi_front_theme() {
+  return [
+    'girchi_front' => [
+      'render element' => 'children',
+    ],
+  ];
+}
