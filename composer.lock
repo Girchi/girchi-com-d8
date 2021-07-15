@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d29aac3137cdf9c9a580ea92294fd744",
+    "content-hash": "410e0e0a85bd6220269dacee17d1bd07",
     "packages": [
         {
             "name": "abgeo/nbg-currency",
@@ -2397,7 +2397,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.27",
-                    "datestamp": "1558552081",
+                    "datestamp": "1558553350",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2678,10 +2678,13 @@
                 "shasum": "0cd9849aa28eea822e18555107e4539d755d95ef"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-3.0-alpha6",
                     "datestamp": "1550449381",
@@ -8891,7 +8894,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-beta6",
-                    "datestamp": "1562986384",
+                    "datestamp": "1552443188",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -9935,6 +9938,59 @@
             "homepage": "https://www.drupal.org/project/view_unpublished",
             "support": {
                 "source": "http://cgit.drupalcode.org/view_unpublished"
+            }
+        },
+        {
+            "name": "drupal/views_aggregator",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_aggregator.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_aggregator-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "45bce7a21ff203c84e50c3727948bc2d76e1be59"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1606085848",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "JordiK",
+                    "homepage": "https://www.drupal.org/user/3472907"
+                },
+                {
+                    "name": "RdeBoer",
+                    "homepage": "https://www.drupal.org/user/404007"
+                },
+                {
+                    "name": "TR",
+                    "homepage": "https://www.drupal.org/user/202830"
+                }
+            ],
+            "description": "A Views plugin that operates on the results <em>after</em> the database query has run, thus offering aggregation functions not otherwise possible.",
+            "homepage": "https://www.drupal.org/project/views_aggregator",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_aggregator",
+                "issues": "https://www.drupal.org/project/issues/views_aggregator"
             }
         },
         {
@@ -11929,14 +11985,14 @@
             "authors": [
                 {
                     "name": "Alex Bilbie",
-                    "role": "Developer",
                     "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com"
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Woody Gilk",
-                    "role": "Contributor",
-                    "homepage": "https://github.com/shadowhand"
+                    "homepage": "https://github.com/shadowhand",
+                    "role": "Contributor"
                 }
             ],
             "description": "OAuth 2.0 Client Library",
@@ -17858,7 +17914,6 @@
             "keywords": [
                 "tokenizer"
             ],
-            "abandoned": true,
             "time": "2017-12-04T08:55:13+00:00"
         },
         {
@@ -18658,6 +18713,7 @@
         "drupal/url_embed": 15,
         "drupal/user_registrationpassword": 15,
         "drupal/view_unpublished": 15,
+        "drupal/views_aggregator": 10,
         "drupal/views_data_export": 10,
         "drupal/webform_composite": 10,
         "drupal/webform_views": 15

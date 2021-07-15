@@ -287,6 +287,7 @@
     "drupal/video_embed_google_drive": "^1.0",
     "drupal/video_embed_instagram": "^1.0",
     "drupal/view_unpublished": "^1.0@alpha",
+    "drupal/views_aggregator": "^1.0@beta",
     "drupal/views_base_url": "^1.0",
     "drupal/views_data_export": "^1.0@beta",
     "drupal/views_infinite_scroll": "^1.5",

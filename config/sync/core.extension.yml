@@ -130,6 +130,8 @@ module:
   video_embed_field: 0
   video_embed_wysiwyg: 0
   view_unpublished: 0
+  views_aggregator: 0
+  views_aggregator_more_functions: 0
   views_data_export: 0
   views_infinite_scroll: 0
   views_ui: 0
