@@ -246,3 +246,12 @@ input[type=number]::-webkit-outer-spin-button {
 .text-count-wrapper {
   text-align: right;
 }
+
+.banner-bg-gradient-green-to-orange {
+  background-image: linear-gradient(42deg, #327f37 , #ffa823);
+}
+
+.btn-auctions {
+  background-color: #3b5998 !important;
+  border-color: #3b5998 !important;
+}
